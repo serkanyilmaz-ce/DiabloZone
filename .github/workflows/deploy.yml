@@ -6,7 +6,6 @@ on:
       - "src/**"
       - "public/**"
       - "astro.config.mjs"
-      - "package.json"
       - "package-lock.json"
       - "tsconfig.json"
   workflow_dispatch:
