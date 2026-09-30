@@ -37,3 +37,19 @@ export function getString(list: StringListDefinition, ...labels: string[]): stri
   }
   return undefined;
 }
+
+export function cleanTooltipText(value?: string): string | undefined {
+  if (!value) return undefined;
+
+  return value
+    .replace(/\{if:[^}]+\}/gi, '')
+    .replace(/\{\/if\}/gi, '')
+    .replace(/\{c_[^}]+\}/gi, '')
+    .replace(/\{\/c(?:_[^}]+)?\}/gi, '')
+    .replace(/\{u\}|\{\/u\}/gi, '')
+    .replace(/\{icon:[^}]+\}/gi, '')
+    .replace(/\r\n/g, '\n')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
