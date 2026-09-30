@@ -5,6 +5,8 @@ on:
     paths:
       - ".github/workflows/probe-d4data.yml"
       - "scripts/import-d4data/**"
+      - "schemas/**"
+      - "package.json"
 permissions:
   contents: read
 jobs:
@@ -19,8 +21,12 @@ jobs:
       - run: npm install
       - name: Clone d4data
         run: git clone --depth 1 https://github.com/DiabloTools/d4data.git .tmp/d4data
-      - name: Probe data
+      - name: Probe source layout
         run: npm run data:probe -- --datamine .tmp/d4data
+      - name: Extract canonical PoC records
+        run: npm run data:extract -- --datamine .tmp/d4data
+      - name: Run tests
+        run: npm test
       - uses: actions/upload-artifact@v4
         if: always()
         with:
