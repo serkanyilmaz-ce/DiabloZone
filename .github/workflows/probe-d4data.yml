@@ -3,12 +3,14 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - ".github/workflows/probe-d4data.yml"
       - "scripts/import-d4data/**"
       - "schemas/**"
       - "package.json"
 permissions:
   contents: read
+concurrency:
+  group: d4data-probe
+  cancel-in-progress: true
 jobs:
   probe:
     runs-on: ubuntu-latest
