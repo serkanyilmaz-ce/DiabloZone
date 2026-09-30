@@ -1,11 +1,16 @@
 name: Probe Diablo IV Data
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/probe-d4data.yml"
+      - "scripts/import-d4data/**"
 permissions:
   contents: read
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -13,10 +18,12 @@ jobs:
           node-version: 22
       - run: npm install
       - name: Clone d4data
-        run: git clone --depth 1 --filter=blob:none https://github.com/DiabloTools/d4data.git .tmp/d4data
+        run: git clone --depth 1 https://github.com/DiabloTools/d4data.git .tmp/d4data
       - name: Probe data
         run: npm run data:probe -- --datamine .tmp/d4data
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: d4data-proof
           path: data/generated/
+          if-no-files-found: warn
