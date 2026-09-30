@@ -6,6 +6,7 @@ on:
       - "scripts/import-d4data/**"
       - "schemas/**"
       - "package.json"
+      - ".github/workflows/probe-d4data.yml"
 permissions:
   contents: read
 concurrency:
@@ -25,12 +26,13 @@ jobs:
         run: |
           git clone --depth 1 --filter=blob:none --sparse https://github.com/DiabloTools/d4data.git .tmp/d4data
           cd .tmp/d4data
+          git sparse-checkout init --no-cone
           git sparse-checkout set \
-            buildVersion.txt \
-            json/base/meta/Power \
-            json/base/meta/Aspect \
-            json/base/meta/Affix \
-            json/enUS_Text/meta/StringList
+            /buildVersion.txt \
+            /json/base/meta/Power/ \
+            /json/base/meta/Aspect/ \
+            /json/base/meta/Affix/ \
+            /json/enUS_Text/meta/StringList/
       - name: Extract canonical PoC records
         run: npm run data:extract -- --datamine .tmp/d4data
       - name: Import all learnable skills
