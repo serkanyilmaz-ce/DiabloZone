@@ -1,0 +1,5 @@
+{
+  "skills": [{ "SNOId": 1001, "name": "Fireball", "description": "Synthetic test fixture only" }],
+  "items": [{ "SNOId": 2001, "name": "Harlequin Crest", "rarity": "Mythic" }],
+  "powers": [{ "SNOId": 3001, "name": "Aspect of Test Power", "type": "Aspect" }]
+}
