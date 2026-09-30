@@ -1,4 +1,4 @@
-name: Probe Diablo IV Data
+name: Validate Diablo IV Data Import
 on:
   workflow_dispatch:
   push:
@@ -9,22 +9,28 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: d4data-probe
+  group: d4data-import
   cancel-in-progress: true
 jobs:
-  probe:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install
-      - name: Clone d4data
-        run: git clone --depth 1 https://github.com/DiabloTools/d4data.git .tmp/d4data
-      - name: Probe source layout
-        run: npm run data:probe -- --datamine .tmp/d4data
+      - name: Sparse clone required d4data paths
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/DiabloTools/d4data.git .tmp/d4data
+          cd .tmp/d4data
+          git sparse-checkout set \
+            buildVersion.txt \
+            json/base/meta/Power \
+            json/base/meta/Aspect \
+            json/base/meta/Affix \
+            json/enUS_Text/meta/StringList
       - name: Extract canonical PoC records
         run: npm run data:extract -- --datamine .tmp/d4data
       - name: Import all learnable skills
