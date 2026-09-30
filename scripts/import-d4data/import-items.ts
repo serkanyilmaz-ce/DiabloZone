@@ -21,13 +21,20 @@ const classes: Item['classes'] = [
   'barbarian','druid','necromancer','rogue','sorcerer','spiritborn','paladin','warlock'
 ];
 
+const equipableSlots = new Set([
+  'amulet','axe','axe2h','boots','bow','chestarmor','crossbow2h','dagger','flail',
+  'focus','focusbookoffhand','glaive','gloves','helm','legs','mace','mace2h',
+  'offhandtotem','polearm','quarterstaff','ring','scythe','scythe2h','shield',
+  'staff','sword','sword2h','wand'
+]);
+
 const root = path.resolve(arg('--datamine') ?? '.tmp/d4data');
 const build = (await readBuildVersion(root)) ?? 'unknown';
 const itemsDir = path.join(root, 'json/base/meta/Item');
 const stringsDir = path.join(root, 'json/enUS_Text/meta/StringList');
 
 const entries = await fs.readdir(itemsDir, { withFileTypes: true });
-const items: Item[] = [];
+const items: Array<Item & { _internalName: string; _seasonal: boolean }> = [];
 const skipped: Array<{ file: string; reason: string }> = [];
 
 for (const entry of entries) {
@@ -41,6 +48,12 @@ for (const entry of entries) {
 
   try {
     const raw = await readJson<any>(itemFile);
+    const slot = String(raw.snoItemType?.name ?? '').toLowerCase();
+    if (!equipableSlots.has(slot)) {
+      skipped.push({ file: entry.name, reason: `non-equipment item type: ${slot || 'unknown'}` });
+      continue;
+    }
+
     let strings;
     try {
       strings = await readStringList(stringsFile);
@@ -70,7 +83,7 @@ for (const entry of entries) {
       slug: slugify(name),
       name,
       rarity: isMythic ? 'mythic' : 'unique',
-      slot: String(raw.snoItemType?.name ?? '').toLowerCase() || undefined,
+      slot,
       classes: itemClasses,
       affixIds,
       flavor: getString(strings, 'flavor'),
@@ -91,7 +104,11 @@ for (const entry of entries) {
       patch: build,
     });
 
-    items.push(item);
+    items.push({
+      ...item,
+      _internalName: internalName,
+      _seasonal: /^S\d+_/i.test(internalName),
+    });
   } catch (error) {
     skipped.push({
       file: entry.name,
@@ -100,7 +117,20 @@ for (const entry of entries) {
   }
 }
 
-const deduped = Array.from(new Map(items.map(x => [x.id, x])).values())
+items.sort((a, b) => Number(a._seasonal) - Number(b._seasonal) || a._internalName.localeCompare(b._internalName));
+
+const canonical = new Map<string, Item>();
+for (const item of items) {
+  const key = `${item.slug}|${item.slot}|${item.rarity}`;
+  if (canonical.has(key)) {
+    skipped.push({ file: item.source.file, reason: `duplicate canonical item: ${item.name}` });
+    continue;
+  }
+  const { _internalName, _seasonal, ...clean } = item;
+  canonical.set(key, clean);
+}
+
+const deduped = Array.from(canonical.values())
   .sort((a, b) => a.rarity.localeCompare(b.rarity) || a.name.localeCompare(b.name));
 
 await writeJson('data/generated/items.json', deduped);
@@ -124,6 +154,10 @@ await writeJson('data/generated/items-report.json', {
 });
 
 if (deduped.length < 50) throw new Error(`Item sanity check failed: only ${deduped.length} unique/mythic items imported`);
-if (!deduped.some(x => x.name === 'Harlequin Crest')) throw new Error('Item sanity check failed: Harlequin Crest missing');
+const harlequins = deduped.filter(x => x.name === 'Harlequin Crest');
+if (harlequins.length !== 1) throw new Error(`Item sanity check failed: expected exactly one Harlequin Crest, got ${harlequins.length}`);
+if (harlequins[0].rarity !== 'mythic' || harlequins[0].slot !== 'helm') {
+  throw new Error('Item sanity check failed: Harlequin Crest canonical metadata mismatch');
+}
 
-console.log(`Imported ${deduped.length} unique/mythic items from d4data ${build}`);
+console.log(`Imported ${deduped.length} canonical unique/mythic equipment items from d4data ${build}`);
