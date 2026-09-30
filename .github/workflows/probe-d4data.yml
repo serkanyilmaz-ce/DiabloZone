@@ -32,6 +32,7 @@ jobs:
             /json/base/meta/Power/ \
             /json/base/meta/Aspect/ \
             /json/base/meta/Affix/ \
+            /json/base/meta/Item/ \
             /json/enUS_Text/meta/StringList/
       - name: Extract canonical PoC records
         run: npm run data:extract -- --datamine .tmp/d4data
@@ -39,6 +40,8 @@ jobs:
         run: npm run data:skills -- --datamine .tmp/d4data
       - name: Import all aspects
         run: npm run data:aspects -- --datamine .tmp/d4data
+      - name: Import unique and mythic items
+        run: npm run data:items -- --datamine .tmp/d4data
       - name: Run tests
         run: npm test
       - uses: actions/upload-artifact@v4

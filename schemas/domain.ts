@@ -40,11 +40,21 @@ export const SkillSchema = z.object({
 });
 
 export const ItemSchema = z.object({
-  id: z.string(), slug: z.string(), name: z.string(),
+  id: z.string(),
+  slug: z.string(),
+  name: z.string(),
   rarity: z.enum(['common','magic','rare','legendary','unique','mythic','unknown']),
-  slot: z.string().optional(), classes: z.array(D4ClassSchema).default([]),
-  affixIds: z.array(z.string()).default([]), uniquePowerId: z.string().optional(),
-  icon: z.string().optional(), source: SourceRefSchema, patch: z.string(),
+  slot: z.string().optional(),
+  classes: z.array(D4ClassSchema).default([]),
+  affixIds: z.array(z.string()).default([]),
+  uniquePowerId: z.string().optional(),
+  flavor: z.string().optional(),
+  requiredLevel: z.number().int().nonnegative().optional(),
+  fixedPowerLevel: z.number().int().nonnegative().optional(),
+  icon: z.string().optional(),
+  source: SourceRefSchema,
+  localizationSource: SourceRefSchema.optional(),
+  patch: z.string(),
 });
 
 export const AspectSchema = z.object({

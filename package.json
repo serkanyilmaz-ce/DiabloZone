@@ -12,6 +12,7 @@
     "data:extract": "tsx scripts/import-d4data/extract-poc.ts",
     "data:skills": "tsx scripts/import-d4data/import-skills.ts",
     "data:aspects": "tsx scripts/import-d4data/import-aspects.ts",
+    "data:items": "tsx scripts/import-d4data/import-items.ts",
     "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {

@@ -1,0 +1,129 @@
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+import { ItemSchema, type Item } from '../../schemas/domain.js';
+import { readBuildVersion, writeJson } from './io.js';
+import { getString, readStringList } from './string-list.js';
+
+function arg(name: string): string | undefined {
+  const i = process.argv.indexOf(name);
+  return i >= 0 ? process.argv[i + 1] : undefined;
+}
+
+function slugify(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+async function readJson<T>(file: string): Promise<T> {
+  return JSON.parse(await fs.readFile(file, 'utf8')) as T;
+}
+
+const classes: Item['classes'] = [
+  'barbarian','druid','necromancer','rogue','sorcerer','spiritborn','paladin','warlock'
+];
+
+const root = path.resolve(arg('--datamine') ?? '.tmp/d4data');
+const build = (await readBuildVersion(root)) ?? 'unknown';
+const itemsDir = path.join(root, 'json/base/meta/Item');
+const stringsDir = path.join(root, 'json/enUS_Text/meta/StringList');
+
+const entries = await fs.readdir(itemsDir, { withFileTypes: true });
+const items: Item[] = [];
+const skipped: Array<{ file: string; reason: string }> = [];
+
+for (const entry of entries) {
+  if (!entry.isFile() || !entry.name.endsWith('.itm.json')) continue;
+  const internalName = entry.name.replace(/\.itm\.json$/, '');
+  if (!/_Unique_/i.test(internalName)) continue;
+  if (/Talisman_Charm|Test|PH_|Placeholder|DoNotShip/i.test(internalName)) continue;
+
+  const itemFile = path.join(itemsDir, entry.name);
+  const stringsFile = path.join(stringsDir, `Item_${internalName}.stl.json`);
+
+  try {
+    const raw = await readJson<any>(itemFile);
+    let strings;
+    try {
+      strings = await readStringList(stringsFile);
+    } catch {
+      skipped.push({ file: entry.name, reason: 'missing localized item string list' });
+      continue;
+    }
+
+    const name = getString(strings, 'name');
+    if (!name || /^\s*(?:\(?(?:DNS|PH)\)?|DO NOT SHIP)/i.test(name)) {
+      skipped.push({ file: entry.name, reason: 'missing or non-shipping localized item name' });
+      continue;
+    }
+
+    const usable = Array.isArray(raw.fUsableByClass) ? raw.fUsableByClass : [];
+    const itemClasses = classes.filter((_, index) => Number(usable[index] ?? 0) !== 0);
+    const forcedAffixes = Array.isArray(raw.arForcedAffixes) ? raw.arForcedAffixes : [];
+    const affixIds = forcedAffixes
+      .map((x: any) => String(x?.name ?? ''))
+      .filter(Boolean);
+
+    const isMythic = raw.snoSalvageTreasureClassMythic != null ||
+      affixIds.some((x: string) => /UBERUNIQUE/i.test(x));
+
+    const item = ItemSchema.parse({
+      id: slugify(internalName),
+      slug: slugify(name),
+      name,
+      rarity: isMythic ? 'mythic' : 'unique',
+      slot: String(raw.snoItemType?.name ?? '').toLowerCase() || undefined,
+      classes: itemClasses,
+      affixIds,
+      flavor: getString(strings, 'flavor'),
+      requiredLevel: typeof raw.nExplicitRequiredLevel === 'number' && raw.nExplicitRequiredLevel > 0
+        ? raw.nExplicitRequiredLevel
+        : undefined,
+      fixedPowerLevel: typeof raw.nFixedIPowerLevel === 'number' && raw.nFixedIPowerLevel > 0
+        ? raw.nFixedIPowerLevel
+        : undefined,
+      source: {
+        file: path.relative(root, itemFile),
+        sno: raw.__snoID__,
+      },
+      localizationSource: {
+        file: path.relative(root, stringsFile),
+        sno: strings.__snoID__,
+      },
+      patch: build,
+    });
+
+    items.push(item);
+  } catch (error) {
+    skipped.push({
+      file: entry.name,
+      reason: error instanceof Error ? error.message : String(error),
+    });
+  }
+}
+
+const deduped = Array.from(new Map(items.map(x => [x.id, x])).values())
+  .sort((a, b) => a.rarity.localeCompare(b.rarity) || a.name.localeCompare(b.name));
+
+await writeJson('data/generated/items.json', deduped);
+await writeJson('data/generated/items-report.json', {
+  source: 'DiabloTools/d4data',
+  gameBuild: build,
+  generatedAt: new Date().toISOString(),
+  imported: deduped.length,
+  byRarity: {
+    mythic: deduped.filter(x => x.rarity === 'mythic').length,
+    unique: deduped.filter(x => x.rarity === 'unique').length,
+  },
+  bySlot: Object.fromEntries(
+    Array.from(new Set(deduped.map(x => x.slot ?? 'unknown'))).sort().map(slot => [
+      slot,
+      deduped.filter(x => (x.slot ?? 'unknown') === slot).length,
+    ])
+  ),
+  skipped: skipped.length,
+  skippedSamples: skipped.slice(0, 100),
+});
+
+if (deduped.length < 50) throw new Error(`Item sanity check failed: only ${deduped.length} unique/mythic items imported`);
+if (!deduped.some(x => x.name === 'Harlequin Crest')) throw new Error('Item sanity check failed: Harlequin Crest missing');
+
+console.log(`Imported ${deduped.length} unique/mythic items from d4data ${build}`);
