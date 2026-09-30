@@ -11,6 +11,7 @@
     "data:probe:fixture": "tsx scripts/import-d4data/probe.ts --datamine tests/fixtures",
     "data:extract": "tsx scripts/import-d4data/extract-poc.ts",
     "data:skills": "tsx scripts/import-d4data/import-skills.ts",
+    "data:aspects": "tsx scripts/import-d4data/import-aspects.ts",
     "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {

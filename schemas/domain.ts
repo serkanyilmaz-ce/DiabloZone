@@ -48,10 +48,20 @@ export const ItemSchema = z.object({
 });
 
 export const AspectSchema = z.object({
-  id: z.string(), slug: z.string(), name: z.string(), description: z.string().optional(),
+  id: z.string(),
+  slug: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  descriptionTemplate: z.string().optional(),
   category: z.enum(['offensive','defensive','utility','resource','mobility','unknown']),
-  classes: z.array(D4ClassSchema).default([]), allowedSlots: z.array(z.string()).default([]),
-  source: SourceRefSchema, patch: z.string(),
+  classes: z.array(D4ClassSchema).default([]),
+  allowedSlots: z.array(z.string()).default([]),
+  rawAllowedItemLabels: z.array(z.number()).default([]),
+  tags: z.array(z.string()).default([]),
+  source: SourceRefSchema,
+  affixSource: SourceRefSchema.optional(),
+  localizationSource: SourceRefSchema.optional(),
+  patch: z.string(),
 });
 
 export type Skill = z.infer<typeof SkillSchema>;
