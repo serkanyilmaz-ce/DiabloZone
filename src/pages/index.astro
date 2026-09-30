@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import metadata from '../../data/generated/metadata.json';
+import proof from '../../data/generated/proof.json';
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Diablo IV community game-data proof of concept" />
+    <title>Diablo IV Data Lab</title>
+  </head>
+  <body>
+    <main class="mx-auto max-w-5xl p-6 md:p-10">
+      <p class="text-sm uppercase tracking-[.28em] text-red-400">Unofficial Diablo IV project</p>
+      <h1 class="mt-3 text-4xl font-semibold md:text-6xl">Game Data Lab</h1>
+      <p class="mt-5 max-w-2xl text-lg text-zinc-400">
+        Static Astro proof of concept for normalized Diablo IV game data. No backend, no database.
+      </p>
+
+      <section class="mt-10 grid gap-4 md:grid-cols-3">
+        <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
+          <div class="text-xs uppercase text-zinc-500">Game build</div>
+          <div class="mt-2 text-xl">{metadata.gameBuild || 'Not imported yet'}</div>
+        </article>
+        <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
+          <div class="text-xs uppercase text-zinc-500">Matched candidates</div>
+          <div class="mt-2 text-xl">{proof.matches.length}</div>
+        </article>
+        <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
+          <div class="text-xs uppercase text-zinc-500">Source</div>
+          <div class="mt-2 text-xl">DiabloTools/d4data</div>
+        </article>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-2xl font-semibold">PoC targets</h2>
+        <div class="mt-4 overflow-hidden rounded-xl border border-zinc-800">
+          {['fireball', 'harlequin', 'aspect'].map((target) => {
+            const count = proof.matches.filter((x) => x.target === target).length;
+            return <div class="flex justify-between border-b border-zinc-800 p-4 last:border-0">
+              <span class="capitalize">{target}</span><span class="text-zinc-400">{count} candidate(s)</span>
+            </div>;
+          })}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
