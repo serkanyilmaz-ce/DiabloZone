@@ -20,12 +20,14 @@ export const SkillSchema = z.object({
   type: z.enum(['active', 'passive', 'modifier', 'unknown']).default('unknown'),
   parentId: z.string().optional(),
   description: z.string().optional(),
+  descriptionTemplate: z.string().optional(),
   maxRank: z.number().int().positive().optional(),
   tags: z.array(z.string()).default([]),
   cooldown: z.number().nonnegative().optional(),
   resourceCost: z.number().nonnegative().optional(),
   icon: z.string().optional(),
   source: SourceRefSchema,
+  localizationSource: SourceRefSchema.optional(),
   patch: z.string(),
 });
 
