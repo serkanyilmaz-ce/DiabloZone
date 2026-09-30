@@ -1,7 +1,15 @@
 import { z } from 'zod';
 
 export const D4ClassSchema = z.enum([
-  'barbarian', 'druid', 'necromancer', 'rogue', 'sorcerer', 'spiritborn', 'unknown'
+  'barbarian',
+  'druid',
+  'necromancer',
+  'rogue',
+  'sorcerer',
+  'spiritborn',
+  'paladin',
+  'warlock',
+  'unknown'
 ]);
 
 export const SourceRefSchema = z.object({
