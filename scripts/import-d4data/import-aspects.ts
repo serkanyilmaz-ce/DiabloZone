@@ -44,6 +44,14 @@ function inferCategory(tags: string[]): Aspect['category'] {
   return 'unknown';
 }
 
+function isNonShippingName(name: string): boolean {
+  const normalized = name.trim().toLowerCase();
+  return normalized.startsWith('(dns)')
+    || normalized.startsWith('(ph)')
+    || normalized.startsWith('(do not ship)')
+    || normalized.includes('do not ship');
+}
+
 const root = path.resolve(arg('--datamine') ?? '.tmp/d4data');
 const build = (await readBuildVersion(root)) ?? 'unknown';
 const aspectsDir = path.join(root, 'json/base/meta/Aspect');
@@ -81,6 +89,10 @@ for (const entry of entries) {
     const name = getString(strings, 'name');
     if (!name) {
       skipped.push({ file: entry.name, reason: 'missing localized aspect name' });
+      continue;
+    }
+    if (isNonShippingName(name)) {
+      skipped.push({ file: entry.name, reason: `non-shipping placeholder: ${name}` });
       continue;
     }
 
@@ -157,5 +169,6 @@ await writeJson('data/generated/aspects-report.json', {
 
 if (deduped.length < 100) throw new Error(`Aspect sanity check failed: only ${deduped.length} aspects imported`);
 if (!deduped.some(x => /berserk ripping/i.test(x.name))) throw new Error('Aspect sanity check failed: Berserk Ripping missing');
+if (deduped.some(x => isNonShippingName(x.name))) throw new Error('Aspect sanity check failed: non-shipping placeholder leaked into canonical output');
 
 console.log(`Imported ${deduped.length} aspects from d4data ${build}`);
