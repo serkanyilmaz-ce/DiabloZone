@@ -114,20 +114,36 @@ for (const entry of entries) {
 
 skills.sort((a, b) => a.class.localeCompare(b.class) || a.name.localeCompare(b.name));
 
+const byClass = Object.fromEntries(
+  Object.keys(classMap).map(key => {
+    const cls = classMap[key];
+    return [cls, skills.filter(skill => skill.class === cls).length];
+  })
+);
+
 await writeJson('data/generated/skills.json', skills);
 await writeJson('data/generated/skills-report.json', {
   source: 'DiabloTools/d4data',
   gameBuild: build,
   generatedAt: new Date().toISOString(),
   imported: skills.length,
-  byClass: Object.fromEntries(
-    Object.keys(classMap).map(key => {
-      const cls = classMap[key];
-      return [cls, skills.filter(skill => skill.class === cls).length];
-    })
-  ),
+  byClass,
   skipped: skipped.length,
   skippedSamples: skipped.slice(0, 100),
 });
 
+// Conservative guardrails: catch broken upstream parsing without pinning volatile exact counts.
+if (skills.length < 20) {
+  throw new Error(`Skill import sanity check failed: only ${skills.length} skills imported`);
+}
+if (!skills.some(skill => skill.class === 'sorcerer' && skill.name.toLowerCase() === 'fireball')) {
+  throw new Error('Skill import sanity check failed: Sorcerer Fireball is missing');
+}
+for (const [d4class, count] of Object.entries(byClass)) {
+  if (count === 0) {
+    throw new Error(`Skill import sanity check failed: no skills imported for ${d4class}`);
+  }
+}
+
 console.log(`Imported ${skills.length} learnable skills from d4data ${build}`);
+console.log(`Class distribution: ${JSON.stringify(byClass)}`);
