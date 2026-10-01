@@ -4,17 +4,27 @@ interface Props { title: string; description?: string; }
 const { title, description = 'Diablo IV game data browser' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0b0706" />
+    <meta name="theme-color" content="#050403" data-theme-color />
     <title>{title} · DiabloZone</title>
+    <script is:inline>
+      (() => {
+        try {
+          const theme = localStorage.getItem('diablozone-theme') || 'dark';
+          document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+          document.documentElement.style.colorScheme = theme === 'light' ? 'light' : 'dark';
+        } catch { document.documentElement.dataset.theme = 'dark'; }
+      })();
+    </script>
   </head>
   <body>
     <div class="ambient ambient-one" aria-hidden="true"></div>
     <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="world-vignette" aria-hidden="true"></div>
     <header class="site-header">
       <div class="shell nav-wrap">
         <a class="brand" href={base}><span class="brand-mark">DZ</span><span>DiabloZone</span></a>
@@ -24,10 +34,16 @@ const base = import.meta.env.BASE_URL;
             <a href={`${base}items/`}>Items</a>
             <a href={`${base}aspects/`}>Aspects</a>
           </nav>
-          <div class="lang-switch" aria-label="Language">
-            <button type="button" data-lang-switch="tr">TR</button>
-            <span>/</span>
-            <button type="button" data-lang-switch="en">EN</button>
+          <div class="header-controls">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle day/night theme">
+              <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+              <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <div class="lang-switch" aria-label="Language">
+              <button type="button" data-lang-switch="tr">TR</button>
+              <span>/</span>
+              <button type="button" data-lang-switch="en">EN</button>
+            </div>
           </div>
         </div>
       </div>
@@ -37,6 +53,22 @@ const base = import.meta.env.BASE_URL;
 
     <script is:inline>
       (() => {
+        const themeButton = document.querySelector('[data-theme-toggle]');
+        const themeMeta = document.querySelector('[data-theme-color]');
+        const applyTheme = (theme) => {
+          const next = theme === 'light' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = next;
+          document.documentElement.style.colorScheme = next;
+          localStorage.setItem('diablozone-theme', next);
+          if (themeMeta) themeMeta.setAttribute('content', next === 'light' ? '#d8c7aa' : '#050403');
+          if (themeButton) {
+            themeButton.setAttribute('aria-pressed', String(next === 'light'));
+            themeButton.setAttribute('aria-label', next === 'light' ? 'Switch to night theme' : 'Switch to day theme');
+          }
+        };
+        applyTheme(document.documentElement.dataset.theme || 'dark');
+        themeButton?.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+
         const exact = new Map(Object.entries({
           'Skills':'Yetenekler','Items':'Eşyalar','Aspects':'Aspektler','Unique & Mythic Items':'Benzersiz & Mitik Eşyalar',
           'Skill database':'Yetenek veritabanı','Equipment database':'Ekipman veritabanı','Legendary power database':'Efsanevi güç veritabanı',
