@@ -1,49 +1,30 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import metadata from '../../data/generated/metadata.json';
-import proof from '../../data/generated/proof.json';
+import skills from '../../data/generated/skills.json';
+import items from '../../data/generated/items.json';
+import aspects from '../../data/generated/aspects.json';
+import affixes from '../../data/generated/affixes.json';
+const base = import.meta.env.BASE_URL;
+const cards = [
+  {label:'Skills', count:skills.length, href:`${base}skills/`, note:'Learnable active and passive skills'},
+  {label:'Items', count:items.length, href:`${base}items/`, note:'Canonical Unique & Mythic equipment'},
+  {label:'Aspects', count:aspects.length, href:`${base}aspects/`, note:'Legendary aspect definitions'},
+  {label:'Affixes', count:affixes.length, href:null, note:'Resolved item/aspect affix records'},
+];
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Diablo IV community game-data proof of concept" />
-    <title>Diablo IV Data Lab</title>
-  </head>
-  <body>
-    <main class="mx-auto max-w-5xl p-6 md:p-10">
-      <p class="text-sm uppercase tracking-[.28em] text-red-400">Unofficial Diablo IV project</p>
-      <h1 class="mt-3 text-4xl font-semibold md:text-6xl">Game Data Lab</h1>
-      <p class="mt-5 max-w-2xl text-lg text-zinc-400">
-        Static Astro proof of concept for normalized Diablo IV game data. No backend, no database.
-      </p>
-
-      <section class="mt-10 grid gap-4 md:grid-cols-3">
-        <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
-          <div class="text-xs uppercase text-zinc-500">Game build</div>
-          <div class="mt-2 text-xl">{metadata.gameBuild || 'Not imported yet'}</div>
-        </article>
-        <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
-          <div class="text-xs uppercase text-zinc-500">Matched candidates</div>
-          <div class="mt-2 text-xl">{proof.matches.length}</div>
-        </article>
-        <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
-          <div class="text-xs uppercase text-zinc-500">Source</div>
-          <div class="mt-2 text-xl">DiabloTools/d4data</div>
-        </article>
-      </section>
-
-      <section class="mt-10">
-        <h2 class="text-2xl font-semibold">PoC targets</h2>
-        <div class="mt-4 overflow-hidden rounded-xl border border-zinc-800">
-          {['fireball', 'harlequin', 'aspect'].map((target) => {
-            const count = proof.matches.filter((x) => x.target === target).length;
-            return <div class="flex justify-between border-b border-zinc-800 p-4 last:border-0">
-              <span class="capitalize">{target}</span><span class="text-zinc-400">{count} candidate(s)</span>
-            </div>;
-          })}
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
+<BaseLayout title="Game Data">
+  <section class="hero">
+    <p class="eyebrow">Unofficial Diablo IV database</p>
+    <h1>DiabloZone</h1>
+    <p>Fast, static game-data browser built from normalized DiabloTools/d4data records.</p>
+    <div class="hero-meta"><span>Build {metadata.gameBuild}</span><span>No backend</span><span>Static Astro</span></div>
+  </section>
+  <section class="stats-grid">
+    {cards.map((card)=><article class="stat-card"><span>{card.label}</span><strong>{card.count}</strong><p>{card.note}</p>{card.href && <a href={card.href}>Browse →</a>}</article>)}
+  </section>
+  <section class="home-section">
+    <div><p class="eyebrow">M1</p><h2>Browse the canonical data</h2><p>Search and filter the current imported build. Detail pages preserve source SNO references and raw tooltip templates for traceability.</p></div>
+    <div class="quick-links"><a href={`${base}skills/`}>Explore skills</a><a href={`${base}items/`}>Explore items</a><a href={`${base}aspects/`}>Explore aspects</a></div>
+  </section>
+</BaseLayout>
