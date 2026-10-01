@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import items from '../../../data/generated/items.json';
+import affixes from '../../../data/generated/affixes.json';
+const slugify=(v:string)=>v.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+export function getStaticPaths(){ return items.map((item:any)=>({params:{slug:item.slug},props:{item}})); }
+const { item } = Astro.props as any;
+const base = import.meta.env.BASE_URL;
+const resolvedAffixes=(item.affixIds??[]).map((id:string)=>affixes.find((a:any)=>a.id===slugify(id))).filter(Boolean);
+---
+<BaseLayout title={item.name} description={`${item.name} ${item.rarity} ${item.slot}`}>
+  <a class="back-link" href={`${base}items/`}>← Back to items</a>
+  <article class="detail-card">
+    <div class="card-kicker">{item.rarity} · {item.slot}</div><h1>{item.name}</h1>
+    {item.flavor && <blockquote>{item.flavor}</blockquote>}
+    <dl class="detail-grid"><div><dt>Required level</dt><dd>{item.requiredLevel ?? '—'}</dd></div><div><dt>Fixed item power</dt><dd>{item.fixedPowerLevel ?? '—'}</dd></div><div><dt>Patch</dt><dd>{item.patch}</dd></div><div><dt>Source SNO</dt><dd>{item.source?.sno ?? '—'}</dd></div></dl>
+    <section class="detail-section"><h2>Classes</h2><div class="chip-row">{(item.classes??[]).map((c:string)=><span class="chip">{c}</span>)}</div></section>
+    <section class="detail-section"><h2>Affixes</h2>{resolvedAffixes.length ? <div class="stack">{resolvedAffixes.map((a:any)=><div class="affix-row"><strong>{a.name ?? a.internalName}</strong><span>{a.description ?? a.descriptionTemplate ?? 'No localized description.'}</span>{(a.staticValues?.length??0)>0 && <code>Static: {a.staticValues.join(', ')}</code>}</div>)}</div> : <p>No resolved affixes.</p>}</section>
+  </article>
+</BaseLayout>
