@@ -1,74 +1,133 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import tree from '../../../data/generated/skill-tree.json';
-import skills from '../../../data/generated/skills.json';
-const base=import.meta.env.BASE_URL;
-const skillBySno=new Map(skills.map((s:any)=>[Number(s.source?.sno),s]));
-const classes=Object.keys((tree as any).classes??{});
-const panels=classes.map((cls)=>{
-  const nodes=((tree as any).classes[cls]??[]).map((node:any)=>({...node,skill:skillBySno.get(Number(node.powerSno))}));
-  const groups=new Map<string,any[]>();
-  for(const node of nodes){const key=node.category||'uncategorized';if(!groups.has(key))groups.set(key,[]);groups.get(key)!.push(node);}
-  return {cls,groups:[...groups.entries()]};
-});
+const base = import.meta.env.BASE_URL;
+const classes = Object.keys(tree.classes);
 ---
-<BaseLayout title="Skill Tree" description="Current Diablo IV logical skill tree built from DiabloTools/d4data SkillTreeRewards">
+<BaseLayout title="Skill Tree" description="Explore every Diablo IV class on its original in-game skill tree.">
   <section class="hero compact">
-    <p class="eyebrow">Current game skill branches</p>
-    <h1>Skill Tree</h1>
-    <p>Current imported build skill unlocks and upgrade branches, resolved from the game data.</p>
+    <p class="eyebrow">The paths of power</p><h1>Skill Tree</h1>
+    <p>Explore every class. Follow the branches. Find your next build.</p>
   </section>
-
   <div class="tree-tabs" role="tablist" aria-label="Class skill trees">
-    {panels.map((panel,index)=><button type="button" class:list={{active:index===0}} data-tree-tab={panel.cls}>{panel.cls}</button>)}
+    {classes.map((cls,index)=><button id={`tab-${cls}`} type="button" role="tab" aria-controls="class-tree" aria-selected={index===0?'true':'false'} tabindex={index===0?0:-1} class:list={{active:index===0}} data-tree-tab={cls}>{cls}</button>)}
   </div>
-  <p class="tree-note">Logical unlock and modifier relationships come from <code>SkillTreeRewards</code>. Node placement is DiabloZone-generated until the game client’s exact board coordinates and edge geometry are decoded.</p>
-
-  {panels.map((panel,index)=><section class="tree-board" data-tree-panel={panel.cls} hidden={index!==0}>
-    {panel.groups.map(([category,nodes])=><section class="tree-tier">
-      <h2>{category}</h2>
-      <div class="tree-tier-track">
-        <div class="tree-tier-nodes">
-          {nodes.map((node:any)=><article class="tree-branch">
-            <a class="tree-node tree-node-main" href={`${base}skills/${node.skillSlug}/`}>
-              {node.skill?.icon ? <img src={`${base}${node.skill.icon}`} alt="" loading="lazy" /> : <span class="tree-node-glyph">✦</span>}
-              <span class="tree-node-name">{node.name}</span>
-              {node.maxRanks && <small>{node.maxRanks} ranks</small>}
-            </a>
-            {(node.modifiers?.length??0)>0 && <div class="tree-modifiers">
-              {node.modifiers.map((mod:any)=><div class:list={['tree-mod',{'tree-mod-defining':mod.defining}]} title={mod.rewardName??mod.label}>
-                <span class="tree-mod-dot"></span><span>{mod.label}</span>{mod.maxRanks && <small>{mod.maxRanks}</small>}
-              </div>)}
-            </div>}
-          </article>)}
-        </div>
+  <div class="tree-workspace">
+    <section class="tree-explorer" id="class-tree" role="tabpanel" aria-labelledby={`tab-${classes[0]}`}>
+      <div class="tree-tools">
+        <label class="tree-search"><span class="sr-only">Search this class</span><input type="search" placeholder="Search skills…" data-tree-search autocomplete="off" /></label>
+        <div class="tree-zoom"><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output data-zoom-label>100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-tree-fit>Fit tree</button><button type="button" data-tree-start>Start</button></div>
       </div>
-    </section>)}
-  </section>)}
-
-  <script is:inline>
+      <div class="tree-viewport" tabindex="0" aria-label="Skill tree. Drag to pan, use the mouse wheel to zoom, or arrow keys to move.">
+        <svg class="tree-canvas" xmlns="http://www.w3.org/2000/svg" aria-label="Class skill nodes" role="group"></svg>
+      </div>
+      <div class="tree-status"><span data-tree-status aria-live="polite"></span><span>Drag to pan · Scroll to zoom · Select a node</span></div>
+      <div class="tree-results" hidden><p data-result-count aria-live="polite"></p><div data-results></div></div>
+    </section>
+    <aside class="tree-details" aria-label="Selected skill">
+      <p class="eyebrow" data-detail-kind>Explore the tree</p>
+      <div class="detail-emblem" data-detail-emblem aria-hidden="true">✦</div>
+      <h2 data-detail-name>Select a skill</h2>
+      <p data-detail-category></p>
+      <p class="tree-description" data-detail-description>Choose any skill or upgrade to inspect it. All eight classes use their original game board positions and connections.</p>
+      <dl data-detail-stats></dl>
+      <a class="tree-detail-link" data-detail-link hidden>Open skill details →</a>
+      <p class="tree-formula-note" hidden>Values in brackets depend on skill rank and character stats.</p>
+      <div class="tree-key"><span>◇ Skill</span><span>○ Upgrade</span><span>◆ Level gate</span></div>
+      <p class="tree-build">Game build {tree.gameBuild}</p>
+    </aside>
+  </div>
+  <script id="tree-data" type="application/json" set:html={JSON.stringify(tree).replace(/</g,'\u003c')} />
+  <script define:vars={{base}}>
     (()=>{
+      const data=JSON.parse(document.getElementById('tree-data').textContent);
       const tabs=[...document.querySelectorAll('[data-tree-tab]')];
-      const panels=[...document.querySelectorAll('[data-tree-panel]')];
-      const select=(cls)=>{tabs.forEach(x=>x.classList.toggle('active',x.dataset.treeTab===cls));panels.forEach(x=>x.hidden=x.dataset.treePanel!==cls);};
-      tabs.forEach(tab=>tab.addEventListener('click',()=>select(tab.dataset.treeTab)));
+      const viewport=document.querySelector('.tree-viewport'),svg=document.querySelector('.tree-canvas');
+      const search=document.querySelector('[data-tree-search]'),results=document.querySelector('.tree-results');
+      const ns='http://www.w3.org/2000/svg';
+      let current,board,selected,scale=0.12,tx=0,ty=0,drag=null,moved=false,group;
+      const views=new Map(),elements=new Map();
+      const make=(tag,attrs={},text)=>{const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));if(text!==undefined)el.textContent=text;return el;};
+      const transform=()=>{group?.setAttribute('transform',`translate(${tx} ${ty}) scale(${scale})`);document.querySelector('[data-zoom-label]').textContent=`${Math.round(scale/0.2*100)}%`;svg.classList.toggle('tree-overview',scale<0.09);};
+      const center=(x,y)=>{tx=viewport.clientWidth/2-x*scale;ty=viewport.clientHeight/2-y*scale;transform();};
+      const fit=()=>{const b=board.bounds;scale=Math.min((viewport.clientWidth-100)/(b.maxX-b.minX),(viewport.clientHeight-100)/(b.maxY-b.minY));center((b.minX+b.maxX)/2,(b.minY+b.maxY)/2);};
+      const start=()=>{scale=viewport.clientWidth<600?0.13:0.2;const node=board.nodes.filter(n=>n.kind==='hub').sort((a,b)=>a.requiredLevel-b.requiredLevel)[0]??board.nodes[0];center(node.x,node.y);};
+      const zoom=(factor,x=viewport.clientWidth/2,y=viewport.clientHeight/2)=>{const next=Math.min(.6,Math.max(.025,scale*factor));tx=x-(x-tx)*next/scale;ty=y-(y-ty)*next/scale;scale=next;transform();};
+      const field=(name,value)=>{document.querySelector(`[data-detail-${name}]`).textContent=value??'';};
+      const selectNode=(node,focus=false)=>{
+        selected=node.id;elements.forEach((el,id)=>el.classList.toggle('selected',id===node.id));
+        const neighbors=new Set(board.edges.filter(e=>e.from===node.id||e.to===node.id).flatMap(e=>[e.from,e.to]));
+        group.querySelectorAll('.tree-edge').forEach(el=>el.classList.toggle('highlight',Number(el.dataset.from)===node.id||Number(el.dataset.to)===node.id));
+        elements.forEach((el,id)=>el.classList.toggle('neighbor',neighbors.has(id)&&id!==node.id));
+        field('kind',node.kind==='hub'?'Skill cluster':node.kind==='gate'?'Level gate':node.kind);
+        field('name',node.name);field('category',node.category??'');
+        // Runtime formulas are not evaluated by this browser; never invent game values.
+        const raw=node.description??'';
+        const description=raw.replace(/\[[^\]]*\]/g,'[value]').replace(/\{[^}]*\}/g,'[value]');
+        field('description',description||(node.kind==='gate'?`This branch opens at player level ${node.requiredLevel}.`:node.kind==='hub'?'Follow the connected branches to explore this skill cluster.':'Inspect the connected nodes for this skill.'));
+        document.querySelector('.tree-formula-note').hidden=!description.includes('[value]');
+        const emblem=document.querySelector('[data-detail-emblem]');emblem.replaceChildren();
+        if(node.icon){const img=document.createElement('img');img.src=base+node.icon;img.alt='';emblem.append(img);}else emblem.textContent=node.kind==='gate'?'◆':'✦';
+        const stats=document.querySelector('[data-detail-stats]');stats.replaceChildren();
+        for(const [label,value] of [['Maximum rank',node.maxRanks],['Required level',node.requiredLevel||undefined],['Choice group',node.exclusiveGroup!==undefined?'Choose one':undefined]]){if(value===undefined)continue;const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=String(value);stats.append(dt,dd);}
+        const link=document.querySelector('[data-detail-link]');link.hidden=!node.skillSlug;if(node.skillSlug)link.href=base+'skills/'+node.skillSlug+'/';
+        if(focus){scale=Math.max(scale,.18);center(node.x,node.y);elements.get(node.id)?.focus({preventScroll:true});}
+      };
+      const filter=()=>{
+        const query=search.value.trim().toLowerCase();const matches=board.nodes.filter(n=>n.powerSno&&`${n.name} ${n.category??''} ${n.description??''}`.toLowerCase().includes(query));
+        const ids=new Set(matches.map(n=>n.id));elements.forEach((el,id)=>{el.classList.toggle('dimmed',!!query&&!ids.has(id));el.classList.toggle('matched',!!query&&ids.has(id));});
+        results.hidden=!query;document.querySelector('[data-result-count]').textContent=`${matches.length} matching nodes`;
+        const list=document.querySelector('[data-results]');list.replaceChildren();if(query)for(const node of matches){const button=document.createElement('button');button.type='button';button.textContent=node.name;button.addEventListener('click',()=>selectNode(node,true));list.append(button);}
+      };
+      const selectClass=(cls)=>{
+        if(!data.classes[cls])return;if(current)views.set(current,{scale,tx,ty,selected});current=cls;board=data.classes[cls];selected=undefined;elements.clear();svg.replaceChildren();
+        tabs.forEach(tab=>{const active=tab.dataset.treeTab===cls;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
+        document.getElementById('class-tree').setAttribute('aria-labelledby','tab-'+cls);svg.setAttribute('aria-label',cls+' skill tree');
+        const defs=make('defs');const clip=make('clipPath',{id:'skill-icon-clip'});clip.append(make('circle',{r:116}));defs.append(clip);svg.append(defs);group=make('g');svg.append(group);
+        for(const edge of board.edges){const path=make('polyline',{points:edge.points.map(p=>`${p.x},${p.y}`).join(' '),class:'tree-edge','data-from':edge.from,'data-to':edge.to});group.append(path);}
+        for(const node of board.nodes){
+          const el=make('g',{transform:`translate(${node.x} ${node.y})`,class:`skill-node node-${node.kind}`,'data-node-id':node.id,role:'button',tabindex:0,'aria-label':`${node.name}${node.maxRanks?`, ${node.maxRanks} ranks`:''}`});
+          el.append(make('title',{},node.name));
+          const diamond=node.kind==='active'||node.kind==='hub'||node.kind==='gate';const r=node.kind==='hub'?175:node.kind==='gate'?90:node.kind==='modifier'?95:145;
+          el.append(diamond?make('path',{d:`M 0 ${-r} L ${r} 0 L 0 ${r} L ${-r} 0 Z`,class:'node-frame'}):make('circle',{r,class:'node-frame'}));
+          if(node.icon){const size=node.kind==='modifier'?148:204;const img=make('image',{href:base+node.icon,x:-size/2,y:-size/2,width:size,height:size,preserveAspectRatio:'xMidYMid meet'});el.append(img);}
+          else el.append(make('text',{class:'node-glyph','text-anchor':'middle',dy:22},node.kind==='gate'?String(node.requiredLevel):'✦'));
+          if(node.kind!=='gate'){const label=make('text',{class:'node-label',y:r+80,'text-anchor':'middle'},node.name);el.append(label);}
+          el.addEventListener('click',()=>{if(!moved)selectNode(node);});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectNode(node,true);}});
+          el.addEventListener('focus',()=>{if(!drag){const x=tx+node.x*scale,y=ty+node.y*scale;if(x<30||y<30||x>viewport.clientWidth-30||y>viewport.clientHeight-30)center(node.x,node.y);}});
+          group.append(el);elements.set(node.id,el);
+        }
+        const previous=views.get(cls);if(previous){({scale,tx,ty}=previous);transform();}else start();
+        const first=board.nodes.find(n=>n.id===previous?.selected)??board.nodes.find(n=>n.kind==='active'&&n.category==='basic')??board.nodes.find(n=>n.kind==='active');if(first)selectNode(first);
+        search.value='';filter();document.querySelector('[data-tree-status]').textContent=`${cls[0].toUpperCase()+cls.slice(1)} · ${board.nodes.filter(n=>n.kind==='active'||n.kind==='passive').length} skills · ${board.nodes.filter(n=>n.kind==='modifier').length} upgrades`;
+        try{history.replaceState(null,'','#'+cls);}catch{}
+      };
+      tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectClass(tab.dataset.treeTab));tab.addEventListener('keydown',event=>{let target;if(event.key==='ArrowRight')target=(index+1)%tabs.length;if(event.key==='ArrowLeft')target=(index+tabs.length-1)%tabs.length;if(event.key==='Home')target=0;if(event.key==='End')target=tabs.length-1;if(target!==undefined){event.preventDefault();tabs[target].focus();selectClass(tabs[target].dataset.treeTab);}});});
+      viewport.addEventListener('wheel',e=>{e.preventDefault();const rect=viewport.getBoundingClientRect();zoom(Math.exp(-e.deltaY*.0015),e.clientX-rect.left,e.clientY-rect.top);},{passive:false});
+      viewport.addEventListener('pointerdown',e=>{if(e.button!==0)return;moved=false;drag={id:e.pointerId,x:e.clientX,y:e.clientY,tx,ty};});
+      viewport.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>4){moved=true;viewport.setPointerCapture(e.pointerId);}if(moved){tx=drag.tx+dx;ty=drag.ty+dy;transform();}});
+      const stop=()=>{drag=null;};viewport.addEventListener('pointerup',stop);viewport.addEventListener('pointercancel',stop);
+      viewport.addEventListener('keydown',e=>{if(e.key==='+'||e.key==='='){e.preventDefault();zoom(1.2);}else if(e.key==='-'){e.preventDefault();zoom(1/1.2);}else if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();tx+=e.key==='ArrowLeft'?80:e.key==='ArrowRight'?-80:0;ty+=e.key==='ArrowUp'?80:e.key==='ArrowDown'?-80:0;transform();}});
+      document.querySelector('[data-zoom="in"]').addEventListener('click',()=>zoom(1.25));document.querySelector('[data-zoom="out"]').addEventListener('click',()=>zoom(.8));
+      document.querySelector('[data-tree-fit]').addEventListener('click',fit);document.querySelector('[data-tree-start]').addEventListener('click',start);search.addEventListener('input',filter);
+      selectClass(data.classes[location.hash.slice(1)]?location.hash.slice(1):tabs[0].dataset.treeTab);
+      new ResizeObserver(()=>{if(board)transform();}).observe(viewport);
     })();
   </script>
-  <style>
-    .tree-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;padding:10px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 82%,transparent)}
-    .tree-tabs button{appearance:none;border:1px solid var(--line);background:var(--input-bg);color:var(--muted);padding:10px 14px;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;cursor:pointer;transition:.16s}
-    .tree-tabs button:hover,.tree-tabs button.active{border-color:var(--blood-2);color:var(--text-strong);background:linear-gradient(180deg,color-mix(in srgb,var(--blood) 24%,var(--surface-2)),var(--surface));box-shadow:0 0 18px color-mix(in srgb,var(--blood) 20%,transparent)}
-    .tree-note{color:var(--muted);font-size:.78rem;line-height:1.6;margin:0 0 28px}.tree-note code{color:var(--gold-soft)}
-    .tree-board{display:grid;gap:34px;position:relative;padding:28px 18px 48px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0,color-mix(in srgb,var(--blood) 12%,transparent),transparent 32%),linear-gradient(180deg,color-mix(in srgb,var(--surface) 86%,transparent),color-mix(in srgb,var(--bg) 96%,transparent));box-shadow:inset 0 0 80px rgba(0,0,0,.18)}
-    .tree-tier{position:relative}.tree-tier:not(:last-child):after{content:"";position:absolute;left:50%;bottom:-34px;width:1px;height:34px;background:linear-gradient(var(--gold),var(--blood-2));opacity:.5}
-    .tree-tier h2{margin:0 0 18px;text-align:center;text-transform:uppercase;letter-spacing:.16em;color:var(--gold-soft);font-size:.95rem}
-    .tree-tier-track{overflow-x:auto;padding:8px 4px 14px}.tree-tier-nodes{display:flex;align-items:flex-start;justify-content:center;gap:30px;min-width:max-content}
-    .tree-branch{width:180px;display:grid;justify-items:center;position:relative}.tree-branch:before{content:"";position:absolute;top:37px;left:-30px;width:30px;height:1px;background:var(--line-strong);opacity:.42}.tree-branch:first-child:before{display:none}
-    .tree-node-main{display:grid;justify-items:center;gap:8px;width:112px;text-align:center;color:var(--text-strong)}
-    .tree-node-main img,.tree-node-glyph{width:68px;height:68px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);background:radial-gradient(circle,var(--surface-3),var(--bg));box-shadow:0 0 0 4px var(--icon-ring),0 0 25px color-mix(in srgb,var(--blood) 30%,transparent)}
-    .tree-node-glyph{display:grid;place-items:center;color:var(--gold-soft);font-size:1.5rem}.tree-node-name{font-size:.78rem;line-height:1.25}.tree-node-main small{font-family:var(--font-ui);color:var(--muted-2);font-size:.64rem}
-    .tree-modifiers{display:grid;gap:8px;margin-top:18px;width:100%;position:relative}.tree-modifiers:before{content:"";position:absolute;left:15px;top:-18px;height:18px;width:1px;background:var(--line-strong)}
-    .tree-mod{display:grid;grid-template-columns:22px 1fr auto;gap:7px;align-items:center;border:1px solid var(--line);background:var(--input-bg);padding:7px 8px;color:var(--muted);font-size:.68rem;line-height:1.25}.tree-mod-dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--gold);background:radial-gradient(circle,var(--surface-3),var(--bg));box-shadow:0 0 0 2px var(--icon-ring)}.tree-mod-defining .tree-mod-dot{border-color:var(--ember);box-shadow:0 0 10px color-mix(in srgb,var(--ember) 30%,transparent)}.tree-mod small{color:var(--gold-soft)}
-    @media(max-width:720px){.tree-board{padding-inline:8px}.tree-tier-nodes{justify-content:flex-start}.tree-tabs{overflow-x:auto;flex-wrap:nowrap}.tree-tabs button{white-space:nowrap}}
+  <style is:global>
+    .tree-tabs{display:flex;gap:6px;overflow-x:auto;padding:8px;margin:16px 0;border:1px solid var(--line)}
+    .tree-tabs button{flex:1;padding:12px 14px;color:#b5a58c;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;cursor:pointer;border:1px solid var(--line);white-space:nowrap}.tree-tabs button.active{color:#ffe9bc}
+    .tree-workspace{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:16px;align-items:start}.tree-explorer{border:1px solid #493422;min-width:0;background:#090807}
+    .tree-tools{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-bottom:1px solid #38291c;flex-wrap:wrap}.tree-search{flex:1;min-width:140px}.tree-search input{width:100%;padding:10px 12px;background:#11100d;color:#eddfc5;border:1px solid #493c2d}
+    .tree-zoom{display:flex;gap:4px;align-items:center}.tree-zoom button,.tree-results button{background:#19130d;color:#dac6a1;border:1px solid #51402b;padding:8px 10px;cursor:pointer}.tree-zoom output{width:42px;text-align:center;font-size:.7rem;color:#b4a385}
+    .tree-viewport{height:clamp(480px,70vh,850px);position:relative;overflow:hidden;touch-action:none;cursor:grab;background:radial-gradient(ellipse at center,#211711 0,#0e0c0a 55%,#060605 100%)}.tree-viewport:active{cursor:grabbing}.tree-canvas{display:block;width:100%;height:100%;user-select:none}
+    .tree-edge{fill:none;stroke:#64523d;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}.tree-edge.highlight{stroke:#d5a45a;stroke-width:15}
+    .skill-node{cursor:pointer;outline:none}.node-frame{fill:#100e0b;stroke:#8e7650;stroke-width:13}.node-hub .node-frame{fill:#351612;stroke:#b0844d;stroke-width:18}.node-gate .node-frame{fill:#281b14;stroke:#7b5b37;stroke-width:10}.node-modifier .node-frame{stroke:#79736a;stroke-width:10}.skill-node image{pointer-events:none}.node-glyph{fill:#d0b482;font:60px Georgia,serif;pointer-events:none}
+    .node-label{fill:#cfbf9f;paint-order:stroke;stroke:#090706;stroke-width:20;stroke-linejoin:round;font:62px Georgia,serif;pointer-events:none}.node-hub .node-label{text-transform:uppercase;fill:#f5d799;font-size:88px;letter-spacing:5px}.node-modifier .node-label{font-size:48px}.tree-overview .node-label{display:none}.tree-overview .node-hub .node-label{display:block}
+    .skill-node:hover .node-frame,.skill-node:focus .node-frame,.skill-node.selected .node-frame{stroke:#ffdd94;fill:#472b12;stroke-width:22}.skill-node.selected .node-label{fill:#fff0c8}.skill-node.neighbor .node-frame{stroke:#c79b58}.skill-node.dimmed{opacity:.18}.skill-node.matched .node-frame{stroke:#ffcc67;stroke-width:20}
+    .tree-status{display:flex;justify-content:space-between;gap:8px;padding:10px 12px;border-top:1px solid #38291c;color:#9f917c;font-size:.67rem;flex-wrap:wrap}.tree-details{padding:25px 22px;border:1px solid #483121;background:linear-gradient(155deg,#1c110b,#090706);color:#cabb9e;position:sticky;top:20px;min-height:480px}.tree-details .eyebrow{font-size:.65rem;color:#b79361;text-transform:uppercase}.tree-details h2{font-family:var(--font-display);font-size:1.65rem;line-height:1.2;color:#f5deac;margin:18px 0 6px}.detail-emblem{height:72px;width:72px;display:grid;place-items:center;border:1px solid #947347;background:#080604;font-size:35px;color:#c69c56;margin:20px 0}.detail-emblem img{width:64px;height:64px;object-fit:contain}.tree-details [data-detail-category]{text-transform:uppercase;font-size:.64rem;letter-spacing:.14em;color:#8c806c}.tree-description{font-size:.87rem;line-height:1.75;white-space:pre-line}.tree-details dl{display:grid;grid-template-columns:1fr auto;gap:10px;font-size:.72rem;padding:18px 0;border-block:1px solid #39291c}.tree-details dd{margin:0;color:#ecd49e}.tree-detail-link{font-size:.75rem;color:#e2b878}.tree-key{border-top:1px solid #39291c;display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;padding-top:18px;font-size:.65rem;color:#a99574}.tree-build,.tree-formula-note{font-size:.65rem;color:#96836c;line-height:1.6}.tree-results{padding:12px;max-height:170px;overflow:auto;color:#cabb9e;font-size:.75rem}.tree-results [data-results]{display:flex;flex-wrap:wrap;gap:6px}
+    .tree-workspace [hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+    :root[data-theme="light"] .tree-details{background:#d7c29f;color:#473824}:root[data-theme="light"] .tree-details h2{color:#382415}
+    @media(max-width:900px){.tree-workspace{grid-template-columns:minmax(0,1fr)}.tree-details{position:static;min-height:0}.tree-tabs button{flex:0 0 auto}.tree-viewport{height:65vh;min-height:430px}.tree-status span:last-child{display:none}}
   </style>
 </BaseLayout>
