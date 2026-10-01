@@ -8,6 +8,7 @@ on:
       - "scripts/fetch-icons.ts"
       - "scripts/import-d4data/import-aspects.ts"
       - "scripts/import-d4data/import-skill-tree.ts"
+      - "scripts/import-d4data/import-skills.ts"
       - "schemas/domain.ts"
       - "package.json"
       - "astro.config.mjs"
@@ -36,6 +37,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
+            public/assets/skill-tree
             public/assets/skills
             public/assets/items
             public/assets/aspects
@@ -51,6 +53,7 @@ jobs:
           git sparse-checkout set \
             /buildVersion.txt \
             /json/base/meta/Power/ \
+            /json/base/meta/SkillKit/ \
             /json/base/meta/Aspect/ \
             /json/base/meta/Affix/ \
             /json/base/meta/Item/ \
@@ -64,6 +67,8 @@ jobs:
           npm run data:aspects -- --datamine .tmp/d4data
           npm run data:items -- --datamine .tmp/d4data
           npm run data:affixes -- --datamine .tmp/d4data
+      - name: Verify all class boards
+        run: node --import tsx --test tests/integration/skill-tree.test.ts
       - name: Resolve and cache skill item and aspect icons
         run: npm run data:icons
       - name: Build Astro site
