@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import skills from '../../../data/generated/skills.json';
+const base = import.meta.env.BASE_URL;
+const classes = Array.from(new Set(skills.map((x:any) => x.class))).sort();
+---
+<BaseLayout title="Skills">
+  <section class="hero compact">
+    <p class="eyebrow">Skill database</p>
+    <h1>Skills</h1>
+    <p>{skills.length} learnable skills from the current imported game build.</p>
+  </section>
+  <section class="toolbar" data-browser>
+    <input class="search" type="search" placeholder="Search skills…" data-search />
+    <select class="select" data-filter="class">
+      <option value="">All classes</option>
+      {classes.map((cls) => <option value={cls}>{cls}</option>)}
+    </select>
+  </section>
+  <div class="card-grid" data-list>
+    {skills.map((skill:any) => (
+      <a class="data-card" href={`${base}skills/${skill.slug}/`} data-entry data-class={skill.class} data-searchtext={`${skill.name} ${skill.class} ${skill.category ?? ''} ${(skill.tags ?? []).join(' ')}`.toLowerCase()}>
+        <div class="card-kicker">{skill.class} · {skill.category ?? 'uncategorized'}</div>
+        <h2>{skill.name}</h2>
+        <p>{skill.description ?? 'No description available.'}</p>
+        <div class="chip-row"><span class="chip">{skill.type}</span></div>
+      </a>
+    ))}
+  </div>
+  <p class="empty" data-empty hidden>No matching skills.</p>
+  <script is:inline>
+    const root=document.querySelector('[data-browser]'); const list=document.querySelector('[data-list]');
+    const search=root?.querySelector('[data-search]'); const filter=root?.querySelector('[data-filter="class"]'); const empty=document.querySelector('[data-empty]');
+    const apply=()=>{const q=(search?.value||'').trim().toLowerCase(); const f=filter?.value||''; let shown=0; list?.querySelectorAll('[data-entry]').forEach((el)=>{const ok=(!q||el.dataset.searchtext.includes(q))&&(!f||el.dataset.class===f); el.hidden=!ok; if(ok)shown++;}); if(empty)empty.hidden=shown!==0;};
+    search?.addEventListener('input',apply); filter?.addEventListener('change',apply);
+  </script>
+</BaseLayout>
