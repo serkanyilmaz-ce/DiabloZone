@@ -1,41 +1,67 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { readBuildVersion, writeJson } from './io.js';
+import { readStringList, getString, cleanTooltipText } from './string-list.js';
 
-type Skill={slug:string;name:string;class:string;category?:string;type:string;source:{sno?:string|number}};
-type Reward={tHeader?:{szName?:string};eType?:number;snoPower?:{__raw__?:number};szPowerMod?:number;dwMaxTalentRanks?:number;unk_94e270e?:boolean};
-function arg(name:string){const i=process.argv.indexOf(name);return i>=0?process.argv[i+1]:undefined;}
-async function readJson<T>(file:string):Promise<T>{return JSON.parse(await fs.readFile(file,'utf8')) as T;}
-function humanize(name:string){return name.replace(/^.*?_Mod_/,'').replace(/^.*?_Unlock_/,'').replace(/_/g,' ').replace(/([a-z])([A-Z])/g,'$1 $2').trim();}
-
-const root=path.resolve(arg('--datamine')??'.tmp/d4data');
-const build=(await readBuildVersion(root))??'unknown';
-const sourceFile=path.join(root,'json/base/meta/GameBalance/SkillTreeRewards.gam.json');
-const raw=await readJson<any>(sourceFile);
-const skills=await readJson<Skill[]>('data/generated/skills.json');
-const skillBySno=new Map<number,Skill>();
-for(const skill of skills){const sno=Number(skill.source?.sno);if(Number.isInteger(sno)&&sno>0)skillBySno.set(sno,skill);}
-const rewards:Reward[]=[];
-for(const table of raw.ptData??[]) for(const entry of table?.tEntries??[]) rewards.push(entry);
-const grouped=new Map<number,{skill:Skill;order:number;unlock?:Reward;mods:Reward[]}>();
-for(let index=0;index<rewards.length;index++){
-  const reward=rewards[index]; const sno=Number(reward.snoPower?.__raw__); const skill=skillBySno.get(sno); if(!skill)continue;
-  let group=grouped.get(sno); if(!group){group={skill,order:index,mods:[]};grouped.set(sno,group);}
-  const mod=Number(reward.szPowerMod??0); if(Number(reward.eType??0)===0&&mod===0&&!group.unlock)group.unlock=reward; else group.mods.push(reward);
-}
-const classes:Record<string,any[]>={};
-for(const group of grouped.values()){
-  const cls=group.skill.class; if(cls==='unknown')continue; (classes[cls]??=[]).push({
-    powerSno:Number(group.skill.source.sno),skillSlug:group.skill.slug,name:group.skill.name,category:group.skill.category??'uncategorized',type:group.skill.type,
-    order:group.order,maxRanks:Number(group.unlock?.dwMaxTalentRanks??0)||undefined,rewardName:group.unlock?.tHeader?.szName,
-    modifiers:group.mods.map((m,index)=>({order:index,rewardName:m.tHeader?.szName,label:humanize(String(m.tHeader?.szName??`Upgrade ${index+1}`)),modifierHash:Number(m.szPowerMod??0)||undefined,maxRanks:Number(m.dwMaxTalentRanks??0)||undefined,defining:Boolean(m.unk_94e270e)})),
+const kits = { barbarian:'Barbarian', druid:'Druid', necromancer:'Necromancer', rogue:'Rogue', sorcerer:'Sorcerer', spiritborn:'Spiritborn', paladin:'Paladin_NEW', warlock:'Warlock' };
+const index = process.argv.indexOf('--datamine');
+const root = path.resolve(index < 0 ? '.tmp/d4data' : process.argv[index + 1]);
+const read = async (file:string) => JSON.parse(await fs.readFile(file, 'utf8'));
+const build = await readBuildVersion(root);
+const rewardsFile = 'json/base/meta/GameBalance/SkillTreeRewards.gam.json';
+const raw = await read(path.join(root, rewardsFile));
+const rewards = new Map<string,any>(raw.ptData.flatMap((t:any) => t.tEntries ?? []).map((r:any) => [r.tHeader.szName,r]));
+const skills = await read('data/generated/skills.json');
+const bySno = new Map<number,any>(skills.map((s:any) => [Number(s.source.sno),s]));
+const classes:Record<string,any> = {};
+const report:Record<string,any> = {};
+for (const [cls,kitName] of Object.entries(kits)) {
+  const sourceFile = `json/base/meta/SkillKit/${kitName}.skl.json`;
+  const kit = await read(path.join(root,sourceFile));
+  const details = new Map<number,any>();
+  const nodes = [];
+  for (const node of kit.arNodes) {
+    const reward = node.gbidReward ? rewards.get(node.gbidReward.name) : undefined;
+    if (node.gbidReward && !reward) throw new Error(`${cls}: unresolved reward ${node.gbidReward.name}`);
+    const sno = Number(reward?.snoPower?.__raw__ ?? 0);
+    const skill = bySno.get(sno);
+    if (sno && !skill) throw new Error(`${cls}: missing imported power ${sno} (${reward.snoPower.name})`);
+    if (skill && !details.has(sno)) details.set(sno, {
+      power: await read(path.join(root,skill.source.file)),
+      strings: await readStringList(path.join(root,skill.localizationSource.file)),
+    });
+    const detail = details.get(sno);
+    const mod = reward?.szPowerMod ? detail?.power.arMods.find((m:any) => m.szName === reward.szPowerMod) : undefined;
+    if (reward?.eType === 1 && !mod) throw new Error(`${cls}: unresolved modifier ${node.gbidReward.name}`);
+    const kind = !reward ? (node.eRootNodeType === 1 ? 'hub' : 'gate') : mod ? 'modifier' : skill.type;
+    // Hubs and level gates are real board nodes, not synthetic category containers.
+    const connected = node.arConnections.map((c:any) => kit.arNodes[c.nIndexNode]);
+    const categories = connected.map((n:any) => bySno.get(Number(rewards.get(n.gbidReward?.name)?.snoPower?.__raw__))?.category).filter(Boolean);
+    const name = mod ? getString(detail.strings, `Mod${mod.dwModId}_Name`) : skill?.name;
+    if (reward && !name) throw new Error(`${cls}: missing localized node name ${node.dwID}`);
+    nodes.push({
+      id:node.dwID, x:node.vPosition.x, y:node.vPosition.y, kind,
+      name:name ?? (kind === 'hub' ? categories[0] ?? 'Skills' : `Level ${node.dwNodeRequiredPlayerLevel}`),
+      description:mod ? cleanTooltipText(getString(detail.strings,`Mod${mod.dwModId}_Description`)) : skill?.description,
+      powerSno:sno || undefined, skillSlug:skill?.slug, category:skill?.category,
+      iconHandle:mod?.hIconNormalOverride || detail?.power.hIconNormal || undefined,
+      maxRanks:reward?.dwMaxTalentRanks || undefined, requiredLevel:node.dwNodeRequiredPlayerLevel,
+      exclusiveGroup:node.nExclusiveGroupId < 0 ? undefined : node.nExclusiveGroupId,
+      defining:reward?.unk_94e270e ?? false, rewardName:node.gbidReward?.name,
+    });
+  }
+  const ids = new Set(nodes.map(n => n.id));
+  const edges = kit.arConnections.map((edge:any) => {
+    const from = kit.arNodes[edge.nIndexNodeA];
+    const to = kit.arNodes[edge.nIndexNodeB];
+    if (!from || !to || !ids.has(edge.dwSourceId) || !ids.has(edge.dwDestinationId) || from.dwID !== edge.dwSourceId || to.dwID !== edge.dwDestinationId) throw new Error(`${cls}: invalid board edge`);
+    return {from:from.dwID,to:to.dwID,points:[from.vPosition,...edge.arCustomPathPositions,to.vPosition]};
   });
+  const points = [...nodes,...edges.flatMap((e:any) => e.points)];
+  const bounds = {minX:Math.min(...points.map(p=>p.x)),minY:Math.min(...points.map(p=>p.y)),maxX:Math.max(...points.map(p=>p.x)),maxY:Math.max(...points.map(p=>p.y))};
+  classes[cls] = {sourceFile,sourceSno:kit.__snoID__,bounds,nodes,edges};
+  report[cls] = {nodes:nodes.length,edges:edges.length,skills:nodes.filter(n=>n.kind==='active'||n.kind==='passive').length,modifiers:nodes.filter(n=>n.kind==='modifier').length};
 }
-for(const nodes of Object.values(classes)) nodes.sort((a:any,b:any)=>a.order-b.order||a.name.localeCompare(b.name));
-const output={source:'DiabloTools/d4data',gameBuild:build,sourceFile:path.relative(root,sourceFile),sourceSno:raw.__snoID__,generatedAt:new Date().toISOString(),layout:'logical',note:'Logical branches come from SkillTreeRewards. DiabloZone currently arranges them visually until exact class-board coordinates and edge geometry are decoded.',classes};
-await writeJson('data/generated/skill-tree.json',output);
-const counts=Object.fromEntries(Object.entries(classes).map(([cls,nodes])=>[cls,nodes.length]));
-await writeJson('data/generated/skill-tree-report.json',{source:'DiabloTools/d4data',gameBuild:build,matchedPowers:grouped.size,byClass:counts});
-if(!classes.sorcerer?.some((x:any)=>x.name==='Fireball'))throw new Error('Skill tree sanity check failed: Sorcerer Fireball missing');
-if(Object.keys(classes).length<5)throw new Error(`Skill tree sanity check failed: only ${Object.keys(classes).length} classes matched`);
-console.log(`Imported ${grouped.size} logical skill-tree powers from ${rewards.length} rewards; ${JSON.stringify(counts)}`);
+await writeJson('data/generated/skill-tree.json',{source:'DiabloTools/d4data',gameBuild:build,generatedAt:new Date().toISOString(),layout:'game-coordinates',classes});
+await writeJson('data/generated/skill-tree-report.json',{gameBuild:build,byClass:report});
+console.log(`Imported all ${Object.keys(classes).length} class boards with original game coordinates and paths: ${JSON.stringify(report)}`);
