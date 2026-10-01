@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string; }
+const { title, description = 'Diablo IV game data browser' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title} · DiabloZone</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href={base}>DiabloZone</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href={`${base}skills/`}>Skills</a>
+          <a href={`${base}items/`}>Items</a>
+          <a href={`${base}aspects/`}>Aspects</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell page-shell"><slot /></main>
+    <footer class="shell footer">Unofficial Diablo IV community data project · Source: DiabloTools/d4data</footer>
+  </body>
+</html>
