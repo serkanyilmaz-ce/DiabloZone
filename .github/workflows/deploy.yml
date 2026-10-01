@@ -8,6 +8,7 @@ on:
       - "astro.config.mjs"
       - "package-lock.json"
       - "tsconfig.json"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 permissions:
   contents: read
@@ -19,13 +20,34 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install
-      - run: npm run build
+      - name: Sparse clone required d4data paths
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/DiabloTools/d4data.git .tmp/d4data
+          cd .tmp/d4data
+          git sparse-checkout init --no-cone
+          git sparse-checkout set \
+            /buildVersion.txt \
+            /json/base/meta/Power/ \
+            /json/base/meta/Aspect/ \
+            /json/base/meta/Affix/ \
+            /json/base/meta/Item/ \
+            /json/enUS_Text/meta/StringList/
+      - name: Generate canonical game data
+        run: |
+          npm run data:extract -- --datamine .tmp/d4data
+          npm run data:skills -- --datamine .tmp/d4data
+          npm run data:aspects -- --datamine .tmp/d4data
+          npm run data:items -- --datamine .tmp/d4data
+          npm run data:affixes -- --datamine .tmp/d4data
+      - name: Build Astro site
+        run: npm run build
         env:
           SITE_URL: https://${{ github.repository_owner }}.github.io
           BASE_PATH: /${{ github.event.repository.name }}
