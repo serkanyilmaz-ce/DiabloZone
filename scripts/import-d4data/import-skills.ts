@@ -39,19 +39,20 @@ const stringsDir = path.join(root, 'json/enUS_Text/meta/StringList');
 const powersDir = path.join(root, 'json/base/meta/Power');
 
 const entries = await fs.readdir(stringsDir, { withFileTypes: true });
+const powerFiles = new Map((await fs.readdir(powersDir)).map(file => [file.toLowerCase(), file]));
 const skills: Skill[] = [];
 const skipped: Array<{ file: string; reason: string }> = [];
 
 for (const entry of entries) {
   if (!entry.isFile()) continue;
-  const match = /^Power_(Barbarian|Druid|Necromancer|Rogue|Sorcerer|Spiritborn|Paladin|Warlock)_(.+)\.stl\.json$/i.exec(entry.name);
+  const match = /^Power_(?:X\d+_)?(Barbarian|Druid|Necromancer|Rogue|Sorcerer|Spiritborn|Paladin|Warlock)_(.+)\.stl\.json$/i.exec(entry.name);
   if (!match) continue;
 
   const classToken = Object.keys(classMap).find(x => x.toLowerCase() === match[1].toLowerCase());
   if (!classToken) continue;
   const d4class = classMap[classToken];
-  const internalPowerName = `${classToken}_${match[2]}`;
-  const powerFile = path.join(powersDir, `${internalPowerName}.pow.json`);
+  const internalPowerName = entry.name.replace(/^Power_/, '').replace(/\.stl\.json$/, '');
+  const powerFile = path.join(powersDir, powerFiles.get(`${internalPowerName}.pow.json`.toLowerCase()) ?? `${internalPowerName}.pow.json`);
   const stringsFile = path.join(stringsDir, entry.name);
 
   try {
