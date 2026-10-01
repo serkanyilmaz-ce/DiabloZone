@@ -12,20 +12,14 @@ const classes = Array.from(new Set(skills.map((x:any) => x.class))).sort();
   </section>
   <section class="toolbar" data-browser>
     <input class="search" type="search" placeholder="Search skills…" data-search />
-    <select class="select" data-filter="class">
-      <option value="">All classes</option>
-      {classes.map((cls) => <option value={cls}>{cls}</option>)}
-    </select>
+    <select class="select" data-filter="class"><option value="">All classes</option>{classes.map((cls) => <option value={cls}>{cls}</option>)}</select>
   </section>
   <div class="card-grid" data-list>
     {skills.map((skill:any) => (
       <a class="data-card" href={`${base}skills/${skill.slug}/`} data-entry data-class={skill.class} data-searchtext={`${skill.name} ${skill.class} ${skill.category ?? ''} ${(skill.tags ?? []).join(' ')}`.toLowerCase()}>
         <div class="card-main">
-          {skill.icon && <img class="entity-icon skill-icon" src={`${base}${skill.icon}`} alt="" loading="lazy" width="64" height="64" />}
-          <div class="card-copy">
-            <div class="card-kicker">{skill.class} · {skill.category ?? 'uncategorized'}</div>
-            <h2>{skill.name}</h2>
-          </div>
+          {skill.icon ? <img class="entity-icon skill-icon" src={`${base}${skill.icon}`} alt="" loading="lazy" width="64" height="64" /> : <span class="entity-fallback" aria-hidden="true">✦</span>}
+          <div class="card-copy"><div class="card-kicker">{skill.class} · {skill.category ?? 'uncategorized'}</div><h2>{skill.name}</h2></div>
         </div>
         <p>{skill.description ?? 'No description available.'}</p>
         <div class="chip-row"><span class="chip">{skill.type}</span></div>
@@ -39,7 +33,4 @@ const classes = Array.from(new Set(skills.map((x:any) => x.class))).sort();
     const apply=()=>{const q=(search?.value||'').trim().toLowerCase(); const f=filter?.value||''; let shown=0; list?.querySelectorAll('[data-entry]').forEach((el)=>{const ok=(!q||el.dataset.searchtext.includes(q))&&(!f||el.dataset.class===f); el.hidden=!ok; if(ok)shown++;}); if(empty)empty.hidden=shown!==0;};
     search?.addEventListener('input',apply); filter?.addEventListener('change',apply);
   </script>
-  <style>
-    .card-main{display:flex;align-items:center;gap:14px}.card-copy{min-width:0}.entity-icon{flex:0 0 auto;display:block}.skill-icon{width:58px;height:58px;border:1px solid #6f4434;background:#090605;box-shadow:0 0 0 3px #120b09,0 8px 20px rgba(0,0,0,.35)}.card-main h2{margin-top:5px}
-  </style>
 </BaseLayout>

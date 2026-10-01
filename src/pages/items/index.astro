@@ -6,7 +6,7 @@ const rarities = ['mythic','unique'];
 const slots = Array.from(new Set(items.map((x:any) => x.slot).filter(Boolean))).sort();
 ---
 <BaseLayout title="Items">
-  <section class="hero compact"><p class="eyebrow">Equipment database</p><h1>Unique & Mythic Items</h1><p>{items.length} canonical equipable items.</p></section>
+  <section class="hero compact"><p class="eyebrow">Equipment archive</p><h1>Items</h1><p>{items.length} canonical equipable items.</p></section>
   <section class="toolbar" data-browser>
     <input class="search" type="search" placeholder="Search items…" data-search />
     <select class="select" data-filter="rarity"><option value="">All rarities</option>{rarities.map((r)=><option value={r}>{r}</option>)}</select>
@@ -15,7 +15,7 @@ const slots = Array.from(new Set(items.map((x:any) => x.slot).filter(Boolean))).
   <div class="card-grid" data-list>
     {items.map((item:any)=><a class="data-card" href={`${base}items/${item.slug}/`} data-entry data-rarity={item.rarity} data-slot={item.slot} data-searchtext={`${item.name} ${item.rarity} ${item.slot} ${(item.classes??[]).join(' ')}`.toLowerCase()}>
       <div class="card-main">
-        {item.icon && <div class="item-icon-frame"><img class="entity-icon item-icon" src={`${base}${item.icon}`} alt="" loading="lazy" /></div>}
+        {item.icon ? <div class="item-icon-frame"><img class="entity-icon item-icon" src={`${base}${item.icon}`} alt="" loading="lazy" /></div> : <span class="entity-fallback" aria-label="Icon unavailable">◆</span>}
         <div class="card-copy"><div class="card-kicker">{item.rarity} · {item.slot}</div><h2>{item.name}</h2></div>
       </div>
       <p>{item.flavor ?? `${item.affixIds?.length ?? 0} referenced affixes`}</p>
@@ -26,7 +26,4 @@ const slots = Array.from(new Set(items.map((x:any) => x.slot).filter(Boolean))).
   <script is:inline>
     const root=document.querySelector('[data-browser]'),list=document.querySelector('[data-list]'),empty=document.querySelector('[data-empty]'); const search=root?.querySelector('[data-search]'); const rarity=root?.querySelector('[data-filter="rarity"]'); const slot=root?.querySelector('[data-filter="slot"]'); const apply=()=>{const q=(search?.value||'').toLowerCase(),r=rarity?.value||'',s=slot?.value||'';let shown=0;list?.querySelectorAll('[data-entry]').forEach(el=>{const ok=(!q||el.dataset.searchtext.includes(q))&&(!r||el.dataset.rarity===r)&&(!s||el.dataset.slot===s);el.hidden=!ok;if(ok)shown++;});if(empty)empty.hidden=shown!==0;}; search?.addEventListener('input',apply);rarity?.addEventListener('change',apply);slot?.addEventListener('change',apply);
   </script>
-  <style>
-    .card-main{display:flex;align-items:center;gap:15px}.card-copy{min-width:0}.item-icon-frame{width:76px;height:76px;display:grid;place-items:center;flex:0 0 auto;border:1px solid #503428;background:radial-gradient(circle,#21140f,#0b0706 72%);box-shadow:inset 0 0 18px rgba(168,131,82,.08)}.item-icon{display:block;max-width:68px;max-height:68px;object-fit:contain}.card-main h2{margin-top:5px}
-  </style>
 </BaseLayout>

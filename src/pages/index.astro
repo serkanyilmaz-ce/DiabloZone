@@ -6,25 +6,48 @@ import items from '../../data/generated/items.json';
 import aspects from '../../data/generated/aspects.json';
 import affixes from '../../data/generated/affixes.json';
 const base = import.meta.env.BASE_URL;
-const cards = [
-  {label:'Skills', count:skills.length, href:`${base}skills/`, note:'Learnable active and passive skills'},
-  {label:'Items', count:items.length, href:`${base}items/`, note:'Canonical Unique & Mythic equipment'},
-  {label:'Aspects', count:aspects.length, href:`${base}aspects/`, note:'Legendary aspect definitions'},
-  {label:'Affixes', count:affixes.length, href:null, note:'Resolved item/aspect affix records'},
+const features = [
+  {label:'Skill Tree', href:`${base}skill-tree/`, note:'Explore class progression and modifier branches.', className:'feature-tree', symbol:'✦'},
+  {label:'Skills', href:`${base}skills/`, note:'Browse active, passive and upgrade-ready skills.', className:'feature-skills', symbol:'✧'},
+  {label:'Items', href:`${base}items/`, note:'Discover Unique and Mythic equipment.', className:'feature-items', symbol:'◆'},
+  {label:'Aspects', href:`${base}aspects/`, note:'Explore legendary aspects and their powers.', className:'feature-aspects', symbol:'◇'},
 ];
 ---
 <BaseLayout title="Game Data">
-  <section class="hero">
-    <p class="eyebrow">Unofficial Diablo IV database</p>
-    <h1>DiabloZone</h1>
-    <p>Fast, static game-data browser built from normalized DiabloTools/d4data records.</p>
-    <div class="hero-meta"><span>Build {metadata.gameBuild}</span><span>No backend</span><span>Static Astro</span></div>
+  <section class="home-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Complete Diablo IV Compendium</p>
+      <h1>Explore <span>Sanctuary</span></h1>
+      <p class="lead">Skills, items, aspects and progression data from the current imported game build. Fast, searchable and built for theorycrafting.</p>
+      <div class="hero-actions">
+        <a class="hero-button" href={`${base}items/`}>Explore Database <span aria-hidden="true">→</span></a>
+        <a class="hero-button secondary" href={`${base}skill-tree/`}>Open Skill Tree <span aria-hidden="true">✦</span></a>
+      </div>
+      <div class="hero-meta"><span>Build {metadata.gameBuild}</span><span>Static Astro</span><span>Source-traceable</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <span class="spire one"></span><span class="spire two"></span><span class="spire three"></span>
+      <span class="portal-ring"></span><span class="ash-field"></span>
+    </div>
   </section>
-  <section class="stats-grid">
-    {cards.map((card)=><article class="stat-card"><span>{card.label}</span><strong>{card.count}</strong><p>{card.note}</p>{card.href && <a href={card.href}>Browse →</a>}</article>)}
+
+  <section class="home-feature-grid" aria-label="Explore DiabloZone">
+    {features.map((feature)=><a class={`feature-card ${feature.className}`} href={feature.href}>
+      <span class="feature-symbol" aria-hidden="true">{feature.symbol}</span>
+      <h2>{feature.label}</h2><p>{feature.note}</p><span>View {feature.label} →</span>
+    </a>)}
   </section>
+
+  <section class="parchment-stats">
+    <div class="stats-heading"><h2>Database at a glance</h2><p>Built for fast exploration</p></div>
+    <div class="parchment-stat"><strong>{skills.length}</strong><span>Skills</span></div>
+    <div class="parchment-stat"><strong>{items.length}</strong><span>Items</span></div>
+    <div class="parchment-stat"><strong>{aspects.length}</strong><span>Aspects</span></div>
+    <div class="parchment-stat"><strong>{affixes.length}</strong><span>Affixes</span></div>
+  </section>
+
   <section class="home-section">
-    <div><p class="eyebrow">M1</p><h2>Browse the canonical data</h2><p>Search and filter the current imported build. Detail pages preserve source SNO references and raw tooltip templates for traceability.</p></div>
+    <div><p class="eyebrow">Game Data</p><h2>Browse the canonical data</h2><p>Search and filter the imported build. Detail pages preserve source SNO references and raw tooltip templates so every record remains traceable to the underlying game data.</p></div>
     <div class="quick-links"><a href={`${base}skills/`}>Explore skills</a><a href={`${base}items/`}>Explore items</a><a href={`${base}aspects/`}>Explore aspects</a></div>
   </section>
 </BaseLayout>

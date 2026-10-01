@@ -1,27 +1,41 @@
 ---
 import '../styles/global.css';
 import '../styles/typography.css';
+import '../styles/concept.css';
 interface Props { title: string; description?: string; }
 const { title, description = 'Diablo IV game data browser' } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const relativePath = Astro.url.pathname.startsWith(base) ? Astro.url.pathname.slice(base.length) : Astro.url.pathname;
+const section = relativePath.replace(/^\/+|\/+$/g,'').split('/')[0] || 'home';
 ---
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#050403" data-theme-color />
+    <meta name="theme-color" content="#030201" data-theme-color />
     <title>{title} · DiabloZone</title>
     <script is:inline>
       (()=>{try{const t=localStorage.getItem('diablozone-theme')||'dark';document.documentElement.dataset.theme=t==='light'?'light':'dark';document.documentElement.style.colorScheme=t==='light'?'light':'dark';}catch{document.documentElement.dataset.theme='dark';}})();
     </script>
   </head>
-  <body>
+  <body class={`page-${section}`}>
     <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div><div class="world-vignette" aria-hidden="true"></div>
     <header class="site-header"><div class="shell nav-wrap">
-      <a class="brand" href={base}><span class="brand-mark">DZ</span><span>DiabloZone</span></a>
+      <a class="brand" href={base} aria-label="DiabloZone home">
+        <span class="brand-sigil" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img"><circle cx="32" cy="32" r="22"/><path d="M32 5v54M5 32h54M16 16l32 32M48 16 16 48"/><path d="M32 12 40 25 32 32 24 25 32 12Zm0 40-8-13 8-7 8 7-8 13Z"/></svg>
+        </span>
+        <span class="brand-copy"><strong>DiabloZone</strong><small>Explore · Theorycraft · Dominate</small></span>
+      </a>
       <div class="nav-side">
-        <nav class="nav-links" aria-label="Primary navigation"><a href={`${base}skill-tree/`}>Skill Tree</a><a href={`${base}skills/`}>Skills</a><a href={`${base}items/`}>Items</a><a href={`${base}aspects/`}>Aspects</a></nav>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class:list={{active:section==='home'}} href={base}>Home</a>
+          <a class:list={{active:section==='skills'}} href={`${base}skills/`}>Skills</a>
+          <a class:list={{active:section==='items'}} href={`${base}items/`}>Items</a>
+          <a class:list={{active:section==='aspects'}} href={`${base}aspects/`}>Aspects</a>
+          <a class:list={{active:section==='skill-tree'}} href={`${base}skill-tree/`}>Skill Tree</a>
+        </nav>
         <div class="header-controls">
           <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle day/night theme"><span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span><span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span></button>
           <div class="lang-switch" aria-label="Language"><button type="button" data-lang-switch="tr">TR</button><span>/</span><button type="button" data-lang-switch="en">EN</button></div>
@@ -29,22 +43,23 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div></header>
     <main class="shell page-shell"><slot /></main>
-    <footer class="shell footer">Unofficial Diablo IV community data project · Source: DiabloTools/d4data</footer>
+    <footer class="shell footer"><span class="footer-rune">✦</span> Unofficial Diablo IV community data project · Source: DiabloTools/d4data <span class="footer-rune">✦</span></footer>
     <script is:inline>
       (()=>{
         const themeButton=document.querySelector('[data-theme-toggle]'),themeMeta=document.querySelector('[data-theme-color]');
-        const applyTheme=(theme)=>{const next=theme==='light'?'light':'dark';document.documentElement.dataset.theme=next;document.documentElement.style.colorScheme=next;localStorage.setItem('diablozone-theme',next);themeMeta?.setAttribute('content',next==='light'?'#d8c7aa':'#050403');themeButton?.setAttribute('aria-pressed',String(next==='light'));};
+        const applyTheme=(theme)=>{const next=theme==='light'?'light':'dark';document.documentElement.dataset.theme=next;document.documentElement.style.colorScheme=next;localStorage.setItem('diablozone-theme',next);themeMeta?.setAttribute('content',next==='light'?'#c8b38f':'#030201');themeButton?.setAttribute('aria-pressed',String(next==='light'));};
         applyTheme(document.documentElement.dataset.theme||'dark');themeButton?.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
         const exact=new Map(Object.entries({
-          'Skill Tree':'Yetenek Ağacı','Skills':'Yetenekler','Items':'Eşyalar','Aspects':'Aspektler','Unique & Mythic Items':'Benzersiz & Mitik Eşyalar',
-          'Current Skill Tree':'Güncel Yetenek Ağacı','Current game skill branches':'Güncel oyun yetenek dalları','Skill database':'Yetenek veritabanı','Equipment database':'Ekipman veritabanı','Legendary power database':'Efsanevi güç veritabanı',
+          'Home':'Ana Sayfa','Skill Tree':'Yetenek Ağacı','Skills':'Yetenekler','Items':'Eşyalar','Aspects':'Aspektler','Unique & Mythic Items':'Benzersiz & Mitik Eşyalar',
+          'Explore Sanctuary':'Sanctuary’yi Keşfet','Complete Diablo IV Compendium':'Kapsamlı Diablo IV Arşivi','Explore Database':'Veritabanını Keşfet','Open Skill Tree':'Yetenek Ağacını Aç','Database at a glance':'Veritabanına Genel Bakış','Built for fast exploration':'Hızlı keşif için tasarlandı',
+          'Current Skill Tree':'Güncel Yetenek Ağacı','Current game skill branches':'Güncel oyun yetenek dalları','Skill database':'Yetenek veritabanı','Equipment database':'Ekipman veritabanı','Equipment archive':'Ekipman arşivi','Legendary power database':'Efsanevi güç veritabanı',
           'All classes':'Tüm sınıflar','All rarities':'Tüm nadirlikler','All slots':'Tüm yuvalar','All categories':'Tüm kategoriler','No matching skills.':'Eşleşen yetenek yok.','No matching items.':'Eşleşen eşya yok.','No matching aspects.':'Eşleşen aspekt yok.',
           '← Back to skills':'← Yeteneklere dön','← Back to items':'← Eşyalara dön','← Back to aspects':'← Aspektlere dön','Required level':'Gerekli seviye','Fixed item power':'Sabit eşya gücü','Patch':'Yama','Source SNO':'Kaynak SNO','Gameplay SNO':'Oynanış SNO','Localization SNO':'Yerelleştirme SNO','Aspect SNO':'Aspekt SNO','Affix SNO':'Affix SNO','Type':'Tür','Classes':'Sınıflar','Affixes':'Affixler','Tags':'Etiketler','Raw tooltip template':'Ham tooltip şablonu','No localized description.':'Yerelleştirilmiş açıklama yok.','No resolved affixes.':'Çözümlenmiş affix yok.','No description available.':'Açıklama yok.','Unofficial Diablo IV database':'Resmî olmayan Diablo IV veritabanı','Game Data':'Oyun Verisi','Browse the canonical data':'Canonical veriyi incele','Explore skills':'Yetenekleri incele','Explore items':'Eşyaları incele','Explore aspects':'Aspektleri incele','Browse →':'Göz at →','Learnable active and passive skills':'Öğrenilebilir aktif ve pasif yetenekler','Canonical Unique & Mythic equipment':'Canonical Benzersiz ve Mitik ekipman','Legendary aspect definitions':'Efsanevi aspekt tanımları','Resolved item/aspect affix records':'Çözümlenmiş eşya/aspekt affix kayıtları','No backend':'Backend yok','Static Astro':'Statik Astro','Unofficial Diablo IV community data project · Source: DiabloTools/d4data':'Resmî olmayan Diablo IV topluluk veri projesi · Kaynak: DiabloTools/d4data'
         }));
         const terms={barbarian:'Barbar',druid:'Druid',necromancer:'Nekromant',rogue:'Rogue',sorcerer:'Büyücü',spiritborn:'Spiritborn',paladin:'Paladin',warlock:'Warlock',unknown:'Bilinmiyor',core:'Temel',basic:'Başlangıç',defensive:'Savunma',offensive:'Saldırı',utility:'Destek',resource:'Kaynak',mobility:'Hareket',active:'Aktif',passive:'Pasif',modifier:'Değiştirici',mythic:'Mitik',unique:'Benzersiz',helm:'Miğfer',chestarmor:'Göğüslük',gloves:'Eldiven',legs:'Bacak zırhı',boots:'Çizme',amulet:'Muska',ring:'Yüzük',shield:'Kalkan'};
         const placeholders={'Search skills…':'Yetenek ara…','Search items…':'Eşya ara…','Search aspects…':'Aspekt ara…'};
         const dynamicTr=(s)=>{let m;if((m=s.match(/^(\d+) learnable skills from the current imported game build\.$/)))return`${m[1]} öğrenilebilir yetenek, içe aktarılan güncel oyun build'inden.`;if((m=s.match(/^(\d+) canonical equipable items\.$/)))return`${m[1]} canonical kuşanılabilir eşya.`;if((m=s.match(/^(\d+) canonical aspects from the current imported build\.$/)))return`${m[1]} canonical aspekt, içe aktarılan güncel build'den.`;return null;};
-        const eligible='nav a,.footer,.eyebrow,.hero>p,.stat-card>span,.stat-card>p,.stat-card>a,.home-section h2,.home-section p,.quick-links a,.back-link,.empty,.detail-grid dt,.detail-section h2,.affix-row span,.select option,.tree-note,.tree-tier h2';
+        const eligible='nav a,.footer,.eyebrow,.hero>p,.hero-copy>p,.hero-copy h1,.hero-actions a,.stat-card>span,.stat-card>p,.stat-card>a,.home-section h2,.home-section p,.quick-links a,.feature-card h2,.feature-card p,.feature-card span,.stats-heading h2,.stats-heading p,.back-link,.empty,.detail-grid dt,.detail-section h2,.affix-row span,.select option,.tree-note,.tree-tier h2';
         const save=(el)=>{if(!el.dataset.originalText)el.dataset.originalText=el.textContent??'';};
         const applyTerms=(el,lang)=>{save(el);const src=el.dataset.originalText.trim();if(lang==='en'){el.textContent=el.dataset.originalText;return;}el.textContent=src.split('·').map(x=>terms[x.trim().toLowerCase()]||x.trim()).join(' · ');};
         const apply=(lang)=>{document.documentElement.lang=lang;localStorage.setItem('diablozone-lang',lang);document.querySelectorAll(eligible).forEach(el=>{save(el);const src=el.dataset.originalText;if(lang==='en'){el.textContent=src;return;}const tr=exact.get(src.trim())||dynamicTr(src.trim());if(tr)el.textContent=tr;});document.querySelectorAll('.card-kicker,.chip').forEach(el=>applyTerms(el,lang));document.querySelectorAll('input[placeholder]').forEach(el=>{if(!el.dataset.originalPlaceholder)el.dataset.originalPlaceholder=el.placeholder;el.placeholder=lang==='tr'?(placeholders[el.dataset.originalPlaceholder]||el.dataset.originalPlaceholder):el.dataset.originalPlaceholder;});document.querySelectorAll('[data-lang-switch]').forEach(btn=>btn.classList.toggle('active',btn.dataset.langSwitch===lang));document.querySelectorAll('[data-entry]').forEach(el=>{if(!el.dataset.baseSearchtext)el.dataset.baseSearchtext=el.dataset.searchtext||'';const aliases=[el.dataset.class,el.dataset.category,el.dataset.rarity,el.dataset.slot].filter(Boolean).map(x=>terms[x]||'').join(' ').toLowerCase();el.dataset.searchtext=`${el.dataset.baseSearchtext} ${aliases}`.trim();});};
