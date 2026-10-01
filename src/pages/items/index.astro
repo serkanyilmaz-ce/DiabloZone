@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import items from '../../../data/generated/items.json';
+const base = import.meta.env.BASE_URL;
+const rarities = ['mythic','unique'];
+const slots = Array.from(new Set(items.map((x:any) => x.slot).filter(Boolean))).sort();
+---
+<BaseLayout title="Items">
+  <section class="hero compact"><p class="eyebrow">Equipment database</p><h1>Unique & Mythic Items</h1><p>{items.length} canonical equipable items.</p></section>
+  <section class="toolbar" data-browser>
+    <input class="search" type="search" placeholder="Search items…" data-search />
+    <select class="select" data-filter="rarity"><option value="">All rarities</option>{rarities.map((r)=><option value={r}>{r}</option>)}</select>
+    <select class="select" data-filter="slot"><option value="">All slots</option>{slots.map((s)=><option value={s}>{s}</option>)}</select>
+  </section>
+  <div class="card-grid" data-list>
+    {items.map((item:any)=><a class="data-card" href={`${base}items/${item.slug}/`} data-entry data-rarity={item.rarity} data-slot={item.slot} data-searchtext={`${item.name} ${item.rarity} ${item.slot} ${(item.classes??[]).join(' ')}`.toLowerCase()}><div class="card-kicker">{item.rarity} · {item.slot}</div><h2>{item.name}</h2><p>{item.flavor ?? `${item.affixIds?.length ?? 0} referenced affixes`}</p><div class="chip-row">{(item.classes??[]).slice(0,4).map((c:string)=><span class="chip">{c}</span>)}</div></a>)}
+  </div>
+  <p class="empty" data-empty hidden>No matching items.</p>
+  <script is:inline>
+    const root=document.querySelector('[data-browser]'),list=document.querySelector('[data-list]'),empty=document.querySelector('[data-empty]'); const search=root?.querySelector('[data-search]'); const rarity=root?.querySelector('[data-filter="rarity"]'); const slot=root?.querySelector('[data-filter="slot"]'); const apply=()=>{const q=(search?.value||'').toLowerCase(),r=rarity?.value||'',s=slot?.value||'';let shown=0;list?.querySelectorAll('[data-entry]').forEach(el=>{const ok=(!q||el.dataset.searchtext.includes(q))&&(!r||el.dataset.rarity===r)&&(!s||el.dataset.slot===s);el.hidden=!ok;if(ok)shown++;});if(empty)empty.hidden=shown!==0;}; search?.addEventListener('input',apply);rarity?.addEventListener('change',apply);slot?.addEventListener('change',apply);
+  </script>
+</BaseLayout>
