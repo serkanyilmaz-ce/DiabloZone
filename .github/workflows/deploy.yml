@@ -6,6 +6,10 @@ on:
       - "src/**"
       - "public/**"
       - "scripts/fetch-icons.ts"
+      - "scripts/import-d4data/import-aspects.ts"
+      - "scripts/import-d4data/import-skill-tree.ts"
+      - "schemas/domain.ts"
+      - "package.json"
       - "astro.config.mjs"
       - "package-lock.json"
       - "tsconfig.json"
@@ -34,6 +38,7 @@ jobs:
           path: |
             public/assets/skills
             public/assets/items
+            public/assets/aspects
             public/assets/icon-source-map.json
           key: d4-icons-v2-${{ github.run_id }}
           restore-keys: |
@@ -49,15 +54,17 @@ jobs:
             /json/base/meta/Aspect/ \
             /json/base/meta/Affix/ \
             /json/base/meta/Item/ \
+            /json/base/meta/GameBalance/SkillTreeRewards.gam.json \
             /json/enUS_Text/meta/StringList/
       - name: Generate canonical game data
         run: |
           npm run data:extract -- --datamine .tmp/d4data
           npm run data:skills -- --datamine .tmp/d4data
+          npm run data:tree -- --datamine .tmp/d4data
           npm run data:aspects -- --datamine .tmp/d4data
           npm run data:items -- --datamine .tmp/d4data
           npm run data:affixes -- --datamine .tmp/d4data
-      - name: Resolve and cache skill/item icons
+      - name: Resolve and cache skill item and aspect icons
         run: npm run data:icons
       - name: Build Astro site
         run: npm run build

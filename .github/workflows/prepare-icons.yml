@@ -22,6 +22,7 @@ jobs:
           path: |
             public/assets/skills
             public/assets/items
+            public/assets/aspects
             public/assets/icon-source-map.json
           key: d4-icons-v2-${{ github.run_id }}
           restore-keys: |
@@ -35,10 +36,13 @@ jobs:
             /buildVersion.txt \
             /json/base/meta/Power/ \
             /json/base/meta/Item/ \
+            /json/base/meta/Aspect/ \
+            /json/base/meta/Affix/ \
             /json/enUS_Text/meta/StringList/
-      - name: Generate canonical skill and item refs
+      - name: Generate canonical icon refs
         run: |
           npm run data:skills -- --datamine .tmp/d4data
+          npm run data:aspects -- --datamine .tmp/d4data
           npm run data:items -- --datamine .tmp/d4data
       - name: Resolve icon assets
         run: npm run data:icons
@@ -50,9 +54,11 @@ jobs:
           path: |
             public/assets/skills/
             public/assets/items/
+            public/assets/aspects/
             public/assets/icon-source-map.json
             data/generated/icon-assets-report.json
             data/generated/icon-manifest.json
             data/generated/skills-report.json
             data/generated/items-report.json
+            data/generated/aspects-report.json
           if-no-files-found: error

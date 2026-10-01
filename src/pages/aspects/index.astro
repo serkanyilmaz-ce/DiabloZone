@@ -1,20 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import aspects from '../../../data/generated/aspects.json';
-const base = import.meta.env.BASE_URL;
-const categories = Array.from(new Set(aspects.map((x:any)=>x.category))).sort();
+const base=import.meta.env.BASE_URL;
+const categories=Array.from(new Set(aspects.map((x:any)=>x.category))).sort();
 ---
 <BaseLayout title="Aspects">
   <section class="hero compact"><p class="eyebrow">Legendary power database</p><h1>Aspects</h1><p>{aspects.length} canonical aspects from the current imported build.</p></section>
-  <section class="toolbar" data-browser>
-    <input class="search" type="search" placeholder="Search aspects…" data-search />
-    <select class="select" data-filter="category"><option value="">All categories</option>{categories.map((c)=><option value={c}>{c}</option>)}</select>
-  </section>
+  <section class="toolbar" data-browser><input class="search" type="search" placeholder="Search aspects…" data-search /><select class="select" data-filter="category"><option value="">All categories</option>{categories.map((c)=><option value={c}>{c}</option>)}</select></section>
   <div class="card-grid" data-list>
-    {aspects.map((aspect:any)=><a class="data-card" href={`${base}aspects/${aspect.slug}/`} data-entry data-category={aspect.category} data-searchtext={`${aspect.name} ${aspect.category} ${(aspect.classes??[]).join(' ')} ${(aspect.tags??[]).join(' ')}`.toLowerCase()}><div class="card-kicker">{aspect.category}</div><h2>{aspect.name}</h2><p>{aspect.description ?? 'No description available.'}</p><div class="chip-row">{(aspect.classes??[]).slice(0,4).map((c:string)=><span class="chip">{c}</span>)}</div></a>)}
+    {aspects.map((aspect:any)=><a class="data-card" href={`${base}aspects/${aspect.slug}/`} data-entry data-category={aspect.category} data-searchtext={`${aspect.name} ${aspect.category} ${(aspect.classes??[]).join(' ')} ${(aspect.tags??[]).join(' ')}`.toLowerCase()}>
+      <div class="card-main">{aspect.icon && <div class="aspect-icon-frame"><img class="aspect-icon" src={`${base}${aspect.icon}`} alt="" loading="lazy" /></div>}<div class="card-copy"><div class="card-kicker">{aspect.category}</div><h2>{aspect.name}</h2></div></div>
+      <p>{aspect.description??'No description available.'}</p><div class="chip-row">{(aspect.classes??[]).slice(0,4).map((c:string)=><span class="chip">{c}</span>)}</div>
+    </a>)}
   </div>
   <p class="empty" data-empty hidden>No matching aspects.</p>
   <script is:inline>
     const root=document.querySelector('[data-browser]'),list=document.querySelector('[data-list]'),empty=document.querySelector('[data-empty]');const search=root?.querySelector('[data-search]'),category=root?.querySelector('[data-filter="category"]');const apply=()=>{const q=(search?.value||'').toLowerCase(),c=category?.value||'';let shown=0;list?.querySelectorAll('[data-entry]').forEach(el=>{const ok=(!q||el.dataset.searchtext.includes(q))&&(!c||el.dataset.category===c);el.hidden=!ok;if(ok)shown++;});if(empty)empty.hidden=shown!==0;};search?.addEventListener('input',apply);category?.addEventListener('change',apply);
   </script>
+  <style>.card-main{display:flex;align-items:center;gap:15px}.card-copy{min-width:0}.aspect-icon-frame{width:68px;height:68px;display:grid;place-items:center;flex:0 0 auto;border:1px solid var(--line-strong);background:radial-gradient(circle,var(--surface-3),var(--icon-bg) 72%);box-shadow:inset 0 0 20px color-mix(in srgb,var(--gold) 9%,transparent),0 8px 22px var(--shadow-soft)}.aspect-icon{display:block;max-width:62px;max-height:62px;object-fit:contain}.card-main h2{margin-top:5px}</style>
 </BaseLayout>

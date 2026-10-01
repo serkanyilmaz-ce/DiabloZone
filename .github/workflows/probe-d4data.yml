@@ -33,11 +33,14 @@ jobs:
             /json/base/meta/Aspect/ \
             /json/base/meta/Affix/ \
             /json/base/meta/Item/ \
+            /json/base/meta/GameBalance/SkillTreeRewards.gam.json \
             /json/enUS_Text/meta/StringList/
       - name: Extract canonical PoC records
         run: npm run data:extract -- --datamine .tmp/d4data
       - name: Import all learnable skills
         run: npm run data:skills -- --datamine .tmp/d4data
+      - name: Import logical skill tree
+        run: npm run data:tree -- --datamine .tmp/d4data
       - name: Import all aspects
         run: npm run data:aspects -- --datamine .tmp/d4data
       - name: Import unique and mythic items
