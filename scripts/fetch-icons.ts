@@ -34,12 +34,12 @@ await mapLimit(aspectCandidates,10,async aspect=>{const handle=Number(aspect.ico
 for(const url of [`${ASPECT_BASE}/${handle}.png`,`${SKILL_BASE}/${handle}.png`]){try{await downloadImage(url,destination);aspect.icon=relative;report.aspects.direct++;report.aspects.resolved++;return;}catch{}}
 const cached=sourceMap.aspects[aspect.name];if(typeof cached==='string'){try{await downloadImage(cached,destination);aspect.icon=relative;report.aspects.sourceMapHits++;report.aspects.resolved++;return;}catch{delete sourceMap.aspects[aspect.name];}}
 try{const page=await fetchWithTimeout(`${ITEM_PAGE_BASE}/${wikiTitle(aspect.name)}`,9000);if(!page.ok)throw new Error(`page HTTP ${page.status}`);const html=await page.text();const urls=uniqueMatches(html,/(https?:\/\/[^"'<>\s]+\.png)/gi).filter(x=>/diablo4/i.test(x));const relativeUrls=uniqueMatches(html,/(\/diablo4\/[^"'<>\s]+\.png)/gi).map(x=>`https://www.purediablo.com${x}`);const candidates=[...new Set([...urls,...relativeUrls])].filter(x=>!/logo|avatar|icon\/wiki/i.test(x));for(const url of candidates){try{await downloadImage(url,destination);sourceMap.aspects[aspect.name]=url;aspect.icon=relative;report.aspects.resolved++;return;}catch{}}throw new Error('no usable aspect image on page');}catch(error){report.aspects.missing.push(`${aspect.name}: ${error instanceof Error?error.message:String(error)}`);}});
-const tree=await readJson<any>('data/generated/skill-tree.json');
+const tree=await readJsonOr<any>('data/generated/skill-tree.json',{classes:{}});
 const handles=[...new Set<number>(Object.values(tree.classes).flatMap((board:any)=>board.nodes.map((node:any)=>Number(node.iconHandle??0))).filter((handle:number)=>handle>0))];
 const resolved=new Set<number>();
 await mapLimit(handles,12,async handle=>{const destination=`public/assets/skill-tree/${handle}.png`;try{await fs.access(destination);resolved.add(handle);return;}catch{}try{await downloadImage(`${SKILL_BASE}/${handle}.png`,destination);resolved.add(handle);}catch{}});
 for(const board of Object.values(tree.classes) as any[])for(const node of board.nodes){if(resolved.has(node.iconHandle))node.icon=`assets/skill-tree/${node.iconHandle}.png`;else{const skill=skills.find(skill=>skill.slug===node.skillSlug);if(skill?.icon)node.icon=skill.icon;}}
-await writeJson('data/generated/skill-tree.json',tree);
+if(Object.keys(tree.classes).length)await writeJson('data/generated/skill-tree.json',tree);
 console.log(`Tree icons ${resolved.size}/${handles.length}`);
 await writeJson(skillsFile,skills);await writeJson(itemsFile,items);await writeJson(aspectsFile,aspects);await writeJson(SOURCE_MAP_FILE,sourceMap);await writeJson('data/generated/icon-assets-report.json',report);
 console.log(`Skill icons ${report.skills.resolved}/${report.skills.candidates}; item icons ${report.items.resolved}/${report.items.candidates}; aspect icons ${report.aspects.resolved}/${report.aspects.candidates}`);
