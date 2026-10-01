@@ -4,94 +4,71 @@ import metadata from '../../data/generated/metadata.json';
 import skills from '../../data/generated/skills.json';
 import items from '../../data/generated/items.json';
 import aspects from '../../data/generated/aspects.json';
-import affixes from '../../data/generated/affixes.json';
 const base = import.meta.env.BASE_URL;
 const features = [
-  {label:'Skill Tree', href:`${base}skill-tree/`, note:'Explore class progression and modifier branches.', className:'feature-tree'},
-  {label:'Skills', href:`${base}skills/`, note:'Browse active, passive and upgrade-ready skills.', className:'feature-skills'},
-  {label:'Items', href:`${base}items/`, note:'Discover Unique and Mythic equipment.', className:'feature-items'},
-  {label:'Aspects', href:`${base}aspects/`, note:'Explore legendary aspects and their powers.', className:'feature-aspects'},
+  {label:'Skills', href:`${base}skills/`, note:'Browse active, passive and upgrade-ready skills.', image:`${base}assets/ui/skills.webp`},
+  {label:'Items', href:`${base}items/`, note:'Discover Unique and Mythic equipment.', image:`${base}assets/ui/items.webp`},
+  {label:'Aspects', href:`${base}aspects/`, note:'Explore legendary aspects and their powers.', image:`${base}assets/ui/aspects.webp`},
 ];
 ---
 <BaseLayout title="Game Data">
   <section class="home-hero">
-    <div class="hero-art" aria-hidden="true">
-      <img src={`${base}assets/ui/hero-sanctuary.webp`} alt="" decoding="async" fetchpriority="high" />
-    </div>
+    <div class="hero-art" aria-hidden="true"><img src={`${base}assets/ui/hero-sanctuary.webp`} alt="" decoding="async" fetchpriority="high" /></div>
     <div class="hero-copy">
       <p class="eyebrow">Complete Diablo IV Compendium</p>
       <h1>Explore <span>Sanctuary</span></h1>
-      <p class="lead">Skills, items, aspects and progression data from the current imported game build. Fast, searchable and built for theorycrafting.</p>
+      <p class="lead">Skills, items and aspects from the current imported game build. Fast, searchable and built for theorycrafting.</p>
       <div class="hero-actions">
         <a class="hero-button" href={`${base}items/`}>Explore Database <span aria-hidden="true">→</span></a>
-        <a class="hero-button secondary" href={`${base}skill-tree/`}>Open Skill Tree <span aria-hidden="true">→</span></a>
+        <a class="skill-tree-link" href={`${base}skill-tree/`}>Open Skill Tree →</a>
       </div>
       <div class="hero-meta"><span>Build {metadata.gameBuild}</span><span>Static Astro</span><span>Source-traceable</span></div>
     </div>
   </section>
 
   <section class="home-feature-grid" aria-label="Explore DiabloZone">
-    {features.map((feature)=><a class={`feature-card ${feature.className}`} href={feature.href}>
-      <span class="feature-art" aria-hidden="true"></span>
-      <span class="feature-shade" aria-hidden="true"></span>
+    {features.map((feature)=><a class="feature-card" href={feature.href} style={`--feature-image:url("${feature.image}")`}>
       <div class="feature-copy"><h2>{feature.label}</h2><p>{feature.note}</p><span>View {feature.label} →</span></div>
     </a>)}
   </section>
 
-  <section class="parchment-stats">
-    <div class="stats-heading"><h2>Database at a glance</h2><p>Built for fast exploration</p></div>
-    <div class="parchment-stat"><strong>{skills.length}</strong><span>Skills</span></div>
-    <div class="parchment-stat"><strong>{items.length}</strong><span>Items</span></div>
-    <div class="parchment-stat"><strong>{aspects.length}</strong><span>Aspects</span></div>
-    <div class="parchment-stat"><strong>{affixes.length}</strong><span>Affixes</span></div>
-  </section>
-
-  <section class="home-section home-section-rich">
-    <div class="section-art" aria-hidden="true"></div>
-    <div class="section-copy"><p class="eyebrow">Game Data</p><h2>Browse the canonical data</h2><p>Search and filter the imported build. Detail pages preserve source SNO references and raw tooltip templates so every record remains traceable to the underlying game data.</p></div>
-    <div class="quick-links"><a href={`${base}skills/`}>Explore skills</a><a href={`${base}items/`}>Explore items</a><a href={`${base}aspects/`}>Explore aspects</a></div>
+  <section class="simple-stats" aria-label="Database statistics">
+    <div><strong>{skills.length}</strong><span>Skills</span></div>
+    <div><strong>{items.length}</strong><span>Items</span></div>
+    <div><strong>{aspects.length}</strong><span>Aspects</span></div>
   </section>
 
   <style>
-    .home-hero{position:relative;min-height:500px;display:flex;align-items:center;overflow:hidden;border:1px solid var(--line-strong);background:#070403;box-shadow:0 24px 60px rgba(0,0,0,.42),inset 0 0 0 8px rgba(0,0,0,.18)}
-    .home-hero:before{content:"";position:absolute;inset:8px;border:1px solid color-mix(in srgb,var(--gold) 20%,transparent);pointer-events:none;z-index:3}
-    .hero-art{position:absolute;inset:0 0 0 34%;overflow:hidden;background:#080403}
-    .hero-art img{width:100%;height:100%;object-fit:cover;object-position:58% center;filter:saturate(1.15) contrast(1.08) brightness(.86);transform:scale(1.035)}
-    .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070403 0%,rgba(7,4,3,.94) 10%,rgba(7,4,3,.58) 34%,rgba(7,4,3,.14) 68%,rgba(7,4,3,.08) 100%),linear-gradient(0deg,rgba(0,0,0,.24),transparent 36%)}
-    .hero-copy{position:relative;z-index:4;width:min(610px,62%);padding:68px 54px}
-    .hero-copy h1{font-family:var(--font-display);font-size:clamp(4rem,7vw,6.7rem);line-height:.84;margin:14px 0 26px;color:#f3e4c8;text-transform:uppercase;letter-spacing:-.025em;text-shadow:0 4px 22px #000}
-    .hero-copy h1 span{display:block;color:#de3d21;text-shadow:0 0 16px rgba(190,39,21,.38),0 4px 22px #000}
-    .hero-copy .lead{max-width:560px;color:#d2c2ad;font-size:1.04rem;line-height:1.65}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
-    .hero-button{display:inline-flex;align-items:center;gap:14px;padding:14px 20px;border:1px solid #b5402c;background:linear-gradient(180deg,#9b2418,#66120e);color:#fff0dc;text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-ui);font-size:.75rem;font-weight:800;box-shadow:inset 0 0 0 2px rgba(0,0,0,.28),0 0 22px rgba(147,32,19,.18)}
-    .hero-button.secondary{border-color:#75583e;background:rgba(8,5,4,.78);color:#e4cda8}
-    .hero-button:hover{transform:translateY(-1px);filter:brightness(1.08)}
-    .hero-meta{position:relative;z-index:4;margin-top:22px}
+    .home-hero{position:relative;min-height:470px;display:flex;align-items:center;overflow:hidden;border:1px solid var(--line-strong);background:#070403;box-shadow:0 22px 54px rgba(0,0,0,.36)}
+    .hero-art{position:absolute;inset:0 0 0 36%;overflow:hidden;background:#080403}
+    .hero-art img{width:100%;height:100%;object-fit:cover;object-position:58% center;filter:saturate(1.08) contrast(1.05) brightness(.82);transform:scale(1.02)}
+    .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070403 0%,rgba(7,4,3,.96) 12%,rgba(7,4,3,.66) 38%,rgba(7,4,3,.18) 72%,rgba(7,4,3,.06) 100%)}
+    .hero-copy{position:relative;z-index:2;width:min(600px,62%);padding:58px 48px}
+    .hero-copy h1{font-family:var(--font-display);font-size:clamp(3.8rem,7vw,6.3rem);line-height:.88;margin:12px 0 22px;color:#f3e4c8;text-transform:uppercase;letter-spacing:-.025em;text-shadow:0 4px 22px #000}
+    .hero-copy h1 span{display:block;color:#de3d21;text-shadow:0 0 16px rgba(190,39,21,.32),0 4px 22px #000}
+    .hero-copy .lead{max-width:540px;color:#d0c0ac;font-size:1.02rem;line-height:1.65}
+    .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:24px}
+    .hero-button{display:inline-flex;align-items:center;gap:12px;padding:13px 18px;border:1px solid #a63b28;background:linear-gradient(180deg,#942217,#65120e);color:#fff0dc;text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-ui);font-size:.73rem;font-weight:800}
+    .skill-tree-link{font-family:var(--font-ui);font-size:.78rem;font-weight:700;color:#d6bc91;border-bottom:1px solid #75583e;padding-bottom:4px}
+    .hero-meta{margin-top:20px}
 
-    .home-feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}
-    .feature-card{position:relative;min-height:232px;overflow:hidden;border:1px solid #5b3f2d;background:#0b0705;box-shadow:0 16px 36px rgba(0,0,0,.28);transition:.18s ease}
-    .feature-card:hover{transform:translateY(-3px);border-color:#9e5437;box-shadow:0 22px 44px rgba(0,0,0,.38),0 0 24px rgba(127,22,15,.12)}
-    .feature-art{position:absolute;inset:0;background-image:url('${base}assets/ui/hero-sanctuary.webp');background-size:cover;filter:saturate(1.05) contrast(1.08) brightness(.78);transform:scale(1.03);transition:transform .25s ease,filter .25s ease}
-    .feature-card:hover .feature-art{transform:scale(1.07);filter:saturate(1.18) contrast(1.08) brightness(.88)}
-    .feature-tree .feature-art{background-position:18% 48%}.feature-skills .feature-art{background-position:48% 42%}.feature-items .feature-art{background-position:76% 64%}.feature-aspects .feature-art{background-position:96% 44%}
-    .feature-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,2,2,.08) 18%,rgba(5,3,2,.58) 54%,#080504 100%)}
-    .feature-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 20px}
-    .feature-copy h2{margin:0 0 8px;font-family:var(--font-display);font-size:1.55rem;color:#f0dfc5}.feature-copy p{margin:0 0 12px;color:#b9aa97;line-height:1.5;font-size:.92rem}.feature-copy>span{font-family:var(--font-ui);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#e34b2e}
+    .home-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+    .feature-card{position:relative;min-height:250px;overflow:hidden;border:1px solid #5a3c2b;background:#0a0604;box-shadow:0 14px 32px rgba(0,0,0,.24);transition:transform .18s,border-color .18s}
+    .feature-card:before{content:"";position:absolute;inset:0;background-image:var(--feature-image);background-position:center;background-size:cover;filter:saturate(.95) contrast(1.04) brightness(.72);transform:scale(1.015);transition:transform .25s,filter .25s}
+    .feature-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,3,2,.03) 20%,rgba(5,3,2,.34) 52%,rgba(5,3,2,.94) 100%)}
+    .feature-card:hover{transform:translateY(-2px);border-color:#8c543b}.feature-card:hover:before{transform:scale(1.045);filter:saturate(1.08) contrast(1.04) brightness(.8)}
+    .feature-copy{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:22px}
+    .feature-copy h2{margin:0 0 7px;font-family:var(--font-display);font-size:1.65rem;color:#f0dfc5}.feature-copy p{margin:0 0 11px;color:#b9aa97;line-height:1.45;font-size:.9rem}.feature-copy>span{font-family:var(--font-ui);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#e34b2e}
 
-    .parchment-stats{margin-top:14px;border-color:#8f6b3d;background:linear-gradient(180deg,#d6bc87,#c6a46b);box-shadow:0 14px 34px rgba(0,0,0,.24)}
-    .parchment-stats,.parchment-stats *{color:#28170f!important}.stats-heading,.parchment-stat{border-color:rgba(66,42,23,.22)!important}
+    .simple-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:14px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent)}
+    .simple-stats>div{display:flex;align-items:baseline;justify-content:center;gap:10px;padding:18px 14px;border-right:1px solid var(--line)}.simple-stats>div:last-child{border-right:0}.simple-stats strong{font-family:var(--font-display);font-size:1.8rem;color:var(--gold-soft)}.simple-stats span{font-family:var(--font-ui);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
-    .home-section-rich{position:relative;overflow:hidden;min-height:235px;padding:38px 34px 38px 360px!important;border:1px solid var(--line)!important;background:linear-gradient(90deg,#080504 0,#0d0806 58%,#0a0604)!important}
-    .section-art{position:absolute;left:0;top:0;bottom:0;width:330px;background:url('${base}assets/ui/hero-sanctuary.webp') center/cover;filter:saturate(.9) brightness(.62);opacity:.9}
-    .section-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,3,2,.05),rgba(4,3,2,.45) 70%,#080504 100%)}
-    .section-copy,.quick-links{position:relative;z-index:2}
+    :root[data-theme="light"] .home-hero{background:#cbb894;box-shadow:0 16px 34px rgba(63,40,21,.16)}
+    :root[data-theme="light"] .hero-art img{filter:saturate(.78) contrast(.94) brightness(1.05)}
+    :root[data-theme="light"] .hero-art:after{background:linear-gradient(90deg,#d2bf9e 0,rgba(210,191,158,.94) 16%,rgba(210,191,158,.58) 42%,rgba(210,191,158,.12) 76%,transparent)}
+    :root[data-theme="light"] .hero-copy h1{color:#29170f;text-shadow:none}:root[data-theme="light"] .hero-copy h1 span{color:#8d1d14;text-shadow:none}:root[data-theme="light"] .hero-copy .lead{color:#5e4b39}
 
-    :root[data-theme="light"] .home-hero,:root[data-theme="light"] .feature-card,:root[data-theme="light"] .home-section-rich{box-shadow:0 16px 36px rgba(63,40,21,.18)}
-    :root[data-theme="light"] .hero-art img{filter:saturate(.86) contrast(.96) brightness(1.06)}
-    :root[data-theme="light"] .hero-art:after{background:linear-gradient(90deg,#d4c19f 0,rgba(212,193,159,.93) 12%,rgba(212,193,159,.52) 38%,rgba(212,193,159,.12) 72%,transparent)}
-    :root[data-theme="light"] .hero-copy h1{color:#29170f;text-shadow:none}:root[data-theme="light"] .hero-copy h1 span{color:#8d1d14;text-shadow:none}:root[data-theme="light"] .hero-copy .lead{color:#5f4d3b}
-
-    @media(max-width:900px){.home-feature-grid{grid-template-columns:repeat(2,1fr)}.hero-art{inset:0}.hero-art:after{background:linear-gradient(90deg,rgba(6,4,3,.94),rgba(6,4,3,.62) 72%,rgba(6,4,3,.32))}.hero-copy{width:78%}.home-section-rich{padding-left:34px!important}.section-art{opacity:.18;width:100%}}
-    @media(max-width:640px){.home-hero{min-height:560px}.hero-copy{width:100%;padding:52px 24px}.hero-copy h1{font-size:clamp(3.2rem,17vw,5rem)}.home-feature-grid{grid-template-columns:1fr}.feature-card{min-height:205px}.parchment-stats{grid-template-columns:1fr 1fr!important}.stats-heading{grid-column:1/-1}.home-section-rich{padding:30px 22px!important}}
+    @media(max-width:900px){.hero-art{inset:0}.hero-art:after{background:linear-gradient(90deg,rgba(6,4,3,.94),rgba(6,4,3,.64) 78%,rgba(6,4,3,.4))}.hero-copy{width:82%}.home-feature-grid{grid-template-columns:1fr 1fr}.feature-card:last-child{grid-column:1/-1}}
+    @media(max-width:640px){.home-hero{min-height:540px}.hero-copy{width:100%;padding:44px 24px}.hero-copy h1{font-size:clamp(3rem,16vw,4.8rem)}.home-feature-grid{grid-template-columns:1fr}.feature-card,.feature-card:last-child{grid-column:auto;min-height:220px}.simple-stats{grid-template-columns:1fr}.simple-stats>div{border-right:0;border-bottom:1px solid var(--line)}.simple-stats>div:last-child{border-bottom:0}}
   </style>
 </BaseLayout>
