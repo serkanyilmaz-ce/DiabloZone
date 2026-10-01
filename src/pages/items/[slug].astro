@@ -11,10 +11,16 @@ const resolvedAffixes=(item.affixIds??[]).map((id:string)=>affixes.find((a:any)=
 <BaseLayout title={item.name} description={`${item.name} ${item.rarity} ${item.slot}`}>
   <a class="back-link" href={`${base}items/`}>← Back to items</a>
   <article class="detail-card">
-    <div class="card-kicker">{item.rarity} · {item.slot}</div><h1>{item.name}</h1>
+    <div class="detail-heading">
+      {item.icon && <div class="item-detail-frame"><img class="detail-icon item-detail-icon" src={`${base}${item.icon}`} alt="" /></div>}
+      <div><div class="card-kicker">{item.rarity} · {item.slot}</div><h1>{item.name}</h1></div>
+    </div>
     {item.flavor && <blockquote>{item.flavor}</blockquote>}
     <dl class="detail-grid"><div><dt>Required level</dt><dd>{item.requiredLevel ?? '—'}</dd></div><div><dt>Fixed item power</dt><dd>{item.fixedPowerLevel ?? '—'}</dd></div><div><dt>Patch</dt><dd>{item.patch}</dd></div><div><dt>Source SNO</dt><dd>{item.source?.sno ?? '—'}</dd></div></dl>
     <section class="detail-section"><h2>Classes</h2><div class="chip-row">{(item.classes??[]).map((c:string)=><span class="chip">{c}</span>)}</div></section>
     <section class="detail-section"><h2>Affixes</h2>{resolvedAffixes.length ? <div class="stack">{resolvedAffixes.map((a:any)=><div class="affix-row"><strong>{a.name ?? a.internalName}</strong><span>{a.description ?? a.descriptionTemplate ?? 'No localized description.'}</span>{(a.staticValues?.length??0)>0 && <code>Static: {a.staticValues.join(', ')}</code>}</div>)}</div> : <p>No resolved affixes.</p>}</section>
   </article>
+  <style>
+    .detail-heading{display:flex;align-items:center;gap:28px}.detail-heading h1{margin-bottom:8px}.item-detail-frame{width:150px;height:150px;display:grid;place-items:center;flex:0 0 auto;border:1px solid #5a3b2f;background:radial-gradient(circle,#271811,#0a0605 72%);box-shadow:inset 0 0 32px rgba(168,131,82,.1),0 18px 42px rgba(0,0,0,.28)}.item-detail-icon{display:block;max-width:138px;max-height:138px;object-fit:contain}@media(max-width:560px){.detail-heading{align-items:flex-start;gap:16px}.item-detail-frame{width:100px;height:100px}.item-detail-icon{max-width:92px;max-height:92px}}
+  </style>
 </BaseLayout>

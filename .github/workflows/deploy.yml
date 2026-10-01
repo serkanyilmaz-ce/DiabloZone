@@ -5,6 +5,7 @@ on:
     paths:
       - "src/**"
       - "public/**"
+      - "scripts/fetch-icons.ts"
       - "astro.config.mjs"
       - "package-lock.json"
       - "tsconfig.json"
@@ -27,6 +28,16 @@ jobs:
         with:
           node-version: 22
       - run: npm install
+      - name: Restore icon cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            public/assets/skills
+            public/assets/items
+            public/assets/icon-source-map.json
+          key: d4-icons-v2-${{ github.run_id }}
+          restore-keys: |
+            d4-icons-v2-
       - name: Sparse clone required d4data paths
         run: |
           git clone --depth 1 --filter=blob:none --sparse https://github.com/DiabloTools/d4data.git .tmp/d4data
@@ -46,6 +57,8 @@ jobs:
           npm run data:aspects -- --datamine .tmp/d4data
           npm run data:items -- --datamine .tmp/d4data
           npm run data:affixes -- --datamine .tmp/d4data
+      - name: Resolve and cache skill/item icons
+        run: npm run data:icons
       - name: Build Astro site
         run: npm run build
         env:

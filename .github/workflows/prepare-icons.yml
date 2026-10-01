@@ -1,21 +1,31 @@
-name: Prepare Diablo IV Icon Manifest
+name: Prepare Diablo IV Icons
 on:
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: d4-icon-manifest
+  group: d4-icon-assets
   cancel-in-progress: true
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install
+      - name: Restore icon cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            public/assets/skills
+            public/assets/items
+            public/assets/icon-source-map.json
+          key: d4-icons-v2-${{ github.run_id }}
+          restore-keys: |
+            d4-icons-v2-
       - name: Sparse clone icon-relevant d4data paths
         run: |
           git clone --depth 1 --filter=blob:none --sparse https://github.com/DiabloTools/d4data.git .tmp/d4data
@@ -30,12 +40,18 @@ jobs:
         run: |
           npm run data:skills -- --datamine .tmp/d4data
           npm run data:items -- --datamine .tmp/d4data
+      - name: Resolve icon assets
+        run: npm run data:icons
       - name: Build icon asset manifest
         run: npx tsx scripts/import-d4data/build-icon-manifest.ts
       - uses: actions/upload-artifact@v4
         with:
-          name: d4-icon-manifest
+          name: d4-icons
           path: |
+            public/assets/skills/
+            public/assets/items/
+            public/assets/icon-source-map.json
+            data/generated/icon-assets-report.json
             data/generated/icon-manifest.json
             data/generated/skills-report.json
             data/generated/items-report.json
