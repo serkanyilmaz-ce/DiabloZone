@@ -44,6 +44,8 @@ jobs:
         run: npm run data:items -- --datamine .tmp/d4data
       - name: Import referenced affixes
         run: npm run data:affixes -- --datamine .tmp/d4data
+      - name: Measure skill and item icon references
+        run: npx tsx scripts/import-d4data/probe-icons.ts --datamine .tmp/d4data
       - name: Run tests
         run: npm test
       - uses: actions/upload-artifact@v4
