@@ -19,6 +19,18 @@ export const SourceRefSchema = z.object({
   gbid: z.union([z.string(), z.number()]).optional(),
 });
 
+export const SkillIconRefSchema = z.object({
+  normalHandle: z.number().int().positive(),
+  mouseoverHandle: z.number().int().positive().optional(),
+  pushedHandle: z.number().int().positive().optional(),
+  inactiveHandle: z.number().int().positive().optional(),
+});
+
+export const ItemIconRefSchema = z.object({
+  inventoryImageHandles: z.array(z.number().int().positive()).default([]),
+  actorSno: z.number().int().positive().optional(),
+});
+
 export const SkillSchema = z.object({
   id: z.string(),
   slug: z.string(),
@@ -34,6 +46,7 @@ export const SkillSchema = z.object({
   cooldown: z.number().nonnegative().optional(),
   resourceCost: z.number().nonnegative().optional(),
   icon: z.string().optional(),
+  iconRef: SkillIconRefSchema.optional(),
   source: SourceRefSchema,
   localizationSource: SourceRefSchema.optional(),
   patch: z.string(),
@@ -52,6 +65,7 @@ export const ItemSchema = z.object({
   requiredLevel: z.number().int().nonnegative().optional(),
   fixedPowerLevel: z.number().int().nonnegative().optional(),
   icon: z.string().optional(),
+  iconRef: ItemIconRefSchema.optional(),
   source: SourceRefSchema,
   localizationSource: SourceRefSchema.optional(),
   patch: z.string(),

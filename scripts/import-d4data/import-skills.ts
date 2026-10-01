@@ -17,6 +17,11 @@ async function readJson<T>(file: string): Promise<T> {
   return JSON.parse(await fs.readFile(file, 'utf8')) as T;
 }
 
+function positiveHandle(value: unknown): number | undefined {
+  const n = Number(value ?? 0);
+  return Number.isInteger(n) && n > 0 ? n : undefined;
+}
+
 const classMap: Record<string, Skill['class']> = {
   Barbarian: 'barbarian',
   Druid: 'druid',
@@ -82,6 +87,14 @@ for (const entry of entries) {
       ? primaryTag.slice('Skill_Primary_'.length).toLowerCase()
       : undefined;
 
+    const normalHandle = positiveHandle(power.hIconNormal);
+    const iconRef = normalHandle ? {
+      normalHandle,
+      mouseoverHandle: positiveHandle(power.hIconMouseover),
+      pushedHandle: positiveHandle(power.hIconPushed),
+      inactiveHandle: positiveHandle(power.hIconInactive),
+    } : undefined;
+
     const skill = SkillSchema.parse({
       id: `${d4class}-${slugify(name)}`,
       slug: slugify(name),
@@ -92,6 +105,7 @@ for (const entry of entries) {
       description: cleanTooltipText(descriptionTemplate),
       descriptionTemplate,
       tags,
+      iconRef,
       source: {
         file: path.relative(root, powerFile),
         sno: power.__snoID__,
@@ -120,6 +134,7 @@ const byClass = Object.fromEntries(
     return [cls, skills.filter(skill => skill.class === cls).length];
   })
 );
+const withIconRef = skills.filter(skill => skill.iconRef?.normalHandle).length;
 
 await writeJson('data/generated/skills.json', skills);
 await writeJson('data/generated/skills-report.json', {
@@ -127,17 +142,22 @@ await writeJson('data/generated/skills-report.json', {
   gameBuild: build,
   generatedAt: new Date().toISOString(),
   imported: skills.length,
+  withIconRef,
+  iconCoverage: skills.length ? withIconRef / skills.length : 0,
   byClass,
   skipped: skipped.length,
   skippedSamples: skipped.slice(0, 100),
 });
 
-// Conservative guardrails: catch broken upstream parsing without pinning volatile exact counts.
 if (skills.length < 20) {
   throw new Error(`Skill import sanity check failed: only ${skills.length} skills imported`);
 }
-if (!skills.some(skill => skill.class === 'sorcerer' && skill.name.toLowerCase() === 'fireball')) {
+const fireball = skills.find(skill => skill.class === 'sorcerer' && skill.name.toLowerCase() === 'fireball');
+if (!fireball) {
   throw new Error('Skill import sanity check failed: Sorcerer Fireball is missing');
+}
+if (fireball.iconRef?.normalHandle !== 2402480109) {
+  throw new Error(`Skill icon sanity check failed: Fireball icon handle is ${fireball.iconRef?.normalHandle ?? 'missing'}`);
 }
 for (const [d4class, count] of Object.entries(byClass)) {
   if (count === 0) {
@@ -146,4 +166,5 @@ for (const [d4class, count] of Object.entries(byClass)) {
 }
 
 console.log(`Imported ${skills.length} learnable skills from d4data ${build}`);
+console.log(`Skill icon refs: ${withIconRef}/${skills.length}`);
 console.log(`Class distribution: ${JSON.stringify(byClass)}`);

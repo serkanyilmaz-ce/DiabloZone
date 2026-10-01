@@ -1,0 +1,42 @@
+name: Prepare Diablo IV Icon Manifest
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: d4-icon-manifest
+  cancel-in-progress: true
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Sparse clone icon-relevant d4data paths
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/DiabloTools/d4data.git .tmp/d4data
+          cd .tmp/d4data
+          git sparse-checkout init --no-cone
+          git sparse-checkout set \
+            /buildVersion.txt \
+            /json/base/meta/Power/ \
+            /json/base/meta/Item/ \
+            /json/enUS_Text/meta/StringList/
+      - name: Generate canonical skill and item refs
+        run: |
+          npm run data:skills -- --datamine .tmp/d4data
+          npm run data:items -- --datamine .tmp/d4data
+      - name: Build icon asset manifest
+        run: npx tsx scripts/import-d4data/build-icon-manifest.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: d4-icon-manifest
+          path: |
+            data/generated/icon-manifest.json
+            data/generated/skills-report.json
+            data/generated/items-report.json
+          if-no-files-found: error

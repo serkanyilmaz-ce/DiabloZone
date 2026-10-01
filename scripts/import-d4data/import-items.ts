@@ -17,6 +17,11 @@ async function readJson<T>(file: string): Promise<T> {
   return JSON.parse(await fs.readFile(file, 'utf8')) as T;
 }
 
+function positiveHandle(value: unknown): number | undefined {
+  const n = Number(value ?? 0);
+  return Number.isInteger(n) && n > 0 ? n : undefined;
+}
+
 const classes: Item['classes'] = [
   'barbarian','druid','necromancer','rogue','sorcerer','spiritborn','paladin','warlock'
 ];
@@ -78,6 +83,16 @@ for (const entry of entries) {
     const isMythic = raw.snoSalvageTreasureClassMythic != null ||
       affixIds.some((x: string) => /UBERUNIQUE/i.test(x));
 
+    const inventoryImageHandles = Array.from(new Set(
+      (Array.isArray(raw.tInvImages) ? raw.tInvImages : [])
+        .flatMap((x: any) => [positiveHandle(x?.hDefaultImage), positiveHandle(x?.hFemaleImage)])
+        .filter((x: number | undefined): x is number => typeof x === 'number')
+    ));
+    const actorSno = positiveHandle(raw.snoActor?.__raw__);
+    const iconRef = inventoryImageHandles.length || actorSno
+      ? { inventoryImageHandles, actorSno }
+      : undefined;
+
     const item = ItemSchema.parse({
       id: slugify(internalName),
       slug: slugify(name),
@@ -93,6 +108,7 @@ for (const entry of entries) {
       fixedPowerLevel: typeof raw.nFixedIPowerLevel === 'number' && raw.nFixedIPowerLevel > 0
         ? raw.nFixedIPowerLevel
         : undefined,
+      iconRef,
       source: {
         file: path.relative(root, itemFile),
         sno: raw.__snoID__,
@@ -132,6 +148,8 @@ for (const item of items) {
 
 const deduped = Array.from(canonical.values())
   .sort((a, b) => a.rarity.localeCompare(b.rarity) || a.name.localeCompare(b.name));
+const withInventoryImageHandle = deduped.filter(x => (x.iconRef?.inventoryImageHandles.length ?? 0) > 0).length;
+const withActorSno = deduped.filter(x => x.iconRef?.actorSno).length;
 
 await writeJson('data/generated/items.json', deduped);
 await writeJson('data/generated/items-report.json', {
@@ -139,6 +157,10 @@ await writeJson('data/generated/items-report.json', {
   gameBuild: build,
   generatedAt: new Date().toISOString(),
   imported: deduped.length,
+  withInventoryImageHandle,
+  inventoryImageCoverage: deduped.length ? withInventoryImageHandle / deduped.length : 0,
+  withActorSno,
+  actorSnoCoverage: deduped.length ? withActorSno / deduped.length : 0,
   byRarity: {
     mythic: deduped.filter(x => x.rarity === 'mythic').length,
     unique: deduped.filter(x => x.rarity === 'unique').length,
@@ -159,5 +181,9 @@ if (harlequins.length !== 1) throw new Error(`Item sanity check failed: expected
 if (harlequins[0].rarity !== 'mythic' || harlequins[0].slot !== 'helm') {
   throw new Error('Item sanity check failed: Harlequin Crest canonical metadata mismatch');
 }
+if (!harlequins[0].iconRef?.inventoryImageHandles.includes(4259099416)) {
+  throw new Error('Item icon sanity check failed: Harlequin Crest inventory image handle missing');
+}
 
 console.log(`Imported ${deduped.length} canonical unique/mythic equipment items from d4data ${build}`);
+console.log(`Item inventory image refs: ${withInventoryImageHandle}/${deduped.length}; actor SNO refs: ${withActorSno}/${deduped.length}`);
