@@ -13,6 +13,7 @@
     "data:skills": "tsx scripts/import-d4data/import-skills.ts",
     "data:aspects": "tsx scripts/import-d4data/import-aspects.ts",
     "data:items": "tsx scripts/import-d4data/import-items.ts",
+    "data:affixes": "tsx scripts/import-d4data/import-affixes.ts",
     "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {

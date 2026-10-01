@@ -74,6 +74,23 @@ export const AspectSchema = z.object({
   patch: z.string(),
 });
 
+export const AffixSchema = z.object({
+  id: z.string(),
+  internalName: z.string(),
+  name: z.string().optional(),
+  description: z.string().optional(),
+  descriptionTemplate: z.string().optional(),
+  staticValues: z.array(z.number()).default([]),
+  itemPowerMin: z.number().optional(),
+  itemPowerMax: z.number().optional(),
+  tags: z.array(z.string()).default([]),
+  source: SourceRefSchema,
+  localizationSource: SourceRefSchema.optional(),
+  passivePowerSource: SourceRefSchema.optional(),
+  patch: z.string(),
+});
+
 export type Skill = z.infer<typeof SkillSchema>;
 export type Item = z.infer<typeof ItemSchema>;
 export type Aspect = z.infer<typeof AspectSchema>;
+export type Affix = z.infer<typeof AffixSchema>;
