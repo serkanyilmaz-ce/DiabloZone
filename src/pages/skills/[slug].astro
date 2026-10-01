@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import skills from '../../../data/generated/skills.json';
+export function getStaticPaths(){ return skills.map((skill:any)=>({params:{slug:skill.slug},props:{skill}})); }
+const { skill } = Astro.props as any;
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title={skill.name} description={skill.description ?? `${skill.name} skill details`}>
+  <a class="back-link" href={`${base}skills/`}>← Back to skills</a>
+  <article class="detail-card">
+    <div class="card-kicker">{skill.class} · {skill.category ?? 'uncategorized'}</div>
+    <h1>{skill.name}</h1>
+    <p class="lead">{skill.description ?? 'No description available.'}</p>
+    <dl class="detail-grid"><div><dt>Type</dt><dd>{skill.type}</dd></div><div><dt>Patch</dt><dd>{skill.patch}</dd></div><div><dt>Gameplay SNO</dt><dd>{skill.source?.sno ?? '—'}</dd></div><div><dt>Localization SNO</dt><dd>{skill.localizationSource?.sno ?? '—'}</dd></div></dl>
+    {(skill.tags?.length ?? 0)>0 && <section class="detail-section"><h2>Tags</h2><div class="chip-row">{skill.tags.map((t:string)=><span class="chip">{t}</span>)}</div></section>}
+    {skill.descriptionTemplate && <section class="detail-section"><h2>Raw tooltip template</h2><pre>{skill.descriptionTemplate}</pre></section>}
+  </article>
+</BaseLayout>
