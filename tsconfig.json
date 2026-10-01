@@ -3,5 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": { "@/*": ["src/*"], "@schemas/*": ["schemas/*"] }
-  }
+  },
+  "exclude": [
+    "scripts/**",
+    "tests/**"
+  ]
 }
