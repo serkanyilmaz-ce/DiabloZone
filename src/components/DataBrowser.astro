@@ -8,12 +8,14 @@ const { count } = Astro.props;
 <nav class="pagination" aria-label="Sonuç sayfaları" data-pagination hidden><button type="button" data-previous>← Önceki</button><span data-page-count></span><button type="button" data-next>Sonraki →</button></nav>
 <script>
   import { matchesEntry, pageSlice } from '../lib/browser';
+  import {bilingualSearch} from '../lib/preferences';
   document.querySelectorAll('form.toolbar').forEach(form => form.addEventListener('submit', event => event.preventDefault()));
   const search = document.querySelector<HTMLInputElement>('[data-search]');
   const filters = [...document.querySelectorAll<HTMLSelectElement>('[data-filter]')];
   const cards = [...document.querySelectorAll<HTMLElement>('[data-entry]')];
   const params = new URLSearchParams(location.search);
   let page = Number(params.get('page') ?? 1);
+  document.addEventListener('dz:locale-ready',()=>apply(false));document.addEventListener('dz:language',()=>apply(false));
   if (search) search.value = params.get('q') ?? '';
   filters.forEach(filter => {
     const candidate = params.get(filter.dataset.filter!) ?? '';
@@ -21,7 +23,7 @@ const { count } = Astro.props;
   });
   function apply(updateUrl = true) {
     const selection = Object.fromEntries(filters.map(filter => [filter.dataset.filter!, filter.value]));
-    const found = cards.filter(card => matchesEntry({ text: card.dataset.searchtext ?? '', filters: card.dataset as Record<string, string> }, search?.value ?? '', selection));
+    const found = cards.filter(card => matchesEntry({ text: (card.dataset.searchtext ?? '')+' '+bilingualSearch(card.dataset.gameKey??''), filters: card.dataset as Record<string, string> }, search?.value ?? '', selection));
     const result = pageSlice(found, page);
     page = result.page;
     const shown = new Set(result.entries);

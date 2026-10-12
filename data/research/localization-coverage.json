@@ -1,0 +1,1655 @@
+{
+  "source": "local-read-only-CASC",
+  "sourceVersion": "3.2.2.73764",
+  "dataSourceVersion": "3.2.1.73552",
+  "gameSnapshotId": "f36be437-156e-437d-9939-c6d228f2ab91",
+  "systemArchiveId": "8f059faa-2afb-44e6-977a-72367d2e3023",
+  "buildInfoSha256": "89f909d4ea60dc0b7b377c30baf25d113f0f21b9fd225e91db65c674b82b0bc9",
+  "extractorCommit": "bb6f084a6f5480b91197f8cc8ad3c022dbf4f821",
+  "rawExportSha256": "dc35642deccdad2e3586f93eb1ec06cfb4ed2a0a6157adf5a975dd476a8acb64",
+  "locale": "tr",
+  "comparison": "Exact normalized English baseline match; no mathematical evaluation",
+  "inputSha256": "f1f33e9583a0eff4f9239a473cdf135fae448740bfd42e7d81e4c098c3f44bc0",
+  "records": 18589,
+  "fields": 25183,
+  "skills": 1600,
+  "skillDescriptions": 1600,
+  "excludedFields": 327,
+  "excluded": [
+    {
+      "key": "items:1063172",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1086681",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1086722",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1086726",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1086728",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1094003",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1095242",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1097901",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1097986",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1098443",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1098541",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1098688",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1101372",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1103447",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1103798",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1103860",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1184069",
+      "field": "name",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1211654",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1215134",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1225568",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1275935",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1304456",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1304469",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1304490",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1306214",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1306259",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1306302",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1306311",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1306326",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1306338",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1310895",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1325405",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1325422",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327121",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327156",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327161",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327163",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327168",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327172",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327183",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327191",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1327194",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1338666",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1433955",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1439530",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1439538",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1468409",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1477080",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1555195",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1559419",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1560871",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1561308",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1612292",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1704785",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1706602",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1706651",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1713218",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:186283",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1882910",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1901484",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1902155",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1902313",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1928896",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1928903",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1928911",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1928913",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:1928915",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2044974",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2044978",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2059805",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2072959",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2072996",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2072998",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2073000",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2073002",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2077995",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2090360",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2125047",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2125691",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2131528",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:224074",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2313190",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2317544",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2326828",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2379497",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2379677",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2379729",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2379731",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2380610",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2380612",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2380616",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2380828",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2380887",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2390301",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2390398",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2390403",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2390408",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2390411",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2391611",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2391633",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2393546",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394306",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394422",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394424",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394427",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394431",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394727",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394741",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394743",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394745",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394773",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394803",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394809",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394813",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394856",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394899",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394901",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2394947",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2404129",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2404191",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2404199",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2404203",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2404208",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407499",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407521",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407523",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407526",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407528",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407629",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407665",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407670",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2407679",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409522",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409612",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409616",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409622",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409624",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409893",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409903",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409906",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2409908",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410222",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410236",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410238",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410242",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410250",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410351",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410357",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410361",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2410366",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2411499",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2411512",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2411515",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2411518",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2413663",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414033",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414402",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414404",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414406",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414422",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414424",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414426",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414431",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414443",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414459",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414462",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414467",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414469",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414708",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414730",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414732",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2414734",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2415987",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2415993",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2415997",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2416007",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2416021",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2416563",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2416575",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2416577",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2416579",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2416581",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417504",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417512",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417514",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417516",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417742",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417834",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417838",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417840",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417843",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417932",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417963",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417967",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417969",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2417973",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2418041",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2418046",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2418049",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2418052",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2418055",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2451898",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2451904",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2451906",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2452707",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2452739",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2452868",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2452872",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2452880",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2452882",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2452973",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2453682",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2453684",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2453688",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2457842",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458104",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458174",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458176",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458179",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458287",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458289",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458292",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458294",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2458296",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2513968",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2541902",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2549168",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2549228",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2553509",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2571975",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2580953",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2581723",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2581812",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2581849",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2581866",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2583959",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2583990",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2583997",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584005",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584007",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584015",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584017",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584021",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584023",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584025",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2584924",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2587261",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2589680",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2589686",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2589688",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2589694",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2589700",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2592856",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2592864",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2592866",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2592872",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2592979",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2596551",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2596553",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2602283",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2602309",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2602321",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2605340",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2605364",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2605399",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2605427",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2611693",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2611748",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2611758",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2611819",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2611848",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2611870",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2611964",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2623201",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2629581",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2641213",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2646277",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2646281",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2646285",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2646291",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651947",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651971",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651973",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651975",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651977",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651980",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651982",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2651984",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662441",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662450",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662454",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662660",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662662",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662698",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662700",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662708",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662710",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662712",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662959",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662961",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2662963",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663067",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663069",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663072",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663162",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663170",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663172",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663196",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663198",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2663200",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2675902",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2678847",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:2680024",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:291669",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:357812",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:359165",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:359743",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:397700",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:451091",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:470539",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:494989",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:609820",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:730442",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:880590",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "items:989678",
+      "field": "flavor",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "affixes:2666112",
+      "field": "description",
+      "reason": "English text differs across data and locale builds"
+    },
+    {
+      "key": "affixes:2675635",
+      "field": "description",
+      "reason": "English text differs across data and locale builds"
+    }
+  ]
+}

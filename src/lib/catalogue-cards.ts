@@ -1,5 +1,6 @@
 import {skills,items,aspects,affixes,metadata} from './data';
 import {term} from './terms';
+import {readableTooltip} from './tooltip';
 export type CardKind='skills'|'items'|'aspects'|'affixes';
 export interface CatalogueCard{
   id:string;slug:string;name:string;kind:CardKind|'systems';description:string;kicker:string;icon?:string;classes:string[];
@@ -8,17 +9,7 @@ export interface CatalogueCard{
 // Preserve raw source expressions in detail records; list previews mark unresolved
 // tokens without evaluating them or silently substituting fabricated game values.
 export function tooltipPreview(value:string|undefined){
-  if(!value)return '';
-  let out='';
-  for(let i=0;i<value.length;i++){
-    const ch=value[i];
-    if(ch==='['||ch==='{'){
-      const closing=ch==='['?']':'}';let depth=1;
-      while(depth&&++i<value.length){if(value[i]===ch)depth++;else if(value[i]===closing)depth--;}
-      out+='[çözümlenmedi]';
-    }else out+=ch;
-  }
-  return out.replace(/\s+/g,' ').trim();
+  return readableTooltip(value);
 }
 const datasets={skills,items,aspects,affixes};
 const labels={skills:'Yetenek',items:'Eşya',aspects:'Aspekt',affixes:'Affix'};
@@ -28,9 +19,9 @@ export function catalogueCards(kind:CardKind|'all'):CatalogueCard[]{
   if(kind==='all'){const all=(Object.keys(datasets) as CardKind[]).flatMap(k=>catalogueCards(k));cache.set(kind,all);return all;}
   const result=datasets[kind].map((record:any)=>{
     const classes=record.classes??(record.class?[record.class]:[]);
-    const name=record.name??record.internalName;
+    const name=record.localizationStatus==='missing'?`Kaynak kaydı ${record.id}`:record.name??record.internalName;
     const description=tooltipPreview(record.description??record.flavor).slice(0,320)||`${record.rawFormulas.length} ham ifade · Kaynak detayını incele.`;
-    const filters={type:record.type??'',rarity:record.rarity??'',slot:record.slot??'',category:record.category??'',kind,localized:record.localizationStatus??'resolved'};
+    const filters={type:record.type??'',rarity:record.rarity??'',slot:record.slot??'',category:record.category??'',kind,localized:record.localizationStatus??'resolved',icon:record.icon?'available':'missing'};
     const kicker=kind==='skills'?`${term(record.class)} · ${term(record.category)}`:kind==='items'?`${term(record.rarity)} · ${term(record.slot)}`:labels[kind];
     const chips=[...(kind==='skills'?[term(record.type)]:[]),...(record.maxRank?[`${record.maxRank} rank`]:[]),...(record.localizationStatus==='missing'?['Kaynak adı']:[])];
     return {id:record.id,slug:record.slug,name,kind,description,kicker,icon:record.icon,classes,filters,

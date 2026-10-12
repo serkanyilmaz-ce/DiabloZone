@@ -1,8 +1,8 @@
 {
-  "at": "2026-10-12T08:06:24.112008+00:00",
+  "at": "2026-10-12T09:30:10.541302+00:00",
   "database": "diablozone",
-  "sha256": "b036ff0f74ae4e95bc41fad157f2a8c21196ecf395629e6e2e12212290e3d4b7",
-  "bytes": 18499098,
+  "sha256": "826872a91f2b63b048940cdc2c2624c2f92fbeb608cd49d67bb52aef3a49a855",
+  "bytes": 21458561,
   "restoreVerified": true,
   "temporaryDatabaseRemoved": true,
   "productionPreserved": true,
@@ -64,6 +64,10 @@
       [
         "004_system_archive.sql",
         "c07a2dedb30475f6f72617b9434548e8dbaec599213dfe3ee72ab8087672d84f"
+      ],
+      [
+        "005_localization.sql",
+        "2a1c0fb7790d1750fc1c1b8c1b9dbd37a9d46e9a46016d2a14e04cc5c6f5c9a4"
       ]
     ],
     "system_records": 3510,
@@ -74,6 +78,15 @@
         "33ec0b017ae2b2e848b3d8c89ced744c0290dd3383524c32d7656739b4721822",
         3510
       ]
-    ]
+    ],
+    "localization_sets": [
+      [
+        "c1f24b94-a808-4b0b-aa85-dc79ed0a0382",
+        "published",
+        "f1f33e9583a0eff4f9239a473cdf135fae448740bfd42e7d81e4c098c3f44bc0",
+        18589
+      ]
+    ],
+    "localized_entities": 18589
   }
 }

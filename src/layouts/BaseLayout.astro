@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
+import '../styles/themes.css';
 import Icon from '../components/Icon.astro';
 import SnapshotNotice from '../components/SnapshotNotice.astro';
+import BrandLogo from '../components/BrandLogo.astro';
 interface Props { title: string; description?: string; }
 const { title, description = 'Diablo IV yetenekleri, eşyaları ve mekanikleri için bağımsız Türkçe veri ve araştırma arşivi.' } = Astro.props;
 const base = import.meta.env.BASE_URL;
@@ -9,12 +11,15 @@ const section = Astro.url.pathname.slice(base.length).split('/')[0] || 'home';
 const navigation = [{name:'Sınıflar',path:'classes/',section:'classes'},{name:'Yetenekler',path:'skills/',section:'skills'},{name:'Eşyalar',path:'items/',section:'items'},{name:'Affix',path:'affixes/',section:'affixes'},{name:'Aspektler',path:'aspects/',section:'aspects'},{name:'Paragon',path:'systems/',section:'systems'},{name:'Formüller',path:'formulas/',section:'formulas'},{name:'Araştırma',path:'research/',section:'research'}];
 ---
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-base={base}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#101114" />
+    <script is:inline>
+      (()=>{const selected=new URLSearchParams(location.search).get('lang');let locale=selected==='en'?'en':'tr',theme=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';try{const saved=localStorage.getItem('diablozone.locale');if(selected!=='tr'&&selected!=='en')locale=saved==='en'?'en':'tr';const appearance=localStorage.getItem('diablozone.theme');if(appearance==='light'||appearance==='dark')theme=appearance;}catch{/* Storage may be unavailable; explicit language and system theme still work. */}document.documentElement.lang=locale;document.documentElement.dataset.locale=locale;document.documentElement.dataset.theme=theme;})();
+    </script>
     <link rel="icon" type="image/svg+xml" href={`${base}assets/ui/sigil.svg`} />
     <title>{title} · DiabloZone</title>
   </head>
@@ -23,21 +28,22 @@ const navigation = [{name:'Sınıflar',path:'classes/',section:'classes'},{name:
     <header class="site-header">
       <div class="shell nav-wrap">
         <a class="brand" href={base} aria-label="DiabloZone ana sayfa">
-          <svg class="brand-sigil" viewBox="0 0 40 48" fill="none" aria-hidden="true"><path d="M20 2 35 12v23L20 46 5 35V12Z" stroke="currentColor"/><path d="m12 12 8 8 8-8M20 8v32M10 27l10 9 10-9M12 20l8 8 8-8" stroke="currentColor" stroke-width="2"/></svg>
-          <span class="brand-copy"><strong>DIABLO<span>ZONE</span></strong><small>VERİ. MEKANİK. KEŞİF.</small></span>
+          <BrandLogo/>
         </a>
         <nav class="nav-links" id="primary-nav" aria-label="Ana gezinme">
           {navigation.map(link => <a href={`${base}${link.path}`} class:list={{active:section===link.section || (link.section==='research' && section==='lab')}} aria-current={section===link.section?'page':undefined}>{link.name}</a>)}
         </nav>
-        <div class="header-controls"><span class="season-badge">SEZON <b>15</b></span><a href={`${base}search/`} class="icon-button" aria-label="Arşivde ara"><Icon name="search" /></a><button class="icon-button menu-toggle" type="button" aria-label="Gezinme menüsü" aria-controls="primary-nav" aria-expanded="false" data-menu><Icon name="menu" /></button></div>
+        <div class="header-controls"><label class="language-control"><span class="sr-only">Dil</span><select data-language aria-label="Dil"><option value="tr">TR</option><option value="en">EN</option></select></label><button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Açık tema" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><g class="theme-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></g><path class="theme-moon" d="M20 15.3A8.5 8.5 0 0 1 8.7 4 8.5 8.5 0 1 0 20 15.3Z"/></svg></button><a href={`${base}search/`} class="icon-button" aria-label="Arşivde ara"><Icon name="search" /></a><button class="icon-button menu-toggle" type="button" aria-label="Gezinme menüsü" aria-controls="primary-nav" aria-expanded="false" data-menu><Icon name="menu" /></button></div>
       </div>
     </header>
-    <main class="shell page-shell" id="main"><SnapshotNotice/><slot /></main>
+    <main class="shell page-shell" id="main"><p class="notice" role="status" data-language-status hidden></p><SnapshotNotice/><slot /></main>
     <footer class="site-footer"><div class="shell">
-      <div class="footer-top"><a class="footer-brand" href={base}>DIABLO<span>ZONE</span></a><p>Oyuncular için. Merak edenler için.</p><div><a href={`${base}research/`}>Araştırma yaklaşımı</a><a href={`${base}research/#kaynaklar`}>Kaynaklar & veri durumu</a></div></div>
+      <div class="footer-top"><a class="footer-brand" href={base}><BrandLogo compact/></a><p>Oyuncular için. Merak edenler için.</p><div><a href={`${base}research/`}>Araştırma yaklaşımı</a><a href={`${base}research/#kaynaklar`}>Kaynaklar & veri durumu</a></div></div>
       <div class="footer-bottom"><p>Bağımsız bir topluluk projesidir. Blizzard Entertainment ile bağlantılı değildir.</p><p>Diablo IV ve ilgili markalar Blizzard Entertainment’a aittir.</p></div>
     </div></footer>
     <script>
+      import {initializePreferences} from '../lib/preferences';
+      initializePreferences();
       const button = document.querySelector<HTMLButtonElement>('[data-menu]');
       const nav = document.querySelector<HTMLElement>('#primary-nav');
       button?.addEventListener('click', () => {
@@ -48,7 +54,7 @@ const navigation = [{name:'Sınıflar',path:'classes/',section:'classes'},{name:
         if (event.key === 'Escape') { button?.setAttribute('aria-expanded','false'); nav?.classList.remove('is-open'); }
         if (event.key === '/' && !(event.target instanceof HTMLElement && event.target.closest('input,textarea,select,[contenteditable]'))) {
           event.preventDefault(); const input = document.querySelector<HTMLInputElement>('[data-search],.hero-search input');
-          if (input) input.focus(); else document.querySelector<HTMLAnchorElement>('[aria-label="Arşivde ara"]')?.click();
+          if (input) input.focus(); else document.querySelector<HTMLAnchorElement>('.header-controls a')?.click();
         }
       });
     </script>

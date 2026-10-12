@@ -10,5 +10,5 @@
     "esModuleInterop": true,
     "types": ["node"]
   },
-  "include": ["scripts/service.ts", "scripts/db/**/*.ts", "src/lib/api-query.ts", "src/lib/client-address.ts", "schemas/domain.ts"]
+  "include": ["scripts/service.ts", "scripts/db/**/*.ts", "src/lib/api-query.ts", "src/lib/client-address.ts", "src/lib/tooltip.ts", "schemas/domain.ts"]
 }

@@ -28,7 +28,8 @@ const fields = [
 </BaseLayout>
 <script>
   import { damageForEvent, expectedDamage, successWithin, trialsForConfidence, type DamageModel } from '../../lib/math';
-  const format = new Intl.NumberFormat('tr-TR',{maximumFractionDigits:2});
+  import {currentLocale} from '../../lib/preferences';
+  const format={format:(value:number)=>new Intl.NumberFormat(currentLocale()==='en'?'en-US':'tr-TR',{maximumFractionDigits:2}).format(value)};
   const text = (id: string, value: string) => { const element=document.getElementById(id); if(element) element.textContent=value; };
   const value = (id: string) => document.querySelector<HTMLInputElement>(`#${id}`)!.valueAsNumber;
   const damageForm = document.querySelector<HTMLFormElement>('#damage-form')!;
@@ -60,4 +61,5 @@ const fields = [
   }
   damageForm.addEventListener('submit',event=>event.preventDefault());rngForm.addEventListener('submit',event=>event.preventDefault());
   damageForm.addEventListener('input',updateDamage);rngForm.addEventListener('input',updateRng);updateDamage();updateRng();
+  document.addEventListener('dz:language',()=>{updateDamage();updateRng();});
 </script>

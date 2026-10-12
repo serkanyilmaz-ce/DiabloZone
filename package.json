@@ -18,7 +18,7 @@
     "data:icons": "tsx scripts/fetch-icons.ts",
     "test": "node scripts/run-tests.mjs",
     "check": "astro check && tsc -p tsconfig.tooling.json",
-    "lint": "eslint src tests scripts/db scripts/source scripts/assets/*.mjs scripts/assets/*.ts scripts/service.ts scripts/package-release.mjs deploy/linux/check-remote.mjs deploy/linux/check-systems.mjs",
+    "lint": "eslint src tests scripts/db scripts/source scripts/assets/*.mjs scripts/assets/*.ts scripts/service.ts scripts/package-release.mjs deploy/linux/check-remote.mjs deploy/linux/check-systems.mjs deploy/linux/check-localization.mjs scripts/browser-i18n-qa.mjs",
     "test:integration": "node scripts/run-tests.mjs --integration",
     "db:migrate": "tsx scripts/db/migrate.ts",
     "db:import": "tsx scripts/db/import.ts",
@@ -39,7 +39,11 @@
     "db:assets-export": "tsx scripts/db/assets-export.ts",
     "data:systems": "tsx scripts/source/normalize-systems.ts",
     "db:systems-import": "tsx scripts/db/systems-import.ts",
-    "db:systems-export": "tsx scripts/db/systems-export.ts"
+    "db:systems-export": "tsx scripts/db/systems-export.ts",
+    "data:locales": "tsx scripts/source/normalize-localization.ts",
+    "db:locales-import": "tsx scripts/db/locales-import.ts",
+    "db:locales-export": "tsx scripts/db/locales-export.ts",
+    "db:locales-promote": "tsx scripts/db/locales-promote.ts"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",

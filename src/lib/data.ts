@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { SkillSchema, ItemSchema, AspectSchema, AffixSchema,ClassSchema,TreeRecordSchema } from '../../schemas/domain';
 import {gameAssetPath} from './assets';
+import {readableTooltip} from './tooltip';
 
 // Missing exports are a valid empty state. Invalid exports fail the build.
 export function readGenerated<T>(name: string, fallback: T): T {
@@ -9,10 +10,10 @@ export function readGenerated<T>(name: string, fallback: T): T {
   if (!existsSync(file)) return fallback;
   return JSON.parse(readFileSync(file, 'utf8')) as T;
 }
-export const skills = SkillSchema.array().parse(readGenerated('skills.json', [])).map(record=>({...record,icon:gameAssetPath(record.iconRef?.normalHandle)??record.icon}));
+export const skills = SkillSchema.array().parse(readGenerated('skills.json', [])).map(record=>({...record,description:readableTooltip(record.descriptionTemplate??record.description),icon:gameAssetPath(record.iconRef?.normalHandle)??record.icon}));
 export const items = ItemSchema.array().parse(readGenerated('items.json', [])).map(record=>({...record,icon:gameAssetPath(record.iconRef?.inventoryImageHandles[0]??record.iconRef?.alternateHandle)??record.icon}));
-export const aspects = AspectSchema.array().parse(readGenerated('aspects.json', [])).map(record=>({...record,icon:gameAssetPath(record.iconRef?.overrideHandle)??record.icon}));
-export const affixes = AffixSchema.array().parse(readGenerated('affixes.json', [])).map(record=>({...record,icon:gameAssetPath(record.iconRef?.normalHandle)??aspects.find(aspect=>aspect.affixId===record.id)?.icon??record.icon}));
+export const aspects = AspectSchema.array().parse(readGenerated('aspects.json', [])).map(record=>({...record,description:readableTooltip(record.descriptionTemplate??record.description),icon:gameAssetPath(record.iconRef?.overrideHandle)??record.icon}));
+export const affixes = AffixSchema.array().parse(readGenerated('affixes.json', [])).map(record=>({...record,description:readableTooltip(record.descriptionTemplate??record.description),icon:gameAssetPath(record.iconRef?.normalHandle)??aspects.find(aspect=>aspect.affixId===record.id)?.icon??record.icon}));
 export const gameClasses=ClassSchema.array().parse(readGenerated('classes.json',[]));
 export const metadata = readGenerated<{ gameBuild: string | null; generatedAt: string | null; source: string;sourceVersion?:string;season?:number;channel?:string;sourceCommit?:string;snapshotId?:string;inputSha256?:string;sample?:boolean }>('metadata.json', { gameBuild: null, generatedAt: null, source: 'DiabloTools/d4data' });
 export const tree = readGenerated<{ gameBuild: string | null; classes: Record<string, unknown> }>('skill-tree.json', { gameBuild: null, classes: {} });

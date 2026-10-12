@@ -18,6 +18,10 @@ ayakta kalır. Çalışma sonunda servis/HTTPS kontrolü yapılır, site durduru
 
 ## Faz haritası ve durum
 
+12 Ekim UI revizyonu: TR/EN, resmî Türkçe oyun açıklamaları, açık/koyu tema,
+okunabilir tooltip/ikon filtresi ve logo. Kaynak/veri sınırları docs/localization.md.
+Bu kullanıcı isteği tamamlandıktan sonra F05/F06'nın kalan veri/ölçüm işleri sürer.
+
 | ID | Faz | Durum | Temel teslim |
 | --- | --- | --- | --- |
 | F00 | Native altyapı/yayın | Tamamlandı | HTTPS, API, PostgreSQL, Git; docs/progress.md |

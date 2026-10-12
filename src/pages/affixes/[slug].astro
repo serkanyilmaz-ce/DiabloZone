@@ -8,8 +8,8 @@ const base=import.meta.env.BASE_URL;
 ---
 <BaseLayout title={affix.name??affix.internalName}>
 <a class="back-link" href={`${base}affixes/`}>← Affix arşivine dön</a>
-<article class="detail-card"><p class="eyebrow">EŞYA ÖZELLİĞİ</p><h1>{affix.name??affix.internalName}</h1>
-<p class="lead">{affix.description??'Kaynakta bağımsız açıklama bulunmuyor; ham ifadeleri aşağıda inceleyebilirsin.'}</p>
+<article class="detail-card"><p class="eyebrow">EŞYA ÖZELLİĞİ</p><h1 data-game-key={`affixes:${affix.id}`} data-game-field="name">{affix.name??affix.internalName}</h1>
+<p class="lead" data-game-key={`affixes:${affix.id}`} data-game-field="description">{affix.description??'Kaynakta bağımsız açıklama bulunmuyor; ham ifadeleri aşağıda inceleyebilirsin.'}</p>
 <dl class="detail-grid"><div><dt>Kaynak SNO</dt><dd>{affix.source.sno}</dd></div><div><dt>Eşya gücü alt sınırı</dt><dd>{affix.itemPowerMin??'Bilinmiyor'}</dd></div><div><dt>Eşya gücü üst sınırı</dt><dd>{affix.itemPowerMax??'Bilinmiyor'}</dd></div><div><dt>Statik değerler</dt><dd>{affix.staticValues.length?affix.staticValues.join(', '):'Kaynakta sabit değer yok'}</dd></div></dl>
 {affix.rawData&&<section class="detail-section"><h2>Roll ve uygunluk kaynağı</h2><p>Havuz ağırlığı: <strong>{String(affix.rawData.nWeight??'Bilinmiyor')}</strong>. Bu değer nihai düşme yüzdesi değildir; uygunluk ve havuz seçimiyle birlikte değerlendirilmelidir.</p><details><summary>Nitelikler, koşullar ve kaynak alanlar</summary><pre>{JSON.stringify(affix.rawData,null,2)}</pre></details></section>}
 <section class="detail-section"><h2>Bağlı kayıtlar</h2><div class="chip-row">{items.filter(item=>item.affixIds.includes(affix.id)).map(item=><a class="chip" href={`${base}items/${item.slug}/`}>{item.name}</a>)}{aspects.filter(aspect=>aspect.affixId===affix.id).map(aspect=><a class="chip" href={`${base}aspects/${aspect.slug}/`}>{aspect.name}</a>)}</div></section>

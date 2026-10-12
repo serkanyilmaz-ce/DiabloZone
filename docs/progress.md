@@ -216,3 +216,34 @@ sonlandırıldı. Yeni faz/özellik başlamadan kalan işler AGENTS/phase5/phase
 korunur: sınıfa özel sistemler, gerçek hasar dependency/model/ölçüm, F07–F09
 mekanikleri ve F10 düzenli otomasyon. TreasureClass oranları unknown, verified
 oyun mekaniği 0; özgün ağaç için piksel eşdeğerliği iddia edilmedi.
+
+## TR/EN, tema, logo ve okunabilir tooltip — 12 Ekim 2026, 12:34
+
+Kullanıcı UI isteği uygulandı. Yerel CASC enUS/trTR kataloglarından 29187 resmî
+metin çifti salt okunur çıkarıldı; .build.info değişmedi. İngilizce baseline
+karşılaştırmasından sonra 18589 kayıt/25183 alan, 005 migration ile ayrı
+immutable localization set'e alındı. 1600 yeteneğin tamamında TR ad/açıklama var;
+327 farklı İngilizce alan kullanılmadı. Locale set c1f24b94-a808-4b0b-aa85-dc79ed0a0382,
+mühür f1f33e9583a0eff4f9239a473cdf135fae448740bfd42e7d81e4c098c3f44bc0.
+İkinci import aynı UUID; gerçek reader export doğrulandı. Veri 73552 / metin
+73764 ayrı, ham oyun snapshot'ı ve formüller değiştirilmedi.
+
+TR/EN seçim ?lang ile paylaşılır/persist edilir; ad/açıklama, UI, başlık ve
+etiketler değişir. Türkçe/İngilizce arama ve ağaç seçimi çalışır. Açık/koyu
+sistem tercihi ve kalıcı seçim; yeni SVG D/Z amblemi, header/footer/favicon.
+Ham tooltip kodları oyuncu görünümünden alındı, değerler —; orijinal ifadeler
+kaynak ayrıntılarında korunur. Eşya listesi özgün ikon filtresiyle başlar;
+bütün kaynak kayıtları filtreyle erişilir. Uydurma oyun ikonu eklenmedi.
+
+23 birim ve 11 kaynak testi, lint/TypeScript/API, 24185 sayfa build geçti.
+Headless Edge 1440/390/1024: TR/EN açıklama ve arama/ağaç, renk/tercih,
+source preservation ve taşma kontrolleri geçti. Storage kapalıyken explicit
+EN ve tema çalışır. 11 ana İngilizce sayfada görünür TR UI metni kalmadı.
+Görsel inceleme sonrası açık tema bilgi kutusu kontrastı/okuma aralığı düzeltildi.
+
+Yeni çeviri tablosunu içeren 21458561 bayt DB dump gerçek ayrı test DB'sine
+restore edildi; bütün mühür/sayı/migration kontrolleri eşleşti. Geçici DB
+kaldırıldı; üretim/Aryaland korundu. Yerel makine dışı kopya SHA256:
+826872a91f2b63b048940cdc2c2624c2f92fbeb608cd49d67bb52aef3a49a855.
+Yedek .cache/backups/diablozone-20261012-123500.dump içinde; Git/release dışında.
+Native uygulama yayını ve canlı kontroller bu kaydı izler. Ayrıntı docs/localization.md.

@@ -1,0 +1,17 @@
+{
+  "source": "local-read-only-CASC",
+  "sourceVersion": "3.2.2.73764",
+  "dataSourceVersion": "3.2.1.73552",
+  "gameSnapshotId": "f36be437-156e-437d-9939-c6d228f2ab91",
+  "systemArchiveId": "8f059faa-2afb-44e6-977a-72367d2e3023",
+  "buildInfoSha256": "89f909d4ea60dc0b7b377c30baf25d113f0f21b9fd225e91db65c674b82b0bc9",
+  "extractorCommit": "bb6f084a6f5480b91197f8cc8ad3c022dbf4f821",
+  "rawExportSha256": "dc35642deccdad2e3586f93eb1ec06cfb4ed2a0a6157adf5a975dd476a8acb64",
+  "locale": "tr",
+  "comparison": "Exact normalized English baseline match; no mathematical evaluation",
+  "localeSetId": "c1f24b94-a808-4b0b-aa85-dc79ed0a0382",
+  "inputSha256": "f1f33e9583a0eff4f9239a473cdf135fae448740bfd42e7d81e4c098c3f44bc0",
+  "storageSource": "DiabloZone PostgreSQL",
+  "entries": 18589,
+  "url": "locales/game-tr-f1f33e9583a0eff4.json"
+}

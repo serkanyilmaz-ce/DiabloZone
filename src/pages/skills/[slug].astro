@@ -13,14 +13,14 @@ const base = import.meta.env.BASE_URL;
     <div class="detail-heading">
       {skill.icon && <img class="detail-icon skill-detail-icon" src={`${base}${skill.icon}`} alt="" />}
       <div>
-        <div class="card-kicker">{term(skill.class)} · {skill.category ?? 'uncategorized'}</div>
-        <h1>{skill.name}</h1>
+        <div class="card-kicker">{term(skill.class)} · {term(skill.category ?? 'uncategorized')}</div>
+        <h1 data-game-key={`skills:${skill.id}`} data-game-field="name">{skill.name}</h1><p class="source-note" data-no-i18n data-locale-only="tr">{skill.name}</p>
       </div>
     </div>
-    <p class="lead">{skill.description ?? 'Kaynakta açıklama bulunmuyor.'}</p>
+    <p class="lead" data-game-key={`skills:${skill.id}`} data-game-field="description">{skill.description ?? 'Kaynakta açıklama bulunmuyor.'}</p>
+    <p class="game-values-note">Hesaplanmamış değerler — ile gösterilir. Ham formüller kaynak ayrıntılarında korunur.</p>
     <dl class="detail-grid"><div><dt>Tür</dt><dd>{term(skill.type)}</dd></div><div><dt>Kaynak sürüm</dt><dd>{skill.patch}</dd></div><div><dt>Yetenek SNO</dt><dd>{skill.source?.sno ?? '—'}</dd></div><div><dt>Yerelleştirme SNO</dt><dd>{skill.localizationSource?.sno ?? '—'}</dd></div></dl>
-    {(skill.tags?.length ?? 0)>0 && <section class="detail-section"><h2>Etiketler</h2><div class="chip-row">{skill.tags.map((t:string)=><span class="chip">{t}</span>)}</div></section>}
-    {skill.descriptionTemplate && <section class="detail-section"><h2>Ham açıklama / çözülemeyen formül</h2><pre>{skill.descriptionTemplate}</pre></section>}
+    {(skill.tags?.length ?? 0)>0 && <details class="detail-section"><summary>Kaynak etiketleri</summary><div class="chip-row" data-no-i18n>{skill.tags.map((t:string)=><span class="chip technical-tag">{t}</span>)}</div></details>}
     <section class="detail-section"><h2>Bağlı kayıtlar</h2><div class="chip-row">{gameClasses.filter(cls=>cls.id===skill.classId).map(cls=><a class="chip" href={`${base}classes/${cls.slug}/`}>{cls.name}</a>)}{skills.filter(value=>value.id===skill.parentId||value.parentId===skill.id).map(value=><a class="chip" href={`${base}skills/${value.slug}/`}>{value.name}</a>)}</div></section>
     <SourceDetails source={skill.source} localizationSource={skill.localizationSource} patch={skill.patch} template={skill.descriptionTemplate} formulas={skill.rawFormulas} />
   </article>

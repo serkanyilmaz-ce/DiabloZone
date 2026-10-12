@@ -28,6 +28,18 @@ const server=createServer(async(request,response)=>{
     if(url.pathname==='/api/v1/seasons'){
       const result=await pool.query('select id,name,status,source_url from seasons order by id desc');reply(response,200,{data:result.rows});return;
     }
+    if(url.pathname==='/api/v1/localization-sets'){
+      const locale=url.searchParams.get('locale');if(locale!==null&&!['tr','en'].includes(locale))throw new RangeError('Geçersiz dil.');
+      const result=await pool.query("select id,locale,source_version,data_source_version,game_snapshot_id,system_archive_id,input_sha256,entry_count,created_at from localization_sets where state='published' and ($1::text is null or locale=$1) order by created_at desc limit 50",[locale]);reply(response,200,{data:result.rows});return;
+    }
+    const localeMatch=url.pathname.match(/^\/api\/v1\/localization-sets\/([^/]+)\/entities$/);
+    if(localeMatch){
+      const id=localeMatch[1],key=url.searchParams.get('key'),pageText=url.searchParams.get('page')??'1';
+      if(!isUuid(id)||!/^\d{1,6}$/.test(pageText)||Number(pageText)<1||key!==null&&!/^(skills|items|affixes|aspects|systems):\d+(:mod:\d+)?$/.test(key))throw new RangeError('Geçersiz çeviri sorgusu.');
+      const set=(await pool.query("select id,locale,source_version,data_source_version,game_snapshot_id,input_sha256,entry_count from localization_sets where id=$1 and state='published'",[id])).rows[0];if(!set){reply(response,404,{error:'Yayınlanmış çeviri arşivi bulunamadı.'});return;}
+      const count=(await pool.query('select count(*)::int as count from localized_entities where localization_set_id=$1 and ($2::text is null or record_key=$2)',[id,key])).rows[0].count;
+      const result=await pool.query('select record_key,payload from localized_entities where localization_set_id=$1 and ($2::text is null or record_key=$2) order by record_key limit 24 offset $3',[id,key,(Number(pageText)-1)*24]);reply(response,200,{localeSet:set,total:count,page:Number(pageText),limit:24,data:result.rows});return;
+    }
     if(url.pathname==='/api/v1/system-archives'){
       const result=await pool.query("select id,source_version,source_commit,season_id,channel,input_sha256,record_count,created_at from system_archives where state='published' order by created_at desc limit 50");
       reply(response,200,{data:result.rows});return;

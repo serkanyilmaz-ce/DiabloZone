@@ -6,10 +6,29 @@ using System.Text.Json;
 using WiseOwl.Casc.Diablo4;
 
 // Read-only CASC extraction. The reviewed upstream opens archives with FileAccess.Read.
-if(args.Length!=3)throw new ArgumentException("install-directory requests.json output-directory");
+if(args.Length!=3&&args.Length!=4)throw new ArgumentException("install-directory requests.json output-directory [strings]");
 var install=Path.GetFullPath(args[0]);var output=Path.GetFullPath(args[2]);
 if(output.Equals(install,StringComparison.OrdinalIgnoreCase)||output.StartsWith(install+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase))throw new ArgumentException("Output must be outside the game installation");
 var info=Path.Combine(install,".build.info");var before=SHA256.HashData(File.ReadAllBytes(info));
+if(args.Length==4&&args[3]=="strings"){
+    Directory.CreateDirectory(output);
+    var requests=JsonSerializer.Deserialize<StringRequest[]>(File.ReadAllText(args[1]))!;
+    using var storage=Diablo4Storage.Open(install);
+    var english=storage.GetStrings("enUS");var turkish=storage.GetStrings("trTR");
+    var translations=new List<object>();
+    foreach(var request in requests){
+        var en=english.Table(request.TableSno);var tr=turkish.Table(request.TableSno);
+        foreach(var label in request.Labels){
+            var enEntry=en?.Entries.FirstOrDefault(e=>e.Key.Equals(label,StringComparison.OrdinalIgnoreCase));
+            var trEntry=tr?.Entries.FirstOrDefault(e=>e.Key.Equals(label,StringComparison.OrdinalIgnoreCase));
+            if(enEntry?.Value!=null&&trEntry?.Value!=null)
+                translations.Add(new {key=request.Key,tableSno=request.TableSno,label,en=enEntry.Value.Value,tr=trEntry.Value.Value});
+        }
+    }
+    var after=SHA256.HashData(File.ReadAllBytes(info));if(!before.SequenceEqual(after))throw new InvalidOperationException("Game manifest changed during read");
+    File.WriteAllText(Path.Combine(output,"strings.json"),JsonSerializer.Serialize(new {source="local-read-only-CASC",sourceVersion=storage.Casc.Build.Version,buildInfoSha256=Convert.ToHexString(before).ToLowerInvariant(),extractorCommit="bb6f084a6f5480b91197f8cc8ad3c022dbf4f821",locales=new[]{"enUS","trTR"},requested=requests.Length,translations},new JsonSerializerOptions{WriteIndented=true}));
+    Console.WriteLine($"{translations.Count} official localized strings read; game manifest unchanged.");return;
+}
 var handles=JsonSerializer.Deserialize<uint[]>(File.ReadAllText(args[1]))!.Distinct().Order().ToArray();
 Directory.CreateDirectory(output);
 using var d4=Diablo4Storage.Open(install);
@@ -54,3 +73,4 @@ static void Chunk(Stream file,string type,byte[] data){
     uint crc=0xFFFFFFFF;foreach(var b in tag.Concat(data)){crc^=b;for(var i=0;i<8;i++)crc=(crc&1)==1?(crc>>1)^0xEDB88320:crc>>1;}
     BinaryPrimitives.WriteUInt32BigEndian(size,~crc);file.Write(size);
 }
+record StringRequest(string Key,int TableSno,string[] Labels);

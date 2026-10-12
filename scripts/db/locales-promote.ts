@@ -1,0 +1,10 @@
+import {writeFile,mkdir} from 'node:fs/promises';
+import {localeBundle} from './locales-bundle.js';
+const {bundle,context,entries,inputSha256}=await localeBundle(process.argv[2]??'output/localization/reader-export.json');
+if(!bundle.localeSetId||bundle.storageSource!=='DiabloZone PostgreSQL')throw new Error('Published PostgreSQL reader export required');
+const filename=`game-tr-${inputSha256.slice(0,16)}.json`;
+await mkdir('public/locales',{recursive:true});
+const records=Object.fromEntries(entries.map(entry=>[entry.key,Object.fromEntries(Object.entries(entry.fields).map(([field,value])=>[field,{en:value.en,tr:value.tr}]))]));
+await writeFile(`public/locales/${filename}`,JSON.stringify({localeSetId:bundle.localeSetId,inputSha256,gameSnapshotId:context.gameSnapshotId,systemArchiveId:context.systemArchiveId,sourceVersion:context.sourceVersion,dataSourceVersion:context.dataSourceVersion,records})+'\n');
+await writeFile('data/research/localization-manifest.json',JSON.stringify({...context,localeSetId:bundle.localeSetId,inputSha256,storageSource:bundle.storageSource,entries:entries.length,url:`locales/${filename}`},null,2)+'\n');
+console.log(JSON.stringify({localeSetId:bundle.localeSetId,records:entries.length,url:filename}));

@@ -1,7 +1,10 @@
 import { cp, mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { resolve, join } from 'node:path';
-import { spawnSync } from 'node:child_process';
+import { spawnSync,spawn } from 'node:child_process';
+import {createGzip} from 'node:zlib';
+import {createWriteStream} from 'node:fs';
+import {pipeline} from 'node:stream/promises';
 
 const release = process.argv[2];
 if (!release || !/^\d{8}-\d{6}$/.test(release)) throw new Error('Usage: pnpm release:package YYYYMMDD-HHMMSS');
@@ -36,6 +39,7 @@ const status=spawnSync('git',['status','--porcelain'],{encoding:'utf8'});
 const draft=status.status!==0||status.stdout.trim().length>0;
 await writeFile(join(directory, 'release.json'), JSON.stringify({ release, commit: revision.status === 0&&!draft ? revision.stdout.trim() : null, basedOn:revision.status===0?revision.stdout.trim():null,draft,site: 'https://diablozone.152.70.4.125.sslip.io', files: hashes }, null, 2) + '\n');
 const archive = `${directory}.tar.gz`;
-const packed = spawnSync('tar', ['-czf', archive, '-C', directory, '.'], { stdio: 'inherit' });
-if (packed.status !== 0) throw new Error('Release packaging failed.');
+const packed = spawn('tar', ['-cf', '-', '-C', directory, '.'], { stdio: ['ignore','pipe','inherit'] });
+const completion=new Promise((resolve,reject)=>{packed.once('error',reject);packed.once('close',code=>code===0?resolve(undefined):reject(new Error('Release tar failed.')));});
+await Promise.all([pipeline(packed.stdout,createGzip({level:1}),createWriteStream(archive)),completion]);
 console.log(JSON.stringify({ release, archive, sha256: createHash('sha256').update(await readFile(archive)).digest('hex') }));

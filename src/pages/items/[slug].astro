@@ -14,12 +14,12 @@ const resolvedÖzellikler=(item.affixIds??[]).map((id:string)=>affixes.find((a:a
   <article class="detail-card">
     <div class="detail-heading">
       {item.icon && <div class="item-detail-frame"><img class="detail-icon item-detail-icon" src={`${base}${item.icon}`} alt="" /></div>}
-      <div><div class="card-kicker">{term(item.rarity)} · {term(item.slot)}</div><h1>{item.name}</h1></div>
+      <div><div class="card-kicker">{term(item.rarity)} · {term(item.slot)}</div><h1 data-game-key={`items:${item.id}`} data-game-field="name">{item.name}</h1></div>
     </div>
-    {item.flavor && <blockquote>{item.flavor}</blockquote>}
+    {item.flavor && <blockquote data-game-key={`items:${item.id}`} data-game-field="flavor">{item.flavor}</blockquote>}
     <dl class="detail-grid"><div><dt>Gerekli seviye</dt><dd>{item.requiredLevel ?? '—'}</dd></div><div><dt>Eşya gücü</dt><dd>{item.fixedPowerLevel ?? '—'}</dd></div><div><dt>Kaynak sürüm</dt><dd>{item.patch}</dd></div><div><dt>Kaynak SNO</dt><dd>{item.source?.sno ?? '—'}</dd></div></dl>
     <section class="detail-section"><h2>Sınıf uygunluğu</h2>{item.classes.length?<div class="chip-row">{item.classes.map((c:string)=><span class="chip">{term(c)}</span>)}</div>:<p>Kaynak sınıf dizisinin index sırası henüz doğrulanmadı.</p>}</section>
-    <section class="detail-section"><h2>Özellikler</h2>{resolvedÖzellikler.length ? <div class="stack">{resolvedÖzellikler.map((a:any)=><div class="affix-row"><strong><a href={`${base}affixes/${a.slug}/`}>{a.name ?? a.internalName} →</a></strong><span>{a.description ?? a.descriptionTemplate ?? 'Yerelleştirilmiş açıklama yok; detaylarda ham ifadeleri incele.'}</span>{(a.staticValues?.length??0)>0 && <code>Statik değer: {a.staticValues.join(', ')}</code>}</div>)}</div> : <p>Çözümlenmiş özellik verisi yok.</p>}</section>
+    <section class="detail-section"><h2>Özellikler</h2>{resolvedÖzellikler.length ? <div class="stack">{resolvedÖzellikler.map((a:any)=><div class="affix-row"><strong><a href={`${base}affixes/${a.slug}/`}>{a.name ?? a.internalName} →</a></strong><span data-game-key={`affixes:${a.id}`} data-game-field="description">{a.description ?? a.descriptionTemplate ?? 'Yerelleştirilmiş açıklama yok; detaylarda ham ifadeleri incele.'}</span>{(a.staticValues?.length??0)>0 && <code>Statik değer: {a.staticValues.join(', ')}</code>}</div>)}</div> : <p>Çözümlenmiş özellik verisi yok.</p>}</section>
     <SourceDetails source={item.source} localizationSource={item.localizationSource} patch={item.patch} formulas={item.rawFormulas} />
   </article>
   <style>

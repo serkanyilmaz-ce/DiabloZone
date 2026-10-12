@@ -34,6 +34,8 @@ def query(database):
       'system_records',(select count(*) from system_records),
       'asset_sets',(select jsonb_agg(jsonb_build_array(id,state,input_sha256) order by id) from asset_sets),
       'assets',(select count(*) from game_assets),
+      'localization_sets',(select jsonb_agg(jsonb_build_array(id,state,input_sha256,entry_count) order by id) from localization_sets),
+      'localized_entities',(select count(*) from localized_entities),
       'migrations',(select jsonb_agg(jsonb_build_array(name,sha256) order by name) from schema_migrations)
     )"""
     result = postgres(['psql', '-X', '-At', '-v', 'ON_ERROR_STOP=1', '-d', database, '-c', sql], capture_output=True, text=True)

@@ -1,0 +1,9 @@
+---
+interface Props{compact?:boolean}
+const {compact=false}=Astro.props;
+---
+<span class:list={['zone-logo',{'is-compact':compact}]} aria-hidden="true">
+<svg class="zone-mark" viewBox="0 0 72 80" fill="none"><path class="mark-horns" d="M5 3c1 17 7 20 13 21L36 8l18 16C61 23 65 16 67 3c8 22 0 31-9 35v19L36 76 14 57V38C4 33-3 24 5 3Z"/><path class="mark-ring" d="m36 17 17 15v21L36 68 19 53V32Z"/><path class="mark-letter" d="M27 30h19L28 51h17M27 30v24"/><path class="mark-scar" d="m9 58 8-5m38 0 8 5M36 2v7m0 65v5"/></svg>
+<span class="zone-wordmark"><strong>DIABLO<span>ZONE</span></strong>{!compact&&<small>VERİ. MEKANİK. KEŞİF.</small>}</span>
+</span>
+<style>.zone-logo{display:flex;align-items:center;gap:11px}.zone-mark{width:45px;height:50px;overflow:visible;filter:drop-shadow(0 0 10px #b8473433)}.mark-horns{fill:var(--logo-fill,#241718);stroke:var(--logo-edge,#a15b47);stroke-width:1.4;stroke-linejoin:round}.mark-ring{fill:var(--logo-center,#151416);stroke:var(--logo-gold,#d1aa79);stroke-width:1.5}.mark-letter{stroke:var(--logo-gold,#edc79a);stroke-width:4;stroke-linejoin:bevel}.mark-scar{stroke:var(--red-light);stroke-width:2}.zone-wordmark{display:grid;gap:4px}.zone-wordmark strong{font:700 21px/1 Georgia,serif;letter-spacing:1.25px;color:var(--text)}.zone-wordmark strong span{color:var(--red-light);margin-left:1px}.zone-wordmark small{font-size:7px;letter-spacing:2.15px;color:var(--muted)}.is-compact .zone-mark{width:29px;height:32px}.is-compact strong{font-size:16px}@media(max-width:600px){.zone-logo{gap:7px}.zone-mark{width:34px;height:40px}.zone-wordmark strong{font-size:17px;letter-spacing:.7px}.zone-wordmark small{font-size:6px;letter-spacing:1.35px}}</style>

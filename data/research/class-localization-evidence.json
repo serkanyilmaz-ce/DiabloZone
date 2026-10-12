@@ -1,0 +1,69 @@
+{
+  "source": "local-read-only-CASC",
+  "sourceVersion": "3.2.2.73764",
+  "buildInfoSha256": "89f909d4ea60dc0b7b377c30baf25d113f0f21b9fd225e91db65c674b82b0bc9",
+  "extractorCommit": "bb6f084a6f5480b91197f8cc8ad3c022dbf4f821",
+  "locales": [
+    "enUS",
+    "trTR"
+  ],
+  "requested": 8,
+  "translations": [
+    {
+      "key": "ui:spiritborn",
+      "tableSno": 4118,
+      "label": "PlayerClassSpiritbornMale",
+      "en": "Spiritborn",
+      "tr": "Ruhdo\u011Fumlu"
+    },
+    {
+      "key": "ui:sorcerer",
+      "tableSno": 4118,
+      "label": "PlayerClassSorcererMale",
+      "en": "Sorcerer",
+      "tr": "B\u00FCy\u00FCc\u00FC"
+    },
+    {
+      "key": "ui:druid",
+      "tableSno": 4118,
+      "label": "PlayerClassDruidMale",
+      "en": "Druid",
+      "tr": "Druid"
+    },
+    {
+      "key": "ui:barbarian",
+      "tableSno": 4118,
+      "label": "PlayerClassBarbarianMale",
+      "en": "Barbarian",
+      "tr": "Barbar"
+    },
+    {
+      "key": "ui:rogue",
+      "tableSno": 4118,
+      "label": "PlayerClassRogueMale",
+      "en": "Rogue",
+      "tr": "Haydut"
+    },
+    {
+      "key": "ui:necromancer",
+      "tableSno": 4118,
+      "label": "PlayerClassNecromancerMale",
+      "en": "Necromancer",
+      "tr": "\u00D6l\u00FCm B\u00FCy\u00FCc\u00FCs\u00FC"
+    },
+    {
+      "key": "ui:paladin",
+      "tableSno": 4118,
+      "label": "PlayerClassPaladinMale",
+      "en": "Paladin",
+      "tr": "Paladin"
+    },
+    {
+      "key": "ui:warlock",
+      "tableSno": 4118,
+      "label": "PlayerClassWarlockMale",
+      "en": "Warlock",
+      "tr": "Kara B\u00FCy\u00FCc\u00FC"
+    }
+  ]
+}

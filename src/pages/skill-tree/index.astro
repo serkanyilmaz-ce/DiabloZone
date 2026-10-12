@@ -4,9 +4,11 @@ import { tree } from '../../lib/data';
 import DataEmpty from '../../components/DataEmpty.astro';
 import {gameAssetPath,treeAssets} from '../../lib/assets';
 import {term} from '../../lib/terms';
+import {readableTooltip} from '../../lib/tooltip';
+import {originalTurkish} from '../../lib/localization-server';
 const base = import.meta.env.BASE_URL;
 const classes = Object.keys(tree.classes);
-const displayTree={...tree,classes:Object.fromEntries(Object.entries(tree.classes).map(([code,value])=>{const board=value as any;return [code,{...board,nodes:board.nodes.map((node:any)=>({...node,icon:gameAssetPath(node.iconHandle)}))}];}))};
+const displayTree={...tree,classes:Object.fromEntries(Object.entries(tree.classes).map(([code,value])=>{const board=value as any;return [code,{...board,nodes:board.nodes.map((node:any)=>({...node,description:readableTooltip(node.description),nameTr:originalTurkish(`skills:${node.skillId}`,'name'),descriptionTr:originalTurkish(`skills:${node.skillId}`,'description'),icon:gameAssetPath(node.iconHandle)}))}];}))};
 const full=Object.values(tree.classes).every((value:any)=>value.scope==='full');
 ---
 <BaseLayout title="Yetenek ağacı" description="İçe aktarılan oyun verisinin yetenek ağacını incele.">
@@ -71,13 +73,14 @@ const full=Object.values(tree.classes).every((value:any)=>value.scope==='full');
         const neighbors=new Set(board.edges.filter(e=>e.from===node.id||e.to===node.id).flatMap(e=>[e.from,e.to]));
         group.querySelectorAll('.tree-edge').forEach(el=>el.classList.toggle('highlight',Number(el.dataset.from)===node.id||Number(el.dataset.to)===node.id));
         elements.forEach((el,id)=>el.classList.toggle('neighbor',neighbors.has(id)&&id!==node.id));
-        field('kind',node.kind==='hub'?'Yetenek kümesi':node.kind==='gate'?'Seviye eşiği':node.kind);
+        field('kind',({active:'Aktif',passive:'Pasif',modifier:'Geliştirme',hub:'Yetenek kümesi',gate:'Seviye eşiği'})[node.kind]??node.kind);
         field('name',node.name);field('category',node.category??'');
+        for(const name of ['name','description']){const element=document.querySelector(`[data-detail-${name}]`);if(node.skillId){element.dataset.gameKey='skills:'+node.skillId;element.dataset.gameField=name;}else{delete element.dataset.gameKey;delete element.dataset.gameField;}}
         // Runtime formulas are not evaluated by this browser; never invent game values.
         const raw=node.description??'';
-        const description=raw.replace(/\[[^\]]*\]/g,'[çözülemedi]').replace(/\{[^}]*\}/g,'[çözülemedi]');
+        const description=raw;
         field('description',description||(node.kind==='gate'?`Kaynak seviye eşiği: ${node.requiredLevel}.`:node.kind==='hub'?'Bu yetenek kümesini incelemek için bağlantılı dalları takip et.':'Bu yeteneğin bağlı düğümlerini incele.'));
-        document.querySelector('.tree-formula-note').hidden=!description.includes('[çözülemedi]');
+        document.querySelector('.tree-formula-note').hidden=!description.includes('—');
         const emblem=document.querySelector('[data-detail-emblem]');emblem.replaceChildren();
         if(node.icon){const img=document.createElement('img');img.src=base+node.icon;img.alt='';emblem.append(img);}else emblem.textContent=node.kind==='gate'?'◆':'✦';
         const stats=document.querySelector('[data-detail-stats]');stats.replaceChildren();
@@ -86,10 +89,11 @@ const full=Object.values(tree.classes).every((value:any)=>value.scope==='full');
         if(focus){scale=Math.max(scale,.18);center(node.x,node.y);elements.get(node.id)?.focus({preventScroll:true});}
       };
       const filter=()=>{
-        const query=search.value.trim().toLowerCase();const matches=board.nodes.filter(n=>n.powerSno&&`${n.name} ${n.category??''} ${n.description??''}`.toLowerCase().includes(query));
+        const fold=value=>value.toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i');
+        const query=fold(search.value.trim());const matches=board.nodes.filter(n=>n.powerSno&&fold(`${n.name} ${n.nameTr??''} ${n.category??''} ${n.description??''} ${n.descriptionTr??''}`).includes(query));
         const ids=new Set(matches.map(n=>n.id));elements.forEach((el,id)=>{el.classList.toggle('dimmed',!!query&&!ids.has(id));el.classList.toggle('matched',!!query&&ids.has(id));});
         results.hidden=!query;document.querySelector('[data-result-count]').textContent=`${matches.length} eşleşen düğüm`;
-        const list=document.querySelector('[data-results]');list.replaceChildren();if(query)for(const node of matches){const button=document.createElement('button');button.type='button';button.textContent=node.name;button.addEventListener('click',()=>selectNode(node,true));list.append(button);}
+        const list=document.querySelector('[data-results]');list.replaceChildren();if(query)for(const node of matches){const button=document.createElement('button');button.type='button';button.textContent=node.name;if(node.skillId){button.dataset.gameKey='skills:'+node.skillId;button.dataset.gameField='name';}button.addEventListener('click',()=>selectNode(node,true));list.append(button);}
       };
       const selectClass=(cls)=>{
         if(!data.classes[cls])return;if(current)views.set(current,{scale,tx,ty,selected});current=cls;board=data.classes[cls];selected=undefined;elements.clear();svg.replaceChildren();
@@ -99,7 +103,7 @@ const full=Object.values(tree.classes).every((value:any)=>value.scope==='full');
         for(const edge of board.edges){const path=make('polyline',{points:edge.points.map(p=>`${p.x},${p.y}`).join(' '),class:'tree-edge','data-from':edge.from,'data-to':edge.to});group.append(path);}
         for(const node of board.nodes){
           const el=make('g',{transform:`translate(${node.x} ${node.y})`,class:`skill-node node-${node.kind}`,'data-node-id':node.id,role:'button',tabindex:0,'aria-label':`${node.name}${node.maxRanks?`, ${node.maxRanks} rank`:''}`});
-          el.append(make('title',{},node.name));
+          el.append(make('title',node.skillId?{'data-game-key':'skills:'+node.skillId,'data-game-field':'name'}:{},node.name));
           const r=node.kind==='hub'?215:node.kind==='gate'?42:node.kind==='modifier'?110:140;
           el.append(make('circle',{r:r+20,class:'node-focus',fill:'transparent'}));
           const frameHandle=node.borderHandle??(node.kind==='hub'?2313016955:node.kind==='modifier'?3849685904:node.kind==='passive'?1859833681:3769819183);
@@ -110,7 +114,7 @@ const full=Object.values(tree.classes).every((value:any)=>value.scope==='full');
             if(node.icon){const size=node.kind==='modifier'?190:node.kind==='passive'?180:230;el.append(make('image',{href:base+node.icon,x:-size/2,y:-size/2,width:size,height:size,preserveAspectRatio:'xMidYMid meet'}));}
             else el.append(make('text',{class:'node-glyph','text-anchor':'middle',dy:22},node.kind==='hub'?String(node.requiredLevel):'✦'));
           }
-          const label=make('text',{class:'node-label',y:r+80,'text-anchor':'middle'},node.name);el.append(label);
+          const label=make('text',{class:'node-label',y:r+80,'text-anchor':'middle',...(node.skillId?{'data-game-key':'skills:'+node.skillId,'data-game-field':'name'}:{})},node.name);el.append(label);
           el.addEventListener('click',()=>{if(!moved)selectNode(node);});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectNode(node,true);}});
           el.addEventListener('focus',()=>{if(!drag){const x=tx+node.x*scale,y=ty+node.y*scale;if(x<30||y<30||x>viewport.clientWidth-30||y>viewport.clientHeight-30)center(node.x,node.y);}});
           group.append(el);elements.set(node.id,el);
