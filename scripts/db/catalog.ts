@@ -46,7 +46,7 @@ export async function loadCatalog(directory='data/generated') {
   }
   const sources=new Map<string,{file:string;sha256:string;commit:string;sno:string|number|undefined}>();
   for(const file of files)for(const record of file.records){
-    for(const field of ['source','localizationSource','affixSource'] as const){
+    for(const field of ['source','localizationSource','affixSource','passivePowerSource','powerSource'] as const){
       const ref=(record as Record<string,any>)[field];
       if(!ref)continue;
       if(!ref.sha256||ref.commit!==metadata.sourceCommit)throw new Error('Unsealed source reference');

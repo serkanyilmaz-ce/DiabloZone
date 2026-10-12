@@ -4,8 +4,9 @@ export const D4ClassSchema = z.enum(['barbarian','druid','necromancer','rogue','
 export const SourceRefSchema = z.object({ file:z.string(), sourceId:z.union([z.string(),z.number()]).optional(), sno:z.union([z.string(),z.number()]).optional(), gbid:z.union([z.string(),z.number()]).optional(), sha256:z.string().regex(/^[a-f0-9]{64}$/).optional(), gitBlob:z.string().regex(/^[a-f0-9]{40}$/).optional(), commit:z.string().regex(/^[a-f0-9]{40}$/).optional() });
 export const RawFormulaSchema = z.object({path:z.string(),expression:z.string()});
 const evidenceFields={rawFormulas:z.array(RawFormulaSchema).default([]),classId:z.string().optional()};
+const catalogueFields={internalName:z.string().optional(),localizationStatus:z.enum(['resolved','missing']).optional(),rawData:z.record(z.string(),z.unknown()).optional()};
 export const SkillIconRefSchema = z.object({ normalHandle:z.number().int().positive(), mouseoverHandle:z.number().int().positive().optional(), pushedHandle:z.number().int().positive().optional(), inactiveHandle:z.number().int().positive().optional() });
-export const ItemIconRefSchema = z.object({ inventoryImageHandles:z.array(z.number().int().positive()).default([]), actorSno:z.number().int().positive().optional() });
+export const ItemIconRefSchema = z.object({ inventoryImageHandles:z.array(z.number().int().positive()).default([]), actorSno:z.number().int().positive().optional(),alternateHandle:z.number().int().positive().optional(),alternateRole:z.enum(['rune','vendor','set_charm']).optional() });
 export const AspectIconRefSchema = z.object({ overrideHandle:z.number().int().positive() });
 
 export const SkillSchema = z.object({
@@ -20,6 +21,8 @@ export const SkillSchema = z.object({
 
 export const ItemSchema = z.object({
   ...evidenceFields,
+  ...catalogueFields,
+  powerSource:SourceRefSchema.optional(),inherentAffixIds:z.array(z.string()).optional(),
   classRestrictionStatus:z.enum(['explicit','unknown']).default('unknown'),
   id:z.string(), slug:z.string(), name:z.string(), rarity:z.enum(['common','magic','rare','legendary','unique','mythic','unknown']),
   slot:z.string().optional(), classes:z.array(D4ClassSchema).default([]), affixIds:z.array(z.string()).default([]), uniquePowerId:z.string().optional(),
@@ -29,6 +32,7 @@ export const ItemSchema = z.object({
 
 export const AspectSchema = z.object({
   ...evidenceFields,
+  ...catalogueFields,
   affixId:z.string().optional(),
   id:z.string(), slug:z.string(), name:z.string(), description:z.string().optional(), descriptionTemplate:z.string().optional(),
   category:z.enum(['offensive','defensive','utility','resource','mobility','unknown']), classes:z.array(D4ClassSchema).default([]),
@@ -38,6 +42,8 @@ export const AspectSchema = z.object({
 
 export const AffixSchema = z.object({
   ...evidenceFields,
+  localizationStatus:catalogueFields.localizationStatus,rawData:catalogueFields.rawData,
+  classes:z.array(D4ClassSchema).optional(),icon:z.string().optional(),iconRef:SkillIconRefSchema.optional(),
   slug:z.string().optional(),rawAllowedItemLabels:z.array(z.number()).default([]),
   id:z.string(), internalName:z.string(), name:z.string().optional(), description:z.string().optional(), descriptionTemplate:z.string().optional(),
   staticValues:z.array(z.number()).default([]), itemPowerMin:z.number().optional(), itemPowerMax:z.number().optional(), tags:z.array(z.string()).default([]),

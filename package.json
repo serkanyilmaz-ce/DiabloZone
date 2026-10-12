@@ -33,7 +33,9 @@
     "source:inventory": "node scripts/source/inventory.mjs",
     "data:poc": "tsx scripts/source/normalize-poc.ts",
     "db:promote": "tsx scripts/db/promote.ts",
-    "data:classes": "tsx scripts/source/normalize-classes.ts"
+    "data:classes": "tsx scripts/source/normalize-classes.ts",
+    "data:catalog": "tsx scripts/source/normalize-catalog.ts",
+    "db:assets": "tsx scripts/db/assets.ts"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",

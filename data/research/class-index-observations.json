@@ -1,0 +1,87 @@
+{
+  "sourceVersion": "3.2.1.73552",
+  "status": "unresolved",
+  "method": "Explicit class SNO compared to single allowed-class bit; correlation does not override contradictory source fields",
+  "pairs": {
+    "0": {
+      "131965": 3
+    },
+    "1": {
+      "131966": 3,
+      "2079084": 1
+    },
+    "2": {
+      "169776": 7
+    },
+    "3": {
+      "199275": 10
+    },
+    "4": {
+      "199277": 19
+    },
+    "5": {
+      "1206232": 3
+    },
+    "6": {
+      "2079084": 5
+    },
+    "7": {
+      "2207749": 16
+    }
+  },
+  "conflicts": [
+    {
+      "index": 1,
+      "evidence": [
+        {
+          "index": 1,
+          "classSno": 131966,
+          "affixId": "2176630",
+          "source": {
+            "sno": 2176630,
+            "file": "json/base/meta/Affix/legendary_druid_131.aff.json",
+            "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+            "sha256": "b1ced4fed97230d74f20fa18f2b03820d656eb04c9e8b0b476e0fad0b0936182",
+            "gitBlob": "ffd737cb03894fbf596ce95da30938b8d0e5ffbe"
+          }
+        },
+        {
+          "index": 1,
+          "classSno": 131966,
+          "affixId": "2451859",
+          "source": {
+            "sno": 2451859,
+            "file": "json/base/meta/Affix/S10_Amulet_Unique_Druid_100.aff.json",
+            "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+            "sha256": "1f05fc267f7efaa6a7b26dc544e9c67204deda030f147598ecc7837856909616",
+            "gitBlob": "e07c60c2d2cc1d81ff976816ef5a6f513af1257f"
+          }
+        },
+        {
+          "index": 1,
+          "classSno": 2079084,
+          "affixId": "2550212",
+          "source": {
+            "sno": 2550212,
+            "file": "json/base/meta/Affix/UNIQUE_SkillRankBonus_Druid_Ultimate.aff.json",
+            "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+            "sha256": "5fa804a42f690dec54c34f944f79cdacc5e598bc288dfef500702ea3b46e818b",
+            "gitBlob": "09e7cfb1a97cb90bcfb93c6ef1b31e355faf2020"
+          }
+        },
+        {
+          "index": 1,
+          "classSno": 131966,
+          "affixId": "579682",
+          "source": {
+            "sno": 579682,
+            "file": "json/base/meta/Affix/legendary_druid_112.aff.json",
+            "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+            "sha256": "b1a60b3302546daad33bcc05b11f348fbb74582376543e86e843935a74d69f8a",
+            "gitBlob": "95fc6469deaaf185aa649db307085ced17922068"
+          }
+        }
+      ]
+    }
+  ]
+}

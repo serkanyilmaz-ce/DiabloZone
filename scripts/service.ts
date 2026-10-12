@@ -27,12 +27,30 @@ const server=createServer(async(request,response)=>{
     if(url.pathname==='/api/v1/seasons'){
       const result=await pool.query('select id,name,status,source_url from seasons order by id desc');reply(response,200,{data:result.rows});return;
     }
+    if(url.pathname==='/api/v1/asset-sets'){
+      const version=url.searchParams.get('sourceVersion');
+      if(version!==null&&!/^\d+\.\d+\.\d+\.\d+$/.test(version))throw new RangeError('Geçersiz görsel sürümü.');
+      const result=await pool.query("select id,source_version,data_source_version,data_source_commit,input_sha256,build_info_sha256,extractor_commit,created_at from asset_sets where state='published' and ($1::text is null or source_version=$1) order by created_at desc limit 50",[version]);
+      reply(response,200,{data:result.rows});return;
+    }
+    const assetMatch=url.pathname.match(/^\/api\/v1\/asset-sets\/([^/]+)\/assets$/);
+    if(assetMatch){
+      const id=assetMatch[1],pageText=url.searchParams.get('page')??'1',status=url.searchParams.get('status'),handle=url.searchParams.get('handle');
+      if(!isUuid(id)||!/^\d{1,6}$/.test(pageText)||Number(pageText)<1||status!==null&&!['extracted','unavailable','unresolved'].includes(status)||handle!==null&&(!/^\d{1,10}$/.test(handle)||Number(handle)<1||Number(handle)>4294967294))throw new RangeError('Geçersiz görsel sorgusu.');
+      const set=await pool.query("select id,source_version,data_source_version,input_sha256 from asset_sets where id=$1 and state='published'",[id]);
+      if(!set.rows.length){reply(response,404,{error:'Yayınlanmış görsel arşivi bulunamadı.'});return;}
+      const values=[id,status,handle];
+      const where='asset_set_id=$1 and ($2::text is null or status=$2) and ($3::bigint is null or handle=$3)';
+      const count=await pool.query(`select count(*)::int as count from game_assets where ${where}`,values);
+      const rows=await pool.query(`select handle,status,path,sha256,width,height,atlas_sno,payload from game_assets where ${where} order by handle limit 24 offset $4`,[...values,(Number(pageText)-1)*24]);
+      reply(response,200,{assetSet:set.rows[0],page:Number(pageText),limit:24,total:count.rows[0].count,data:rows.rows});return;
+    }
     if(url.pathname==='/api/v1/snapshots'){
       const season=url.searchParams.get('season') ?? '15',channel=url.searchParams.get('channel') ?? 'live';
       const kind=url.searchParams.get('kind');
       if(!/^\d{1,4}$/.test(season)||!['live','ptr'].includes(channel)) throw new RangeError('Geçersiz sezon veya kanal.');
       if(kind && !['research','game_data'].includes(kind)) throw new RangeError('Geçersiz snapshot türü.');
-      const result=await pool.query("select s.id,s.build_id,s.created_at,s.manifest,b.patch,b.channel,b.season_id from snapshots s join builds b on b.id=s.build_id where s.state='published' and b.season_id=$1 and b.channel=$2 and ($3::text is null or s.manifest->>'kind'=$3) order by s.created_at desc limit 50",[Number(season),channel,kind??null]);
+      const result=await pool.query("select s.id,s.build_id,s.created_at,(s.manifest-'provenance') as manifest,b.patch,b.channel,b.season_id from snapshots s join builds b on b.id=s.build_id where s.state='published' and b.season_id=$1 and b.channel=$2 and ($3::text is null or s.manifest->>'kind'=$3) order by s.created_at desc limit 50",[Number(season),channel,kind??null]);
       reply(response,200,{data:result.rows});return;
     }
     const match=url.pathname.match(/^\/api\/v1\/snapshots\/([^/]+)\/(records|mechanics|formulas|rng)$/);

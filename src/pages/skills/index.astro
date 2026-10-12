@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import DataBrowser from '../../components/DataBrowser.astro';
-import DataEmpty from '../../components/DataEmpty.astro';
+import ArchiveList from '../../components/ArchiveList.astro';
 import {skills} from '../../lib/data';
 import { term } from '../../lib/terms';
 const base = import.meta.env.BASE_URL;
@@ -11,8 +10,5 @@ const classes = [...new Set(skills.map(skill => skill.class))].sort();
   <div class="breadcrumbs"><a href={base}>Ana sayfa</a><span>/</span><span>Veritabanı</span><span>/</span><span>Yetenekler</span></div>
   <section class="page-heading"><p class="eyebrow">GÜCÜNÜN TEMELİ</p><h1>Yetenekler</h1><p>Aktif yetenekler, pasif etkiler ve geliştirmeler. Sınıfını seç, bir sonraki build’inin temelini keşfet.</p></section>
   <form class="toolbar" role="search"><label class="field search-field">Arama<input class="search" type="search" placeholder="Yetenek adı, açıklama veya etiket…" data-search /></label><label class="field">Sınıf<select class="select" data-filter="class"><option value="">Tüm sınıflar</option>{classes.map(cls => <option value={cls}>{term(cls)}</option>)}</select></label><label class="field">Tür<select class="select" data-filter="type"><option value="">Tüm kayıtlar</option><option value="active">Aktif</option><option value="passive">Pasif</option><option value="modifier">Geliştirme</option></select></label></form>
-  <DataBrowser count={skills.length}>
-    <div class="card-grid" data-list tabindex="-1">{skills.map(skill => <a class="data-card" href={`${base}skills/${skill.slug}/`} data-entry data-type={skill.type} data-class={skill.class} data-searchtext={`${skill.name} ${skill.description ?? ''} ${skill.class} ${term(skill.class)} ${skill.category ?? ''} ${skill.tags.join(' ')}`}><div class="card-main">{skill.icon ? <img class="entity-icon" src={`${base}${skill.icon}`} alt="" width="55" height="55" loading="lazy" /> : <span class="entity-fallback" aria-hidden="true">✦</span>}<div class="card-copy"><div class="card-kicker">{term(skill.class)} · {term(skill.category)}</div><h2>{skill.name}</h2></div></div><p>{skill.description ?? 'Kaynakta açıklama bulunmuyor.'}</p><div class="chip-row"><span class="chip">{term(skill.type)}</span>{skill.maxRank && <span class="chip">En fazla {skill.maxRank} rank</span>}</div></a>)}</div>
-    {skills.length === 0 && <DataEmpty kind="yetenek" />}
-  </DataBrowser>
+  <ArchiveList kind="skills" />
 </BaseLayout>

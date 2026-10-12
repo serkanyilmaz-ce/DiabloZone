@@ -19,8 +19,9 @@ listedeki alanların veritabanında veya arayüzde bugün tamamlandığı anlam�
 | Sezon | Sezon gücü/etkinliği, sezon kuralları, canlı/PTR ve önceki build'e göre eklenen/değişen/kalkan kayıtlar |
 
 Yeni tür önce gerçek kaynaktan tanımlanır; şema/API/export/arayüz birlikte genişletilir.
-F02 importer skills/items/aspects/affixes/classes/skill-tree alır. Bir sınıf ve
-ağaç kesiti DB/export akışındadır; diğer sınıflar/paragon/loot adaptörleri bekler.
+Importer skills/items/aspects/affixes/classes/skill-tree alır. F04'te sekiz tam
+ağaç ve bütün12.117Item/6.329Affix/608Aspect kaynak kaydı DB/export akışındadır.
+Paragon/loot ve diğer entity adaptörleri sıradadır; sezon/loot uygunluğu henüz kesinleşmedi.
 
 ## Matematik kapsamı
 
@@ -55,8 +56,9 @@ Boş içerik, drop oranının sıfır veya sistemin oyunda yok olması anlamına
 
 ## Sıra ve mevcut durum
 
-12 Ekim 2026 F02: 34 gerçek kayıt/76 ilişki; 8 alan unknown, verified mekanik 0.
-Küçük gerçek örnekle uçtan uca akış doğrulandı; docs/phase2.md.
+12 Ekim 2026 F04:20.670 gerçek kaynak kaydı/9.522 ilişki;19.375 ham affix ifadesi.
+Özgün grafik arşivi ayrıDBset'inde10.098PNG taşır; docs/phase4.md.
+Araştırma planı8alan unknown, verified mekanik0; ham ifade runtime doğrulaması değildir.
 Önce build'i doğrulanmış küçük yetenek/eşya/affix/aspekt örneğiyle uçtan uca akış;
 ardından tüm sınıflar/ilişkiler, paragon/diğer sistemler, hasar/savunma/zamanlama
 ve loot/crafting RNG genişletilir. Kaynak tamlığı ve yamalar arası fark izlenir.

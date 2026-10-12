@@ -24,7 +24,7 @@ ayakta kalır. Çalışma sonunda servis/HTTPS kontrolü yapılır, site durduru
 | F01 | Kaynak/build doğrulaması | Tamamlandı | docs/source-audit.md; pinned 3.2.1.73552, hash/envanter |
 | F02 | Küçük gerçek veri akışı | Tamamlandı | docs/phase2.md; 34 kayıt/76 ilişki, DB/export/API/HTTPS |
 | F03 | Tüm sınıflar/yetenekler/ağaç | Veri/ikon hazır; görsel eşleme sürüyor | docs/phase3.md; 8 sınıf/1600 kayıt, tam kaynak ağaçları |
-| F04 | Tüm eşyalar/affix/aspekt | Bekliyor | Tam katalog, varyant/roll ve ilişkili detaylar |
+| F04 | Tüm eşyalar/affix/aspekt | Kaynak/DB hazır; yayın doğrulanıyor | docs/phase4.md; 12117/6329/608 kaynak kaydı |
 | F05 | Diğer karakter sistemleri | Bekliyor | Paragon/glyph, sınıf özel, gem/rune/minyon |
 | F06 | Formül/genel hasar | Bekliyor | Ham ifadeler, bağımlılık, ilk hasar modeli |
 | F07 | Savunma/zaman/kaynak/proc | Bekliyor | Koşul/sınırı belli mekanik modelleri |
@@ -254,6 +254,9 @@ yinelenebilir; yedek gerçekten geri yüklenmiş ve işletim sınırları ölç�
   kaynak/bağımlılık ilişkileri korunur; uygulanmış migration değiştirilmez.
 - Ham formüller eval/Function ile çalıştırılmaz. Desteklenmeyen ifade ve bağımlılık saklanır.
 - Sunucu tarafında erişilemeyen mekanik parametreler açık eksik araştırma kaydı olarak kalır.
+- Sınıf array sırası için gözlem raporu data/research/class-index-observations.json.
+  Affix2550212 Druid bitini işaretlerken açık class requirement Paladin SNO'sudur.
+  Çelişki çözülmeden corpus çoğunluğunu kesin enum eşlemesi olarak kullanma.
 
 ### Uygulama ve işletim sınırları
 

@@ -1,0 +1,15 @@
+{
+  "origin": "http://127.0.0.1:4321",
+  "browser": "155.0.4283.45",
+  "playwright": "1.64.0",
+  "at": "2026-10-12T04:46:44.611Z",
+  "checks": [
+    "skills search/class/type and original icon 1440",
+    "tree count/search/detail/tab/keyboard/width 1440",
+    "item/affix catalogue pagination, reload, exact item icon and weight caveat 1440",
+    "skills search/class/type and original icon 390",
+    "tree count/search/detail/tab/keyboard/width 390",
+    "item/affix catalogue pagination, reload, exact item icon and weight caveat 390"
+  ],
+  "errors": []
+}

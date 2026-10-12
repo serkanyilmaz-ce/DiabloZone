@@ -61,11 +61,11 @@ pnpm.cmd source:inventory .tmp/d4data 33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0
 
 Manifest data/research/source-manifest.json; ilk gerçek import seçimi poc-plan.json.
 
-F03 veri teslimi: 8 sınıf, 1.600 yetenek/geliştirme, 8 tam kaynak ağacı; önceki eşya1,
-affix6/aspekt1 ile toplam1.624 DB kaydı/4.612 ilişki. [F03 kanıtı](docs/phase3.md).
-1.600 yeteneğin ana ikonu özgün oyun CASC'sinden çıkarıldı: [görseller](docs/original-assets.md).
-Metadata build73552; veri3.2.1.73552, görseller3.2.2.73764. Eksik veri açıkça
-gösterilir, bozuk export build'i durdurur. DB araştırma planı
+F04 veri teslimi:8 sınıf/1.600 yetenek,8 tam kaynak ağacı,12.117 eşya,
+6.329 affix/608 aspekt; toplam20.670 DB kaydı/9.522 ilişki. [F04 kanıtı](docs/phase4.md).
+19.375 ham affix ifadesi;10.098 özgün oyunPNG'si ayrıimmutable grafik DB arşivinde.
+Metadata build73552; veri3.2.1.73552, görseller3.2.2.73764. Kaynakta bulunması
+loot/season aktifliğini tek başına kanıtlamaz. Bozuk export build'i durdurur. DB araştırma planı
 8 alanı unknown olarak saklar; verified mekanik 0. Hasar/RNG laboratuvarı eğitim
 modelidir. Tarihsel katsayılar güncel sezon verisi olarak sunulmaz.
 

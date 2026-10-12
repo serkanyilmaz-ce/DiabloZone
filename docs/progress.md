@@ -125,9 +125,9 @@ karşılaştırma sürer. F03 veri teslimi hazır; piksel eşdeğerliği tamamla
 - Snapshotcb1ea0ce-6eab-453c-b8e0-2034b83fb559,1.624kayıt/4.612ilişki.
   İkinci import aynıUUID; eski34kayıtlıF02 ve araştırma snapshot'ları korunur.
 - Sekiz sınıfın2.228düğüm/2.197kenarı kaynak koordinat/path ile eşleşti.
-  1.600yetenek/geliştirmenin tamamı özgün ana ikonunu gösterir. Salt okunur
+  1.600 yetenek/geliştirmenin tamamı özgün ana ikonunu gösterir. Salt okunur
   yerelCASC extraction1.583PNG; oyun manifesti değişmedi. Veri73552/grafik73764.
-- 16birim+11kaynak testi, lint/TypeScript/build/API geçti.1.626sayfa.
+- 16birim+11 kaynak testi, lint/TypeScript/build/API geçti.1.626sayfa.
 - İzole headless Edge155.0.4283.45 ile yerel ve canlı HTTPS1440px/390px arama,
   class/type filtreleri, PNGyüklemesi, ağaçarama/detay/class/klavye geçişi geçti;
   yatay sayfa taşması ve pageerror0. Kullanıcı tarayıcı profiline bağlanılmadı.
@@ -137,3 +137,22 @@ karşılaştırma sürer. F03 veri teslimi hazır; piksel eşdeğerliği tamamla
   Reader yazamaz, publishedlink silinemez, Aryaland.online200.
 - Site enabledsystemd/Caddy'de; SSHkomutları iş sonunda kapandı. OrtakPG/Aryaland
   restart/reboot yok. F03animasyon/connector/piksel eşlemesi sürer; F04hazırlığı başladı.
+
+## F04 DB ve yerel doğrulama — 12 Ekim 2026, 07:50
+
+Bütün12.117Item/6.329Affix/608Aspect kaynak kaydı, önceki sekiz sınıf/ağaç ile
+20.670kayıt/9.522 ilişki. Snapshotf36be437-156e-437d-9939-c6d228f2ab91;
+inputSHA256d4c2413f50bab96e568827bbb2d95e6c668727a4c461645de7cf7a5b28c8cf42.
+Native writer ikinciimporttaUUID'yi korudu; readerexport mührü/ilişkileri geçti.
+003_original_assets.sql uygulanıp10.185handle/10.098PNGmetadata nativeDB'ye alındı.
+Aseta0659c36-1a22-4996-9a23-6f508a668113; inputSHA256
+2ba34965d0941e52529e3d181098f57840ef1c68b03f9ccb5864bb33b1099328.
+İkinci register aynıset; ayrıreaderexport doğrulandı. Her PNG kaynak atlas SNO/UV ile
+uyumlu; veri 73552 / görsel 73764 farkı korunur. PNGURL tamSHA256 içerir.
+17 birim/11 kaynak testi ve lint/TypeScript geçti;20.673 sayfa build tamamlandı.
+Masaüstü1440/mobil390: arama/filter/ikon/tree/klavye, item/affix pagination/reload
+kontrolleri geçti, pageerror0. Listeler bütünkayıtları ararkenDOM'da24kart çizer.
+İlkbuild geçici preview dosya kilidiyle EPERM verdi; kendi preview kapatılınca
+aynıbuild geçti. OrtakOS veya oyun dosyası izinlerine müdahale edilmedi.
+Sınıf dizisindeki kaynak çelişkisi Affix2550212'de bulundu; kesin sıra ilan edilmedi.
+19.375 ham affix ifadesi var, verified mekanik 0. Yayın/HTTPSkontrolü devam ediyor.

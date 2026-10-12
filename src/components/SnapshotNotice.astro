@@ -8,7 +8,7 @@ const base=import.meta.env.BASE_URL;
   <a href={`${base}classes/`}>Sınıfları incele →</a>
   <p>Sezon başlangıç verisi. Kaynak adları ve açıklamaları İngilizce; çözümlenmeyen formüller ham hâliyle gösterilir.</p>
   {assetManifest.sourceVersion&&<p>Özgün oyun görselleri: yerel {assetManifest.sourceVersion} kurulumu.</p>}
-  {metadata.snapshotId && <details><summary>Arşiv kaydı</summary><code>{metadata.snapshotId}</code></details>}
+  {metadata.snapshotId && <details><summary>Arşiv kaydı</summary><p>Oyun verisi: <code>{metadata.snapshotId}</code></p>{assetManifest.assetSetId&&<p>Özgün görseller: <code>{assetManifest.assetSetId}</code></p>}</details>}
 </aside>}
 <style>
 .snapshot-notice{border:1px solid var(--line);border-left:3px solid var(--red);padding:12px 16px;margin:0 0 24px;background:var(--surface);font-size:.78rem;display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px}

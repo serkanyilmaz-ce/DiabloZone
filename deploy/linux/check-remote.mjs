@@ -21,6 +21,15 @@ const checked = message => { checks.push(message); console.log(`PASS ${message}`
 async function rejected(client, sql, code, values = []) {
   await assert.rejects(client.query(sql, values), error => error.code === code);
 }
+async function apiFetch(url){
+  let response=await fetch(url);
+  if(response.status===429){
+    const wait=Math.min(60000,Math.max(1000,Number(response.headers.get('Retry-After')??'60')*1000));
+    console.log('API rate boundary reached; waiting for the next request window');
+    await new Promise(resolve=>setTimeout(resolve,wait));response=await fetch(url);
+  }
+  return response;
+}
 try {
   const roles = await reader.query("select rolname,rolsuper from pg_roles where rolname in ('diablozone_writer','diablozone_reader')");
   assert.equal(roles.rows.length, 2);
@@ -88,7 +97,7 @@ try {
   for(const file of catalog.files){
     const payloads=new Map();
     for(let page=1;page<=Math.max(1,Math.ceil(file.records.length/24));page++){
-      const response=await fetch(`${origin}/api/v1/snapshots/${gameId}/records?kind=${file.kind}&page=${page}`);
+      const response=await apiFetch(`${origin}/api/v1/snapshots/${gameId}/records?kind=${file.kind}&page=${page}`);
       assert.equal(response.status,200);
       const result=await response.json();
       assert.equal(result.total,file.records.length);assert.equal(result.snapshot.id,gameId);
@@ -117,6 +126,22 @@ try {
   await rejected(writer,'delete from record_links where snapshot_id=$1','P0001',[gameId]);
   await writer.query('rollback');
   checked('All real game API payloads match the PostgreSQL export; detail HTML carries the same snapshot; reader and immutable links protected');
+  const originalAssets=JSON.parse(readFileSync(path.join(releaseRoot,'data/research/assets-manifest.json'),'utf8'));
+  if(originalAssets.assetSetId){
+    const assetId=originalAssets.assetSetId;
+    const stored=(await reader.query("select input_sha256,source_version,data_source_version,state from asset_sets where id=$1",[assetId])).rows[0];
+    assert.equal(stored.state,'published');assert.equal(stored.input_sha256,originalAssets.inputSha256);
+    assert.equal(stored.source_version,originalAssets.sourceVersion);assert.equal(stored.data_source_version,originalAssets.dataSourceVersion);
+    const all=(await reader.query('select payload from game_assets where asset_set_id=$1 order by handle',[assetId])).rows;
+    assert.equal(canonical(all.map(row=>row.payload)),canonical(originalAssets.assets));
+    await reader.query('begin read write');await rejected(reader,'update game_assets set status=status where false','42501');await reader.query('rollback');
+    await writer.query('begin');await rejected(writer,'delete from game_assets where asset_set_id=$1','P0001',[assetId]);await writer.query('rollback');
+    const result=await (await apiFetch(`${origin}/api/v1/asset-sets/${assetId}/assets?handle=2402480109`)).json();
+    assert.equal(result.total,1);assert.equal(result.assetSet.source_version,stored.source_version);
+    const png=originalAssets.assets.find(a=>a.handle===2402480109);assert.equal((await fetch(origin+'/'+png.path)).status,200);
+    assert.equal((await fetch(`${origin}/api/v1/asset-sets/${assetId}/assets?handle=`)).status,400);
+    checked('Original image registry matches the reader export; separate graphics build, original PNG, reader and immutable set validated');
+  }
   const treeHtml=await (await fetch(origin+'/skill-tree/')).text();
   for(const board of catalog.files.find(file=>file.kind==='skill-tree').records){assert(treeHtml.includes(board.id));assert(treeHtml.includes(board.scope));}
   assert.equal((await fetch('http://127.0.0.1:3001/')).status,200);

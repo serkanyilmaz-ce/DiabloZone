@@ -1,0 +1,29 @@
+{
+  "phase": "F04",
+  "sourceCommit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+  "sourceVersion": "3.2.1.73552",
+  "items": {
+    "source": 12117,
+    "imported": 12117,
+    "localized": 11987,
+    "withInventoryIcon": 4164,
+    "byRarity": {
+      "unknown": 10080,
+      "legendary": 798,
+      "unique": 1201,
+      "mythic": 38
+    }
+  },
+  "affixes": {
+    "source": 6329,
+    "imported": 6329,
+    "localized": 1468,
+    "withRawExpressions": 6329
+  },
+  "aspects": {
+    "source": 608,
+    "imported": 608
+  },
+  "unresolved": [],
+  "availability": "Source presence does not prove shipping, season activation or loot eligibility; all variants retained"
+}

@@ -8,8 +8,9 @@ import { digest,loadCatalog } from '../scripts/db/catalog.js';
 
 test('catalogue seal survives JSONB key reordering and rejects broken relationships',async()=>{
   const original=await loadCatalog();
-  assert.equal(original.files.find(file=>file.kind==='items')!.records.length,1);
-  assert.equal(original.links.filter(link=>link.relation==='item_affix').length,5);
+  const harlequin=original.files.find(file=>file.kind==='items')!.records.find(record=>record.id==='609820');
+  assert(harlequin&&'affixIds' in harlequin);
+  assert.deepEqual(original.links.filter(link=>link.relation==='item_affix'&&link.sourceId===harlequin.id).map(link=>link.targetId).sort(),[...harlequin.affixIds].sort());
   const directory=await mkdtemp(path.join(os.tmpdir(),'diablozone-catalog-'));
   for(const file of original.files){
     // Recursive JSONB-like key order change, preserving all nested data.

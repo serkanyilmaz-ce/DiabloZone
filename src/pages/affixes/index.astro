@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchiveList from '../../components/ArchiveList.astro';
+---
+<BaseLayout title="Affix arşivi">
+<section class="page-heading"><p class="eyebrow">ÖZELLİKLERİN ARKASINDA</p><h1>Affix arşivi</h1><p>Eşya özellikleri, ham roll ifadeleri, havuz ağırlıkları ve bağlı güçler.</p><p class="source-note">Yerelleştirilmiş adı olmayan kayıtlar kaynak adıyla korunur. Ağırlık, nihai düşme olasılığı değildir.</p></section>
+<form class="toolbar" role="search"><label class="field search-field">Arama<input class="search" type="search" data-search placeholder="Affix adı, nitelik veya etiket…"/></label><label class="field">Adlandırma<select class="select" data-filter="localized"><option value="">Tüm kaynak kayıtları</option><option value="resolved">Yerelleştirilmiş adı var</option><option value="missing">Kaynak adı</option></select></label></form>
+<ArchiveList kind="affixes"/>
+</BaseLayout>

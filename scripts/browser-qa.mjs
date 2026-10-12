@@ -19,7 +19,7 @@ try{
     await page.locator('[data-filter="type"]').selectOption('active');
     assert.equal(await page.locator('[data-entry]:visible').count(),1);
     assert((await page.locator('[data-entry]:visible').textContent()).includes('Fireball'));
-    assert(await page.locator('[data-entry]:visible img').evaluate(img=>img.complete&&img.naturalWidth>0));
+    await page.waitForFunction(()=>{const img=document.querySelector('[data-list] img');return img instanceof HTMLImageElement&&img.complete&&img.naturalWidth>0;});
     await page.screenshot({path:`output/browser-qa/skills-${viewport.width}.png`,fullPage:true});
     checks.push(`skills search/class/type and original icon ${viewport.width}`);
     await page.goto(origin+'/skill-tree/#sorcerer',{waitUntil:'networkidle'});
@@ -29,7 +29,7 @@ try{
     await page.locator('[data-results] button').filter({hasText:/^Fireball$/}).click();
     assert.equal(await page.locator('[data-detail-name]').textContent(),'Fireball');
     assert((await page.locator('[data-detail-link]').getAttribute('href')).includes('fireball-165023'));
-    assert(await page.locator('[data-detail-emblem] img').evaluate(img=>img.complete&&img.naturalWidth>0));
+    await page.waitForFunction(()=>{const img=document.querySelector('[data-detail-emblem] img');return img instanceof HTMLImageElement&&img.complete&&img.naturalWidth>0;});
     await page.locator('[data-tree-search]').fill('');
     await page.locator('[data-tree-tab="druid"]').click();
     assert.equal(await page.locator('[data-node-id]').count(),337);
@@ -45,6 +45,19 @@ try{
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
     assert.equal(overflow,false,`Horizontal page overflow ${viewport.width}`);
     checks.push(`tree count/search/detail/tab/keyboard/width ${viewport.width}`);
+    await page.goto(origin+'/items/',{waitUntil:'networkidle'});
+    assert.equal(await page.locator('[data-entry]').count(),24);
+    await page.locator('[data-next]').click();assert(new URL(page.url()).searchParams.get('page')==='2');
+    await page.locator('[data-search]').fill('Harlequin Crest');
+    const harlequin=page.locator('[data-entry][href$="harlequin-crest-609820/"]');await harlequin.waitFor();
+    await page.waitForFunction(()=>{const img=document.querySelector('[href$="harlequin-crest-609820/"] img');return img instanceof HTMLImageElement&&img.complete&&img.naturalWidth>0;});
+    await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('[data-search]').inputValue(),'Harlequin Crest');
+    await page.screenshot({path:`output/browser-qa/items-${viewport.width}.png`,fullPage:true});
+    await page.goto(origin+'/affixes/',{waitUntil:'networkidle'});assert.equal(await page.locator('[data-entry]').count(),24);
+    await page.locator('[data-search]').fill('Binding Embers');assert((await page.locator('[data-result-count]').textContent()).includes('1 kayıt'));
+    await page.locator('[data-entry]').click();assert((await page.locator('h1').textContent()).includes('Binding Embers'));
+    assert((await page.locator('body').textContent()).includes('nihai düşme yüzdesi değildir'));
+    checks.push(`item/affix catalogue pagination, reload, exact item icon and weight caveat ${viewport.width}`);
     await context.close();
   }
   assert.deepEqual(errors,[]);

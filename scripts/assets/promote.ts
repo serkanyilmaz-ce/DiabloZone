@@ -22,8 +22,9 @@ for(const row of report.assets){
   const evidence=frames.get(row.handle);
   const verified=evidence?.textureSno===row.atlasSno;
   const matching=verified&&['u0','v0','u1','v1'].every(k=>Math.abs(row.frame[k]-evidence.frame[`fl${k[0].toUpperCase()}${k[1]}`])<1e-6);
-  await copyFile(path.join(directory,row.file),`public/${relative}/${row.file}`);
-  assets.push({...row,path:`${relative}/${row.file}`,sourceMetadata:evidence?.source,referenceStatus:matching?'same-handle-atlas-and-uv':'local-handle-only'});
+  const filename=`${row.handle}-${row.sha256}.png`;
+  await copyFile(path.join(directory,row.file),`public/${relative}/${filename}`);
+  assets.push({...row,path:`${relative}/${filename}`,sourceMetadata:evidence?.source,referenceStatus:matching?'same-handle-atlas-and-uv':'local-handle-only'});
 }
 const output={...report,dataSourceVersion:manifest.version,dataSourceCommit:manifest.commit,assets:assets.sort((a,b)=>a.handle-b.handle)};
 await writeFile('data/research/assets-manifest.json',JSON.stringify(output,null,2)+'\n');
