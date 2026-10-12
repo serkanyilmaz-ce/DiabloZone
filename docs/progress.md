@@ -156,3 +156,28 @@ kontrolleri geçti, pageerror0. Listeler bütünkayıtları ararkenDOM'da24kart 
 aynıbuild geçti. OrtakOS veya oyun dosyası izinlerine müdahale edilmedi.
 Sınıf dizisindeki kaynak çelişkisi Affix2550212'de bulundu; kesin sıra ilan edilmedi.
 19.375 ham affix ifadesi var, verified mekanik 0. Yayın/HTTPSkontrolü devam ediyor.
+
+## F04 canlı doğrulama; F05/F06 kaynak teslimi — 12 Ekim 2026
+
+F04 release 20261012-080500, commit 448bdcd1f4a7580ab5e8a7a3f91d9e2ff5f03100,
+arşiv SHA256 929a88162fb0f0daf37e4e08923d8847289afa983f723612b99c3e3658b8cab4
+canlıya alındı. Gerçek PG/API payload'ları, bütün detay HTML'leri, görsel registry,
+reader/immutability ve Aryaland HTTPS kontrolü geçti. Masaüstü/mobil browser geçti.
+
+F05 ayrı immutable arşiv 8f059faa-2afb-44e6-977a-72367d2e3023:
+3510 kaynak kaydı, 4268 ham ifade (3970 boş olmayan), gerçek reader export.
+191 ikon handle'ının 189 yenisi oyun dosyaları değiştirilmeden çıkarıldı.
+Yeni asset set 540d47e9-d05e-4736-a778-b19a409ece79; 10287 özgün PNG.
+Kaynakta bulunmayan 1144 TreasureClass referansı unresolved; oran uydurulmadı.
+
+F06 kaynak arşivi 73251 boş olmayan ifade görünümü; 67065 grammar supported,
+6186 unsupported. Bunlar benzersiz oyun formülü/verified mekanik sayısı değildir.
+Sınırlı parser: eval/Function yok, missing input ve sonlu olmayan sonuç reddi,
+koşul kısa devre ve kaynak sınırları. 20 birim + 11 gerçek kaynak testi geçti.
+24185 sayfalık build; mobil dinamik kart CSS kapsamı ayrıca düzeltildi.
+F05/F06 gerçek sınıf/ölçüm/stacking teslimlerinin kalanları phase5/phase6.md'de.
+
+F10 bağımsız işletim kontrolü: 18.5 MB DB yedeği gerçek ayrı test DB'sine geri
+yüklendi, mühür/sayı/migration hash'leri eşleşti ve test DB'si kaldırıldı.
+Makine dışı yerel kopyanın SHA256'sı eşleşti; docs/backup-verification.md.
+Native F05/F06 uygulama yayını ve son browser/HTTPS doğrulaması bu kaydı izler.

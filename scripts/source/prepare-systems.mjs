@@ -16,4 +16,4 @@ const tables=['AttributeFormulas','DataAttributes','DifficultyTiers','LevelScali
 for(const name of tables){const file=lookup.get(`json/base/meta/GameBalance/${name}.gam.json`.toLowerCase());if(file)patterns.push('/'+file);}
 console.log(JSON.stringify({counts,tables}));
 const r=spawnSync('git',['-C',root,'sparse-checkout','set','--no-cone','--stdin'],{input:[...new Set(patterns)].join('\n')+'\n',encoding:'utf8',maxBuffer:16*1024*1024});
-if(r.status)throw new Error(r.stderr);console.log('Character systems, RNG pools and mathematical source tables materialized');
+if(r.status)throw new Error(r.stderr);console.log('Character systems and mathematical tables materialized; TreasureClass coverage is reported separately and may be unavailable');

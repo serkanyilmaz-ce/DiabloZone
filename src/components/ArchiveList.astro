@@ -1,11 +1,11 @@
 ---
-import {catalogueCards,type CardKind} from '../lib/catalogue-cards';
+import {catalogueCards,type CardKind,type CatalogueCard} from '../lib/catalogue-cards';
 import {metadata} from '../lib/data';
-interface Props{kind:CardKind|'all'}
-const {kind}=Astro.props;const cards=catalogueCards(kind),base=import.meta.env.BASE_URL;
-const url=`${base}catalog/${metadata.snapshotId??'unpublished'}/${kind}.json`;
+interface Props{kind?:CardKind|'all';records?:CatalogueCard[];sourceUrl?:string;snapshotId?:string}
+const {kind='all',records,sourceUrl,snapshotId=metadata.snapshotId??''}=Astro.props;const cards=records??catalogueCards(kind),base=import.meta.env.BASE_URL;
+const url=sourceUrl??`${base}catalog/${metadata.snapshotId??'unpublished'}/${kind}.json`;
 ---
-<section class="archive-list" data-archive-list data-url={url} data-snapshot={metadata.snapshotId??''} data-base={base}>
+<section class="archive-list" data-archive-list data-url={url} data-snapshot={snapshotId} data-base={base}>
   <div class="browser-summary"><p data-result-count aria-live="polite">{cards.length} kayıt · Sayfa 1</p><button type="button" class="text-button" data-reset>Filtreleri sıfırla</button></div>
   <p data-list-status class="source-note" role="status" hidden></p>
   <div class="card-grid" data-list tabindex="-1">{cards.slice(0,24).map(card=><a class="data-card" href={`${base}${card.kind}/${card.slug}/`} data-entry data-class={card.classes[0]} data-type={card.filters.type}><div class="card-main">{card.icon?<img class="entity-icon" width="55" height="55" src={`${base}${card.icon}`} alt="" loading="lazy"/>:<span class="entity-fallback" aria-hidden="true">◇</span>}<div class="card-copy"><p class="card-kicker">{card.kicker}</p><h2>{card.name}</h2></div></div><p>{card.description}</p><div class="chip-row">{card.chips.map(chip=><span class="chip">{chip}</span>)}</div></a>)}</div>

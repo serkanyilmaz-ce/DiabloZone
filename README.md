@@ -135,5 +135,14 @@ edilerek mevcut tasarım üzerine yazılmaz. Sunucu yayını ayrı native işlem
 Antrasit/bordo tasarım, Türkçe sayfalar, URL filtreleri ve 24 kayıt sayfalama.
 sanctuary-research.png özgün üretim görseldir. Eski kullanılmayan görsel/CSS
 taslakları kaldırıldı. Diablo IV/markalar Blizzard'a aittir; proje bağımsızdır.
-Tarayıcı üzerinden görsel/mobil/klavye QA henüz tamamlanmadı. HTTP/DB/TLS/
-sistemd ve test sonuçları docs/progress.md'de ayrı kayıtlanır.
+1440 px masaüstü ve 390 px mobil, arama/filtre/ikon/ağaç/klavye/sayfalama
+kontrolleri izole headless Edge ile yapılır. HTTP/DB/TLS/systemd ve test
+sonuçları docs/progress.md'de ayrı kayıtlanır. Gerçek oyun görsel eşdeğerliği
+ve mekanik katsayılarının ölçüm doğrulaması tamamlanmış değildir.
+
+Paragon/glyph/tarif/sezon ve 11 matematik tablosu `/systems/` arşivindedir;
+ayrı immutable DB set'i reader export ile frontend'e gelir. Ham ifade arşivi
+`/formulas/` altında kaynak/bağımlılık ve sınırlı yorumlayıcı sunar.
+`data:systems`, `db:systems-import`, `db:systems-export` bu zincirin araçlarıdır.
+F05/F06 kapsam ve eksikler docs/phase5.md ile docs/phase6.md'de.
+Gerçek yedek/izole restore kanıtı docs/backup-verification.md'dedir.

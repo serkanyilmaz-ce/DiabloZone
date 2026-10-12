@@ -1,12 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
-import { skills, items, aspects, metadata } from '../lib/data';
+import { skills, items, aspects, affixes,metadata } from '../lib/data';
+import {systems} from '../lib/systems';
+import {formulaRecords} from '../lib/formula-archive';
 const base = import.meta.env.BASE_URL;
 const features = [
   {label:'Yetenekler', href:'skills/', note:'Sınıfının gücünü tanı. Aktif yetenekleri, pasifleri ve geliştirmeleri incele.', icon:'skills',count:skills.length,number:'01'},
   {label:'Eşyalar', href:'items/', note:'Doğru parçanın peşine düş. Eşya özelliklerini ve güçlerini karşılaştır.', icon:'items',count:items.length,number:'02'},
   {label:'Aspektler', href:'aspects/', note:'Build’ini değiştiren gücü bul. Efsanevi etkileri ve koşullarını keşfet.', icon:'aspects',count:aspects.length,number:'03'},
+  {label:'Affix arşivi',href:'affixes/',note:'Roll, uygunluk, kaynak ağırlığı ve eşya ilişkilerini ayrıntılarıyla incele.',icon:'items',count:affixes.length,number:'04'},
+  {label:'Paragon & sistemler',href:'systems/',note:'Panolar, düğümler, glyph bonusları ve ilerleme tablolarının kaynaklarını keşfet.',icon:'tree',count:systems.length,number:'05'},
+  {label:'Ham formüller',href:'formulas/',note:'Gizli ifadeleri ara. Bağımlılıklarını ve çözülmemiş matematiği kaynağıyla incele.',icon:'formula',count:formulaRecords.length,number:'06'},
 ];
 ---
 <BaseLayout title="Diablo IV veri & mekanik arşivi">

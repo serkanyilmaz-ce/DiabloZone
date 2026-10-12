@@ -2,7 +2,7 @@ import {skills,items,aspects,affixes,metadata} from './data';
 import {term} from './terms';
 export type CardKind='skills'|'items'|'aspects'|'affixes';
 export interface CatalogueCard{
-  id:string;slug:string;name:string;kind:CardKind;description:string;kicker:string;icon?:string;classes:string[];
+  id:string;slug:string;name:string;kind:CardKind|'systems';description:string;kicker:string;icon?:string;classes:string[];
   filters:Record<string,string>;text:string;chips:string[];
 }
 // Preserve raw source expressions in detail records; list previews mark unresolved

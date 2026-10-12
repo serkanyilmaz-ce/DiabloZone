@@ -2,6 +2,7 @@ import { createServer, type ServerResponse } from 'node:http';
 import { databasePool } from './db/config.js';
 import { parseRecordQuery, isUuid, escapeLike } from '../src/lib/api-query.js';
 import { clientAddress } from '../src/lib/client-address.js';
+import {systemKinds} from '../schemas/systems.js';
 const pool=databasePool(true);
 const host=process.env.API_HOST ?? '127.0.0.1';
 const port=Number(process.env.API_PORT ?? '8787');
@@ -26,6 +27,21 @@ const server=createServer(async(request,response)=>{
     if(url.pathname==='/health'){await pool.query('select 1');reply(response,200,{status:'ok'});return;}
     if(url.pathname==='/api/v1/seasons'){
       const result=await pool.query('select id,name,status,source_url from seasons order by id desc');reply(response,200,{data:result.rows});return;
+    }
+    if(url.pathname==='/api/v1/system-archives'){
+      const result=await pool.query("select id,source_version,source_commit,season_id,channel,input_sha256,record_count,created_at from system_archives where state='published' order by created_at desc limit 50");
+      reply(response,200,{data:result.rows});return;
+    }
+    const systemMatch=url.pathname.match(/^\/api\/v1\/system-archives\/([^/]+)\/records$/);
+    if(systemMatch){
+      const id=systemMatch[1],kind=url.searchParams.get('kind'),q=url.searchParams.get('q')??'',page=url.searchParams.get('page')??'1';
+      if(!isUuid(id)||kind!==null&&!systemKinds.includes(kind as typeof systemKinds[number])||q.length>120||!/^\d{1,6}$/.test(page)||Number(page)<1)throw new RangeError('Geçersiz sistem sorgusu.');
+      const archive=(await pool.query("select id,source_version,source_commit,input_sha256,record_count from system_archives where id=$1 and state='published'",[id])).rows[0];
+      if(!archive){reply(response,404,{error:'Yayınlanmış sistem arşivi bulunamadı.'});return;}
+      const values=[id,kind,`%${escapeLike(q)}%`],where="archive_id=$1 and ($2::text is null or kind=$2) and ($3='%%' or name ilike $3 or id ilike $3 or payload->>'internalName' ilike $3)";
+      const count=(await pool.query(`select count(*)::int as count from system_records where ${where}`,values)).rows[0].count;
+      const result=await pool.query(`select kind,id,slug,name,payload from system_records where ${where} order by kind,id limit 24 offset $4`,[...values,(Number(page)-1)*24]);
+      reply(response,200,{archive,page:Number(page),limit:24,total:count,data:result.rows});return;
     }
     if(url.pathname==='/api/v1/asset-sets'){
       const version=url.searchParams.get('sourceVersion');

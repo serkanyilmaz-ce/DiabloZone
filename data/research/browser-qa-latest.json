@@ -2,14 +2,16 @@
   "origin": "http://127.0.0.1:4321",
   "browser": "155.0.4283.45",
   "playwright": "1.64.0",
-  "at": "2026-10-12T04:46:44.611Z",
+  "at": "2026-10-12T08:11:05.124Z",
   "checks": [
     "skills search/class/type and original icon 1440",
     "tree count/search/detail/tab/keyboard/width 1440",
     "item/affix catalogue pagination, reload, exact item icon and weight caveat 1440",
+    "Paragon/glyph original icon, board grid, safe source expression, boundary and reload 1440",
     "skills search/class/type and original icon 390",
     "tree count/search/detail/tab/keyboard/width 390",
-    "item/affix catalogue pagination, reload, exact item icon and weight caveat 390"
+    "item/affix catalogue pagination, reload, exact item icon and weight caveat 390",
+    "Paragon/glyph original icon, board grid, safe source expression, boundary and reload 390"
   ],
   "errors": []
 }

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceDetails from '../../components/SourceDetails.astro';
+import {systems,systemArchive,systemById,systemLabels,systemIcon} from '../../lib/systems';
+export function getStaticPaths(){return systems.map(record=>({params:{slug:record.slug},props:{record}}));}
+const {record}=Astro.props,base=import.meta.env.BASE_URL,icon=systemIcon(record);
+const width=record.kind==='ParagonBoard'?Number(record.rawData.nWidth):0;
+const entries=record.kind==='ParagonBoard'&&Array.isArray(record.rawData.arEntries)?record.rawData.arEntries as Array<{__raw__?:number}|null>:[];
+const gridValid=Number.isInteger(width)&&width>0&&width<=100&&entries.length<=10000;
+const glyphBonusKeys=['flStartingBonusScalar','flAddedBonusScalarPerLevel','eBonusOperation','eRequiredRarity'];
+---
+<BaseLayout title={record.name}>
+<a class="back-link" href={`${base}systems/?type=${record.kind}`}>← {systemLabels[record.kind]} arşivine dön</a>
+<article class="detail-card"><p class="eyebrow">{systemLabels[record.kind]}</p><div class="card-main">{icon&&<img class="entity-icon" width="72" height="72" src={`${base}${icon}`} alt=""/>}<h1>{record.name}</h1></div>
+<p class="source-note">Veri {systemArchive?.sourceVersion} · Arşiv <code>{systemArchive?.archiveId}</code> · Kaynak SNO {record.id}</p>
+<p class="lead">Bu kayıt datamine kaynağıdır. Ham alanlar korunur; oyun içi uygunluk, birim, işlem sırası ve katsayılar ayrıca doğrulanmalıdır.</p>
+{record.kind==='ParagonBoard'&&gridValid&&<section class="detail-section"><h2>Kaynak pano düzeni</h2><p>{width} sütun · {entries.length} hücre. Sıralı kaynak hücreleri gösterilir; bağlantı/rotasyon veya puan harcama kuralı varsayılmaz.</p><div class="board-scroll"><div class="paragon-grid" style={`--board-width:${width}`}>{entries.map((ref,index)=>{const node=ref?.__raw__?systemById.get(`ParagonNode:${ref.__raw__}`):undefined;const image=node?systemIcon(node):undefined;return node?<a class:list={['paragon-cell',{'has-socket':node.rawData.bHasSocket,'is-gate':node.rawData.bIsGate}]} href={`${base}systems/${node.slug}/`} title={`${node.name} · hücre ${index}`} aria-label={`${node.name}, satır ${Math.floor(index/width)+1}, sütun ${index%width+1}`}>{image?<img src={`${base}${image}`} width="24" height="24" alt="" loading="lazy"/>:<span aria-hidden="true">{node.rawData.bHasSocket?'◉':node.rawData.bIsGate?'◆':'·'}</span>}</a>:<span class:list={['paragon-cell',{'is-empty':!ref?.__raw__}]} title={ref?.__raw__?`Çözümlenmemiş düğüm ${ref.__raw__}`:undefined}></span>;})}</div></div></section>}
+{record.kind==='ParagonGlyphAffix'&&<section class="detail-section"><h2>Bonus ölçekleme alanları</h2><dl class="detail-grid">{glyphBonusKeys.map(key=><div><dt>{key}</dt><dd>{String(record.rawData[key]??'Bilinmiyor')}</dd></div>)}</dl><p class="source-note">Alan adı veya enum, tek başına nihai hasar çarpanı değildir. Seviye tabanı, hedef nitelik, stat eşiği ve bonus işlemi ham kayıtta tutulur.</p></section>}
+<section class="detail-section"><h2>Kaynak bağlantıları</h2>{record.references.length?<ul>{record.references.map(ref=><li><code>{ref.path}</code> · {ref.kind??'Bilinmeyen tür'} {ref.sno} · {ref.resolution==='archive'?<a href={`${base}systems/${ref.targetSlug}/`}>{ref.name??ref.sno}</a>:ref.file?<a href={`https://github.com/DiabloTools/d4data/blob/${systemArchive?.sourceCommit}/${ref.file}`} target="_blank" rel="noreferrer">{ref.name??ref.sno} · kaynak referansı, içe alınmadı</a>:<span>Kaynak dosyası bulunamadı; çözümlenmedi.</span>}</li>)}</ul>:<p class="source-note">Bu kayıtta SNO bağlantısı yok.</p>}</section>
+<SourceDetails source={record.source} localizationSource={record.localizationSource} patch={systemArchive?.sourceVersion} template={record.descriptionTemplate} formulas={record.rawFormulas}/>
+<details class="detail-section"><summary>Tüm ham kaynak alanları</summary><pre>{JSON.stringify(record.rawData,null,2)}</pre></details>
+</article>
+</BaseLayout>
+<style>.board-scroll{overflow:auto;padding:1rem 0}.paragon-grid{display:grid;grid-template-columns:repeat(var(--board-width),28px);gap:3px;width:max-content}.paragon-cell{display:grid;place-items:center;width:28px;height:28px;border:1px solid #625641;background:#201f20;color:#c4b794;border-radius:3px}.paragon-cell img{object-fit:contain}.paragon-cell.is-empty{border-color:transparent;background:transparent}.paragon-cell.has-socket{border-color:#d9a8e8;border-radius:50%}.paragon-cell.is-gate{border-color:#eab665}.paragon-cell:focus-visible{outline:2px solid white;outline-offset:2px}</style>

@@ -18,7 +18,7 @@
     "data:icons": "tsx scripts/fetch-icons.ts",
     "test": "node scripts/run-tests.mjs",
     "check": "astro check && tsc -p tsconfig.tooling.json",
-    "lint": "eslint src tests scripts/db scripts/source scripts/assets/*.mjs scripts/assets/*.ts scripts/service.ts scripts/package-release.mjs deploy/linux/check-remote.mjs",
+    "lint": "eslint src tests scripts/db scripts/source scripts/assets/*.mjs scripts/assets/*.ts scripts/service.ts scripts/package-release.mjs deploy/linux/check-remote.mjs deploy/linux/check-systems.mjs",
     "test:integration": "node scripts/run-tests.mjs --integration",
     "db:migrate": "tsx scripts/db/migrate.ts",
     "db:import": "tsx scripts/db/import.ts",
@@ -35,7 +35,11 @@
     "db:promote": "tsx scripts/db/promote.ts",
     "data:classes": "tsx scripts/source/normalize-classes.ts",
     "data:catalog": "tsx scripts/source/normalize-catalog.ts",
-    "db:assets": "tsx scripts/db/assets.ts"
+    "db:assets": "tsx scripts/db/assets.ts",
+    "db:assets-export": "tsx scripts/db/assets-export.ts",
+    "data:systems": "tsx scripts/source/normalize-systems.ts",
+    "db:systems-import": "tsx scripts/db/systems-import.ts",
+    "db:systems-export": "tsx scripts/db/systems-export.ts"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",

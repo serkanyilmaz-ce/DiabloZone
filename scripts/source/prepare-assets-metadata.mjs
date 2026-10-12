@@ -5,7 +5,7 @@ const root=path.resolve('.tmp/d4data');
 const manifest=JSON.parse(await readFile('data/research/source-manifest.json','utf8'));
 const inventory=JSON.parse(await readFile(`.tmp/source-evidence/${manifest.commit}-inventory.json`,'utf8'));
 const available=new Set(inventory.entries.map(e=>e.file));
-const report=JSON.parse(await readFile('output/assets-local/3.2.2.73764/report.json','utf8'));
+const report=JSON.parse(await readFile(process.argv[2]??'output/assets-local/3.2.2.73764/report.json','utf8'));
 const patterns=(await readFile(path.join(root,'.git/info/sparse-checkout'),'utf8')).trim().split('\n');
 const files=new Set(report.assets.filter(a=>a.atlasName).map(a=>`json/base/meta/Texture/${a.atlasName}.tex.json`));
 const missing=[];

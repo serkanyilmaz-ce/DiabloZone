@@ -10,10 +10,10 @@ release = pathlib.Path(sys.argv[1]).resolve(strict=True)
 if release.parent != pathlib.Path('/srv/diablozone/releases'):
     raise SystemExit('Invalid release path')
 task = sys.argv[2] if len(sys.argv) > 2 else 'bootstrap'
-if task not in ('bootstrap', 'migrate', 'research', 'import', 'export', 'assets', 'assets-export'):
+if task not in ('bootstrap', 'migrate', 'research', 'import', 'export', 'assets', 'assets-export', 'systems-import', 'systems-export'):
     raise SystemExit('Invalid admin task')
 environment = os.environ.copy()
-secret_file = '/etc/diablozone/api.env' if task in ('export', 'assets-export') else '/etc/diablozone/import.env'
+secret_file = '/etc/diablozone/api.env' if task in ('export', 'assets-export', 'systems-export') else '/etc/diablozone/import.env'
 for line in pathlib.Path(secret_file).read_text().splitlines():
     if line and not line.startswith('#'):
         key, value = line.split('=', 1)

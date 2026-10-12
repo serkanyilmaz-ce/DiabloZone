@@ -104,13 +104,16 @@ doğrulaması açıkken kontrol edilir. Host reboot yapılmadan auto-start enabl
 
 ## Veri ve kapasite sınırı
 
-Liste/detay statik export, araştırma canlı API kullanır. Tam sınıf/eşya/affix
-verisinin otomatik DB → frontend aktarımı ve gerçek oyun import'u bekler.
+Liste/detay statik reader export, araştırma ve veri uçları canlı API kullanır.
+Sınıf/yetenek/eşya/affix/aspekt ve ayrı sistem arşivi gerçek PG'ye içe alınır;
+DB → reader export → build → release akışı kontrollü çalışır. Otomatik
+güncelleme zamanlaması henüz yoktur.
 8 unknown araştırma alanı gerçek sezon 15 katsayısı/drop oranı değildir.
 100 GB aynı makinedeki Aryaland ile paylaşılır; eski bağımsız 100 GB bütçesi
 bu ortak sunucuya uygulanmaz. Veri büyüdükçe disk/DB/WAL/log/release ölçülür.
-Otomatik release/DB/yedek silme yoktur. Makine dışı yedek ve geri yükleme testi
-henüz hazırlanmadığından tamamlanmış felaket kurtarma sistemi iddia edilmez.
+Otomatik release/DB/yedek silme yoktur. Makine dışı yerel DB yedeği ve ayrı
+test DB'sine gerçek geri yükleme doğrulandı; docs/backup-verification.md.
+Günlük otomatik dış transfer ve alarm/saklama politikası henüz yoktur.
 
 ## Resmî kaynaklar
 

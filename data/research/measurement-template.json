@@ -1,0 +1,39 @@
+{
+  "documentKind": "unfilled_measurement_template",
+  "validationStatus": "unknown",
+  "experimentId": null,
+  "domain": null,
+  "hypothesis": null,
+  "sourceVersion": null,
+  "season": null,
+  "channel": null,
+  "character": {
+    "class": null,
+    "level": null,
+    "equipmentSnapshot": null,
+    "skillRanks": null,
+    "paragonSnapshot": null
+  },
+  "conditions": {
+    "target": null,
+    "difficulty": null,
+    "activeBuffs": null,
+    "activeDebuffs": null,
+    "trialUnit": null,
+    "changedVariable": null,
+    "independenceStatus": "unknown"
+  },
+  "observationFields": [
+    "timestamp",
+    "observedDamageOrOutcome",
+    "critical",
+    "vulnerable",
+    "overpower",
+    "success",
+    "excludedReason",
+    "evidenceLocator",
+    "evidenceSha256"
+  ],
+  "observations": [],
+  "notes": "No measurements have been performed. Unknown fields stay null; failed trials must also be retained."
+}

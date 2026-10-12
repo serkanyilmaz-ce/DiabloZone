@@ -6,7 +6,7 @@ interface Props { title: string; description?: string; }
 const { title, description = 'Diablo IV yetenekleri, eşyaları ve mekanikleri için bağımsız Türkçe veri ve araştırma arşivi.' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const section = Astro.url.pathname.slice(base.length).split('/')[0] || 'home';
-const navigation = [{name:'Ana sayfa',path:'',section:'home'},{name:'Sınıflar',path:'classes/',section:'classes'},{name:'Yetenekler',path:'skills/',section:'skills'},{name:'Eşyalar',path:'items/',section:'items'},{name:'Aspektler',path:'aspects/',section:'aspects'},{name:'Araştırma',path:'research/',section:'research'}];
+const navigation = [{name:'Sınıflar',path:'classes/',section:'classes'},{name:'Yetenekler',path:'skills/',section:'skills'},{name:'Eşyalar',path:'items/',section:'items'},{name:'Affix',path:'affixes/',section:'affixes'},{name:'Aspektler',path:'aspects/',section:'aspects'},{name:'Paragon',path:'systems/',section:'systems'},{name:'Formüller',path:'formulas/',section:'formulas'},{name:'Araştırma',path:'research/',section:'research'}];
 ---
 <!doctype html>
 <html lang="tr">

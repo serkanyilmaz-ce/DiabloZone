@@ -24,9 +24,9 @@ ayakta kalır. Çalışma sonunda servis/HTTPS kontrolü yapılır, site durduru
 | F01 | Kaynak/build doğrulaması | Tamamlandı | docs/source-audit.md; pinned 3.2.1.73552, hash/envanter |
 | F02 | Küçük gerçek veri akışı | Tamamlandı | docs/phase2.md; 34 kayıt/76 ilişki, DB/export/API/HTTPS |
 | F03 | Tüm sınıflar/yetenekler/ağaç | Veri/ikon hazır; görsel eşleme sürüyor | docs/phase3.md; 8 sınıf/1600 kayıt, tam kaynak ağaçları |
-| F04 | Tüm eşyalar/affix/aspekt | Kaynak/DB hazır; yayın doğrulanıyor | docs/phase4.md; 12117/6329/608 kaynak kaydı |
-| F05 | Diğer karakter sistemleri | Bekliyor | Paragon/glyph, sınıf özel, gem/rune/minyon |
-| F06 | Formül/genel hasar | Bekliyor | Ham ifadeler, bağımlılık, ilk hasar modeli |
+| F04 | Tüm eşyalar/affix/aspekt | Arşiv yayında; birim/uygunluk yorumları sürüyor | docs/phase4.md; 12117/6329/608, native/HTTPS kanıtı |
+| F05 | Diğer karakter sistemleri | Paragon/glyph DB hazır; kapsam genişliyor | docs/phase5.md; 3510 kaynak kaydı, 189 yeni özgün ikon |
+| F06 | Formül/genel hasar | Ham arşiv ve sınırlı yorumlayıcı hazır; gerçek model sürüyor | docs/phase6.md; kaynak ifadeleri, çözülmemiş bağımlılıklar |
 | F07 | Savunma/zaman/kaynak/proc | Bekliyor | Koşul/sınırı belli mekanik modelleri |
 | F08 | Loot/crafting/RNG | Bekliyor | Havuz/ağırlık/dağılım ve belirsizlik |
 | F09 | Dünya/ilerleme/sezon | Bekliyor | Boss/aktivite/XP/ödül/sezon ilişkileri |

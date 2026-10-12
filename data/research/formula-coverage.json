@@ -1,0 +1,30 @@
+{
+  "sourceVersion": "3.2.1.73552",
+  "gameSnapshot": "f36be437-156e-437d-9939-c6d228f2ab91",
+  "systemArchive": "8f059faa-2afb-44e6-977a-72367d2e3023",
+  "counts": [
+    {
+      "kind": "skills",
+      "nonempty": 50551,
+      "supportedSyntax": 48172,
+      "manualSymbols": 4993,
+      "unsupportedSyntax": 2379
+    },
+    {
+      "kind": "affixes",
+      "nonempty": 18730,
+      "supportedSyntax": 17127,
+      "manualSymbols": 0,
+      "unsupportedSyntax": 1603
+    },
+    {
+      "kind": "systems",
+      "nonempty": 3970,
+      "supportedSyntax": 1766,
+      "manualSymbols": 2,
+      "unsupportedSyntax": 2204
+    }
+  ],
+  "verifiedGameMechanics": 0,
+  "note": "Grammar support does not verify game behavior, units, rounding, coefficients or dependency values."
+}

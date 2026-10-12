@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {formulaRecords} from '../../lib/formula-archive';
+import {metadata} from '../../lib/data';
+import {systemArchive} from '../../lib/systems';
+const base=import.meta.env.BASE_URL;
+const supported=formulaRecords.filter(r=>r.status==='supported').length;
+---
+<BaseLayout title="Ham formül arşivi">
+<section class="page-heading"><p class="eyebrow">TOOLTIP'İN ARKASINDA</p><h1>Ham formül arşivi</h1><p class="lead">Yetenek, affix, Paragon ve matematik tablolarındaki kaynak ifadeleri. Bir ifadeyi seç, bağımlılıklarını gör, desteklenen sözdizimini kendi girdilerinle incele.</p></section>
+<p class="source-note">{formulaRecords.length.toLocaleString('tr')} boş olmayan ifade · {supported.toLocaleString('tr')} sözdizimi destekleniyor · Kaynak {metadata.sourceVersion}.</p>
+<div class="notice"><strong>Yorumlayıcı sonucu oyun doğrulaması değildir.</strong> Birim, float hassasiyeti, yuvarlama, lookup tabloları ve uygulama koşulları bilinmiyorsa sonuç matematiksel bir denemedir. Fonksiyon/lookup çağrıları çalıştırılmaz; desteklenmeyen kaynak korunur. <a href={`${base}lab/`}>Genel hasar ve RNG eğitim modeli ↗</a></div>
+<div data-formula-archive data-url={`${base}formulas/catalog.json`} data-game={metadata.snapshotId} data-systems={systemArchive?.archiveId??''} data-base={base}>
+<form class="toolbar" role="search"><label class="search-field"><span>İfade veya kaynak ara</span><input type="search" data-formula-search placeholder="Damage, Critical, Level, glyph adı…"/></label><label><span>Sözdizimi</span><select data-formula-filter><option value="">Tümü</option><option value="supported">Desteklenen</option><option value="unsupported">Çözümlenmemiş</option></select></label></form>
+<p data-formula-status role="status">İfadeler yükleniyor…</p><p data-formula-count aria-live="polite"></p>
+<div class="formula-workspace"><section><div class="formula-list" data-formula-list>{formulaRecords.slice(0,24).map(record=><button class="formula-entry" type="button" data-formula={record.key}><strong>{record.name}</strong><small>{record.kind} · {record.path}</small><code>{record.expression}</code></button>)}</div><nav class="pagination" aria-label="Formül sayfaları"><button type="button" data-formula-prev disabled>← Önceki</button><span data-formula-page></span><button type="button" data-formula-next disabled>Sonraki →</button></nav></section>
+<section class="lab-panel formula-inspector" aria-label="Seçilen ifade"><h2 data-formula-title>Bir ifade seç</h2><pre data-formula-expression></pre><p data-formula-support class="source-note"></p><form data-formula-inputs class="lab-fields"></form><p data-formula-error role="status"></p><output data-formula-result class="lab-result" aria-live="polite">—</output><p class="source-note">Yukarıdaki sonuç yorumlayıcının matematik çıktısıdır. Etkin oyun bonusu veya hasar katsayısı olarak doğrulanmamıştır.</p><p><a data-formula-record hidden>Kaydın detayını aç →</a></p><p><a data-formula-source target="_blank" rel="noreferrer" hidden>Sabit kaynak dosyasını aç ↗</a></p><p data-formula-hash class="source-note"></p></section></div>
+</div>
+<noscript><p class="notice">Kaynak ifadeleri detay sayfalarında okunabilir. Arama ve yorumlama için JavaScript gerekir.</p></noscript>
+</BaseLayout>
+<style is:global>.formula-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem;align-items:start}.formula-workspace>section{min-width:0}.formula-list{display:grid;gap:.65rem}.formula-entry{display:grid;text-align:left;gap:.5rem;width:100%;padding:1rem;border:1px solid #383438;background:#19191c;color:inherit;border-radius:8px;cursor:pointer;min-width:0}.formula-entry:hover,.formula-entry[aria-pressed="true"]{border-color:#a99a78;background:#232124}.formula-entry small{color:#a9a6ab;overflow-wrap:anywhere}.formula-entry code{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8rem;color:#dbccb0}.formula-inspector{position:sticky;top:110px}.formula-inspector pre{white-space:pre-wrap;overflow-wrap:anywhere}.formula-inspector output{display:block;overflow-wrap:anywhere}.formula-inspector .source-note{overflow-wrap:anywhere}@media(max-width:850px){.formula-workspace{grid-template-columns:1fr}.formula-inspector{position:static;grid-row:1;grid-column:1}.formula-workspace>section:first-child{grid-row:2;grid-column:1}}</style>
+<script>
+import {parseExpression,evaluateExpression} from '../../lib/expression';
+import {pageSlice} from '../../lib/browser';
+import type {formulaRecords} from '../../lib/formula-archive';
+const root=document.querySelector<HTMLElement>('[data-formula-archive]')!;
+type Formula=typeof formulaRecords[number];
+let records:Formula[]=[],page=1,active:Formula|null=null;
+const search=root.querySelector<HTMLInputElement>('[data-formula-search]')!,filter=root.querySelector<HTMLSelectElement>('[data-formula-filter]')!;
+const status=root.querySelector<HTMLElement>('[data-formula-status]')!,list=root.querySelector<HTMLElement>('[data-formula-list]')!;
+const inputForm=root.querySelector<HTMLFormElement>('[data-formula-inputs]')!;
+const put=(selector:string,text:string)=>{root.querySelector<HTMLElement>(selector)!.textContent=text;};
+const params=new URLSearchParams(location.search);search.value=params.get('q')??'';filter.value=['supported','unsupported'].includes(params.get('status')??'')?params.get('status')!:'';
+page=Number(params.get('page')??1);
+function draw(){
+  const words=search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const found=records.filter(r=>(!filter.value||r.status===filter.value)&&words.every(w=>`${r.name} ${r.id} ${r.path} ${r.expression} ${r.source.file}`.toLowerCase().includes(w)));
+  const result=pageSlice(found,page);page=result.page;
+  list.replaceChildren(...result.entries.map(r=>{const button=document.createElement('button');button.type='button';button.className='formula-entry';button.dataset.formula=r.key;button.setAttribute('aria-pressed',String(active?.key===r.key));for(const [tag,text]of [['strong',r.name],['small',`${r.kind} · ${r.path}`],['code',r.expression]]){const el=document.createElement(tag);el.textContent=text;button.append(el);}return button;}));
+  put('[data-formula-count]',found.length?`${found.length} ifade · Sayfa ${page} / ${result.pages}`:'Eşleşen ifade bulunamadı.');put('[data-formula-page]',`${page} / ${result.pages}`);
+  (root.querySelector('[data-formula-prev]') as HTMLButtonElement).disabled=page<=1;(root.querySelector('[data-formula-next]') as HTMLButtonElement).disabled=page>=result.pages;
+  const url=new URL(location.href);for(const key of ['q','status','page'])url.searchParams.delete(key);if(search.value.trim())url.searchParams.set('q',search.value.trim());if(filter.value)url.searchParams.set('status',filter.value);if(page>1)url.searchParams.set('page',String(page));history.replaceState(null,'',url);
+}
+function evaluate(){
+  put('[data-formula-result]','—');put('[data-formula-error]','');if(!active||active.status!=='supported')return;
+  if(!inputForm.checkValidity()){put('[data-formula-error]','Bağımlı sembollerin tümü için sonlu bir değer gir.');return;}
+  try{const inputs=Object.fromEntries([...inputForm.querySelectorAll<HTMLInputElement>('input')].map(input=>[input.name,input.valueAsNumber]));put('[data-formula-result]',String(evaluateExpression(parseExpression(active.expression).ast,inputs)));}
+  catch(error){put('[data-formula-error]',(error as Error).message);}
+}
+function select(record:Formula){
+  active=record;put('[data-formula-title]',record.name);put('[data-formula-expression]',record.expression);inputForm.replaceChildren();
+  put('[data-formula-support]',record.status==='supported'?record.symbols.length?`${record.symbols.length} sembol kullanıcı girdisi gerektiriyor; birimleri/oyun değerleri çözülmedi.`:'Sabit aritmetik ifade; oyun davranışı ayrıca doğrulanmalıdır.':`Çözümlenmedi: ${record.reason}`);
+  for(const symbol of record.symbols){const label=document.createElement('label');label.className='field';label.textContent=symbol;const input=document.createElement('input');input.type='number';input.step='any';input.name=symbol;input.required=true;label.append(input);inputForm.append(label);}
+  const link=root.querySelector<HTMLAnchorElement>('[data-formula-record]')!;link.href=`${root.dataset.base}${record.kind}/${record.slug}/`;link.hidden=!record.slug;
+  const source=root.querySelector<HTMLAnchorElement>('[data-formula-source]')!;source.href=`https://github.com/DiabloTools/d4data/blob/${record.source.commit}/${record.source.file}`;source.hidden=false;
+  put('[data-formula-hash]',`Kaynak SHA256: ${record.source.sha256}`);const url=new URL(location.href);url.searchParams.set('f',record.key);history.replaceState(null,'',url);evaluate();draw();
+}
+root.querySelector('form.toolbar')?.addEventListener('submit',e=>e.preventDefault());inputForm.addEventListener('submit',e=>e.preventDefault());inputForm.addEventListener('input',evaluate);
+list.addEventListener('click',event=>{const button=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-formula]');const record=records.find(r=>r.key===button?.dataset.formula);if(record)select(record);});
+search.addEventListener('input',()=>{page=1;draw();});filter.addEventListener('change',()=>{page=1;draw();});
+for(const [selector,delta]of [['[data-formula-prev]',-1],['[data-formula-next]',1]] as const)root.querySelector(selector)!.addEventListener('click',()=>{page+=delta;draw();});
+async function load(){try{const response=await fetch(root.dataset.url!);if(!response.ok)throw new Error('Fetch failed');const body=await response.json();if(body.schemaVersion!==2||body.gameSnapshot!==root.dataset.game||(body.systemArchive??'')!==root.dataset.systems||!Array.isArray(body.records)||!Array.isArray(body.owners))throw new Error('Source context mismatch');records=body.records.map((row:any)=>({...body.owners[row.owner],...row}));status.hidden=true;const selected=records.find(r=>r.key===params.get('f'));if(selected)select(selected);else draw();}catch{status.textContent='Formül arşivi yüklenemedi; sayfayı yenileyerek tekrar deneyebilirsin.';}}
+void load();
+</script>

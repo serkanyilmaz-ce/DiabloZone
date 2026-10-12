@@ -26,6 +26,14 @@ for(const row of report.assets){
   await copyFile(path.join(directory,row.file),`public/${relative}/${filename}`);
   assets.push({...row,path:`${relative}/${filename}`,sourceMetadata:evidence?.source,referenceStatus:matching?'same-handle-atlas-and-uv':'local-handle-only'});
 }
-const output={...report,dataSourceVersion:manifest.version,dataSourceCommit:manifest.commit,assets:assets.sort((a,b)=>a.handle-b.handle)};
-await writeFile('data/research/assets-manifest.json',JSON.stringify(output,null,2)+'\n');
+let combined=assets;
+if(process.argv[4]){
+  const previous=JSON.parse(await readFile(process.argv[4],'utf8'));
+  if(previous.sourceVersion!==report.sourceVersion||previous.buildInfoSha256!==report.buildInfoSha256||previous.dataSourceCommit!==manifest.commit)throw new Error('Cannot merge different original asset builds');
+  const merged=new Map<number,any>(previous.assets.map((a:any)=>[a.handle,a]));
+  for(const row of assets){const old=merged.get(row.handle);if(old?.status==='extracted'&&old.sha256!==row.sha256)throw new Error('Original frame changed within one build');merged.set(row.handle,row);}
+  combined=[...merged.values()];
+}
+const output={...report,dataSourceVersion:manifest.version,dataSourceCommit:manifest.commit,requested:combined.length,assets:combined.sort((a,b)=>a.handle-b.handle)};
+await writeFile(process.argv[3]??'data/research/assets-manifest.json',JSON.stringify(output,null,2)+'\n');
 console.log(JSON.stringify({sourceVersion:report.sourceVersion,dataVersion:manifest.version,extracted:assets.filter(a=>a.status==='extracted').length,matchingSourceFrames:assets.filter(a=>a.referenceStatus==='same-handle-atlas-and-uv').length}));
