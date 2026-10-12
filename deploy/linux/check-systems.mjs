@@ -3,7 +3,7 @@ import {readFileSync,realpathSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
-const root=realpathSync(fileURLToPath(new URL('../../../',import.meta.url)));
+const root=realpathSync(process.env.DIABLOZONE_RELEASE_ROOT??fileURLToPath(new URL('../../../',import.meta.url)));
 if(path.dirname(root)!=='/srv/diablozone/releases')throw new Error('Native release required');
 const require=createRequire(path.join(root,'package.json')),{parse}=require('dotenv'),{Pool}=require('pg');
 const {systemBundle}=await import(path.join(root,'build/service/scripts/db/system-bundle.js'));
@@ -13,7 +13,7 @@ const readerPool=new Pool({connectionString:parse(readFileSync('/etc/diablozone/
 const writerPool=new Pool({connectionString:parse(readFileSync('/etc/diablozone/import.env')).DATABASE_URL,max:1});
 const reader=await readerPool.connect(),writer=await writerPool.connect();
 const origin='https://diablozone.152.70.4.125.sslip.io';
-async function denied(client,sql,args,code){await client.query('begin');try{await assert.rejects(client.query(sql,args),e=>e.code===code);}finally{await client.query('rollback');}}
+async function denied(client,sql,args,code){await client.query('begin read write');try{await assert.rejects(client.query(sql,args),e=>e.code===code);}finally{await client.query('rollback');}}
 try{
   const archive=(await reader.query("select * from system_archives where id=$1 and state='published'",[bundle.archiveId])).rows[0];
   assert.equal(archive.input_sha256,sha256);assert.equal(archive.record_count,bundle.records.length);

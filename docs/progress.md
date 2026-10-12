@@ -181,3 +181,38 @@ F10 bağımsız işletim kontrolü: 18.5 MB DB yedeği gerçek ayrı test DB'sin
 yüklendi, mühür/sayı/migration hash'leri eşleşti ve test DB'si kaldırıldı.
 Makine dışı yerel kopyanın SHA256'sı eşleşti; docs/backup-verification.md.
 Native F05/F06 uygulama yayını ve son browser/HTTPS doğrulaması bu kaydı izler.
+
+## F05/F06 canlı teslim ve çalışma kapanışı — 12 Ekim 2026, 11:26
+
+Aktif native release /srv/diablozone/releases/20261012-111300; uygulama/görseller
+commit 1e4f27799ceceb2d3264e315fb231502e54d5cfe. Release SHA256:
+6c701d13c950a7aa6fcea48d38382c8a56a50542d545ccb46490ccb9614529b0.
+Hazırlık paketindeki draft işareti, tüm dosyaların temiz çalışma ağacı hash'leri
+ile karşılaştırılmasından sonra kaldırıldı; final release commit'i sabittir.
+Yerel yavaş sıkıştırma işlemi tek başına yeniden başlatıldı; site durdurulmadı.
+
+3510 sistem kaydının tamamı gerçek PG reader export'u ile eşleşti. Reader
+ACL yazmayı reddeder; published kayıt/set değişmez; eksik set yayını reddedilir.
+Yedi türün API count/payload'ları ve 3510 detay HTML adı/arşiv kimliği doğrulandı.
+İlk kontrol default read-only modun 25006 hatasını ACL 42501 diye beklediği
+ için başarısızdı; araç açık read-write transaction ile düzeltildi ve yeniden geçti.
+Published release dosyası değiştirilmedi; düzeltilmiş kontrol bağımsız çalıştırıldı.
+
+Canlı HTTPS 1440/390px: arama/filtre/sayfalama, özgün ikon, glyph bağlantısı,
+441 hücreli pano, kaynak formül sınır girdileri ve reload geçti; pageerror 0.
+Dinamik kartların Astro scoped CSS dışında kalması düzeltilip yeniden sınandı.
+20 birim + 11 kaynak testi, lint/TypeScript, 24185 sayfa build ve API build geçti.
+Uygulama ve ikon commit'lerinin Linux CI başarı kanıtı:
+https://github.com/serkanyilmaz-ce/DiabloZone/actions/runs/38222442521
+
+Son kontrol: diablozone-api/Caddy/Aryaland active; API enabled ve health ok;
+DiabloZone/formulas ve Aryaland HTTPS başarılı. Uzak disk 96GB/90GB boş;
+release dizini bu son yayından önce 1.5GB idi. Ortak PG/OS restart/reboot yok.
+Her SSH işi tamamlandı ve bağlantısı kapandı; site systemd/Caddy'de ayakta.
+Kendi yerel preview işlemi kapatıldı. Yedek yerelde, Git/release dışında korunur.
+
+Beş saatlik geliştirme penceresi sona erdi; uçuşta olan yayın kontrolleri
+sonlandırıldı. Yeni faz/özellik başlamadan kalan işler AGENTS/phase5/phase6'da
+korunur: sınıfa özel sistemler, gerçek hasar dependency/model/ölçüm, F07–F09
+mekanikleri ve F10 düzenli otomasyon. TreasureClass oranları unknown, verified
+oyun mekaniği 0; özgün ağaç için piksel eşdeğerliği iddia edilmedi.

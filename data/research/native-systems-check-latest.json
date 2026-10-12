@@ -1,0 +1,23 @@
+{
+    "archiveId":  "8f059faa-2afb-44e6-977a-72367d2e3023",
+    "seal":  "33ec0b017ae2b2e848b3d8c89ced744c0290dd3383524c32d7656739b4721822",
+    "records":  3510,
+    "kinds":  [
+                  "GameBalance",
+                  "ParagonBoard",
+                  "ParagonGlyph",
+                  "ParagonGlyphAffix",
+                  "ParagonNode",
+                  "Recipe",
+                  "Season"
+              ],
+    "checks":  [
+                   "All PostgreSQL payloads match reader export",
+                   "Reader writes denied",
+                   "Published records and archive immutable",
+                   "Incomplete publication rejected; fixture rolled back",
+                   "All kind API counts and payloads match",
+                   "All detail HTML routes match archive and name",
+                   "Existing Aryaland HTTPS preserved"
+               ]
+}

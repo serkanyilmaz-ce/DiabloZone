@@ -1,8 +1,8 @@
 {
-  "origin": "http://127.0.0.1:4321",
+  "origin": "https://diablozone.152.70.4.125.sslip.io",
   "browser": "155.0.4283.45",
   "playwright": "1.64.0",
-  "at": "2026-10-12T08:11:05.124Z",
+  "at": "2026-10-12T08:24:29.209Z",
   "checks": [
     "skills search/class/type and original icon 1440",
     "tree count/search/detail/tab/keyboard/width 1440",
