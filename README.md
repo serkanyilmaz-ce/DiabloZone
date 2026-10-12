@@ -60,12 +60,14 @@ pnpm.cmd source:inventory .tmp/d4data 33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0
 
 Manifest data/research/source-manifest.json; ilk gerçek import seçimi poc-plan.json.
 
-Gerçek oyun kayıtları henüz içe aktarılmadı. Metadata gameBuild NULL;
+F02 yayında: 1 sınıf, 24 yetenek/geliştirme, 1 eşya, 6 affix, 1 aspekt ve 1 ağaç kesiti; toplam 34 DB kaydı/76 ilişki. [F02 kanıtı](docs/phase2.md). Metadata build 73552; kaynak 3.2.1.73552.
 eksik veri açıkça gösterilir, bozuk export build'i durdurur. DB araştırma planı
 8 alanı unknown olarak saklar; verified mekanik 0. Hasar/RNG laboratuvarı eğitim
 modelidir. Tarihsel katsayılar güncel sezon verisi olarak sunulmaz.
 
-Sürümü doğrulanmış yerel d4data dökümü için korunmuş importer'lar:
+Aktif küçük kaynak normalizasyonu: pnpm.cmd data:poc .tmp/d4data.
+Writer import → reader export → db:promote → frontend build gerçek DB ile doğrulandı.
+Eski genel importer'lar korunur; yeni mühürlü altı-tür sözleşmesine F03/F04'te uyarlanacak:
 
 ```powershell
 pnpm.cmd data:probe --datamine .tmp/d4data
@@ -91,20 +93,21 @@ pnpm.cmd db:migrate
 pnpm.cmd db:research
 pnpm.cmd db:import
 pnpm.cmd db:export <snapshot-uuid>
+pnpm.cmd db:promote output/snapshots/<snapshot-uuid>
 pnpm.cmd api:dev
 ```
 
 bootstrap migration ve aynı planın çoğalmadığı idempotent seed'dir. db:research
 özel JSON manifestiyle ham formül/bağımlılık/RNG alır; kendiliğinden verified
-yapmaz. db:import boş veya sürümü tutarsız oyun verisini reddeder. db:export
-output/snapshots içine yazar; data/generated'ı değiştirmez.
+yapmaz. db:import altı türü, kaynak/SNO/hash ve ilişkileri kontrol eder; aynı içerik ikinci kez çoğalmaz. db:export
+output/snapshots içine yazar; db:promote mühürlü published DB export'unu data/generated'a alır.
 
 DATABASE_URL writer, DATABASE_READ_URL SELECT reader hesabıdır. DATA_SEASON/
 DATA_CHANNEL kaynağa göre açıkça ayarlanır. API 127.0.0.1:8787 üzerinde derlenmiş
 JavaScript ile çalışır. API_TRUST_LOOPBACK_PROXY yalnızca başlıkları yeniden
 yazan aynı-host Caddy proxy'siyle 1'dir. Şifre/anahtar istemciye taşınmaz.
-Liste/detay statik export, araştırma arşivi canlı API kullanır; otomatik tam
-DB → frontend aktarımı bekler.
+Liste/detay statik export, araştırma arşivi canlı API kullanır; tam
+DB → frontend aktarımı kontrollü export/promote ile yapılır; otomatik zamanlama bekler.
 
 ## Release ve CI
 

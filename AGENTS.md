@@ -4,14 +4,26 @@ Bu dosya aktif çalışma planının ana kaynağıdır. İsim DiabloZone; hedef 
 bütün oyun verilerini ve matematik/RNG ilişkilerini kendi DB'mizde arşivlemek.
 İlk hedef sezon15. Kullanıcı fazların sırayla yürütülmesini istedi.
 
+## Kesintisiz çalışma talimatı — 12 Ekim 2026
+
+Kullanıcı bilgisayar başında değil. Bu oturumda soru sormadan fazları sırayla ilerlet;
+rutin kaynak incelemesi, geliştirme, test, GitHub main ve native yayın yetkilidir.
+Beş saatlik çalışma penceresi: 06:25:24–11:25:24 Europe/Istanbul
+(03:25:24–08:25:24 UTC). Bir faz tesliminde durma; sonraki bağımsız işe geç.
+Gerçek erişim/ölçüm engellerini kanıtıyla kaydet ve yapılabilen işlerde ilerle.
+
+Her sunucu işi kısa SSH komutuyla yürütülür; iş bitince SSH bağlantısı kapatılır.
+Site SSH oturumuna bağlı çalıştırılmaz: Caddy ve enabled systemd servisi sürekli
+ayakta kalır. Çalışma sonunda servis/HTTPS kontrolü yapılır, site durdurulmaz.
+
 ## Faz haritası ve durum
 
 | ID | Faz | Durum | Temel teslim |
 | --- | --- | --- | --- |
 | F00 | Native altyapı/yayın | Tamamlandı | HTTPS, API, PostgreSQL, Git; docs/progress.md |
 | F01 | Kaynak/build doğrulaması | Tamamlandı | docs/source-audit.md; pinned 3.2.1.73552, hash/envanter |
-| F02 | Küçük gerçek veri akışı | Doğrulama/yayın | Gerçek örnek: kaynak→DB→API/export→site |
-| F03 | Tüm sınıflar/yetenekler/ağaç | Bekliyor | Sınıf katalogları ve bağlı ağaçlar |
+| F02 | Küçük gerçek veri akışı | Tamamlandı | docs/phase2.md; 34 kayıt/76 ilişki, DB/export/API/HTTPS |
+| F03 | Tüm sınıflar/yetenekler/ağaç | Çalışılıyor | Sınıf katalogları, özgün ikonlar ve kaynak ağaçları |
 | F04 | Tüm eşyalar/affix/aspekt | Bekliyor | Tam katalog, varyant/roll ve ilişkili detaylar |
 | F05 | Diğer karakter sistemleri | Bekliyor | Paragon/glyph, sınıf özel, gem/rune/minyon |
 | F06 | Formül/genel hasar | Bekliyor | Ham ifadeler, bağımlılık, ilk hasar modeli |
@@ -45,7 +57,7 @@ Astro/TypeScript/Tailwind, pnpm, PostgreSQL16 ve salt okunur Node22 API çalış
 Ubuntu24.04 ARM64 ortak sunucuda Caddy HTTPS yayını var. F00 yayını Git commit'iyle
 eşleştirilmiştir; sonraki kaynak denetimi commit'i ayrı teslimdir. Kanıt/son snapshot
 docs/progress.md ve ../Notlar.md'de.
-Gerçek oyun katalogları henüz boş; 8 araştırma alanı unknown ve verified mekanik0.
+F00 anındaki kataloglar boştu. F02 artık 34 gerçek kayıt/76 ilişki içerir; 8 araştırma alanı unknown, verified mekanik 0.
 
 ## Faz 1 — Kaynak ve sezon/build doğrulaması
 
@@ -211,10 +223,16 @@ yinelenebilir; yedek gerçekten geri yüklenmiş ve işletim sınırları ölç�
 
 ### Kullanıcı kararları
 
+- Her obje için özgün oyun ikonu araştırılır; kaynak handle/SNO, URL/dosya ve
+  SHA256 eşleştirmesi tutulur. Uydurma görsel veya benzer isimli ikon doğrulanmış
+  eşleşme sayılmaz. Bağımsız ikonu olmayan objenin bağlı oyun görseli açıkça belirtilir.
+- Yetenek ağacı özgün oyunun düğüm, kenar ve konumlarını kullanır; özgün ikon ve
+  çerçeve/bağlantı varlıkları araştırılır. Kaynak konumları tasarım amacıyla yeniden
+  düzenlenmez. Görsel eşdeğerlik kanıtsız tamamlandı diye raporlanmaz.
 - Yerel Diablo IV kurulumuna yalnızca okuma yap. Oyun dosyası yazma/taşıma/silme,
   yama veya süreç/bellek müdahalesi yok. Çıktıları proje içine yaz.
 - Forum ertelenmiştir; üyelik/konu/yanıt/moderasyon ve Next/Supabase geçişi geliştirme.
-  docs/forum-* ve docs/permissions.md gelecekteki forum arşividir; aktif faz kuralı değildir.
+  Forumla ilgili arşiv kuralları aktif veri/araştırma fazlarına uygulanmaz.
 - Docker kurulum dosyaları kaldırıldı; uzak sunucuda Docker kullanılmaz.
 - Ortak sunucuda Aryaland korunur. DiabloZone DB/roller/servis/release ayrıdır;
   ortak PostgreSQL cluster yükseltilmez veya test için yeniden başlatılmaz.

@@ -21,7 +21,8 @@ atanmasına izin vermez. Test edilmiş matematik modeli, doğrulanmış oyun mod
 Resmî sezon 15: Season of Hell's Legacy, 3.2.1 build 73552 (15 Eylül 2026).
 https://news.blizzard.com/en-us/article/24295394/celebrate-30-years-of-diablo-in-season-of-hell-s-legacy
 Yerel .build.info gözlemi: 3.2.2.73764. Bu yalnızca kurulum sürümüdür.
-Şimdiki generated metadata build'i NULL; gerçek oyun veri dökümü içe aktarılmadı.
+F02 örneği 3.2.1.73552 (build 73552) gerçek DB'ye alındı: 34 kayıt/76 ilişki.
+Yerel 3.2.2 ayrı tutulur. Ham ifadeler datamine kanıtıdır; oyun ölçümü değildir.
 PTR/canlı snapshot ayrıdır; başka build'in formül veya kaynağına bağlanılmaz.
 Kaynak hash'i yoksa kayıt sadece kaynak adresidir; dondurulmuş belge kanıtı değildir.
 

@@ -78,3 +78,27 @@ Sınıf index array sırası unresolved; eski hardcoded sıraya göre veri atama
 14test ve lint/TypeScript geçti. Bu faz uygulama/DB içeriği yayınlamaz; gerçek
 oyun kayıtları henüz0. START-PROMPT kullanıcı tarafından kaldırıldı; kaynak
 paketleyici ve README yeni ana AGENTS planına uyarlandı. Sonraki faz F02.
+
+## F02 — gerçek veri yayını, 12 Ekim 2026 06:21
+
+34 gerçek kayıt ve 76 aynı-snapshot ilişki PostgreSQL → reader export → site/API
+zincirinde doğrulandı. Sınıf1, yetenek24, eşya1, affix6, aspekt1, ağaç1.
+Kaynak 3.2.1.73552; yerel 3.2.2.73764 ile karıştırılmaz. Ağaç 105/282 düğümle
+kesittir; tüm ağaçlar F03 işidir. Ham formüller gösterilir; verified mekanik hâlâ0.
+Snapshot 5691d80f-9a80-4720-b5be-806705cd0379;
+inputSHA256 2706adec0eccf36de81fb7eb1349c5b893d2094319ff3e9266b570600d385c3c.
+Aktif release /srv/diablozone/releases/20261012-062100; uygulama commit a6a2424.
+002 migration PG16'da uygulandı; immutable ilişkiler ve reader yazma yasağı geçti.
+İkinci import aynı UUID; eski araştırma snapshot'ı korunur. 16test, lint,
+Astro/TypeScript, frontend/API build ve gerçek DB/HTTPS kontrolleri geçti.
+GitHub Linux CI success: https://github.com/serkanyilmaz-ce/DiabloZone/actions/runs/38199230621 .
+43 sayfa ve 33 oyun detay yolu kontrol edildi. Ayrıntılı teslim docs/phase2.md.
+Aryaland'ın güncel adı aryaland.online; bu görev dışında değişen host korunur.
+Önceki F00/F01 kayıtları tarihsel kanıttır; güncel oyun sayısı34, veri zinciri tamamdır.
+
+## Kesintisiz devam — 06:25–11:25 Europe/Istanbul
+
+Kullanıcı soru sormadan beş saat boyunca fazları sürdürmeyi istedi. AGENTS.md
+çalışma penceresini, özgün oyun ikonlarını ve özgün ağaç yerleşimini kaydeder.
+F03 tüm sınıf/yetenek/ağaç çalışması başladı. Her sunucu işinde SSH kapanır;
+site enabled systemd/Caddy ile sürekli çalışır. Forum geliştirilmez.
