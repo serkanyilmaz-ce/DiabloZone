@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro';
+---
+<section class="archive-live" aria-labelledby="archive-live-title">
+  <div class="archive-live-heading"><Icon name="book" /><div><p class="eyebrow">KAYDEDİLMİŞ ARAŞTIRMA ARŞİVİ</p><h2 id="archive-live-title">Sürümü belli, kaynağı izlenebilir.</h2></div></div>
+  <p data-archive-status aria-live="polite">Arşiv kayıtları yükleniyor…</p>
+  <div class="model-meta" data-archive-meta hidden></div>
+  <p class="source-note" data-archive-note hidden>Araştırma kapsamı kaydedildi. Bunlar henüz doğrulanmış sezon 15 formülleri değildir.</p>
+  <button class="text-button" type="button" data-archive-retry hidden>Yeniden dene</button>
+  <noscript><p class="source-note">Kaydedilmiş arşivi sorgulamak için JavaScript gerekli. Araştırma kapsamı aşağıda okunabilir.</p></noscript>
+</section>
+<script>
+  import { archiveSnapshot, archiveMechanics } from '../lib/archive-client';
+  const status=document.querySelector<HTMLElement>('[data-archive-status]')!;
+  const meta=document.querySelector<HTMLElement>('[data-archive-meta]')!;
+  const note=document.querySelector<HTMLElement>('[data-archive-note]')!;
+  const retry=document.querySelector<HTMLButtonElement>('[data-archive-retry]')!;
+  async function getJson(path:string):Promise<unknown>{
+    const response=await fetch(path,{signal:AbortSignal.timeout(8000),cache:'no-store'});
+    if(!response.ok)throw new Error('Arşiv geçici olarak kullanılamıyor.');
+    return response.json();
+  }
+  async function load(){
+    retry.hidden=true;meta.hidden=true;note.hidden=true;status.textContent='Arşiv kayıtları yükleniyor…';
+    try{
+      const snapshot=archiveSnapshot(await getJson('/api/v1/snapshots?season=15&channel=live&kind=research'));
+      if(!snapshot){status.textContent='Henüz yayınlanmış araştırma kaydı yok.';return;}
+      const mechanics=archiveMechanics(await getJson(`/api/v1/snapshots/${snapshot.id}/mechanics`),snapshot.id);
+      const verified=mechanics.filter(mechanic=>mechanic.status==='verified').length;
+      status.textContent=`${mechanics.length} araştırma alanı arşivde · ${verified} doğrulanmış mekanik`;
+      meta.replaceChildren();
+      for(const label of [`Sezon ${snapshot.season_id}`,`Kaynak build ${snapshot.build_id}`,'Canlı kanal']){const chip=document.createElement('span');chip.className='chip';chip.textContent=label;meta.append(chip);}
+      meta.hidden=false;note.hidden=verified>0;
+    }catch{status.textContent='Araştırma arşivine şu anda ulaşılamıyor. Araştırma kapsamını aşağıda inceleyebilirsin.';retry.hidden=false;}
+  }
+  retry.addEventListener('click',()=>void load());void load();
+</script>
+<style>
+  .archive-live{padding:24px;border:1px solid var(--line);background:var(--surface);border-radius:4px;margin:24px 0}
+  .archive-live-heading{display:flex;align-items:center;gap:16px}.archive-live-heading>svg{color:var(--red-light)}.archive-live .eyebrow{margin-bottom:7px;font-size:9px}.archive-live h2{font-size:24px;margin:0}.archive-live>[data-archive-status]{font-size:14px;color:var(--muted);margin:18px 0 12px}.archive-live .model-meta{margin-bottom:12px}.archive-live .source-note{margin-bottom:0}
+</style>

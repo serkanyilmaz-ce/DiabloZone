@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+interface Props { kind?: string; }
+const { kind = 'oyun' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<div class="data-empty">
+  <span class="empty-icon"><Icon name="book" size={32} /></span>
+  <p class="eyebrow">ARŞİV HAZIRLANIYOR</p>
+  <h2>Henüz {kind} verisi içe aktarılmadı.</h2>
+  <p>Sezon 15 araştırmasının veri kümesi hazırlanıyor. Doğrulanmış kayıtlar eklendiğinde burada listelenecek.</p>
+  <a class="text-link" href={`${base}research/`}>Araştırma kapsamını incele <Icon /></a>
+</div>

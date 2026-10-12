@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const fields = [
+  {id:'base',label:'Baz hasar (model birimi)',value:1000,max:1000000000,step:'any'},
+  {id:'additive',label:'Etkin toplamsal bonus (%)',value:100,max:100000,step:'any'},
+  {id:'criticalAdditive',label:'Kritikte ek toplamsal (%)',value:50,max:100000,step:'any'},
+  {id:'vulnerableAdditive',label:'Savunmasızlıkta ek toplamsal (%)',value:20,max:100000,step:'any'},
+  {id:'multiplier1',label:'Bağımsız bonus A (%)',value:10,max:100000,step:'any'},
+  {id:'multiplier2',label:'Bağımsız bonus B (%)',value:20,max:100000,step:'any'},
+  {id:'criticalChance',label:'Kritik olasılığı (%)',value:25,max:100,step:'any'},
+  {id:'vulnerableUptime',label:'Savunmasız hedef oranı (%)',value:50,max:100,step:'any'},
+  {id:'criticalMultiplier',label:'Kritik olay çarpanı (×)',value:1.5,max:10000,step:'any'},
+  {id:'vulnerableMultiplier',label:'Savunmasızlık olay çarpanı (×)',value:1.2,max:10000,step:'any'},
+];
+---
+<BaseLayout title="Formül laboratuvarı">
+  <div class="breadcrumbs"><a href={`${base}research/`}>Araştırma</a><span>/</span><span>Formül laboratuvarı</span></div>
+  <section class="page-heading"><p class="eyebrow">DEĞİŞTİR · HESAPLA · KARŞILAŞTIR</p><h1>Bir bonusun gerçek etkisi.</h1><p>Toplamsal havuz ve ayrı çarpanlar aynı şey değildir. Etkin koşulları değiştirerek modeldeki farkı incele.</p></section>
+  <div class="notice"><strong>Eğitim modeli · Sezon 15’te doğrulanmadı.</strong> Başlangıç girdileri örnektir. 1.50 / 1.20 olay çarpanları <a href="https://news.blizzard.com/en-us/article/24092662/diablo-iv-patch-notes-1-0-1-2" target="_blank" rel="noreferrer">1.2.0 tarihsel açıklamasından</a> alınmıştır; güncel oyuna otomatik uygulanamaz.</div>
+  <div class="formula-display">D = B × (1 + A + I<sub>c</sub>A<sub>c</sub> + I<sub>v</sub>A<sub>v</sub>) × ∏(1 + m<sub>i</sub>) × C<sup>I<sub>c</sub></sup> × V<sup>I<sub>v</sub></sup></div>
+  <div class="lab-grid"><section class="lab-panel"><h2>Modelin girdileri</h2><p>Yüzdeler bonus miktarıdır; × alanları doğrudan olay çarpanıdır.</p><form id="damage-form" class="lab-fields">{fields.map(field => <label class="field" for={field.id}>{field.label}<input id={field.id} name={field.id} type="number" value={field.value} min="0" max={field.max} step={field.step} required /></label>)}</form><p class="lab-error" id="damage-error" role="status"></p></section>
+  <section class="lab-panel"><p class="eyebrow">OLASILIK AĞIRLIKLI SONUÇ</p><h2>Beklenen vuruş</h2><output class="lab-result" id="expected-damage" aria-live="polite">—</output><p class="lab-result-note">Model birimi. Kritik ve savunmasızlık olaylarının bağımsız olduğu varsayılır.</p><dl class="lab-breakdown"><dt>Normal</dt><dd id="event-normal">—</dd><dt>Kritik</dt><dd id="event-critical">—</dd><dt>Savunmasız</dt><dd id="event-vulnerable">—</dd><dt>Kritik + savunmasız</dt><dd id="event-both">—</dd></dl><div class="comparison-bars"><div><div class="bar-label"><span>+10 puan toplamsal bonus ekle</span><strong id="additive-improvement">—</strong></div><div class="bar-track"><div class="bar-value" id="additive-bar"></div></div></div><div><div class="bar-label"><span>Yeni bağımsız ×1.10 çarpanı ekle</span><strong id="multiplicative-improvement">—</strong></div><div class="bar-track"><div class="bar-value" id="multiplicative-bar"></div></div></div></div><p class="lab-result-note">Çubuklar göreli artışı karşılaştırır. +10 puan, mevcut toplamsal yüzdeye eklenir.</p></section></div>
+  <section class="content-section"><h2>Modelin sınırları</h2><p>B baz hasar; A etkin bonus toplamı; I olay göstergesi (0/1); C ve V olay çarpanlarıdır. Yalnızca bu koşullarda etkin bonuslar girilmelidir. Ana stat, zırh/direnç, aşırı güç, DoT, minyon kuralları, tavanlar, yuvarlama ve özel çifte uygulamalar bu modelde yoktur. Sonuç bir build tahmini veya gerçek DPS değildir.</p></section>
+  <section class="content-section" id="rng"><p class="eyebrow">RNG · BAĞIMSIZ DENEMELER</p><h2>Şans, garanti değildir.</h2><p>Sabit başarı olasılığı ve birbirinden bağımsız denemeler varsayımıyla: P(en az bir başarı) = 1 − (1 − p)<sup>n</sup>. Loot ağırlıkları, pity sistemi veya bağımlı proc’lar varsa bu model yeterli değildir.</p></section>
+  <div class="lab-grid"><section class="lab-panel"><h2>Olasılık varsayımı</h2><p>%1 başlangıç değeri örnektir; Diablo IV drop oranı değildir.</p><form id="rng-form" class="lab-fields"><label class="field" for="rng-probability">Tek denemede başarı (%)<input id="rng-probability" type="number" min="0" max="100" step="any" value="1" required /></label><label class="field" for="rng-trials">Deneme sayısı<input id="rng-trials" type="number" min="0" max="1000000000" step="1" value="100" required /></label><label class="field" for="rng-confidence">Hedef başarı olasılığı (%)<input id="rng-confidence" type="number" min="0" max="100" step="any" value="95" required /></label></form><p class="lab-error" id="rng-error" role="status"></p></section><section class="lab-panel"><p class="eyebrow">EN AZ BİR BAŞARI</p><output class="lab-result" id="rng-result" aria-live="polite">—</output><dl class="lab-breakdown"><dt>Hedef olasılığa ulaşan deneme</dt><dd id="rng-required">—</dd><dt>İlk başarıya kadar ortalama deneme</dt><dd id="rng-mean">—</dd></dl><p class="lab-result-note">Ortalama 1/p’dir; garanti değildir. p&lt;1 iken sonlu denemede %100 başarı sağlanamaz.</p></section></div>
+  <noscript><p class="notice">Etkileşimli hesaplamalar için JavaScript gerekli. Formüller ve doğrulama sınırları yukarıda okunabilir.</p></noscript>
+</BaseLayout>
+<script>
+  import { damageForEvent, expectedDamage, successWithin, trialsForConfidence, type DamageModel } from '../../lib/math';
+  const format = new Intl.NumberFormat('tr-TR',{maximumFractionDigits:2});
+  const text = (id: string, value: string) => { const element=document.getElementById(id); if(element) element.textContent=value; };
+  const value = (id: string) => document.querySelector<HTMLInputElement>(`#${id}`)!.valueAsNumber;
+  const damageForm = document.querySelector<HTMLFormElement>('#damage-form')!;
+  function updateDamage() {
+    if (!damageForm.checkValidity()) { text('damage-error','Tüm girdileri belirtilen aralıkta doldur.'); ['expected-damage','event-normal','event-critical','event-vulnerable','event-both','additive-improvement','multiplicative-improvement'].forEach(id=>text(id,'—')); ['additive-bar','multiplicative-bar'].forEach(id=>{document.getElementById(id)!.style.width='0%';}); return; }
+    const model:DamageModel={base:value('base'),additive:value('additive')/100,criticalAdditive:value('criticalAdditive')/100,vulnerableAdditive:value('vulnerableAdditive')/100,multipliers:[value('multiplier1')/100,value('multiplier2')/100],criticalMultiplier:value('criticalMultiplier'),vulnerableMultiplier:value('vulnerableMultiplier'),criticalChance:value('criticalChance')/100,vulnerableUptime:value('vulnerableUptime')/100};
+    try {
+      const expected=expectedDamage(model);
+      text('expected-damage',format.format(expected)); text('damage-error','');
+      for(const [id,c,v] of [['event-normal',false,false],['event-critical',true,false],['event-vulnerable',false,true],['event-both',true,true]] as const) text(id,format.format(damageForEvent(model,c,v)));
+      const additive=expected?100*(expectedDamage({...model,additive:model.additive+.1})/expected-1):0;
+      const multiplicative=expected?100*(expectedDamage({...model,multipliers:[...model.multipliers,.1]})/expected-1):0;
+      text('additive-improvement',expected?`+%${format.format(additive)}`:'Tanımsız (baz sonuç 0)');
+      text('multiplicative-improvement',expected?`+%${format.format(multiplicative)}`:'Tanımsız (baz sonuç 0)');
+      const maximum=Math.max(additive,multiplicative,1);
+      document.getElementById('additive-bar')!.style.width=`${100*additive/maximum}%`;
+      document.getElementById('multiplicative-bar')!.style.width=`${100*multiplicative/maximum}%`;
+    } catch { text('damage-error','Hesaplanamayan girdiler. Değerleri kontrol et.'); text('expected-damage','—'); }
+  }
+  const rngForm=document.querySelector<HTMLFormElement>('#rng-form')!;
+  function updateRng() {
+    if(!rngForm.checkValidity()){text('rng-error','Olasılık %0–100, deneme sayısı tam sayı olmalı.');['rng-result','rng-required','rng-mean'].forEach(id=>text(id,'—'));return;}
+    try {
+      const p=value('rng-probability')/100,n=value('rng-trials'),confidence=value('rng-confidence')/100;
+      text('rng-result',`%${format.format(100*successWithin(p,n))}`);
+      const required=trialsForConfidence(p,confidence);text('rng-required',required===null?'Sonlu çözüm yok':format.format(required));
+      text('rng-mean',p>0?format.format(1/p):'Sonsuz');text('rng-error','');
+    } catch { text('rng-error','Hesaplanamayan girdiler.'); }
+  }
+  damageForm.addEventListener('submit',event=>event.preventDefault());rngForm.addEventListener('submit',event=>event.preventDefault());
+  damageForm.addEventListener('input',updateDamage);rngForm.addEventListener('input',updateRng);updateDamage();updateRng();
+</script>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DataBrowser from '../../components/DataBrowser.astro';
+import DataEmpty from '../../components/DataEmpty.astro';
+import { skills, items, aspects } from '../../lib/data';
+import { term } from '../../lib/terms';
+const base = import.meta.env.BASE_URL;
+const entries = [
+  ...skills.map(record => ({...record,kind:'skills',label:'Yetenek',description:record.description})),
+  ...items.map(record => ({...record,kind:'items',label:'Eşya',description:record.flavor})),
+  ...aspects.map(record => ({...record,kind:'aspects',label:'Aspekt',description:record.description})),
+];
+---
+<BaseLayout title="Arşivde ara">
+  <section class="page-heading"><p class="eyebrow">TÜM VERİTABANI</p><h1>Aradığın bilgiyi bul.</h1><p>Yetenek, eşya ve aspekt kayıtlarında birlikte ara.</p></section>
+  <form class="toolbar" role="search"><label class="field search-field">Arama<input class="search" data-search type="search" placeholder="Ad, açıklama veya etiket…" /></label><label class="field">Kayıt türü<select class="select" data-filter="kind"><option value="">Tüm kayıtlar</option><option value="skills">Yetenekler</option><option value="items">Eşyalar</option><option value="aspects">Aspektler</option></select></label></form>
+  <DataBrowser count={entries.length}><div class="card-grid" data-list tabindex="-1">{entries.map(entry => <a class="data-card" href={`${base}${entry.kind}/${entry.slug}/`} data-entry data-kind={entry.kind} data-searchtext={`${entry.name} ${entry.description ?? ''} ${'class' in entry ? term(entry.class) : entry.classes.map(term).join(' ')}`}><p class="card-kicker">{entry.label}</p><h2>{entry.name}</h2><p>{entry.description ?? 'Kaynak açıklaması bulunmuyor.'}</p></a>)}</div>{entries.length===0 && <DataEmpty />}</DataBrowser>
+</BaseLayout>

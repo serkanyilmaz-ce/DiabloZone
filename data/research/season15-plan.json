@@ -1,0 +1,89 @@
+{
+  "build": "73552",
+  "season": 15,
+  "patch": "3.2.1",
+  "channel": "live",
+  "sources": [
+    {
+      "locator": "https://news.blizzard.com/en-us/article/24295394/celebrate-30-years-of-diablo-in-season-of-hell-s-legacy",
+      "kind": "official",
+      "sha256": null
+    }
+  ],
+  "mechanics": [
+    {
+      "slug": "damage",
+      "domain": "damage",
+      "title": "Hasar & çarpanlar",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    },
+    {
+      "slug": "defense",
+      "domain": "defense",
+      "title": "Savunma & dayanıklılık",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    },
+    {
+      "slug": "resources",
+      "domain": "resources",
+      "title": "Kaynak ekonomisi",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    },
+    {
+      "slug": "timing",
+      "domain": "timing",
+      "title": "Hız & zamanlama",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    },
+    {
+      "slug": "procs",
+      "domain": "procs",
+      "title": "Proc & Lucky Hit",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    },
+    {
+      "slug": "loot",
+      "domain": "loot",
+      "title": "Loot & RNG",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    },
+    {
+      "slug": "crafting",
+      "domain": "crafting",
+      "title": "Crafting & reroll",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    },
+    {
+      "slug": "seasonal",
+      "domain": "seasonal",
+      "title": "Sezon mekanikleri",
+      "status": "unknown",
+      "assumptions": [
+        "Bu kayıt araştırma kapsamıdır; sezon 15 katsayıları veya RNG oranları doğrulanmadı."
+      ]
+    }
+  ],
+  "formulas": [],
+  "rng": []
+}

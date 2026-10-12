@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "pnpm check && astro build",
     "preview": "astro preview",
     "data:probe": "tsx scripts/import-d4data/probe.ts",
     "data:probe:fixture": "tsx scripts/import-d4data/probe.ts --datamine tests/fixtures",
@@ -16,17 +16,41 @@
     "data:items": "tsx scripts/import-d4data/import-items.ts",
     "data:affixes": "tsx scripts/import-d4data/import-affixes.ts",
     "data:icons": "tsx scripts/fetch-icons.ts",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "node scripts/run-tests.mjs",
+    "check": "astro check && tsc -p tsconfig.tooling.json",
+    "lint": "eslint src tests scripts/db scripts/service.ts scripts/package-release.mjs deploy/linux/check-remote.mjs",
+    "test:integration": "node scripts/run-tests.mjs --integration",
+    "db:migrate": "tsx scripts/db/migrate.ts",
+    "db:import": "tsx scripts/db/import.ts",
+    "db:export": "tsx scripts/db/export.ts",
+    "api:dev": "tsx scripts/service.ts",
+    "check:tooling": "tsc -p tsconfig.tooling.json",
+    "db:research": "tsx scripts/db/research.ts",
+    "api:build": "tsc -p tsconfig.service.json",
+    "api:start": "node build/service/scripts/service.js",
+    "db:bootstrap": "tsx scripts/db/bootstrap.ts",
+    "release:package": "node scripts/package-release.mjs"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "astro": "^5.13.5",
-    "tailwindcss": "^4.1.13",
-    "@tailwindcss/vite": "^4.1.13",
-    "typescript": "^5.9.2",
-    "zod": "^4.1.5"
+    "@astrojs/check": "0.9.4",
+    "@tailwindcss/vite": "4.1.13",
+    "astro": "5.13.5",
+    "dotenv": "18.0.7",
+    "pg": "8.23.1",
+    "tailwindcss": "4.1.13",
+    "typescript": "5.9.2",
+    "zod": "4.1.5"
   },
   "devDependencies": {
-    "tsx": "^4.20.5"
-  }
+    "@electric-sql/pglite": "0.5.8",
+    "@eslint/js": "10.0.1",
+    "@types/node": "20.19.43",
+    "@types/pg": "8.23.1",
+    "eslint": "10.12.0",
+    "eslint-plugin-astro": "3.2.1",
+    "globals": "16.5.0",
+    "tsx": "4.20.5",
+    "typescript-eslint": "8.71.1"
+  },
+  "packageManager": "pnpm@10.11.0"
 }

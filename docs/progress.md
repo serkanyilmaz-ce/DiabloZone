@@ -1,0 +1,67 @@
+# İlerleme — 12 Ekim 2026
+
+## Aktif kapsam
+
+Diablo IV'ün tüm oyun verileri ve tüm matematik/RNG ilişkileri. İlk hedef sezon 15.
+Forum ertelendi. Kullanıcı native uzak yayın, GitHub main'e aktarım ve gereksiz
+Docker dosyalarının kaldırılmasını istedi.
+
+Yayın: https://diablozone.152.70.4.125.sslip.io/ .
+Repo: https://github.com/serkanyilmaz-ce/DiabloZone .
+Sunucu işlem günlüğü: [../Notlar.md](../../Notlar.md).
+
+| İş | Durum | Kanıt / sınır |
+| --- | --- | --- |
+| Kapsam ve tamlık matrisi | Güncellendi | START-PROMPT, product, data-catalog, research-method, README |
+| Tasarım/Türkçe yerleşim | Uygulandı | Görsel/mobil/klavye tarayıcı QA bekliyor |
+| Liste/detay/yetenek ağacı | Korundu | Gerçek oyun export'u yok, boş durum görünür |
+| Arama/filtre/URL/sayfalama | Uygulandı | Türkçe/sınır birim testleri |
+| Eğitim hasar/RNG modelleri | Test edildi | Gerçek S15 katsayısı kanıtı değil |
+| Araştırma planı | Uzak DB'de | 8 alan unknown, verified mekanik 0 |
+| Native kurulum | Yayında | Ubuntu24.04.5 ARM64, Caddy2.11.7, Node22.23.3, PG16.15 |
+| HTTPS ve sayfalar | Doğrulandı | Sertifika kontrolü açık; 8 HTML yolunda HTTP200 |
+| DB/API/Caddy akışı | Doğrulandı | Gerçek PostgreSQL16; aynı snapshot API'den okunuyor |
+| Reader/immutability/RNG | Doğrulandı | 42501/P0001/23514/23503; fixture kayıtları rollback |
+| Kalıcılık/idempotency | Doğrulandı | Tek araştırma snapshot'ı; ikinci kurulum/API restart aynı UUID |
+| systemd | Aktif ve enabled | diablozone-api; reboot yapılmadı, otomatik başlangıç enable edildi |
+| Aryaland | Korundu | İşlem öncesi/sonrası sertifika doğrulamalı HTTP200; servis active |
+| Git | .git proje içinde | main geçmişi korunarak güncel çalışma ağacı tek yeni commit alır |
+| Docker temizliği | Tamamlandı | Dockerfile/Compose/local:* ve eski taslaklar kaldırıldı; volume silinmedi |
+| Gerçek sezon15 kayıtları | Bekliyor | Tüm sınıf/eşya/affix/aspekt ve matematik henüz doldurulmadı |
+| Tam DB → frontend akışı | Bekliyor | Araştırma canlı; oyun listeleri statik |
+| Forum | Ertelendi | Arşiv belgeleri aktif kapsam değildir |
+
+## Güncel doğrulama
+
+- Lint, Astro/TypeScript (0 hata/uyarı/ipucu), 12 birim testi, frontend/API build geçti.
+- Uzak entegrasyon release'i: /srv/diablozone/releases/20261012-050200.
+  Arşiv SHA256: 44424d6734763d44e6edb267bdac06a552f178ce419505f13a6a8b41f8e703e5.
+  Son Git commit'i kaynak/release.json içine kaydedilerek yeni final release hazırlanır;
+  current bağlantısı ve kesin yayın commit'i dış Notlar.md içinde kayıtlanır.
+- 001_research.sql gerçek PG16'ya uygulandı. LF satır sonları .gitattributes ile sabitlenir.
+- Snapshot: 8533e17d-6a69-4a7c-a74b-d037a4ce2725, build73552, tek published araştırma planı.
+- Gerçek oyun kayıt sayısı0; DB yaklaşık8271kB; her runtime release yaklaşık12MB.
+- Reader read-write transaction açsa da UPDATE reddedilir; iki rol non-superuser.
+- Published snapshot güncellenemez, yanlış RNG oranı ve çapraz snapshot kaynak reddedilir.
+- Test fixture'ları transaction rollback ile kaldırıldı; draft snapshot kalmadı.
+- /health dışarı404, POST405, yanlış UUID/kind400, özel404 sayfası404.
+- API 127.0.0.1:8787, PostgreSQL localhost:5432; internet yalnızca Caddy80/443.
+- systemd-analyze verify ve Caddy validate geçti. OS'nin ilgisiz monitoring unit
+  izinleri hakkında mevcut uyarılar görüldü; ortak OS servisleri değiştirilmedi.
+- İlk uzak kontrol aracında pool.query ile transaction sonrası savepoint kontrolü
+  başarısız oldu; dedicated client ile düzeltildi ve tüm gerçek DB kontrolleri geçti.
+- Native PostgreSQL/Aryaland restart veya host reboot yapılmadı.
+- Görsel/mobil/klavye QA ve gerçek d4data/ağaç entegrasyonu henüz yapılmadı.
+
+## Yayın dosyaları
+
+deploy/linux içinde Caddy host, systemd, root-only secret provisioning,
+writer admin çalıştırıcısı, hash doğrulamalı release installer ve gerçek DB/HTTPS
+kontrol aracı vardır. Runtime yalnızca dotenv/pg/zod ve sabit lockfile kullanır.
+Geri dönüş için önceki release ve Caddy yedekleri tutulur; veri sıfırlanmaz.
+
+## Sonraki veri işi
+
+Build/kaynak envanteri → küçük gerçek yetenek/eşya/affix/aspekt örneği → tam sınıf
+ve eşya ilişkileri → paragon/diğer adaptörler → formül/RNG bağımlılıkları ve
+kontrollü ölçüm. Kaynak toplamı olmadan tamamlanma yüzdesi uydurulmaz.

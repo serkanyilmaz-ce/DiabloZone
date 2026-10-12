@@ -1,40 +1,42 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import tree from '../../../data/generated/skill-tree.json';
+import { tree } from '../../lib/data';
+import DataEmpty from '../../components/DataEmpty.astro';
 const base = import.meta.env.BASE_URL;
 const classes = Object.keys(tree.classes);
 ---
-<BaseLayout title="Skill Tree" description="Explore every Diablo IV class on its original in-game skill tree.">
-  <section class="hero compact">
-    <p class="eyebrow">The paths of power</p><h1>Skill Tree</h1>
-    <p>Explore every class. Follow the branches. Find your next build.</p>
+<BaseLayout title="Yetenek ağacı" description="İçe aktarılan oyun verisinin yetenek ağacını incele.">
+  <section class="page-heading">
+    <p class="eyebrow">GÜCÜN DALLARI</p><h1>Yetenek ağacı</h1>
+    <p>İçe aktarılan sınıf verilerinin dallarını ve bağlantılarını incele.</p>
   </section>
-  <div class="tree-tabs" role="tablist" aria-label="Class skill trees">
+  {classes.length === 0 && <DataEmpty kind="yetenek ağacı" />}
+  <div class="tree-tabs" hidden={!classes.length} role="tablist" aria-label="Sınıf yetenek ağaçları">
     {classes.map((cls,index)=><button id={`tab-${cls}`} type="button" role="tab" aria-controls="class-tree" aria-selected={index===0?'true':'false'} tabindex={index===0?0:-1} class:list={{active:index===0}} data-tree-tab={cls}>{cls}</button>)}
   </div>
-  <div class="tree-workspace">
+  <div class="tree-workspace" hidden={!classes.length}>
     <section class="tree-explorer" id="class-tree" role="tabpanel" aria-labelledby={`tab-${classes[0]}`}>
       <div class="tree-tools">
-        <label class="tree-search"><span class="sr-only">Search this class</span><input type="search" placeholder="Search skills…" data-tree-search autocomplete="off" /></label>
-        <div class="tree-zoom"><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output data-zoom-label>100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-tree-fit>Fit tree</button><button type="button" data-tree-start>Start</button></div>
+        <label class="tree-search"><span class="sr-only">Bu sınıfta ara</span><input type="search" placeholder="Yetenek ara…" data-tree-search autocomplete="off" /></label>
+        <div class="tree-zoom"><button type="button" data-zoom="out" aria-label="Uzaklaştır">−</button><output data-zoom-label>100%</output><button type="button" data-zoom="in" aria-label="Yakınlaştır">+</button><button type="button" data-tree-fit>Ağacı sığdır</button><button type="button" data-tree-start>Başlangıç</button></div>
       </div>
-      <div class="tree-viewport" tabindex="0" aria-label="Skill tree. Drag to pan, use the mouse wheel to zoom, or arrow keys to move.">
-        <svg class="tree-canvas" xmlns="http://www.w3.org/2000/svg" aria-label="Class skill nodes" role="group"></svg>
+      <div class="tree-viewport" tabindex="0" aria-label="Yetenek ağacı. Sürükle, tekerlekle yakınlaştır veya ok tuşlarıyla hareket et.">
+        <svg class="tree-canvas" xmlns="http://www.w3.org/2000/svg" aria-label="Sınıf yetenek düğümleri" role="group"></svg>
       </div>
-      <div class="tree-status"><span data-tree-status aria-live="polite"></span><span>Drag to pan · Scroll to zoom · Select a node</span></div>
+      <div class="tree-status"><span data-tree-status aria-live="polite"></span><span>Sürükle · Yakınlaştır · Düğüm seç</span></div>
       <div class="tree-results" hidden><p data-result-count aria-live="polite"></p><div data-results></div></div>
     </section>
-    <aside class="tree-details" aria-label="Selected skill">
-      <p class="eyebrow" data-detail-kind>Explore the tree</p>
+    <aside class="tree-details" aria-label="Seçili yetenek">
+      <p class="eyebrow" data-detail-kind>Ağacı incele</p>
       <div class="detail-emblem" data-detail-emblem aria-hidden="true">✦</div>
-      <h2 data-detail-name>Select a skill</h2>
+      <h2 data-detail-name>Yetenek seç</h2>
       <p data-detail-category></p>
-      <p class="tree-description" data-detail-description>Choose any skill or upgrade to inspect it. All eight classes use their original game board positions and connections.</p>
+      <p class="tree-description" data-detail-description>Bir yetenek veya geliştirme seç. Konumlar ve bağlantılar içe aktarılan oyun verisine dayanır.</p>
       <dl data-detail-stats></dl>
-      <a class="tree-detail-link" data-detail-link hidden>Open skill details →</a>
-      <p class="tree-formula-note" hidden>Values in brackets depend on skill rank and character stats.</p>
-      <div class="tree-key"><span>◇ Skill</span><span>○ Upgrade</span><span>◆ Level gate</span></div>
-      <p class="tree-build">Game build {tree.gameBuild}</p>
+      <a class="tree-detail-link" data-detail-link hidden>Yetenek detaylarını aç →</a>
+      <p class="tree-formula-note" hidden>Parantezli ifadeler henüz çözülmedi; rank ve karakter istatistiklerine bağlı olabilir.</p>
+      <div class="tree-key"><span>◇ Yetenek</span><span>○ Geliştirme</span><span>◆ Seviye eşiği</span></div>
+      <p class="tree-build">Kaynak build {tree.gameBuild}</p>
     </aside>
   </div>
   <script id="tree-data" type="application/json" set:html={JSON.stringify(tree).replace(/</g,'\u003c')} />
@@ -42,6 +44,7 @@ const classes = Object.keys(tree.classes);
     (()=>{
       const data=JSON.parse(document.getElementById('tree-data').textContent);
       const tabs=[...document.querySelectorAll('[data-tree-tab]')];
+      if (!tabs.length) return;
       const viewport=document.querySelector('.tree-viewport'),svg=document.querySelector('.tree-canvas');
       const search=document.querySelector('[data-tree-search]'),results=document.querySelector('.tree-results');
       const ns='http://www.w3.org/2000/svg';
@@ -59,24 +62,24 @@ const classes = Object.keys(tree.classes);
         const neighbors=new Set(board.edges.filter(e=>e.from===node.id||e.to===node.id).flatMap(e=>[e.from,e.to]));
         group.querySelectorAll('.tree-edge').forEach(el=>el.classList.toggle('highlight',Number(el.dataset.from)===node.id||Number(el.dataset.to)===node.id));
         elements.forEach((el,id)=>el.classList.toggle('neighbor',neighbors.has(id)&&id!==node.id));
-        field('kind',node.kind==='hub'?'Skill cluster':node.kind==='gate'?'Level gate':node.kind);
+        field('kind',node.kind==='hub'?'Yetenek kümesi':node.kind==='gate'?'Seviye eşiği':node.kind);
         field('name',node.name);field('category',node.category??'');
         // Runtime formulas are not evaluated by this browser; never invent game values.
         const raw=node.description??'';
-        const description=raw.replace(/\[[^\]]*\]/g,'[value]').replace(/\{[^}]*\}/g,'[value]');
-        field('description',description||(node.kind==='gate'?`This branch opens at player level ${node.requiredLevel}.`:node.kind==='hub'?'Follow the connected branches to explore this skill cluster.':'Inspect the connected nodes for this skill.'));
-        document.querySelector('.tree-formula-note').hidden=!description.includes('[value]');
+        const description=raw.replace(/\[[^\]]*\]/g,'[çözülemedi]').replace(/\{[^}]*\}/g,'[çözülemedi]');
+        field('description',description||(node.kind==='gate'?`This branch opens at player level ${node.requiredLevel}.`:node.kind==='hub'?'Bu yetenek kümesini incelemek için bağlantılı dalları takip et.':'Bu yeteneğin bağlı düğümlerini incele.'));
+        document.querySelector('.tree-formula-note').hidden=!description.includes('[çözülemedi]');
         const emblem=document.querySelector('[data-detail-emblem]');emblem.replaceChildren();
         if(node.icon){const img=document.createElement('img');img.src=base+node.icon;img.alt='';emblem.append(img);}else emblem.textContent=node.kind==='gate'?'◆':'✦';
         const stats=document.querySelector('[data-detail-stats]');stats.replaceChildren();
-        for(const [label,value] of [['Maximum rank',node.maxRanks],['Required level',node.requiredLevel||undefined],['Choice group',node.exclusiveGroup!==undefined?'Choose one':undefined]]){if(value===undefined)continue;const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=String(value);stats.append(dt,dd);}
+        for(const [label,value] of [['En fazla rank',node.maxRanks],['Required level',node.requiredLevel||undefined],['Seçim grubu',node.exclusiveGroup!==undefined?'Birini seç':undefined]]){if(value===undefined)continue;const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=String(value);stats.append(dt,dd);}
         const link=document.querySelector('[data-detail-link]');link.hidden=!node.skillSlug;if(node.skillSlug)link.href=base+'skills/'+node.skillSlug+'/';
         if(focus){scale=Math.max(scale,.18);center(node.x,node.y);elements.get(node.id)?.focus({preventScroll:true});}
       };
       const filter=()=>{
         const query=search.value.trim().toLowerCase();const matches=board.nodes.filter(n=>n.powerSno&&`${n.name} ${n.category??''} ${n.description??''}`.toLowerCase().includes(query));
         const ids=new Set(matches.map(n=>n.id));elements.forEach((el,id)=>{el.classList.toggle('dimmed',!!query&&!ids.has(id));el.classList.toggle('matched',!!query&&ids.has(id));});
-        results.hidden=!query;document.querySelector('[data-result-count]').textContent=`${matches.length} matching nodes`;
+        results.hidden=!query;document.querySelector('[data-result-count]').textContent=`${matches.length} eşleşen düğüm`;
         const list=document.querySelector('[data-results]');list.replaceChildren();if(query)for(const node of matches){const button=document.createElement('button');button.type='button';button.textContent=node.name;button.addEventListener('click',()=>selectNode(node,true));list.append(button);}
       };
       const selectClass=(cls)=>{
@@ -86,7 +89,7 @@ const classes = Object.keys(tree.classes);
         const defs=make('defs');const clip=make('clipPath',{id:'skill-icon-clip'});clip.append(make('circle',{r:116}));defs.append(clip);svg.append(defs);group=make('g');svg.append(group);
         for(const edge of board.edges){const path=make('polyline',{points:edge.points.map(p=>`${p.x},${p.y}`).join(' '),class:'tree-edge','data-from':edge.from,'data-to':edge.to});group.append(path);}
         for(const node of board.nodes){
-          const el=make('g',{transform:`translate(${node.x} ${node.y})`,class:`skill-node node-${node.kind}`,'data-node-id':node.id,role:'button',tabindex:0,'aria-label':`${node.name}${node.maxRanks?`, ${node.maxRanks} ranks`:''}`});
+          const el=make('g',{transform:`translate(${node.x} ${node.y})`,class:`skill-node node-${node.kind}`,'data-node-id':node.id,role:'button',tabindex:0,'aria-label':`${node.name}${node.maxRanks?`, ${node.maxRanks} rank`:''}`});
           el.append(make('title',{},node.name));
           const diamond=node.kind==='active'||node.kind==='hub'||node.kind==='gate';const r=node.kind==='hub'?175:node.kind==='gate'?90:node.kind==='modifier'?95:145;
           el.append(diamond?make('path',{d:`M 0 ${-r} L ${r} 0 L 0 ${r} L ${-r} 0 Z`,class:'node-frame'}):make('circle',{r,class:'node-frame'}));
@@ -99,8 +102,8 @@ const classes = Object.keys(tree.classes);
         }
         const previous=views.get(cls);if(previous){({scale,tx,ty}=previous);transform();}else start();
         const first=board.nodes.find(n=>n.id===previous?.selected)??board.nodes.find(n=>n.kind==='active'&&n.category==='basic')??board.nodes.find(n=>n.kind==='active');if(first)selectNode(first);
-        search.value='';filter();document.querySelector('[data-tree-status]').textContent=`${cls[0].toUpperCase()+cls.slice(1)} · ${board.nodes.filter(n=>n.kind==='active'||n.kind==='passive').length} skills · ${board.nodes.filter(n=>n.kind==='modifier').length} upgrades`;
-        try{history.replaceState(null,'','#'+cls);}catch{}
+        search.value='';filter();document.querySelector('[data-tree-status]').textContent=`${cls[0].toUpperCase()+cls.slice(1)} · ${board.nodes.filter(n=>n.kind==='active'||n.kind==='passive').length} yetenek · ${board.nodes.filter(n=>n.kind==='modifier').length} geliştirme`;
+        try{history.replaceState(null,'','#'+cls);}catch{/* Browser may disallow history updates. */}
       };
       tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectClass(tab.dataset.treeTab));tab.addEventListener('keydown',event=>{let target;if(event.key==='ArrowRight')target=(index+1)%tabs.length;if(event.key==='ArrowLeft')target=(index+tabs.length-1)%tabs.length;if(event.key==='Home')target=0;if(event.key==='End')target=tabs.length-1;if(target!==undefined){event.preventDefault();tabs[target].focus();selectClass(tabs[target].dataset.treeTab);}});});
       viewport.addEventListener('wheel',e=>{e.preventDefault();const rect=viewport.getBoundingClientRect();zoom(Math.exp(-e.deltaY*.0015),e.clientX-rect.left,e.clientY-rect.top);},{passive:false});

@@ -1,0 +1,32 @@
+[Unit]
+Description=DiabloZone read-only game data and research API
+After=network.target postgresql.service
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=diablozone
+Group=diablozone
+WorkingDirectory=/srv/diablozone/current
+EnvironmentFile=/etc/diablozone/api.env
+Environment=NODE_ENV=production
+Environment=NODE_OPTIONS=--max-old-space-size=512
+ExecStart=/usr/local/bin/node /srv/diablozone/current/build/service/scripts/service.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+MemoryHigh=768M
+MemoryMax=1G
+CPUQuota=100%
+TasksMax=64
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

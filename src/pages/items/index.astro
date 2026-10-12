@@ -1,29 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import items from '../../../data/generated/items.json';
+import DataBrowser from '../../components/DataBrowser.astro';
+import DataEmpty from '../../components/DataEmpty.astro';
+import {items} from '../../lib/data';
+import { term } from '../../lib/terms';
 const base = import.meta.env.BASE_URL;
-const rarities = ['mythic','unique'];
-const slots = Array.from(new Set(items.map((x:any) => x.slot).filter(Boolean))).sort();
+const rarities = [...new Set(items.map(item => item.rarity))].sort();
+const slots = [...new Set(items.map(item => item.slot).filter((slot): slot is string => !!slot))].sort();
 ---
-<BaseLayout title="Items">
-  <section class="hero compact"><p class="eyebrow">Equipment archive</p><h1>Items</h1><p>{items.length} canonical equipable items.</p></section>
-  <section class="toolbar" data-browser>
-    <input class="search" type="search" placeholder="Search items…" data-search />
-    <select class="select" data-filter="rarity"><option value="">All rarities</option>{rarities.map((r)=><option value={r}>{r}</option>)}</select>
-    <select class="select" data-filter="slot"><option value="">All slots</option>{slots.map((s)=><option value={s}>{s}</option>)}</select>
-  </section>
-  <div class="card-grid" data-list>
-    {items.map((item:any)=><a class="data-card" href={`${base}items/${item.slug}/`} data-entry data-rarity={item.rarity} data-slot={item.slot} data-searchtext={`${item.name} ${item.rarity} ${item.slot} ${(item.classes??[]).join(' ')}`.toLowerCase()}>
-      <div class="card-main">
-        {item.icon ? <div class="item-icon-frame"><img class="entity-icon item-icon" src={`${base}${item.icon}`} alt="" loading="lazy" /></div> : <span class="entity-fallback" aria-label="Icon unavailable">◆</span>}
-        <div class="card-copy"><div class="card-kicker">{item.rarity} · {item.slot}</div><h2>{item.name}</h2></div>
-      </div>
-      <p>{item.flavor ?? `${item.affixIds?.length ?? 0} referenced affixes`}</p>
-      <div class="chip-row">{(item.classes??[]).slice(0,4).map((c:string)=><span class="chip">{c}</span>)}</div>
-    </a>)}
-  </div>
-  <p class="empty" data-empty hidden>No matching items.</p>
-  <script is:inline>
-    const root=document.querySelector('[data-browser]'),list=document.querySelector('[data-list]'),empty=document.querySelector('[data-empty]'); const search=root?.querySelector('[data-search]'); const rarity=root?.querySelector('[data-filter="rarity"]'); const slot=root?.querySelector('[data-filter="slot"]'); const apply=()=>{const q=(search?.value||'').toLowerCase(),r=rarity?.value||'',s=slot?.value||'';let shown=0;list?.querySelectorAll('[data-entry]').forEach(el=>{const ok=(!q||el.dataset.searchtext.includes(q))&&(!r||el.dataset.rarity===r)&&(!s||el.dataset.slot===s);el.hidden=!ok;if(ok)shown++;});if(empty)empty.hidden=shown!==0;}; search?.addEventListener('input',apply);rarity?.addEventListener('change',apply);slot?.addEventListener('change',apply);
-  </script>
+<BaseLayout title="Eşyalar">
+  <div class="breadcrumbs"><a href={base}>Ana sayfa</a><span>/</span><span>Veritabanı</span><span>/</span><span>Eşyalar</span></div>
+  <section class="page-heading"><p class="eyebrow">SANCTUARY’NİN HAZİNELERİ</p><h1>Eşyalar</h1><p>Benzersiz güçler, eşya özellikleri ve sınıf uyumları. Her parçanın arkasındaki veriyi incele.</p></section>
+  <form class="toolbar" role="search"><label class="field search-field">Arama<input class="search" type="search" placeholder="Eşya adı, özellik veya sınıf…" data-search /></label><label class="field">Nadirlik<select class="select" data-filter="rarity"><option value="">Tüm nadirlikler</option>{rarities.map(r => <option value={r}>{term(r)}</option>)}</select></label><label class="field">Ekipman yuvası<select class="select" data-filter="slot"><option value="">Tüm yuvalar</option>{slots.map(s => <option value={s}>{term(s)}</option>)}</select></label></form>
+  <DataBrowser count={items.length}>
+    <div class="card-grid" data-list tabindex="-1">{items.map(item => <a class="data-card" href={`${base}items/${item.slug}/`} data-entry data-rarity={item.rarity} data-slot={item.slot ?? ''} data-searchtext={`${item.name} ${item.flavor ?? ''} ${term(item.rarity)} ${item.rarity} ${term(item.slot)} ${item.classes.map(term).join(' ')}`}><div class="card-main">{item.icon ? <div class="item-icon-frame"><img src={`${base}${item.icon}`} alt="" loading="lazy" /></div> : <span class="entity-fallback" aria-hidden="true">◇</span>}<div class="card-copy"><div class="card-kicker">{term(item.rarity)} · {term(item.slot)}</div><h2>{item.name}</h2></div></div><p>{item.flavor ?? `${item.affixIds.length} özellik referansı · Detaylarda incele.`}</p><div class="chip-row">{item.classes.slice(0,4).map(cls => <span class="chip">{term(cls)}</span>)}</div></a>)}</div>
+    {items.length === 0 && <DataEmpty kind="eşya" />}
+  </DataBrowser>
 </BaseLayout>

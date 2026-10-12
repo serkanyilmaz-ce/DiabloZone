@@ -5,3 +5,12 @@ dist/
 .cache/
 d4data/
 .env
+.env.*
+!.env.example
+*.tsbuildinfo
+data/private/
+output/
+build/
+*.key
+*.pem
+Notlar.md

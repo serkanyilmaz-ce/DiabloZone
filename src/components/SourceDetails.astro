@@ -1,0 +1,10 @@
+---
+interface Ref { file: string; sno?: string | number; }
+interface Props { source?: Ref; localizationSource?: Ref; patch?: string; template?: string; }
+const {source, localizationSource, patch, template}=Astro.props;
+---
+<details class="detail-section"><summary>Kaynak & ham formül bilgisi</summary>
+  <p class="source-note">Kaynak sürüm: {patch ?? 'Bilinmiyor'}. Ham şablon hesaplanmamıştır; tek başına oyun mekaniğini doğrulamaz.</p>
+  <dl class="detail-grid">{source && <div><dt>Kaynak dosyası</dt><dd>{source.file}</dd></div>}{localizationSource && <div><dt>Yerelleştirme dosyası</dt><dd>{localizationSource.file}</dd></div>}</dl>
+  {template ? <pre>{template}</pre> : <p class="source-note">Bu kayıtta ham açıklama şablonu yok.</p>}
+</details>

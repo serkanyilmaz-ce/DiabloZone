@@ -1,0 +1,29 @@
+diablozone.152.70.4.125.sslip.io {
+    encode zstd gzip
+    header X-Content-Type-Options nosniff
+    header Referrer-Policy strict-origin-when-cross-origin
+
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8787 {
+            header_up X-Real-IP {remote_host}
+            transport http {
+                dial_timeout 3s
+                response_header_timeout 10s
+            }
+        }
+    }
+
+    handle {
+        root * /srv/diablozone/current/dist
+        file_server
+    }
+
+    handle_errors {
+        @notfound expression {err.status_code} == 404
+        handle @notfound {
+            rewrite * /404.html
+            root * /srv/diablozone/current/dist
+            file_server
+        }
+    }
+}

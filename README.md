@@ -1,71 +1,121 @@
-# Diablo IV Data Lab — PoC
+# DiabloZone — Diablo IV veri ve matematik arşivi
 
-A compact static-site proof of concept for turning `DiabloTools/d4data` into a stable website-owned data model.
+Türkçe, bağımsız oyun veritabanı: tüm sınıflar, eşyalar, affix/aspekt/yetenekler,
+paragon ve diğer sistemler; tüm matematiksel ilişkiler, gizli çarpanlar ve RNG.
+İlk hedef sezon 15. Forum ertelenmiştir.
 
-## Why this shape
+Yayın adresi: https://diablozone.152.70.4.125.sslip.io/ .
+Astro/TypeScript/Tailwind, kendi PostgreSQL arşivi ve salt okunur Node API.
+Uzak sunucuda Docker kullanılmaz; mevcut Caddy, PostgreSQL 16 ve Node 22
+üzerinde ayrı DB/roller ve systemd servisiyle yayınlanır.
 
-- Astro static output → GitHub Pages, no server/database.
-- TypeScript importer isolated from the UI.
-- Zod schemas define the future canonical domain model.
-- `probe` intentionally discovers records recursively instead of assuming undocumented upstream paths.
-- No copied/fake Diablo game records are committed. The test fixture is synthetic.
+## Belgeler
 
-## Requirements
+- [Başlangıç](START-PROMPT.md), [ürün](docs/product.md), [veri kataloğu/tamlık](docs/data-catalog.md).
+- [Bilimsel yöntem](docs/research-method.md), [native yayın](docs/deployment.md), [ilerleme](docs/progress.md).
+- [Dış işlem günlüğü](../Notlar.md): sunucu ve kronolojik çalışma kaydı; secret içermez.
+- Git: https://github.com/serkanyilmaz-ce/DiabloZone . .git yalnızca bu proje klasöründedir.
 
-- Node.js 22+
-- npm
-- A local checkout of `https://github.com/DiabloTools/d4data`
+## Geliştirme
 
-## Run site
+Node 22, pnpm 10.11.0. PowerShell pnpm.ps1'i engelliyorsa pnpm.cmd kullanılır.
 
-```bash
-npm install
-npm run dev
+```powershell
+pnpm.cmd install --frozen-lockfile
+pnpm.cmd dev --host 127.0.0.1
 ```
 
-## Run importer probe
+Arayüz http://127.0.0.1:4321/ . /api/ geliştirme proxy'si yerel 8787'ye gider.
+Yalnızca frontend çalıştırıldığında araştırmanın canlı DB kartı API bağlantı
+hatasını gösterir; statik sayfalar erişilebilir. Gerçek DB geliştirmesinde .env
+içine ayrı writer/reader URL konur; .env.example yalnızca placeholder'dır.
+Eski Docker/Compose ve local:* komutları kullanıcı isteğiyle kaldırıldı.
 
-```bash
-git clone --depth 1 https://github.com/DiabloTools/d4data.git ./d4data
-npm run data:probe -- --datamine ./d4data
-npm run dev
+## Kontroller ve build
+
+```powershell
+pnpm.cmd lint
+pnpm.cmd check
+pnpm.cmd test
+$env:SITE_URL='https://diablozone.152.70.4.125.sslip.io'
+pnpm.cmd build
+pnpm.cmd api:build
 ```
 
-Generated files:
+check Astro ve servis/DB TypeScript'ini kapsar. Testler Türkçe arama/sayfalama,
+koşullu hasar/RNG, proxy güveni, API sorguları ve PGlite'ta gerçek PostgreSQL
+kısıtlarını sınar. Sentetik kayıtlar sezon 15 oyun mekaniğini doğrulamaz.
+Gerçek d4data/ağaç export'u olduğunda pnpm.cmd test:integration çalıştırılır;
+bu kopyada gerçek export olmadığı için oyun/ağaç entegrasyonu henüz doğrulanmadı.
 
-- `data/generated/metadata.json`
-- `data/generated/proof.json`
+## Veri durumu
 
-The probe searches for three first targets:
+Gerçek oyun kayıtları henüz içe aktarılmadı. Metadata gameBuild NULL;
+eksik veri açıkça gösterilir, bozuk export build'i durdurur. DB araştırma planı
+8 alanı unknown olarak saklar; verified mekanik 0. Hasar/RNG laboratuvarı eğitim
+modelidir. Tarihsel katsayılar güncel sezon verisi olarak sunulmaz.
 
-1. Fireball
-2. Harlequin Crest
-3. Aspect records
+Sürümü doğrulanmış yerel d4data dökümü için korunmuş importer'lar:
 
-This is **discovery**, not the final parser. The resulting `file` + JSON `path` values tell us the exact current upstream structures to implement in the next adapter.
-
-## Synthetic local check
-
-```bash
-npm run data:probe:fixture
-npm test
+```powershell
+pnpm.cmd data:probe --datamine .tmp/d4data
+pnpm.cmd data:skills --datamine .tmp/d4data
+pnpm.cmd data:tree --datamine .tmp/d4data
+pnpm.cmd data:items --datamine .tmp/d4data
+pnpm.cmd data:aspects --datamine .tmp/d4data
+pnpm.cmd data:affixes --datamine .tmp/d4data
 ```
 
-## GitHub Pages
+Mevcut item importer'ı unique/mythic, affix importer'ı ilişkili affix alt kümesine
+odaklanır; tüm eşya/affix kapsamı tamamlanmış sayılmaz. Sınıf/paragon/loot havuzu
+ve diğer sistem adaptörleri bekler. Hedef kayıt kapsamı docs/data-catalog.md'dedir.
+Kaynak proje https://github.com/DiabloTools/d4data ; importer varsayımları gerçek
+sezon 15 dökümüyle doğrulanmalıdır. Oyun kurulumuna yalnızca okuma yapılır.
+Yerel manifest 3.2.2.73764 gösteriyordu; bu normalize veri dökümü değildir.
 
-Push to `main`, then in GitHub open **Settings → Pages** and select **GitHub Actions** as the source. The included workflow builds a static site and handles a project-style `github.io/<repo>/` base path.
+## DB ve API
 
-## Next implementation step
+```powershell
+pnpm.cmd db:bootstrap
+pnpm.cmd db:migrate
+pnpm.cmd db:research
+pnpm.cmd db:import
+pnpm.cmd db:export <snapshot-uuid>
+pnpm.cmd api:dev
+```
 
-Use the real `proof.json` to replace heuristic discovery with explicit adapters:
+bootstrap migration ve aynı planın çoğalmadığı idempotent seed'dir. db:research
+özel JSON manifestiyle ham formül/bağımlılık/RNG alır; kendiliğinden verified
+yapmaz. db:import boş veya sürümü tutarsız oyun verisini reddeder. db:export
+output/snapshots içine yazar; data/generated'ı değiştirmez.
 
-- `skills.ts`
-- `items.ts`
-- `aspects.ts`
-- string/SNO/GBID resolvers
+DATABASE_URL writer, DATABASE_READ_URL SELECT reader hesabıdır. DATA_SEASON/
+DATA_CHANNEL kaynağa göre açıkça ayarlanır. API 127.0.0.1:8787 üzerinde derlenmiş
+JavaScript ile çalışır. API_TRUST_LOOPBACK_PROXY yalnızca başlıkları yeniden
+yazan aynı-host Caddy proxy'siyle 1'dir. Şifre/anahtar istemciye taşınmaz.
+Liste/detay statik export, araştırma arşivi canlı API kullanır; otomatik tam
+DB → frontend aktarımı bekler.
 
-The UI should consume only normalized `data/generated/*.json`, never raw d4data structures.
+## Release ve CI
 
-## Attribution / status
+```powershell
+pnpm.cmd release:package YYYYMMDD-HHMMSS
+```
 
-Unofficial community project. Diablo IV and game assets/data are property of Blizzard Entertainment. `DiabloTools/d4data` is a community datamine project; review upstream licensing/Blizzard terms before redistributing game assets.
+Native kurulum araçları deploy/linux içindedir; süreç docs/deployment.md'de.
+Arşiv yalnızca runtime + açık kaynak allowlist'i taşır. .env/anahtar/node_modules/
+ham oyun arşivi dışlanır. Uzak runtime yalnızca üç sabit bağımlılık kurar;
+Astro veya frontend derleyicileri sürekli servis için sunucuya kurulmaz.
+
+GitHub CI pnpm frozen kurulum, lint, test, build ve api:build çalıştırır.
+Eski otomatik d4data çekme, npm kurulum ve Pages yayın workflow'ları kaldırıldı.
+Ana branch güncel çalışma ağacından fast-forward commit alır; eski kod checkout
+edilerek mevcut tasarım üzerine yazılmaz. Sunucu yayını ayrı native işlemdir.
+
+## Görünüm ve doğrulama sınırı
+
+Antrasit/bordo tasarım, Türkçe sayfalar, URL filtreleri ve 24 kayıt sayfalama.
+sanctuary-research.png özgün üretim görseldir. Eski kullanılmayan görsel/CSS
+taslakları kaldırıldı. Diablo IV/markalar Blizzard'a aittir; proje bağımsızdır.
+Tarayıcı üzerinden görsel/mobil/klavye QA henüz tamamlanmadı. HTTP/DB/TLS/
+sistemd ve test sonuçları docs/progress.md'de ayrı kayıtlanır.

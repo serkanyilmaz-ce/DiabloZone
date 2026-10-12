@@ -1,0 +1,12 @@
+{
+  "name": "diablozone-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.11.0",
+  "dependencies": {
+    "dotenv": "18.0.7",
+    "pg": "8.23.1",
+    "zod": "4.1.5"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "targetSeason": 15,
+  "seasonName": "Season of Hell's Legacy",
+  "announcementPatch": "3.2.1",
+  "announcementBuild": "73552",
+  "announcementUrl": "https://news.blizzard.com/en-us/article/24295394/celebrate-30-years-of-diablo-in-season-of-hell-s-legacy",
+  "localInstallationVersion": "3.2.2.73764",
+  "localInstallationObservedOn": "2026-10-12",
+  "importedGameBuild": null,
+  "verifiedLiveModels": 0,
+  "areas": [
+    { "slug": "damage", "title": "Hasar & çarpanlar", "description": "Toplamsal havuzlar, kritik, savunmasızlık, ana stat, DoT ve özel yetenek katsayıları.", "icon": "skills", "status": "Araştırma planlandı" },
+    { "slug": "defense", "title": "Savunma & dayanıklılık", "description": "Zırh, direnç, hasar azaltma, bariyer, güçlendirme ve efektif can.", "icon": "shield", "status": "Araştırma planlandı" },
+    { "slug": "resources", "title": "Kaynak ekonomisi", "description": "Kaynak maliyeti, yenileme, üretim, cooldown ve sürdürülebilir rotasyonlar.", "icon": "formula", "status": "Araştırma planlandı" },
+    { "slug": "timing", "title": "Hız & zamanlama", "description": "Saldırı hızı havuzları, sınırlar, tick aralıkları ve animasyon eşikleri.", "icon": "tree", "status": "Araştırma planlandı" },
+    { "slug": "procs", "title": "Proc & Lucky Hit", "description": "Olay koşulları, tetikleme zincirleri, bağımlılık ve iç cooldown kuralları.", "icon": "aspects", "status": "Araştırma planlandı" },
+    { "slug": "loot", "title": "Loot & RNG", "description": "Drop havuzları, ağırlıklar, affix dağılımları ve koşullu olasılıklar.", "icon": "dice", "status": "Araştırma planlandı" },
+    { "slug": "crafting", "title": "Crafting & reroll", "description": "Yeniden zar atma, seçim havuzları, deneme maliyeti ve başarı dağılımı.", "icon": "items", "status": "Araştırma planlandı" },
+    { "slug": "seasonal", "title": "Sezon mekanikleri", "description": "Sezon 15 güçleri, sınıf istisnaları, minyonlar ve eşya etkileşimleri.", "icon": "book", "status": "Araştırma planlandı" }
+  ]
+}

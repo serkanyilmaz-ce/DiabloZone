@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Sayfa bulunamadı"><section class="data-empty"><p class="eyebrow">404 · YOL BURADA BİTİYOR</p><h1>Bu sayfa bulunamadı.</h1><p>Bağlantı değişmiş veya bu kayıt henüz içe aktarılmamış olabilir.</p><a class="button primary" href={base}>Ana sayfaya dön</a></section></BaseLayout>

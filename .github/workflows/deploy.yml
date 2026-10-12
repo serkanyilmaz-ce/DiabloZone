@@ -1,92 +1,28 @@
-name: Deploy GitHub Pages
+name: Verify DiabloZone
 on:
   push:
     branches: [main]
-    paths:
-      - "src/**"
-      - "public/**"
-      - "scripts/fetch-icons.ts"
-      - "scripts/import-d4data/import-aspects.ts"
-      - "scripts/import-d4data/import-skill-tree.ts"
-      - "scripts/import-d4data/import-skills.ts"
-      - "schemas/domain.ts"
-      - "package.json"
-      - "astro.config.mjs"
-      - "package-lock.json"
-      - "tsconfig.json"
-      - ".github/workflows/deploy.yml"
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
-  group: pages
+  group: verify-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
-      - name: Restore icon cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            public/assets/skill-tree
-            public/assets/skills
-            public/assets/items
-            public/assets/aspects
-            public/assets/icon-source-map.json
-          key: d4-icons-v2-${{ github.run_id }}
-          restore-keys: |
-            d4-icons-v2-
-      - name: Sparse clone required d4data paths
-        run: |
-          git clone --depth 1 --filter=blob:none --sparse https://github.com/DiabloTools/d4data.git .tmp/d4data
-          cd .tmp/d4data
-          git sparse-checkout init --no-cone
-          git sparse-checkout set \
-            /buildVersion.txt \
-            /json/base/meta/Power/ \
-            /json/base/meta/SkillKit/ \
-            /json/base/meta/Aspect/ \
-            /json/base/meta/Affix/ \
-            /json/base/meta/Item/ \
-            /json/base/meta/GameBalance/SkillTreeRewards.gam.json \
-            /json/enUS_Text/meta/StringList/
-      - name: Generate canonical game data
-        run: |
-          npm run data:extract -- --datamine .tmp/d4data
-          npm run data:skills -- --datamine .tmp/d4data
-          npm run data:tree -- --datamine .tmp/d4data
-          npm run data:aspects -- --datamine .tmp/d4data
-          npm run data:items -- --datamine .tmp/d4data
-          npm run data:affixes -- --datamine .tmp/d4data
-      - name: Verify all class boards
-        run: node --import tsx --test tests/integration/skill-tree.test.ts
-      - name: Resolve and cache skill item and aspect icons
-        run: npm run data:icons
-      - name: Build Astro site
-        run: npm run build
-        env:
-          SITE_URL: https://${{ github.repository_owner }}.github.io
-          BASE_PATH: /${{ github.event.repository.name }}
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - run: npm install --global pnpm@10.11.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm build
+      - run: pnpm api:build
+# No remote data pull and no deployment. Season/build review and publishing
+# are separate, user-authorized operations.

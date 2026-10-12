@@ -8,5 +8,5 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://example.github.io',
   base: normalizedBase,
   output: 'static',
-  vite: { plugins: [tailwindcss()] },
+  vite: { plugins: [tailwindcss()], server: { proxy: { '/api/': 'http://127.0.0.1:8787' } } },
 });

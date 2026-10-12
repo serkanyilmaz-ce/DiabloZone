@@ -1,0 +1,59 @@
+---
+interface Props { count: number; }
+const { count } = Astro.props;
+---
+<div class="browser-summary"><p data-result-count aria-live="polite">{count} kayıt</p><button type="button" class="text-button" data-reset>Filtreleri sıfırla</button></div>
+<slot />
+<div class="data-empty" data-no-results hidden><h2>Eşleşen kayıt bulunamadı.</h2><p>Arama sözcüğünü değiştir veya filtreleri sıfırla.</p><button type="button" class="button secondary" data-reset>Filtreleri sıfırla</button></div>
+<nav class="pagination" aria-label="Sonuç sayfaları" data-pagination hidden><button type="button" data-previous>← Önceki</button><span data-page-count></span><button type="button" data-next>Sonraki →</button></nav>
+<script>
+  import { matchesEntry, pageSlice } from '../lib/browser';
+  document.querySelectorAll('form.toolbar').forEach(form => form.addEventListener('submit', event => event.preventDefault()));
+  const search = document.querySelector<HTMLInputElement>('[data-search]');
+  const filters = [...document.querySelectorAll<HTMLSelectElement>('[data-filter]')];
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-entry]')];
+  const params = new URLSearchParams(location.search);
+  let page = Number(params.get('page') ?? 1);
+  if (search) search.value = params.get('q') ?? '';
+  filters.forEach(filter => {
+    const candidate = params.get(filter.dataset.filter!) ?? '';
+    filter.value = [...filter.options].some(option => option.value === candidate) ? candidate : '';
+  });
+  function apply(updateUrl = true) {
+    const selection = Object.fromEntries(filters.map(filter => [filter.dataset.filter!, filter.value]));
+    const found = cards.filter(card => matchesEntry({ text: card.dataset.searchtext ?? '', filters: card.dataset as Record<string, string> }, search?.value ?? '', selection));
+    const result = pageSlice(found, page);
+    page = result.page;
+    const shown = new Set(result.entries);
+    cards.forEach(card => { card.hidden = !shown.has(card); });
+    const count = document.querySelector('[data-result-count]');
+    if (count) count.textContent = `${found.length} kayıt${found.length ? ` · Sayfa ${page} / ${result.pages}` : ''}`;
+    const empty = document.querySelector<HTMLElement>('[data-no-results]');
+    if (empty) empty.hidden = found.length !== 0 || cards.length === 0;
+    const pagination = document.querySelector<HTMLElement>('[data-pagination]');
+    if (pagination) pagination.hidden = result.pages < 2;
+    const pageCount = document.querySelector('[data-page-count]');
+    if (pageCount) pageCount.textContent = `${page} / ${result.pages}`;
+    const previous = document.querySelector<HTMLButtonElement>('[data-previous]');
+    const next = document.querySelector<HTMLButtonElement>('[data-next]');
+    if (previous) previous.disabled = page <= 1;
+    if (next) next.disabled = page >= result.pages;
+    if (updateUrl) {
+      const url = new URL(location.href);
+      url.searchParams.delete('q'); url.searchParams.delete('page');
+      filters.forEach(filter => url.searchParams.delete(filter.dataset.filter!));
+      if (search?.value.trim()) url.searchParams.set('q', search.value.trim());
+      Object.entries(selection).forEach(([key, value]) => { if (value) url.searchParams.set(key, value); });
+      if (page > 1) url.searchParams.set('page', String(page));
+      history.replaceState(null, '', url);
+    }
+  }
+  search?.addEventListener('input', () => { page = 1; apply(); });
+  filters.forEach(filter => filter.addEventListener('change', () => { page = 1; apply(); }));
+  document.querySelectorAll('[data-reset]').forEach(button => button.addEventListener('click', () => {
+    if (search) search.value = ''; filters.forEach(filter => { filter.value = ''; }); page = 1; apply(); search?.focus();
+  }));
+  document.querySelector('[data-previous]')?.addEventListener('click', () => { page--; apply(); document.querySelector<HTMLElement>('[data-list]')?.focus(); });
+  document.querySelector('[data-next]')?.addEventListener('click', () => { page++; apply(); document.querySelector<HTMLElement>('[data-list]')?.focus(); });
+  apply(false);
+</script>
