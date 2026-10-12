@@ -1,13 +1,15 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { parse } from 'dotenv';
-import pg from 'pg';
+import { readFileSync,realpathSync } from 'node:fs';
+import {createRequire} from 'node:module';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { loadCatalog,canonical } from '../../../build/service/scripts/db/catalog.js';
 
 const origin = 'https://diablozone.152.70.4.125.sslip.io';
-const releaseRoot=fileURLToPath(new URL('../../../',import.meta.url));
+const releaseRoot=realpathSync(process.env.DIABLOZONE_RELEASE_ROOT??fileURLToPath(new URL('../../../',import.meta.url)));
+if(path.dirname(releaseRoot)!=='/srv/diablozone/releases')throw new Error('Native release path required');
+const require=createRequire(path.join(releaseRoot,'package.json'));
+const {parse}=require('dotenv'),pg=require('pg');
+const {loadCatalog,canonical}=await import(path.join(releaseRoot,'build/service/scripts/db/catalog.js'));
 const writerPool = new pg.Pool({ connectionString: parse(readFileSync('/etc/diablozone/import.env')).DATABASE_URL, max: 1 });
 const readerPool = new pg.Pool({ connectionString: parse(readFileSync('/etc/diablozone/api.env')).DATABASE_READ_URL, max: 1 });
 // Explicit clients retain the same connection after an expected SQL error.
@@ -101,8 +103,8 @@ try {
       await Promise.all(file.records.slice(offset,offset+8).map(async record=>{
         const page=await fetch(`${origin}/${file.kind}/${record.slug}/`);assert.equal(page.status,200);
         const html=await page.text();assert(html.includes(gameId));assert(html.includes(String(record.source.sno)));
-        const escaped=(record.name??record.internalName).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
-        assert(html.includes(escaped));
+        const escaped=(record.name??record.internalName).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll("'",'&#39;').replaceAll('"','&quot;');
+        assert(html.includes(escaped),`Detail name mismatch ${file.kind}:${record.id}`);
       }));
     }
   }

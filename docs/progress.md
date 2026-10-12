@@ -117,3 +117,23 @@ Veri73552/görseller73764 farkı arayüzde açıklanır. Native kaynak derlemesi
 16 birim +11 kaynak entegrasyon kontrolü, lint/TypeScript/API/frontend build geçti;
 1.626 sayfa oluştu. Runtime animasyon/connector katmanları ve gerçek görsel
 karşılaştırma sürer. F03 veri teslimi hazır; piksel eşdeğerliği tamamlandı sayılmaz.
+
+### F03 yayını — 12 Ekim 2026, 07:00 (Europe/Istanbul)
+
+- main0a948c2; aktif release /srv/diablozone/releases/20261012-065500.
+  ReleaseSHA2564575dc6cb2d79adf21e8c8cd9278cb0424ef06bf9f8094a33c19d2e5b14b3d7d.
+- Snapshotcb1ea0ce-6eab-453c-b8e0-2034b83fb559,1.624kayıt/4.612ilişki.
+  İkinci import aynıUUID; eski34kayıtlıF02 ve araştırma snapshot'ları korunur.
+- Sekiz sınıfın2.228düğüm/2.197kenarı kaynak koordinat/path ile eşleşti.
+  1.600yetenek/geliştirmenin tamamı özgün ana ikonunu gösterir. Salt okunur
+  yerelCASC extraction1.583PNG; oyun manifesti değişmedi. Veri73552/grafik73764.
+- 16birim+11kaynak testi, lint/TypeScript/build/API geçti.1.626sayfa.
+- İzole headless Edge155.0.4283.45 ile yerel ve canlı HTTPS1440px/390px arama,
+  class/type filtreleri, PNGyüklemesi, ağaçarama/detay/class/klavye geçişi geçti;
+  yatay sayfa taşması ve pageerror0. Kullanıcı tarayıcı profiline bağlanılmadı.
+- Native checker önce apostrof adları HTMLentity karşılaştırmasında hatalıydı.
+  Araç düzeltildi; published release dosyası değiştirilmeden bağımsız checker
+  çalıştırıldı. Tüm API sayfaları/payload ve1.616detayHTML kaynak/snapshot eşleşti.
+  Reader yazamaz, publishedlink silinemez, Aryaland.online200.
+- Site enabledsystemd/Caddy'de; SSHkomutları iş sonunda kapandı. OrtakPG/Aryaland
+  restart/reboot yok. F03animasyon/connector/piksel eşlemesi sürer; F04hazırlığı başladı.
