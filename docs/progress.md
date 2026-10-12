@@ -268,3 +268,24 @@ HTTPS başarılı. Her SSH komutu tamamlandı ve bağlantısı kapandı; site
 systemd/Caddy'de açık kalır. Kaynak/kanıt MD ve dış Notlar.md güncellendi.
 Kendi local preview işlemi çalışma sonunda kapatılır. Sıradaki veri işleri
 F05 sınıfa özel sistemler, ardından F06 hasar bağımlılıkları/gerçek ölçümdür.
+
+## Katalog okunabilirlik revizyonu canlı — 12 Ekim 2026, 15:10
+
+Aktif release /srv/diablozone/releases/20261012-150019; uygulama commit
+e72e70cd6aba2d2c34dc4ae12ebed80fb7f38ee4, clean/draft=false.
+Arşiv SHA256 83d4931c9a195ae2b5bedaf621f81f7f801f869056c02ffc25c5480248f226d7.
+Önceki release 20261012-123500 korunur. DB/snapshot/locale set değişmedi.
+
+Kapsam: test/placeholder kayıtları varsayılan olarak gizli (filtreyle açılır),
+test atlası/1px görseller ikon sayılmaz, eşya kartlarında benzersiz güç ve
+etiketli stat satırları, çözülmemiş değer X, resmî trTR kategori/yuva adları,
+tek satır filtre çubuğu, sıkı kart ızgarası ve tutarlı yazı ölçeği.
+Ayrıntı docs/localization.md.
+
+Yerel lint, 23 birim testi, Astro/TypeScript 0 hata, 24185 sayfa build ve
+API build geçti. browser-i18n-qa yerel ve canlı HTTPS 1440/390/1024 geçti;
+pageerror 0, yatay taşma yok. Bu QA'daki "Mana Bedeli: —" beklentisi yeni
+X işaretine güncellendi. browser-qa.mjs TR varsayılan dilden önce yazıldığı
+için İngilizce "Fireball" bekler; ayrıca güncellenmesi gerekir.
+Canlı: sekiz HTML yolu ve /api/v1/seasons 200; API health ok;
+diablozone-api/Caddy/Aryaland active; Aryaland HTTPS 200. SSH kapatıldı.
