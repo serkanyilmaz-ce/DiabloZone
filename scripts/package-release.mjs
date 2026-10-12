@@ -18,7 +18,7 @@ for (const name of ['package.json', 'pnpm-lock.yaml']) {
 for (const name of ['src', 'schemas', 'scripts', 'public', 'docs', 'deploy', 'database', 'data', 'tests']) {
   await cp(name, join(directory, 'source', name), { recursive: true, filter: source => !/[\\/](node_modules|private|raw|\.env(?:\.[^\\/]*)?)(?:[\\/]|$)/.test(source) });
 }
-for (const name of ['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'astro.config.mjs', 'tsconfig.json', 'tsconfig.service.json', 'tsconfig.tooling.json', 'eslint.config.mjs', 'README.md', 'START-PROMPT.md', 'AGENTS.md', '.gitattributes', '.gitignore', '.env.example']) {
+for (const name of ['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'astro.config.mjs', 'tsconfig.json', 'tsconfig.service.json', 'tsconfig.tooling.json', 'eslint.config.mjs', 'README.md', 'AGENTS.md', '.gitattributes', '.gitignore', '.env.example']) {
   await cp(name, join(directory, 'source', name));
 }
 const hashes = {};

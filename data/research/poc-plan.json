@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "phase": "F02",
+  "status": "source_ready_not_imported",
+  "sourceCommit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+  "sourceVersion": "3.2.1.73552",
+  "build": "73552",
+  "patch": "3.2.1",
+  "season": 15,
+  "channel": "live",
+  "selection": [
+    {"kind":"class","sno":131965,"file":"json/base/meta/PlayerClass/Sorcerer.pcl.json"},
+    {"kind":"skill","sno":165023,"file":"json/base/meta/Power/Sorcerer_Fireball.pow.json"},
+    {"kind":"item","sno":609820,"file":"json/base/meta/Item/Helm_Unique_Generic_002.itm.json"},
+    {"kind":"affix","sno":609821,"file":"json/base/meta/Affix/Helm_Unique_Generic_002.aff.json"},
+    {"kind":"aspect","sno":1775673,"file":"json/base/meta/Aspect/Asp_Legendary_Sorc_004.asp.json"},
+    {"kind":"affix","sno":579749,"file":"json/base/meta/Affix/legendary_sorc_004.aff.json"},
+    {"kind":"skill-tree","sno":72984,"file":"json/base/meta/SkillKit/Sorcerer.skl.json"}
+  ],
+  "notes": [
+    "Resolve selected records and their necessary dependencies; publish only after schema/reference validation.",
+    "This is a season-start baseline, not the locally installed 3.2.2 build.",
+    "Unknown array class-index ordering must not be inferred; prefer explicit class SNO references.",
+    "No real game coefficient or RNG probability is verified by this source selection."
+  ]
+}

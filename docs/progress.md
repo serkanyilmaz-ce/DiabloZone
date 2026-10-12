@@ -65,3 +65,16 @@ Geri dönüş için önceki release ve Caddy yedekleri tutulur; veri sıfırlanm
 Build/kaynak envanteri → küçük gerçek yetenek/eşya/affix/aspekt örneği → tam sınıf
 ve eşya ilişkileri → paragon/diğer adaptörler → formül/RNG bağımlılıkları ve
 kontrollü ölçüm. Kaynak toplamı olmadan tamamlanma yüzdesi uydurulmaz.
+
+## Faz yürütme — F01
+
+Ana faz haritası/teslim ölçütleri ve kısıtlar AGENTS.md içindedir; roadmap yönlendirme dosyasıdır.
+F01 tamamlandı: sabit commit33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0,
+sezon15 başlangıç3.2.1.73552. Yerel3.2.2.73764 ayrı sürüm olarak kaydedildi.
+867.510 JSONpath/blob envanteri,134base tür;47örnek JSON/SNO/SHA256 doğrulandı.
+İki resmî belge donduruldu; kaynak manifesti data/research/source-manifest.json.
+F02'nin gerçek örnek seçimi data/research/poc-plan.json; denetim docs/source-audit.md.
+Sınıf index array sırası unresolved; eski hardcoded sıraya göre veri ataması yapılmayacak.
+14test ve lint/TypeScript geçti. Bu faz uygulama/DB içeriği yayınlamaz; gerçek
+oyun kayıtları henüz0. START-PROMPT kullanıcı tarafından kaldırıldı; kaynak
+paketleyici ve README yeni ana AGENTS planına uyarlandı. Sonraki faz F02.

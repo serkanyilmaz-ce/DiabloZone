@@ -11,7 +11,7 @@ Uzak sunucuda Docker kullanılmaz; mevcut Caddy, PostgreSQL 16 ve Node 22
 
 ## Belgeler
 
-- [Başlangıç](START-PROMPT.md), [ürün](docs/product.md), [veri kataloğu/tamlık](docs/data-catalog.md).
+- [Fazlar ve kısıtlar](AGENTS.md), [ürün](docs/product.md), [veri kataloğu/tamlık](docs/data-catalog.md).
 - [Bilimsel yöntem](docs/research-method.md), [native yayın](docs/deployment.md), [ilerleme](docs/progress.md).
 - [Dış işlem günlüğü](../Notlar.md): sunucu ve kronolojik çalışma kaydı; secret içermez.
 - Git: https://github.com/serkanyilmaz-ce/DiabloZone . .git yalnızca bu proje klasöründedir.
@@ -49,6 +49,16 @@ Gerçek d4data/ağaç export'u olduğunda pnpm.cmd test:integration çalıştır
 bu kopyada gerçek export olmadığı için oyun/ağaç entegrasyonu henüz doğrulanmadı.
 
 ## Veri durumu
+
+F01 kaynak/build denetimi tamamlandı: [kaynak raporu](docs/source-audit.md).
+Sezon15 başlangıç3.2.1.73552 dökümü commit/hash ile sabitlendi; yerel3.2.2 ayrı kaydedildi.
+Pinned sparse checkout ve belge cache'i hazırken:
+
+```powershell
+pnpm.cmd source:inventory .tmp/d4data 33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0
+```
+
+Manifest data/research/source-manifest.json; ilk gerçek import seçimi poc-plan.json.
 
 Gerçek oyun kayıtları henüz içe aktarılmadı. Metadata gameBuild NULL;
 eksik veri açıkça gösterilir, bozuk export build'i durdurur. DB araştırma planı
