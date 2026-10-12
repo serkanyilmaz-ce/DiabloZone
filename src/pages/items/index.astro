@@ -3,13 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArchiveList from '../../components/ArchiveList.astro';
 import {items} from '../../lib/data';
 import { term } from '../../lib/terms';
+import {isGearSlot,rarityRank} from '../../lib/presentation';
 const base = import.meta.env.BASE_URL;
-const rarities = [...new Set(items.map(item => item.rarity))].sort();
-const slots = [...new Set(items.map(item => item.slot).filter((slot): slot is string => !!slot))].sort();
+const rarities = [...new Set(items.map(item => item.rarity))].sort((a,b)=>rarityRank(a)-rarityRank(b));
+const slots = [...new Set(items.map(item => item.slot).filter((slot): slot is string => !!slot))].sort((a,b)=>Number(!isGearSlot(a))-Number(!isGearSlot(b))||term(a).localeCompare(term(b),'tr'));
 ---
 <BaseLayout title="Eşyalar">
   <div class="breadcrumbs"><a href={base}>Ana sayfa</a><span>/</span><span>Veritabanı</span><span>/</span><span>Eşyalar</span></div>
   <section class="page-heading"><p class="eyebrow">SANCTUARY’NİN HAZİNELERİ</p><h1>Eşyalar</h1><p>Benzersiz güçler, eşya özellikleri ve sınıf uyumları. Her parçanın arkasındaki veriyi incele.</p></section>
-  <form class="toolbar" role="search"><label class="field search-field">Arama<input class="search" type="search" placeholder="Eşya adı, özellik veya sınıf…" data-search /></label><label class="field">Nadirlik<select class="select" data-filter="rarity"><option value="">Tüm nadirlikler</option>{rarities.map(r => <option value={r}>{term(r)}</option>)}</select></label><label class="field">Eşya türü / yuva<select class="select" data-filter="slot"><option value="">Tüm eşya türleri</option>{slots.map(s => <option value={s}>{term(s)}</option>)}</select></label></form>
-  <ArchiveList kind="items" />
+  <ArchiveList kind="items" placeholder="Eşya adı, özellik veya sınıf…"><Fragment slot="filters"><label class="field"><span>Nadirlik</span><select class="select" data-filter="rarity"><option value="">Tüm nadirlikler</option>{rarities.map(r => <option value={r}>{term(r)}</option>)}</select></label><label class="field"><span>Eşya türü / yuva</span><select class="select" data-filter="slot"><option value="">Tüm eşya türleri</option>{slots.map(s => <option value={s}>{term(s)}</option>)}</select></label></Fragment></ArchiveList>
 </BaseLayout>

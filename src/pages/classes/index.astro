@@ -1,10 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
 import { gameClasses,skills } from '../../lib/data';
 import { term } from '../../lib/terms';
 const base=import.meta.env.BASE_URL;
+// The class emblem is the class's own ultimate skill icon (original game art);
+// the strip previews its core and basic actives. No standalone class portrait is archived.
+const roster=gameClasses.map(cls=>{
+  const linked=skills.filter(skill=>skill.classId===cls.id);
+  const actives=linked.filter(skill=>skill.type==='active'&&!skill.parentId&&skill.icon);
+  const emblem=actives.find(skill=>skill.category==='ultimate')??actives[0];
+  const strip=actives.filter(skill=>skill!==emblem&&['core','basic'].includes(skill.category??'')).slice(0,6);
+  const upgrades=linked.filter(skill=>skill.parentId).length;
+  return {cls,emblem,strip,summary:`${linked.length-upgrades} yetenek · ${upgrades} geliştirme`};
+});
 ---
 <BaseLayout title="Sınıflar">
+<div class="breadcrumbs"><a href={base}>Ana sayfa</a><span>/</span><span>Veritabanı</span><span>/</span><span>Sınıflar</span></div>
 <section class="page-heading"><p class="eyebrow">SINIF ARŞİVİ</p><h1>Sınıflar</h1><p>İçe alınan sınıf kayıtları ve bağlı yetenekleri.</p></section>
-<div class="card-grid">{gameClasses.map(cls=><a class="data-card" href={`${base}classes/${cls.slug}/`}><p class="card-kicker">{cls.name}</p><h2>{term(cls.code)}</h2><p>{skills.filter(skill=>skill.classId===cls.id).length} yetenek ve geliştirme kaydı</p><span class="chip">{cls.patch}</span></a>)}</div>
+<div class="card-grid">{roster.map(({cls,emblem,strip,summary})=><a class="data-card class-card kind-skills" href={`${base}classes/${cls.slug}/`}>
+  <div class="card-main"><span class="card-icon">{emblem?<img class="entity-icon" src={`${base}${emblem.icon}`} width="72" height="72" alt="" loading="lazy"/>:<span class="entity-fallback"><Icon name="crest" size={28}/></span>}</span>
+  <div class="card-copy"><p class="card-kicker">{summary}</p><h2>{term(cls.code)}</h2></div></div>
+  {strip.length>0&&<div class="class-skill-strip">{strip.map(skill=><img src={`${base}${skill.icon}`} width="34" height="34" alt="" loading="lazy" title={skill.name}/>)}</div>}
+</a>)}</div>
 </BaseLayout>

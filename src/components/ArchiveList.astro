@@ -1,61 +1,69 @@
 ---
+import CatalogueCardView from './CatalogueCardView.astro';
 import {catalogueCards,type CardKind,type CatalogueCard} from '../lib/catalogue-cards';
 import {metadata} from '../lib/data';
-interface Props{kind?:CardKind|'all';records?:CatalogueCard[];sourceUrl?:string;snapshotId?:string}
-const {kind='all',records,sourceUrl,snapshotId=metadata.snapshotId??''}=Astro.props;const cards=records??catalogueCards(kind),base=import.meta.env.BASE_URL;
+interface Props{kind?:CardKind|'all';records?:CatalogueCard[];sourceUrl?:string;snapshotId?:string;placeholder?:string}
+const {kind='all',records,sourceUrl,snapshotId=metadata.snapshotId??'',placeholder='Ad, açıklama veya etiket…'}=Astro.props;const cards=records??catalogueCards(kind),base=import.meta.env.BASE_URL;
 const url=sourceUrl??`${base}catalog/${metadata.snapshotId??'unpublished'}/${kind}.json`;
+// Default view: playable game records; the item archive also starts with original icons.
+// Every record stays reachable through the filters below.
+const defaultIcon=kind==='items'?'available':'';
+const initial=cards.filter(card=>card.filters.quality!=='dev'&&(!defaultIcon||card.filters.icon===defaultIcon));
+const hidden=cards.length-initial.length;
 ---
-<section class="archive-list" data-archive-list data-url={url} data-snapshot={snapshotId} data-base={base} data-default-icon={kind==='items'?'available':''}>
-  <div class="browser-summary"><p data-result-count aria-live="polite">{cards.length} kayıt · Sayfa 1</p><button type="button" class="text-button" data-reset>Filtreleri sıfırla</button></div>
-  <label class="field archive-image-filter">Görsel<select class="select" data-filter="icon"><option value="">Tüm görseller</option><option value="available">Özgün ikonu var</option><option value="missing">Özgün ikon henüz bulunamadı</option></select></label>
+<section class="archive-list" data-archive-list data-url={url} data-snapshot={snapshotId} data-base={base} data-default-icon={defaultIcon} data-default-quality="game">
+  <form class="toolbar" role="search">
+    <label class="field search-field"><span>Arama</span><input class="search" type="search" placeholder={placeholder} data-search /></label>
+    <slot name="filters" />
+    <label class="field"><span>Görsel</span><select class="select" data-filter="icon"><option value="">Tüm görseller</option><option value="available">Özgün ikonu var</option><option value="missing">Özgün ikon henüz bulunamadı</option></select></label>
+    <label class="field"><span>Kayıtlar</span><select class="select" data-filter="quality"><option value="game">Oyun kayıtları</option><option value="dev">Test ve placeholder kayıtları</option><option value="">Tümü</option></select></label>
+  </form>
+  <div class="browser-summary"><p data-result-count aria-live="polite">{initial.length.toLocaleString('tr')} kayıt · Sayfa 1 / {Math.max(1,Math.ceil(initial.length/24))}</p>{hidden>0&&<span class="source-note" data-hidden-note>Varsayılan görünüm test kayıtlarını gizler; filtrelerden açılabilir.</span>}<button type="button" class="text-button" data-reset>Filtreleri sıfırla</button></div>
   <p data-list-status class="source-note" role="status" hidden></p>
-  <div class="card-grid" data-list tabindex="-1">{cards.slice(0,24).map(card=><a class="data-card" href={`${base}${card.kind}/${card.slug}/`} data-entry data-class={card.classes[0]} data-type={card.filters.type}><div class="card-main">{card.icon?<img class="entity-icon" width="55" height="55" src={`${base}${card.icon}`} alt="" loading="lazy"/>:<span class="entity-fallback" aria-hidden="true">◇</span>}<div class="card-copy"><p class="card-kicker">{card.kicker}</p><h2>{card.name}</h2></div></div><p>{card.description}</p><div class="chip-row">{card.chips.map(chip=><span class="chip">{chip}</span>)}</div></a>)}</div>
+  <div class="card-grid" data-list tabindex="-1">{initial.slice(0,24).map(card=><CatalogueCardView card={card}/>)}</div>
   <div class="data-empty" data-no-results hidden><h2>Eşleşen kayıt bulunamadı.</h2><p>Arama sözcüğünü değiştir veya filtreleri sıfırla.</p></div>
-  <nav class="pagination" aria-label="Sonuç sayfaları" data-pagination><button type="button" data-previous disabled>← Önceki</button><span data-page-count>1 / {Math.max(1,Math.ceil(cards.length/24))}</span><button type="button" data-next disabled={cards.length<=24}>Sonraki →</button></nav>
+  <nav class="pagination" aria-label="Sonuç sayfaları" data-pagination><button type="button" data-previous disabled>← Önceki</button><span data-page-count>1 / {Math.max(1,Math.ceil(initial.length/24))}</span><button type="button" data-next disabled={initial.length<=24}>Sonraki →</button></nav>
 </section>
 <script>
 import {matchesEntry,pageSlice} from '../lib/browser';
 import type {CatalogueCard} from '../lib/catalogue-cards';
+import {drawCard} from '../lib/card-dom';
 import {bilingualSearch,localize} from '../lib/preferences';
 const root=document.querySelector<HTMLElement>('[data-archive-list]');
 if(root){
-  const search=document.querySelector<HTMLInputElement>('[data-search]'),filters=[...document.querySelectorAll<HTMLSelectElement>('[data-filter]')];
+  const search=root.querySelector<HTMLInputElement>('[data-search]'),filters=[...root.querySelectorAll<HTMLSelectElement>('[data-filter]')];
+  const defaults:Record<string,string>={icon:root.dataset.defaultIcon??'',quality:root.dataset.defaultQuality??''};
   const params=new URLSearchParams(location.search);let page=Number(params.get('page')??1),records:CatalogueCard[]=[];
   let pending=false;
   if(search)search.value=params.get('q')??'';
-  for(const f of filters){const value=params.get(f.dataset.filter!)??(f.dataset.filter==='icon'?root.dataset.defaultIcon??'':'');f.value=[...f.options].some(o=>o.value===value)?value:'';}
-  document.querySelector('form.toolbar')?.addEventListener('submit',e=>e.preventDefault());
-  function textElement(tag:string,text:string,className?:string){const el=document.createElement(tag);el.textContent=text;if(className)el.className=className;return el;}
-  function draw(card:CatalogueCard){
-    const link=document.createElement('a');link.className='data-card';link.href=root!.dataset.base+card.kind+'/'+card.slug+'/';link.dataset.entry='';link.dataset.class=card.classes[0]??'';link.dataset.type=card.filters.type;
-    const main=document.createElement('div');main.className='card-main';
-    if(card.icon){const img=document.createElement('img');img.src=root!.dataset.base+card.icon;img.className='entity-icon';img.width=55;img.height=55;img.alt='';img.loading='lazy';main.append(img);}
-    else{const fallback=textElement('span',card.name.slice(0,2).toUpperCase(),'entity-fallback');fallback.title='Özgün ikon henüz bulunamadı';main.append(fallback);}
-    const name=textElement('h2',card.name);name.dataset.gameKey=`${card.kind}:${card.id}`;name.dataset.gameField='name';
-    const copy=document.createElement('div');copy.className='card-copy';copy.append(textElement('p',card.kicker,'card-kicker'),name);main.append(copy);
-    const chips=document.createElement('div');chips.className='chip-row';for(const chip of card.chips)chips.append(textElement('span',chip,'chip'));
-    const description=textElement('p',card.description);description.dataset.gameKey=`${card.kind}:${card.id}`;description.dataset.gameField=card.kind==='items'?'flavor':'description';
-    link.append(main,description,chips);return link;
-  }
+  // URL values win; an explicit empty value (?quality=) means "all" rather than the default.
+  for(const f of filters){const key=f.dataset.filter!;const value=params.has(key)?params.get(key)!:defaults[key]??'';f.value=[...f.options].some(o=>o.value===value)?value:'';}
+  root.querySelector('form.toolbar')?.addEventListener('submit',e=>e.preventDefault());
   function apply(updateUrl=true){
     if(pending)return;
     const selection=Object.fromEntries(filters.map(f=>[f.dataset.filter!,f.value]));
     const classCode=selection.class;delete selection.class;
     const found=records.filter(card=>(!classCode||card.classes.includes(classCode))&&matchesEntry({text:card.text+' '+bilingualSearch(`${card.kind}:${card.id}`),filters:card.filters},search?.value??'',selection));
     const result=pageSlice(found,page);page=result.page;
-    root!.querySelector('[data-list]')!.replaceChildren(...result.entries.map(draw));
+    root!.querySelector('[data-list]')!.replaceChildren(...result.entries.map(card=>drawCard(card,root!.dataset.base!)));
     localize(root!);
-    root!.querySelector('[data-result-count]')!.textContent=`${found.length} kayıt · Sayfa ${page} / ${result.pages}`;
+    root!.querySelector('[data-result-count]')!.textContent=`${found.length.toLocaleString('tr')} kayıt · Sayfa ${page} / ${result.pages}`;
+    const note=root!.querySelector<HTMLElement>('[data-hidden-note]');if(note)note.hidden=selection.quality!=='game';
     (root!.querySelector('[data-no-results]') as HTMLElement).hidden=found.length!==0;
     root!.querySelector('[data-page-count]')!.textContent=`${page} / ${result.pages}`;
     (root!.querySelector('[data-previous]') as HTMLButtonElement).disabled=page<=1;
     (root!.querySelector('[data-next]') as HTMLButtonElement).disabled=page>=result.pages;
-    if(updateUrl){const url=new URL(location.href);url.searchParams.delete('q');url.searchParams.delete('page');filters.forEach(f=>url.searchParams.delete(f.dataset.filter!));if(search?.value.trim())url.searchParams.set('q',search.value.trim());for(const f of filters)if(f.value)url.searchParams.set(f.dataset.filter!,f.value);if(page>1)url.searchParams.set('page',String(page));history.replaceState(null,'',url);}
+    if(updateUrl){
+      const url=new URL(location.href);url.searchParams.delete('q');url.searchParams.delete('page');filters.forEach(f=>url.searchParams.delete(f.dataset.filter!));
+      if(search?.value.trim())url.searchParams.set('q',search.value.trim());
+      for(const f of filters){const key=f.dataset.filter!;if(f.value!==(defaults[key]??''))url.searchParams.set(key,f.value);}
+      if(page>1)url.searchParams.set('page',String(page));history.replaceState(null,'',url);
+    }
   }
   search?.addEventListener('input',()=>{page=1;apply();});filters.forEach(f=>f.addEventListener('change',()=>{page=1;apply();}));
   document.addEventListener('dz:locale-ready',()=>apply(false));document.addEventListener('dz:language',()=>apply(false));
-  root.querySelector('[data-reset]')?.addEventListener('click',()=>{if(search)search.value='';filters.forEach(f=>f.value='');page=1;apply();search?.focus();});
-  for(const [selector,delta]of [['[data-previous]',-1],['[data-next]',1]] as const)root.querySelector(selector)?.addEventListener('click',()=>{page+=delta;apply();root.querySelector<HTMLElement>('[data-list]')?.focus();});
+  root.querySelector('[data-reset]')?.addEventListener('click',()=>{if(search)search.value='';filters.forEach(f=>{f.value=defaults[f.dataset.filter!]??'';});page=1;apply();search?.focus();});
+  for(const [selector,delta]of [['[data-previous]',-1],['[data-next]',1]] as const)root.querySelector(selector)?.addEventListener('click',()=>{page+=delta;apply();root.querySelector<HTMLElement>('[data-list]')?.focus();root.scrollIntoView({block:'start'});});
   async function load(){
     pending=true;const status=root!.querySelector<HTMLElement>('[data-list-status]')!;status.hidden=false;status.textContent='Kayıtlar yükleniyor…';
     try{

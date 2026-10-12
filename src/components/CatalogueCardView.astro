@@ -1,0 +1,19 @@
+---
+// Static mirror of drawCard() in lib/card-dom.ts; keep both markups identical.
+import Icon from './Icon.astro';
+import type {CatalogueCard} from '../lib/catalogue-cards';
+import {labelSegments} from '../lib/presentation';
+interface Props{card:CatalogueCard;searchable?:boolean}
+const {card,searchable=false}=Astro.props,base=import.meta.env.BASE_URL;
+---
+<a class:list={['data-card',`kind-${card.kind}`,card.rarity&&`rarity-${card.rarity}`]} href={`${base}${card.kind}/${card.slug}/`} data-entry data-class={card.classes[0]??''} data-type={card.filters.type} data-searchtext={searchable?card.text:undefined} data-game-key={searchable?`${card.kind}:${card.id}`:undefined}>
+  <div class="card-main">
+    <span class="card-icon">{card.icon?<img class="entity-icon" width="64" height="64" src={`${base}${card.icon}`} alt="" loading="lazy"/>:<span class="entity-fallback" title="Özgün ikon henüz bulunamadı"><Icon name={card.fallback} size={26}/></span>}</span>
+    <div class="card-copy"><p class="card-kicker">{card.kicker}</p><h2 data-game-key={`${card.kind}:${card.id}`} data-game-field="name" data-name-style={card.nameStyle}>{card.name}</h2></div>
+  </div>
+  {card.properties?.length?<ul class="item-props">{card.properties.map(line=>line.kind==='power'
+    ?<li class="prop-power" data-game-key={`affixes:${line.affixId}`} data-game-field="description">{line.en}</li>
+    :<li class="prop-stat" data-no-i18n>{([['en',line.en],['tr',line.tr??line.en]] as const).map(([locale,text])=><span data-locale-only={locale}>{labelSegments(text).map(s=>s.value?<span class="value-token" title="Kaynakta sayısal değeri çözülmemiş alan">{s.text}</span>:s.text)}</span>)}</li>)}</ul>:null}
+  {card.description&&<p class="card-desc" data-game-key={`${card.kind}:${card.id}`} data-game-field={card.descriptionField??'description'}>{card.description}</p>}
+  {card.chips.length>0&&<div class="chip-row">{card.chips.map(chip=><span class="chip">{chip}</span>)}</div>}
+</a>

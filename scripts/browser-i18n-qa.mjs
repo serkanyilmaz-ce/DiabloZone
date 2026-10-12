@@ -31,7 +31,7 @@ try{
     assert(!(await page.locator('p.lead').textContent()).includes('{'));
     await page.locator('[data-language]').selectOption('tr');
     assert.equal(await page.locator('h1').textContent(),'Ateş Topu');
-    assert((await page.locator('p.lead').textContent()).includes('Mana Bedeli: —'));
+    assert((await page.locator('p.lead').textContent()).includes('Mana Bedeli: X'));
     assert((await page.locator('p.lead').textContent()).includes('Ateş Topu fırlat'));
     assert.equal(await page.locator('.detail-grid>div').first().evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(239, 232, 223)');
     assert((await page.title()).includes('Ateş Topu'));

@@ -5,11 +5,9 @@ import {systemArchive,systemCards,systemKinds,systemLabels,systems} from '../../
 const base=import.meta.env.BASE_URL;
 ---
 <BaseLayout title="Paragon & oyun sistemleri">
-<section class="page-heading"><p class="eyebrow">KARAKTERİN ARKASINDAKİ VERİ</p><h1>Paragon & oyun sistemleri</h1><p class="lead">Panolar, glyph bonusları, tarifler ve matematik tabloları. Ham kaynakları ve birbirlerine bağlı kayıtları birlikte incele.</p></section>
+<section class="page-heading"><p class="eyebrow">KARAKTERİN ARKASINDAKİ VERİ</p><h1>Paragon & oyun sistemleri</h1><p>Panolar, glyph bonusları, tarifler ve matematik tabloları. Ham kaynakları ve birbirlerine bağlı kayıtları birlikte incele.</p></section>
 {systemArchive?<>
-<p class="source-note">{systems.length.toLocaleString('tr')} kayıt · Veri {systemArchive.sourceVersion} · PostgreSQL arşivi <code>{systemArchive.archiveId}</code></p>
-<p class="source-note">Kaynakta tarihsel, test ve boş kayıtlar da bulunur. Bir kaydın burada bulunması Sezon 15'te oynanabilir veya matematiğinin doğrulanmış olduğunu göstermez. Sınıf dizilerinin sırası ve sunucu tarafı oranlar çözümlenmemiştir.</p>
-<form class="toolbar" role="search"><label class="search-field"><span>Ara</span><input type="search" data-search placeholder="Glyph, pano, tablo adı veya SNO…"/></label><label><span>Sistem</span><select data-filter="type"><option value="">Tüm sistemler</option>{systemKinds.map(kind=><option value={kind}>{systemLabels[kind]} · {systems.filter(r=>r.kind===kind).length}</option>)}</select></label></form>
-<ArchiveList records={systemCards} sourceUrl={`${base}systems/catalog.json`} snapshotId={systemArchive.archiveId}/>
+<p class="source-note">{systems.length.toLocaleString('tr')} kayıt · Veri {systemArchive.sourceVersion} · Kaynakta bulunması Sezon 15'te oynanabilir olduğunu göstermez.</p>
+<ArchiveList records={systemCards} sourceUrl={`${base}systems/catalog.json`} snapshotId={systemArchive.archiveId} placeholder="Glyph, pano, tablo adı veya SNO…"><Fragment slot="filters"><label class="field"><span>Sistem</span><select class="select" data-filter="type"><option value="">Tüm sistemler</option>{systemKinds.map(kind=><option value={kind}>{systemLabels[kind]} · {systems.filter(r=>r.kind===kind).length}</option>)}</select></label></Fragment></ArchiveList>
 </>:<p class="data-empty">Sistem arşivi hazırlanıyor; henüz yayımlanmış DB kaydı yok.</p>}
 </BaseLayout>

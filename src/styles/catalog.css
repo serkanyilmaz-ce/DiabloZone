@@ -1,0 +1,88 @@
+/* Catalogue lists, cards and item tooltips. Type scale: 11 labels · 13–14 body · 17 card titles. */
+:root{--icon-well:#0c0a09;--icon-edge:#3b322c;--value:#e9c46a;--rarity-mythic:#c8a2ff;--rarity-unique:#d8b56c;--rarity-legendary:#ec9246;--rarity-rare:#eed65a;--rarity-magic:#86aaff;--rarity-common:#cfcfcf;--rarity-unknown:var(--muted)}
+:root[data-theme="light"]{--icon-well:#17120f;--icon-edge:#6f5a49;--value:#94570b;--rarity-mythic:#6c33b8;--rarity-unique:#86600f;--rarity-legendary:#a65011;--rarity-rare:#7c6a00;--rarity-magic:#2b56be;--rarity-common:#4d4d4d}
+
+/* Toolbar: search and every filter on one wrapping row. */
+.toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:12px;border:1px solid var(--line);background:var(--surface);padding:14px;border-radius:6px}
+.field{display:grid;gap:5px;font-size:12px;color:var(--muted);flex:1 1 170px;min-width:0}
+.search-field{flex:2.2 1 280px}
+.search,.select{min-height:42px;border:1px solid var(--line-strong);background:var(--bg);color:var(--text);padding:9px 12px;border-radius:5px;width:100%;font-size:14px;min-width:0}
+.browser-summary{display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;font-size:13px;margin:14px 0 12px;color:var(--muted)}
+.browser-summary p{margin:0;color:var(--text);font-weight:600}
+.browser-summary .source-note{margin:0;font-size:12.5px}
+.browser-summary .text-button{margin-left:auto}
+.text-button{color:var(--red-light);background:transparent;font-size:13px;min-height:34px}
+.text-button:hover{text-decoration:underline}
+
+/* Card grid: dense, equal-height cards. */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.data-card{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .15s,box-shadow .15s}
+.data-card:hover{border-color:color-mix(in srgb,var(--red-light) 55%,var(--line));box-shadow:0 6px 18px color-mix(in srgb,#000 14%,transparent)}
+.card-main{display:flex;align-items:center;gap:14px;min-width:0}
+.card-copy{min-width:0;display:grid;gap:3px}
+.card-kicker{font:600 11px/1.4 var(--font-ui);letter-spacing:.8px;color:var(--muted);text-transform:uppercase;margin:0}
+.data-card h2{font:400 17px/1.3 var(--font-display);margin:0;overflow-wrap:anywhere;color:var(--text)}
+.data-card h2[data-name-style="identifier"]{font:500 13px/1.4 ui-monospace,Consolas,monospace;color:var(--muted)}
+.card-desc{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0;white-space:pre-line;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.kind-items .card-desc{font-style:italic;-webkit-line-clamp:2}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chip{font-size:11px;line-height:1.5;padding:2px 8px;border:1px solid var(--line);background:var(--surface-2);color:var(--muted);border-radius:999px}
+
+/* Icons: original game art sits in a dark well in both themes, as in game. */
+.card-icon{width:64px;height:64px;flex:0 0 64px;display:grid;place-items:center;border:1px solid var(--icon-edge);border-radius:6px;background:radial-gradient(circle at 50% 40%,#2a211c,var(--icon-well) 75%);overflow:hidden}
+.card-icon .entity-icon{width:58px;height:58px;object-fit:contain;border:0;background:none;border-radius:0}
+.entity-fallback{width:100%;height:100%;display:grid;place-items:center;color:color-mix(in srgb,var(--muted) 85%,transparent);background:var(--surface-2);border:0}
+.card-icon:has(.entity-fallback){background:var(--surface-2);border-style:dashed;border-color:var(--line-strong)}
+.kind-skills .card-icon{border-radius:50%}
+.kind-skills .card-icon .entity-icon{width:64px;height:64px}
+
+/* Rarity: frame and name colour follow the in-game rarity palette. */
+.data-card[class*="rarity-"]{--rarity:var(--rarity-unknown)}
+.data-card.rarity-mythic{--rarity:var(--rarity-mythic)}.data-card.rarity-unique{--rarity:var(--rarity-unique)}.data-card.rarity-legendary{--rarity:var(--rarity-legendary)}.data-card.rarity-rare{--rarity:var(--rarity-rare)}.data-card.rarity-magic{--rarity:var(--rarity-magic)}.data-card.rarity-common{--rarity:var(--rarity-common)}
+.data-card[class*="rarity-"] .card-icon{border-color:color-mix(in srgb,var(--rarity) 55%,transparent);box-shadow:inset 0 0 18px color-mix(in srgb,var(--rarity) 18%,transparent)}
+.data-card[class*="rarity-"] .card-kicker{color:var(--rarity)}
+.data-card.rarity-mythic h2,.data-card.rarity-unique h2,.data-card.rarity-legendary h2,.data-card.rarity-rare h2,.data-card.rarity-magic h2{color:var(--rarity)}
+.rarity-unknown .card-kicker{color:var(--muted)}
+
+/* Item properties read like a compact game tooltip. */
+.item-props{list-style:none;margin:0;padding:10px 0 0;border-top:1px solid var(--line);display:grid;gap:5px;font-size:13.5px;line-height:1.5}
+.item-props li{position:relative;padding-left:14px;color:var(--text);overflow-wrap:anywhere}
+.item-props li:before{content:'';position:absolute;left:1px;top:.62em;width:5px;height:5px;transform:rotate(45deg);background:var(--muted-2)}
+.item-props .prop-power{color:var(--muted);white-space:pre-line;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.item-props .prop-power:before{background:var(--rarity,var(--red-light))}
+.value-token{color:var(--value);font-weight:700;font-style:normal}
+
+.pagination{display:flex;align-items:center;justify-content:center;gap:18px;padding-top:22px;font-size:13px}
+.pagination button{color:var(--text)}
+
+/* Home: real game icons preview each archive. */
+.feature-icons{display:flex;gap:6px;margin:0 0 14px}
+.feature-icons img{width:40px;height:40px;object-fit:contain;border:1px solid var(--icon-edge);border-radius:5px;background:radial-gradient(circle,#2a211c,var(--icon-well) 75%)}
+.feature-top{margin-bottom:16px!important}
+.feature-card p{min-height:0!important;margin-bottom:16px!important}
+
+/* Class cards. */
+.class-card .card-icon{width:72px;height:72px;flex-basis:72px;border-radius:50%}
+.class-card .card-icon .entity-icon{width:72px;height:72px}
+.class-skill-strip{display:flex;gap:5px;flex-wrap:wrap}
+.class-skill-strip img{width:34px;height:34px;border-radius:50%;border:1px solid var(--icon-edge);background:var(--icon-well)}
+
+/* Item detail tooltip. */
+.item-tooltip{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:start}
+.item-tooltip .card-icon{width:150px;height:150px;flex-basis:150px}
+.item-tooltip .card-icon .entity-icon{width:138px;height:138px}
+.item-tooltip h1{margin:4px 0 6px;color:var(--rarity,var(--text))}
+.item-tooltip .item-props{font-size:15px;gap:8px;margin-top:16px}
+.item-tooltip .prop-power{display:block;-webkit-line-clamp:unset;color:var(--text)}
+.item-tooltip .prop-power a{color:inherit}
+
+@media(max-width:600px){
+  .card-grid{grid-template-columns:1fr;gap:10px}
+  .data-card{padding:12px 14px}
+  .card-icon{width:54px;height:54px;flex-basis:54px}.card-icon .entity-icon{width:48px;height:48px}.kind-skills .card-icon .entity-icon{width:54px;height:54px}
+  .toolbar{padding:12px;gap:10px}
+  .field{flex:1 1 140px}.search-field{flex-basis:100%}
+  .browser-summary .text-button{margin-left:0}
+  .item-tooltip{grid-template-columns:1fr;gap:14px}
+  .item-tooltip .card-icon{width:110px;height:110px}.item-tooltip .card-icon .entity-icon{width:100px;height:100px}
+}

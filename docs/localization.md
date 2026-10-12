@@ -38,15 +38,15 @@ snapshot ve formül kaynakları değişmez. UI İngilizcesi ayrı bakım sözlü
 JavaScript/locale dosyası olmadan temel statik kaynak görünümü okunabilir;
 çeviri yüklenemezse açık hata durumu gösterilir.
 
-Ham tooltip token'ları oyuncu görünümünde — ile gösterilir; 0 veya tahmin
-edilmiş sayı eklenmez. Ham şablon, koşul, kaynak etiketleri ve formüller
+Ham tooltip token'ları arşivde — olarak saklanır, oyuncu görünümünde işaretli X
+değişkeni olarak gösterilir; 0 veya tahmin edilmiş sayı eklenmez. Ham şablon, koşul, kaynak etiketleri ve formüller
 açılır kaynak ayrıntılarında korunur. TR metin resmi kaynaktan gelir; bir
 metnin bulunması güncel runtime katsayısının doğrulandığı anlamına gelmez.
 
 Eşya listesi başlangıçta özgün ikonu olan kayıtları gösterir. Görsel filtresinde
 Tüm görseller veya bulunamayan ikonlar seçilerek kaynak arşivinin tamamına
-erişilir; kayıt silinmez. Eksik görsel için açık etiketli harf işareti vardır,
-uydurma oyun ikonu yoktur. İç adlar yerine anlaşılır kaynak kaydı/ID etiketi
+erişilir; kayıt silinmez. Eksik görsel için kayıt türünü belirten arayüz
+sembolü (miğfer, yüzük, glyph…) kullanılır; uydurma oyun ikonu yoktur. İç adlar yerine anlaşılır kaynak kaydı/ID etiketi
 gösterilir; iç adla arama ve detay erişimi korunur.
 
 Açık/koyu tema sistem tercihiyle başlar, kullanıcı seçimi korunur. Başlangıç
@@ -63,3 +63,23 @@ kimlik/locale/key doğrulaması ve sayfalama. Kaynak data/research/localization-
 Tarayıcı kontrolü scripts/browser-i18n-qa.mjs; native DB/API kontrolü
 deploy/linux/check-localization.mjs. Mevcut araştırma/matematik modelleri
 eğitim/datayaklaşımı statüsünde kalır; verified mekanik sayısı artırılmaz.
+
+## Katalog okunabilirlik revizyonu — 12 Ekim 2026
+
+Kullanıcı geri bildirimi: boş alan, ikonsuz kartlar, yazı/ikon oranı, eşya
+özelliklerinin görünmemesi ve karışık metin. Yalnızca sunum katmanı değişti;
+DB, snapshot, locale set ve kaynak kayıtları değişmedi.
+
+- (PH)/(DNS)/[ph_]/DO NOT SHIP/TEST/??? ve (BAŞTAN TASARLANDI) kayıtları
+  "Test kaydı" olarak işaretlenir; varsayılan liste oyun kayıtlarını gösterir,
+  Kayıtlar filtresinden hepsi açılır. Kayıt silinmez.
+- 2DUI_Test/gray-box atlası ve 24 pikselden küçük görseller kayıt ikonu
+  sayılmaz (pembe/boş kare). Manifest ve ağaç varlıkları değişmez.
+- Eşya kartları/detayı: benzersiz güç arşiv açıklamasıyla, açıklaması olmayan
+  stat affix'leri kaynak attribute adından resmî trTR terimleriyle (Maksimum Can,
+  Saldırı Hızı, Kademe…) gösterilir. Değer çözülmez: +X. Etiketlenemeyen
+  affix sayısı "+N özellik" olarak belirtilir.
+- Türkçe adlardaki çekim/yer tutucu "—" bölümleri temel biçime indirgenir;
+  aspektler EN "Aspect of …", TR "… Yüzü" (resmî trTR terimi) biçimindedir.
+- Liste sıralaması: oyun kayıtları, nadirlik, ekipman, ikon. Kategori/yuva
+  etiketleri resmî trTR karşılıklarıyla çevrildi (Odak, Tesir, Adalet…).

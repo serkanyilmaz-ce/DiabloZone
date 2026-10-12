@@ -1,14 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArchiveList from '../../components/ArchiveList.astro';
-import {aspects} from '../../lib/data';
-import { term } from '../../lib/terms';
 const base = import.meta.env.BASE_URL;
-const categories = [...new Set(aspects.map(aspect => aspect.category))].sort();
 ---
 <BaseLayout title="Aspektler">
   <div class="breadcrumbs"><a href={base}>Ana sayfa</a><span>/</span><span>Veritabanı</span><span>/</span><span>Aspektler</span></div>
   <section class="page-heading"><p class="eyebrow">EFSANEVİ GÜÇLER</p><h1>Aspektler</h1><p>Build’ini şekillendiren etkiler. Koşulları, sınıf uyumlarını ve ham açıklamaları keşfet.</p></section>
-  <form class="toolbar" role="search"><label class="field search-field">Arama<input class="search" type="search" placeholder="Aspekt adı, etki veya etiket…" data-search /></label><label class="field">Kategori<select class="select" data-filter="category"><option value="">Tüm kategoriler</option>{categories.map(c => <option value={c}>{term(c)}</option>)}</select></label></form>
-  <ArchiveList kind="aspects" />
+  <ArchiveList kind="aspects" placeholder="Aspekt adı, etki veya etiket…" />
 </BaseLayout>

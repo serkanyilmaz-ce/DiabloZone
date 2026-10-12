@@ -1,5 +1,7 @@
 import {englishUi} from './ui-translations';
 import localeManifest from '../../data/research/localization-manifest.json';
+import {formatGameName,valueSegments} from './presentation';
+import {appendSegments} from './card-dom';
 export type Locale='tr'|'en';
 type Fields=Record<string,{en:string;tr:string}>;
 let game:Record<string,Fields>={};
@@ -24,8 +26,18 @@ export function localize(root:Element=document.body){
   for(const element of entityElements){
     const key=element.getAttribute('data-game-key')??element.closest('[data-game-key]')?.getAttribute('data-game-key');
     const current=element.textContent??'';let state=entities.get(element);if(!state||state.key!==key||current!==state.rendered)state={key:key??'',source:current,rendered:current};
-    const text=key?gameText(key,element.getAttribute('data-game-field')!):undefined;
-    const output=text??(currentLocale()==='en'?englishUi(state.source):state.source);state.rendered=output;entities.set(element,state);if(element.textContent!==output)element.textContent=output;
+    const field=element.getAttribute('data-game-field')!;
+    const text=key?gameText(key,field):undefined;
+    let output=text??(currentLocale()==='en'?englishUi(state.source):state.source);
+    // A localized name that is only an unresolved token falls back to the archived name.
+    if(field==='name')output=formatGameName(output,element.getAttribute('data-name-style')??undefined,currentLocale())||formatGameName(state.source,element.getAttribute('data-name-style')??undefined,currentLocale())||state.source;
+    if(field==='description'&&!output.replace(/[—\s]/g,''))output=state.source;
+    // Unresolved tooltip values ("—") are shown as a marked X variable.
+    if(field==='description'&&output.includes('—')){
+      const segments=valueSegments(output);
+      if(element.textContent!==segments.map(s=>s.text).join('')){element.replaceChildren();appendSegments(element,segments);}
+    }else if(element.textContent!==output)element.textContent=output;
+    state.rendered=element.textContent??'';entities.set(element,state);
   }
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:node=>protectedNode(node.parentElement)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
   while(walker.nextNode()){

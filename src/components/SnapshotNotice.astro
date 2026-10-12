@@ -10,6 +10,7 @@ const base=import.meta.env.BASE_URL;
   {metadata.snapshotId && <details><summary>Veri ve çeviri kaynakları</summary><p>Oyun verisi: <code>{metadata.snapshotId}</code></p>{assetManifest.assetSetId&&<p>Özgün görseller: <code>{assetManifest.assetSetId}</code></p>}<p class="locale-note">Oyun metinleri resmî TR/EN kaynağından okunur. İngilizce karşılığı kaynak sürümüyle eşleşen çeviriler kullanılır.</p><p class="locale-note">Metin ve görsel kaynağı {localization.sourceVersion} · Veri kaynağı {metadata.sourceVersion}.</p><p>Çeviri arşivi: <code>{localization.localeSetId}</code></p></details>}
 </aside>}
 <style>
-.snapshot-notice{border:1px solid var(--line);border-left:3px solid var(--red);padding:12px 16px;margin:0 0 24px;background:var(--surface);font-size:.78rem;display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px}
-.snapshot-notice div{display:flex;gap:12px;flex-wrap:wrap}.snapshot-notice strong{color:var(--text)}.snapshot-notice span,.snapshot-notice p{color:var(--muted)}.snapshot-notice p{flex-basis:100%;margin:0;line-height:1.6}.snapshot-notice a{margin-left:auto}.snapshot-notice details{width:100%;font-size:.7rem}.snapshot-notice code{overflow-wrap:anywhere}
+.snapshot-notice{border:1px solid var(--line);border-left:3px solid var(--red);padding:7px 14px;margin:0 0 14px;background:var(--surface);font-size:12.5px;display:flex;align-items:center;flex-wrap:wrap;gap:4px 16px;border-radius:4px}
+.snapshot-notice div{display:flex;gap:10px;flex-wrap:wrap}.snapshot-notice strong{color:var(--text)}.snapshot-notice span,.snapshot-notice p{color:var(--muted)}.snapshot-notice p{margin:0;line-height:1.6}.snapshot-notice a{margin-left:auto;order:3}
+.snapshot-notice details{font-size:12px;order:2}.snapshot-notice details[open]{flex-basis:100%;order:4}.snapshot-notice summary{cursor:pointer;color:var(--muted)}.snapshot-notice code{overflow-wrap:anywhere}
 </style>

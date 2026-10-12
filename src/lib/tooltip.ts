@@ -8,7 +8,7 @@ export function readableTooltip(value:string|undefined):string{
     if(open==='{'||open==='['){
       const close=open==='{'?'}':']';let depth=1,token='';
       while(depth&&++i<value.length){const ch=value[i];if(ch===open)depth++;else if(ch===close)depth--;if(depth)token+=ch;}
-      if(open==='{'&&/^(?:\/?c(?:_|$)|\/?u$|\/?if(?::|$)|icon:|plural:|color:)/i.test(token))continue;
+      if(open==='{'&&/^(?:\/?c(?:_|$)|\/?u$|\/?if(?::|$)|else$|icon:|plural:|color:)/i.test(token))continue;
       out+='—';
     }else out+=open;
   }

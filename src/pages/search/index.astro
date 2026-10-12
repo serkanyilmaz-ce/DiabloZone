@@ -4,6 +4,5 @@ import ArchiveList from '../../components/ArchiveList.astro';
 ---
 <BaseLayout title="Arşivde ara">
   <section class="page-heading"><p class="eyebrow">TÜM VERİTABANI</p><h1>Aradığın bilgiyi bul.</h1><p>Yetenek, eşya, affix ve aspekt kayıtlarında birlikte ara.</p></section>
-  <form class="toolbar" role="search"><label class="field search-field">Arama<input class="search" data-search type="search" placeholder="Ad, açıklama veya etiket…" /></label><label class="field">Kayıt türü<select class="select" data-filter="kind"><option value="">Tüm kayıtlar</option><option value="skills">Yetenekler</option><option value="items">Eşyalar</option><option value="aspects">Aspektler</option><option value="affixes">Affix arşivi</option></select></label></form>
-  <ArchiveList kind="all" />
+  <ArchiveList kind="all"><Fragment slot="filters"><label class="field"><span>Kayıt türü</span><select class="select" data-filter="kind"><option value="">Tüm kayıtlar</option><option value="skills">Yetenekler</option><option value="items">Eşyalar</option><option value="aspects">Aspektler</option><option value="affixes">Affix arşivi</option></select></label></Fragment></ArchiveList>
 </BaseLayout>

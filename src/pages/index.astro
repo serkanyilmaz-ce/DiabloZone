@@ -4,14 +4,18 @@ import Icon from '../components/Icon.astro';
 import { skills, items, aspects, affixes,metadata } from '../lib/data';
 import {systems} from '../lib/systems';
 import {formulaRecords} from '../lib/formula-archive';
+import {catalogueCards} from '../lib/catalogue-cards';
+import {systemCards} from '../lib/systems';
+// Preview strip of original game icons from the first playable records of each archive.
+const preview=(cards:{icon?:string;filters:Record<string,string>}[])=>cards.filter(card=>card.icon&&card.filters.quality!=='dev').slice(0,5).map(card=>card.icon!);
 const base = import.meta.env.BASE_URL;
 const features = [
-  {label:'Yetenekler', href:'skills/', note:'Sınıfının gücünü tanı. Aktif yetenekleri, pasifleri ve geliştirmeleri incele.', icon:'skills',count:skills.length,number:'01'},
-  {label:'Eşyalar', href:'items/', note:'Doğru parçanın peşine düş. Eşya özelliklerini ve güçlerini karşılaştır.', icon:'items',count:items.length,number:'02'},
-  {label:'Aspektler', href:'aspects/', note:'Build’ini değiştiren gücü bul. Efsanevi etkileri ve koşullarını keşfet.', icon:'aspects',count:aspects.length,number:'03'},
-  {label:'Affix arşivi',href:'affixes/',note:'Roll, uygunluk, kaynak ağırlığı ve eşya ilişkilerini ayrıntılarıyla incele.',icon:'items',count:affixes.length,number:'04'},
-  {label:'Paragon & sistemler',href:'systems/',note:'Panolar, düğümler, glyph bonusları ve ilerleme tablolarının kaynaklarını keşfet.',icon:'tree',count:systems.length,number:'05'},
-  {label:'Ham formüller',href:'formulas/',note:'Gizli ifadeleri ara. Bağımlılıklarını ve çözülmemiş matematiği kaynağıyla incele.',icon:'formula',count:formulaRecords.length,number:'06'},
+  {label:'Yetenekler', href:'skills/', note:'Sınıfının gücünü tanı. Aktif yetenekleri, pasifleri ve geliştirmeleri incele.', icon:'skills',count:skills.length,number:'01',icons:preview(catalogueCards('skills').filter(c=>c.filters.type==='active'))},
+  {label:'Eşyalar', href:'items/', note:'Doğru parçanın peşine düş. Eşya özelliklerini ve güçlerini karşılaştır.', icon:'items',count:items.length,number:'02',icons:preview(catalogueCards('items'))},
+  {label:'Aspektler', href:'aspects/', note:'Build’ini değiştiren gücü bul. Efsanevi etkileri ve koşullarını keşfet.', icon:'aspects',count:aspects.length,number:'03',icons:preview(catalogueCards('aspects'))},
+  {label:'Affix arşivi',href:'affixes/',note:'Roll, uygunluk, kaynak ağırlığı ve eşya ilişkilerini ayrıntılarıyla incele.',icon:'rune',count:affixes.length,number:'04',icons:preview(catalogueCards('affixes'))},
+  {label:'Paragon & sistemler',href:'systems/',note:'Panolar, düğümler, glyph bonusları ve ilerleme tablolarının kaynaklarını keşfet.',icon:'board',count:systems.length,number:'05',icons:preview(systemCards)},
+  {label:'Ham formüller',href:'formulas/',note:'Gizli ifadeleri ara. Bağımlılıklarını ve çözülmemiş matematiği kaynağıyla incele.',icon:'formula',count:formulaRecords.length,number:'06',icons:[] as string[]},
 ];
 ---
 <BaseLayout title="Diablo IV veri & mekanik arşivi">
@@ -26,7 +30,7 @@ const features = [
   </section>
   <section class="archive-section" id="arsiv" aria-labelledby="archive-title">
     <div class="section-heading"><div><p class="eyebrow">SANCTUARY ARŞİVİ</p><h2 id="archive-title">Bilgiyi güce dönüştür.</h2></div><span class="section-note">{metadata.gameBuild ? `İçe aktarılan build ${metadata.gameBuild}` : 'Oyun verisi içe aktarımı bekleniyor'}</span></div>
-    <div class="home-feature-grid">{features.map(feature => <a class="feature-card" href={`${base}${feature.href}`}><div class="feature-top"><span class={`feature-icon icon-${feature.icon}`}><Icon name={feature.icon} size={29} /></span><span class="feature-number">{feature.number}</span></div><h3>{feature.label}</h3><p>{feature.note}</p><div class="feature-bottom"><span>{feature.count ? `${feature.count.toLocaleString('tr')} kayıt` : 'Veri bekleniyor'}</span><Icon size={20} /></div></a>)}</div>
+    <div class="home-feature-grid">{features.map(feature => <a class="feature-card" href={`${base}${feature.href}`}><div class="feature-top"><span class={`feature-icon icon-${feature.icon}`}><Icon name={feature.icon} size={29} /></span><span class="feature-number">{feature.number}</span></div><h3>{feature.label}</h3>{feature.icons.length>0&&<div class="feature-icons" aria-hidden="true">{feature.icons.map(icon=><img src={`${base}${icon}`} width="40" height="40" alt="" loading="lazy"/>)}</div>}<p>{feature.note}</p><div class="feature-bottom"><span>{feature.count ? `${feature.count.toLocaleString('tr')} kayıt` : 'Veri bekleniyor'}</span><Icon size={20} /></div></a>)}</div>
   </section>
   <section class="research-banner" aria-labelledby="research-title"><div class="research-art" aria-hidden="true"><span class="research-glyph">∑</span><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="formula-fragment">[+] &nbsp; × &nbsp; [x]</span></div><div class="research-copy"><p class="eyebrow">FORMÜL LABORATUVARI</p><h2 id="research-title">Tooltip’in ötesine bak.</h2><p>Toplamsal bonus mu, bağımsız çarpan mı? Hasardan RNG’ye, oyunun matematiğini kaynakları ve sınırlarıyla incele.</p><a class="text-link" href={`${base}lab/`}>Hasar & olasılık modellerini aç <Icon size={18} /></a></div><span class="research-tag">DENEYSEL MODELLER</span></section>
   <section class="principles" aria-label="Araştırma ilkeleri"><div><Icon name="book" /><p><strong>Kaynağı belli</strong><span>Her bilgi, bir dayanağa bağlı.</span></p></div><div><Icon name="formula" /><p><strong>Matematiği açık</strong><span>Varsayım ve kanıt ayrı görünür.</span></p></div><div><Icon name="shield" /><p><strong>Sürümü kayıtlı</strong><span>PTR ve canlı veri birbirine karışmaz.</span></p></div></section>
