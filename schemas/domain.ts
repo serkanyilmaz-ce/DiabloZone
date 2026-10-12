@@ -15,6 +15,7 @@ export const SkillSchema = z.object({
   description:z.string().optional(), descriptionTemplate:z.string().optional(), maxRank:z.number().int().positive().optional(),
   tags:z.array(z.string()).default([]), cooldown:z.number().nonnegative().optional(), resourceCost:z.number().nonnegative().optional(),
   icon:z.string().optional(), iconRef:SkillIconRefSchema.optional(), source:SourceRefSchema, localizationSource:SourceRefSchema.optional(), patch:z.string(),
+  localizationStatus:z.enum(['resolved','missing']).optional(),rawData:z.record(z.string(),z.unknown()).optional(),
 });
 
 export const ItemSchema = z.object({
@@ -52,11 +53,13 @@ export const ClassSchema=z.object({
   id:z.string(),slug:z.string(),name:z.string(),code:D4ClassSchema,
   skillKitId:z.string(),skillIds:z.array(z.string()),source:SourceRefSchema,
   rawData:z.record(z.string(),z.unknown()).default({}),patch:z.string(),
+  centerImageHandle:z.number().int().positive().optional(),
 });
 export const TreeNodeSchema=z.object({
   id:z.number().int(),x:z.number(),y:z.number(),kind:z.enum(['active','passive','modifier','hub','gate']),
   name:z.string(),description:z.string().optional(),powerSno:z.number().int().optional(),skillId:z.string().optional(),skillSlug:z.string().optional(),
   category:z.string().optional(),maxRanks:z.number().int().positive().optional(),requiredLevel:z.number().nonnegative(),exclusiveGroup:z.number().optional(),rewardName:z.string().optional(),
+  iconHandle:z.number().int().positive().optional(),borderHandle:z.number().int().positive().optional(),rootNodeType:z.number().int().optional(),
 });
 export const TreeRecordSchema=z.object({
   id:z.string(),slug:z.string(),name:z.string(),classCode:D4ClassSchema,classId:z.string(),patch:z.string(),source:SourceRefSchema,

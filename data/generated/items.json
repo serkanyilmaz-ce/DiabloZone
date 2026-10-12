@@ -15,6 +15,12 @@
       "gitBlob": "3620e6ed9dc301dafa957a7077ed4f9600f65612"
     },
     "classes": [],
+    "iconRef": {
+      "actorSno": 1089568,
+      "inventoryImageHandles": [
+        4259099416
+      ]
+    },
     "affixIds": [
       "609821",
       "2067852",

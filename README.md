@@ -46,7 +46,8 @@ check Astro ve servis/DB TypeScript'ini kapsar. Testler Türkçe arama/sayfalama
 koşullu hasar/RNG, proxy güveni, API sorguları ve PGlite'ta gerçek PostgreSQL
 kısıtlarını sınar. Sentetik kayıtlar sezon 15 oyun mekaniğini doğrulamaz.
 Gerçek d4data/ağaç export'u olduğunda pnpm.cmd test:integration çalıştırılır;
-bu kopyada gerçek export olmadığı için oyun/ağaç entegrasyonu henüz doğrulanmadı.
+bu kopyada sekiz tam kaynak ağacı ve özgün ikonlar için 11 entegrasyon kontrolü geçti.
+Bu kontroller yerel pinned kaynak checkout'u ve PNG provenance gerektirir.
 
 ## Veri durumu
 
@@ -60,14 +61,18 @@ pnpm.cmd source:inventory .tmp/d4data 33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0
 
 Manifest data/research/source-manifest.json; ilk gerçek import seçimi poc-plan.json.
 
-F02 yayında: 1 sınıf, 24 yetenek/geliştirme, 1 eşya, 6 affix, 1 aspekt ve 1 ağaç kesiti; toplam 34 DB kaydı/76 ilişki. [F02 kanıtı](docs/phase2.md). Metadata build 73552; kaynak 3.2.1.73552.
-eksik veri açıkça gösterilir, bozuk export build'i durdurur. DB araştırma planı
+F03 veri teslimi: 8 sınıf, 1.600 yetenek/geliştirme, 8 tam kaynak ağacı; önceki eşya1,
+affix6/aspekt1 ile toplam1.624 DB kaydı/4.612 ilişki. [F03 kanıtı](docs/phase3.md).
+1.600 yeteneğin ana ikonu özgün oyun CASC'sinden çıkarıldı: [görseller](docs/original-assets.md).
+Metadata build73552; veri3.2.1.73552, görseller3.2.2.73764. Eksik veri açıkça
+gösterilir, bozuk export build'i durdurur. DB araştırma planı
 8 alanı unknown olarak saklar; verified mekanik 0. Hasar/RNG laboratuvarı eğitim
 modelidir. Tarihsel katsayılar güncel sezon verisi olarak sunulmaz.
 
-Aktif küçük kaynak normalizasyonu: pnpm.cmd data:poc .tmp/d4data.
+Aktif tam sınıf normalizasyonu: pnpm.cmd data:classes .tmp/d4data output/staging/f03.
+Küçük F02 normalizasyonu data:poc'tur; yayınlanmış data/generated üstüne çalıştırılmaz.
 Writer import → reader export → db:promote → frontend build gerçek DB ile doğrulandı.
-Eski genel importer'lar korunur; yeni mühürlü altı-tür sözleşmesine F03/F04'te uyarlanacak:
+Eski genel importer'lar tarihsel araçtır; mühürlü altı-tür yayın sözleşmesine uyarlanmadan çalıştırılmaz:
 
 ```powershell
 pnpm.cmd data:probe --datamine .tmp/d4data

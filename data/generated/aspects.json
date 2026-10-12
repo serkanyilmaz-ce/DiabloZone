@@ -25,6 +25,9 @@
     "classes": [
       "sorcerer"
     ],
+    "iconRef": {
+      "overrideHandle": 1632509696
+    },
     "category": "unknown",
     "affixSource": {
       "sno": 579749,

@@ -2,23 +2,28 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { tree } from '../../lib/data';
 import DataEmpty from '../../components/DataEmpty.astro';
+import {gameAssetPath,treeAssets} from '../../lib/assets';
+import {term} from '../../lib/terms';
 const base = import.meta.env.BASE_URL;
 const classes = Object.keys(tree.classes);
+const displayTree={...tree,classes:Object.fromEntries(Object.entries(tree.classes).map(([code,value])=>{const board=value as any;return [code,{...board,nodes:board.nodes.map((node:any)=>({...node,icon:gameAssetPath(node.iconHandle)}))}];}))};
+const full=Object.values(tree.classes).every((value:any)=>value.scope==='full');
 ---
 <BaseLayout title="Yetenek ağacı" description="İçe aktarılan oyun verisinin yetenek ağacını incele.">
   <section class="page-heading">
     <p class="eyebrow">GÜCÜN DALLARI</p><h1>Yetenek ağacı</h1>
     <p>İçe aktarılan sınıf verilerinin dallarını ve bağlantılarını incele.</p>
-    <p class="source-note">Faz 2 kesiti: yalnızca üç seçili yetenek, bağlı geliştirmeler ve kaynak bağlantıları. Tam sınıf ağacı sonraki fazda tamamlanacak.</p>
+    <p class="source-note">{full?'Tam sınıf ağaçları · Özgün oyun ikonları, düğüm konumları ve bağlantı yolları.':'Seçili yetenek ağacı kesiti · Katalog genişletiliyor.'}</p>
   </section>
   {classes.length === 0 && <DataEmpty kind="yetenek ağacı" />}
   <div class="tree-tabs" hidden={!classes.length} role="tablist" aria-label="Sınıf yetenek ağaçları">
-    {classes.map((cls,index)=><button id={`tab-${cls}`} type="button" role="tab" aria-controls="class-tree" aria-selected={index===0?'true':'false'} tabindex={index===0?0:-1} class:list={{active:index===0}} data-tree-tab={cls}>{cls}</button>)}
+    {classes.map((cls,index)=><button id={`tab-${cls}`} type="button" role="tab" aria-controls="class-tree" aria-selected={index===0?'true':'false'} tabindex={index===0?0:-1} class:list={{active:index===0}} data-tree-tab={cls}>{term(cls)}</button>)}
   </div>
   <div class="tree-workspace" hidden={!classes.length}>
     <section class="tree-explorer" id="class-tree" role="tabpanel" aria-labelledby={`tab-${classes[0]}`}>
       <div class="tree-tools">
         <label class="tree-search"><span class="sr-only">Bu sınıfta ara</span><input type="search" placeholder="Yetenek ara…" data-tree-search autocomplete="off" /></label>
+        <label class="tree-label-toggle"><input type="checkbox" data-tree-labels/> Adları göster</label>
         <div class="tree-zoom"><button type="button" data-zoom="out" aria-label="Uzaklaştır">−</button><output data-zoom-label>100%</output><button type="button" data-zoom="in" aria-label="Yakınlaştır">+</button><button type="button" data-tree-fit>Ağacı sığdır</button><button type="button" data-tree-start>Başlangıç</button></div>
       </div>
       <div class="tree-viewport" tabindex="0" aria-label="Yetenek ağacı. Sürükle, tekerlekle yakınlaştır veya ok tuşlarıyla hareket et.">
@@ -40,7 +45,7 @@ const classes = Object.keys(tree.classes);
       <p class="tree-build">Kaynak build {tree.gameBuild}</p>
     </aside>
   </div>
-  <script id="tree-data" type="application/json" set:html={JSON.stringify(tree).replace(/</g,'\u003c')} />
+  <script id="tree-data" type="application/json" set:html={JSON.stringify({...displayTree,assets:treeAssets}).replace(/</g,'\u003c')} />
   <script define:vars={{base}}>
     (()=>{
       const data=JSON.parse(document.getElementById('tree-data').textContent);
@@ -49,6 +54,9 @@ const classes = Object.keys(tree.classes);
       const viewport=document.querySelector('.tree-viewport'),svg=document.querySelector('.tree-canvas');
       const search=document.querySelector('[data-tree-search]'),results=document.querySelector('.tree-results');
       const ns='http://www.w3.org/2000/svg';
+      const labels=document.querySelector('[data-tree-labels]');
+      labels.addEventListener('change',()=>svg.classList.toggle('show-labels',labels.checked));
+      const asset=handle=>data.assets?.[handle];
       let current,board,selected,scale=0.12,tx=0,ty=0,drag=null,moved=false,group;
       const views=new Map(),elements=new Map();
       const make=(tag,attrs={},text)=>{const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));if(text!==undefined)el.textContent=text;return el;};
@@ -92,11 +100,17 @@ const classes = Object.keys(tree.classes);
         for(const node of board.nodes){
           const el=make('g',{transform:`translate(${node.x} ${node.y})`,class:`skill-node node-${node.kind}`,'data-node-id':node.id,role:'button',tabindex:0,'aria-label':`${node.name}${node.maxRanks?`, ${node.maxRanks} rank`:''}`});
           el.append(make('title',{},node.name));
-          const diamond=node.kind==='active'||node.kind==='hub'||node.kind==='gate';const r=node.kind==='hub'?175:node.kind==='gate'?90:node.kind==='modifier'?95:145;
-          el.append(diamond?make('path',{d:`M 0 ${-r} L ${r} 0 L 0 ${r} L ${-r} 0 Z`,class:'node-frame'}):make('circle',{r,class:'node-frame'}));
-          if(node.icon){const size=node.kind==='modifier'?148:204;const img=make('image',{href:base+node.icon,x:-size/2,y:-size/2,width:size,height:size,preserveAspectRatio:'xMidYMid meet'});el.append(img);}
-          else el.append(make('text',{class:'node-glyph','text-anchor':'middle',dy:22},node.kind==='gate'?String(node.requiredLevel):'✦'));
-          if(node.kind!=='gate'){const label=make('text',{class:'node-label',y:r+80,'text-anchor':'middle'},node.name);el.append(label);}
+          const r=node.kind==='hub'?215:node.kind==='gate'?42:node.kind==='modifier'?110:140;
+          el.append(make('circle',{r:r+20,class:'node-focus',fill:'transparent'}));
+          const frameHandle=node.borderHandle??(node.kind==='hub'?2313016955:node.kind==='modifier'?3849685904:node.kind==='passive'?1859833681:3769819183);
+          const frame=asset(frameHandle);
+          if(node.kind==='gate')el.append(make('circle',{r:37,class:'node-junction'}));
+          else {
+            if(frame)el.append(make('image',{href:base+frame,x:-r,y:-r,width:r*2,height:r*2,preserveAspectRatio:'xMidYMid meet'}));
+            if(node.icon){const size=node.kind==='modifier'?190:node.kind==='passive'?180:230;el.append(make('image',{href:base+node.icon,x:-size/2,y:-size/2,width:size,height:size,preserveAspectRatio:'xMidYMid meet'}));}
+            else el.append(make('text',{class:'node-glyph','text-anchor':'middle',dy:22},node.kind==='hub'?String(node.requiredLevel):'✦'));
+          }
+          const label=make('text',{class:'node-label',y:r+80,'text-anchor':'middle'},node.name);el.append(label);
           el.addEventListener('click',()=>{if(!moved)selectNode(node);});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectNode(node,true);}});
           el.addEventListener('focus',()=>{if(!drag){const x=tx+node.x*scale,y=ty+node.y*scale;if(x<30||y<30||x>viewport.clientWidth-30||y>viewport.clientHeight-30)center(node.x,node.y);}});
           group.append(el);elements.set(node.id,el);
@@ -126,9 +140,9 @@ const classes = Object.keys(tree.classes);
     .tree-zoom{display:flex;gap:4px;align-items:center}.tree-zoom button,.tree-results button{background:#19130d;color:#dac6a1;border:1px solid #51402b;padding:8px 10px;cursor:pointer}.tree-zoom output{width:42px;text-align:center;font-size:.7rem;color:#b4a385}
     .tree-viewport{height:clamp(480px,70vh,850px);position:relative;overflow:hidden;touch-action:none;cursor:grab;background:radial-gradient(ellipse at center,#211711 0,#0e0c0a 55%,#060605 100%)}.tree-viewport:active{cursor:grabbing}.tree-canvas{display:block;width:100%;height:100%;user-select:none}
     .tree-edge{fill:none;stroke:#64523d;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}.tree-edge.highlight{stroke:#d5a45a;stroke-width:15}
-    .skill-node{cursor:pointer;outline:none}.node-frame{fill:#100e0b;stroke:#8e7650;stroke-width:13}.node-hub .node-frame{fill:#351612;stroke:#b0844d;stroke-width:18}.node-gate .node-frame{fill:#281b14;stroke:#7b5b37;stroke-width:10}.node-modifier .node-frame{stroke:#79736a;stroke-width:10}.skill-node image{pointer-events:none}.node-glyph{fill:#d0b482;font:60px Georgia,serif;pointer-events:none}
-    .node-label{fill:#cfbf9f;paint-order:stroke;stroke:#090706;stroke-width:20;stroke-linejoin:round;font:62px Georgia,serif;pointer-events:none}.node-hub .node-label{text-transform:uppercase;fill:#f5d799;font-size:88px;letter-spacing:5px}.node-modifier .node-label{font-size:48px}.tree-overview .node-label{display:none}.tree-overview .node-hub .node-label{display:block}
-    .skill-node:hover .node-frame,.skill-node:focus .node-frame,.skill-node.selected .node-frame{stroke:#ffdd94;fill:#472b12;stroke-width:22}.skill-node.selected .node-label{fill:#fff0c8}.skill-node.neighbor .node-frame{stroke:#c79b58}.skill-node.dimmed{opacity:.18}.skill-node.matched .node-frame{stroke:#ffcc67;stroke-width:20}
+    .skill-node{cursor:pointer;outline:none}.node-focus{stroke:transparent;stroke-width:8}.node-junction{fill:#1d1a16;stroke:#736352;stroke-width:9}.skill-node image{pointer-events:none}.node-glyph{fill:#d0b482;font:60px Georgia,serif;pointer-events:none}.tree-label-toggle{font-size:.75rem;color:#cabb9e;display:flex;align-items:center;gap:6px}.tree-label-toggle input{accent-color:#ab382c}
+    .node-label{display:none;fill:#cfbf9f;paint-order:stroke;stroke:#090706;stroke-width:20;stroke-linejoin:round;font:62px Georgia,serif;pointer-events:none}.show-labels .node-label,.skill-node:hover .node-label,.skill-node:focus .node-label{display:block}.node-hub .node-label{text-transform:uppercase;fill:#f5d799;font-size:78px;letter-spacing:3px}.node-modifier .node-label{font-size:48px}.tree-overview .node-label{display:none}
+    .skill-node:hover .node-focus,.skill-node:focus .node-focus,.skill-node.selected .node-focus{stroke:#ffdd94}.skill-node.selected .node-label{fill:#fff0c8}.skill-node.neighbor .node-focus{stroke:#c79b58}.skill-node.dimmed{opacity:.18}.skill-node.matched .node-focus{stroke:#ffcc67;stroke-width:15}
     .tree-status{display:flex;justify-content:space-between;gap:8px;padding:10px 12px;border-top:1px solid #38291c;color:#9f917c;font-size:.67rem;flex-wrap:wrap}.tree-details{padding:25px 22px;border:1px solid #483121;background:linear-gradient(155deg,#1c110b,#090706);color:#cabb9e;position:sticky;top:20px;min-height:480px}.tree-details .eyebrow{font-size:.65rem;color:#b79361;text-transform:uppercase}.tree-details h2{font-family:var(--font-display);font-size:1.65rem;line-height:1.2;color:#f5deac;margin:18px 0 6px}.detail-emblem{height:72px;width:72px;display:grid;place-items:center;border:1px solid #947347;background:#080604;font-size:35px;color:#c69c56;margin:20px 0}.detail-emblem img{width:64px;height:64px;object-fit:contain}.tree-details [data-detail-category]{text-transform:uppercase;font-size:.64rem;letter-spacing:.14em;color:#8c806c}.tree-description{font-size:.87rem;line-height:1.75;white-space:pre-line}.tree-details dl{display:grid;grid-template-columns:1fr auto;gap:10px;font-size:.72rem;padding:18px 0;border-block:1px solid #39291c}.tree-details dd{margin:0;color:#ecd49e}.tree-detail-link{font-size:.75rem;color:#e2b878}.tree-key{border-top:1px solid #39291c;display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;padding-top:18px;font-size:.65rem;color:#a99574}.tree-build,.tree-formula-note{font-size:.65rem;color:#96836c;line-height:1.6}.tree-results{padding:12px;max-height:170px;overflow:auto;color:#cabb9e;font-size:.75rem}.tree-results [data-results]{display:flex;flex-wrap:wrap;gap:6px}
     .tree-workspace [hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
     :root[data-theme="light"] .tree-details{background:#d7c29f;color:#473824}:root[data-theme="light"] .tree-details h2{color:#382415}

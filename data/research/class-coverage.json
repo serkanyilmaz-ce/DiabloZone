@@ -1,0 +1,73 @@
+{
+  "phase": "F03",
+  "sourceCommit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+  "version": "3.2.1.73552",
+  "classes": [
+    {
+      "class": "barbarian",
+      "powers": 24,
+      "records": 192,
+      "nodes": 270,
+      "edges": 264,
+      "missingLocalization": []
+    },
+    {
+      "class": "druid",
+      "powers": 26,
+      "records": 251,
+      "nodes": 337,
+      "edges": 348,
+      "missingLocalization": []
+    },
+    {
+      "class": "necromancer",
+      "powers": 23,
+      "records": 184,
+      "nodes": 259,
+      "edges": 253,
+      "missingLocalization": []
+    },
+    {
+      "class": "rogue",
+      "powers": 24,
+      "records": 192,
+      "nodes": 270,
+      "edges": 264,
+      "missingLocalization": []
+    },
+    {
+      "class": "sorcerer",
+      "powers": 25,
+      "records": 201,
+      "nodes": 282,
+      "edges": 276,
+      "missingLocalization": []
+    },
+    {
+      "class": "spiritborn",
+      "powers": 24,
+      "records": 192,
+      "nodes": 270,
+      "edges": 264,
+      "missingLocalization": []
+    },
+    {
+      "class": "paladin",
+      "powers": 24,
+      "records": 192,
+      "nodes": 270,
+      "edges": 264,
+      "missingLocalization": []
+    },
+    {
+      "class": "warlock",
+      "powers": 28,
+      "records": 196,
+      "nodes": 270,
+      "edges": 264,
+      "missingLocalization": []
+    }
+  ],
+  "treeLayout": "original-source-coordinates-and-paths",
+  "scope": "Eight source-confirmed class skill kits; non-tree powers remain inventoried in F04/F06"
+}

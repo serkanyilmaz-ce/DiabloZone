@@ -4,5 +4,5 @@
     "strict": true, "noEmit": true, "skipLibCheck": true,
     "esModuleInterop": true, "types": ["node"]
   },
-  "include": ["src/lib/**/*.ts", "schemas/**/*.ts", "scripts/db/**/*.ts", "scripts/source/**/*.ts", "scripts/service.ts", "tests/*.test.ts"]
+  "include": ["src/lib/**/*.ts", "schemas/**/*.ts", "scripts/db/**/*.ts", "scripts/source/**/*.ts", "scripts/assets/**/*.ts", "scripts/service.ts", "tests/*.test.ts"]
 }

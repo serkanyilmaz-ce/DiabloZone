@@ -31,7 +31,7 @@ Sunucu işlem günlüğü: [../Notlar.md](../../Notlar.md).
 | Tam DB → frontend akışı | Bekliyor | Araştırma canlı; oyun listeleri statik |
 | Forum | Ertelendi | Arşiv belgeleri aktif kapsam değildir |
 
-## Güncel doğrulama
+## F00 tarihsel doğrulama
 
 - Lint, Astro/TypeScript (0 hata/uyarı/ipucu), 12 birim testi, frontend/API build geçti.
 - Uzak entegrasyon release'i: /srv/diablozone/releases/20261012-050200.
@@ -102,3 +102,18 @@ Kullanıcı soru sormadan beş saat boyunca fazları sürdürmeyi istedi. AGENTS
 çalışma penceresini, özgün oyun ikonlarını ve özgün ağaç yerleşimini kaydeder.
 F03 tüm sınıf/yetenek/ağaç çalışması başladı. Her sunucu işinde SSH kapanır;
 site enabled systemd/Caddy ile sürekli çalışır. Forum geliştirilmez.
+
+## F03 — 12 Ekim 2026 06:53
+
+Native PostgreSQL'de1.624 kayıt/4.612 ilişki: sekiz sınıf,1.600 yetenek/geliştirme,
+sekiz tam kaynak ağacı; önceki eşya/affix/aspekt grubu korunur. Snapshot
+cb1ea0ce-6eab-453c-b8e0-2034b83fb559; inputSHA256
+3d69f75fb0f8bd7d159039d9ca8a97bd0518a9afaa3326092ff421f30b4d50ce.
+İkinci import aynı UUID; reader export mühür/ilişki kontrolleriyle yükseltildi.
+2.228 düğüm/2.197 kenarın tamamı özgün source konum/path ile eşleşir.
+1.600 kaydın ana ikonu yerel oyun CASC'sinden bulundu; toplam1.583 PNG,
+1.461 pinned atlas/UV eşleşmesi. Oyun manifesti extraction boyunca değişmedi.
+Veri73552/görseller73764 farkı arayüzde açıklanır. Native kaynak derlemesi read-only.
+16 birim +11 kaynak entegrasyon kontrolü, lint/TypeScript/API/frontend build geçti;
+1.626 sayfa oluştu. Runtime animasyon/connector katmanları ve gerçek görsel
+karşılaştırma sürer. F03 veri teslimi hazır; piksel eşdeğerliği tamamlandı sayılmaz.

@@ -23,7 +23,7 @@ ayakta kalır. Çalışma sonunda servis/HTTPS kontrolü yapılır, site durduru
 | F00 | Native altyapı/yayın | Tamamlandı | HTTPS, API, PostgreSQL, Git; docs/progress.md |
 | F01 | Kaynak/build doğrulaması | Tamamlandı | docs/source-audit.md; pinned 3.2.1.73552, hash/envanter |
 | F02 | Küçük gerçek veri akışı | Tamamlandı | docs/phase2.md; 34 kayıt/76 ilişki, DB/export/API/HTTPS |
-| F03 | Tüm sınıflar/yetenekler/ağaç | Çalışılıyor | Sınıf katalogları, özgün ikonlar ve kaynak ağaçları |
+| F03 | Tüm sınıflar/yetenekler/ağaç | Veri/ikon hazır; görsel eşleme sürüyor | docs/phase3.md; 8 sınıf/1600 kayıt, tam kaynak ağaçları |
 | F04 | Tüm eşyalar/affix/aspekt | Bekliyor | Tam katalog, varyant/roll ve ilişkili detaylar |
 | F05 | Diğer karakter sistemleri | Bekliyor | Paragon/glyph, sınıf özel, gem/rune/minyon |
 | F06 | Formül/genel hasar | Bekliyor | Ham ifadeler, bağımlılık, ilk hasar modeli |

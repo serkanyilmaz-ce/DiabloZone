@@ -19,7 +19,9 @@ Bu akış hedef deneyimdir; mevcut eksik veriler docs/progress.md içinde kayıt
 Astro/TypeScript/Tailwind ve pnpm korunur. Kendi PostgreSQL veritabanı
 sezon/build/kanal/snapshot ile sürümlenir. Node API yalnızca yayınlanmış veriyi
 okur. Liste/detay bugün statik export, araştırma arşivi canlı API kullanır.
-Tüm oyun listeleri için otomatik DB eşitlemesi henüz tamamlanmamıştır.
+Writer import → reader export → hash doğrulama → static build akışı tamamdır;
+her yeni veri yayını yeni immutable snapshot ve release kullanır. Anlık otomatik
+senkronizasyon yerine kontrollü yayın uygulanır.
 
 Yerel geliştirme Docker gerektirmez. Uzak makine Ubuntu 24.04 ARM64,
 2 OCPU, 12 GB RAM, 100 GB disk; Docker kullanılmaz. Ortak sunucunun mevcut Caddy,

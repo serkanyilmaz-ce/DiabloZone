@@ -57,10 +57,802 @@
       "sha256": "5c51019007e40827300300c29a4a3bdba35eb78b471453e4ea8d853e15c11aa1"
     },
     {
+      "sno": 169776,
+      "file": "json/base/meta/PlayerClass/Barbarian.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e31102f0bce0c9331d936567973d0a31e5a2a2f49edcb68bc23bc01b0ab75584"
+    },
+    {
+      "sno": 131966,
+      "file": "json/base/meta/PlayerClass/Druid.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b29713de7f47c1a6bc10b0d49b32f820c5c0b7a87de1d21958e29668082b020e"
+    },
+    {
+      "sno": 199277,
+      "file": "json/base/meta/PlayerClass/Necromancer.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a287ad71a991dc2a2ff008ed43df2149cf5434444886441cede724b541c938a3"
+    },
+    {
+      "sno": 2079084,
+      "file": "json/base/meta/PlayerClass/Paladin.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "53df69660a5a5692ba98d75ed2896be438a0bf565f2b24dfd3e4d4557f4d2f1b"
+    },
+    {
+      "sno": 199275,
+      "file": "json/base/meta/PlayerClass/Rogue.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f72642b543fd766555bd8525433ed547e97a100eda5470ad144811f1d2203588"
+    },
+    {
       "sno": 131965,
       "file": "json/base/meta/PlayerClass/Sorcerer.pcl.json",
       "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
       "sha256": "16a94796c34345720a899c42ad4574163d59ad30e76838be355f78516861c272"
+    },
+    {
+      "sno": 1206232,
+      "file": "json/base/meta/PlayerClass/Spiritborn.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "57616b1afeef4ea1c10db40749ac13a78d203b0935ea99d470ecfc92113e785b"
+    },
+    {
+      "sno": 2207749,
+      "file": "json/base/meta/PlayerClass/Warlock.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8eb50983a0b16741f014ca948108bc9451fb1181359c1a5995bcb48e722ae890"
+    },
+    {
+      "sno": 200765,
+      "file": "json/base/meta/Power/Barbarian_Bash.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "75e5941885d91f4e79d6cba10a739928f9008f669aa35ef5d5f8f5c40bc08a01"
+    },
+    {
+      "sno": 309802,
+      "file": "json/base/meta/Power/Barbarian_CalloftheAncients.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9749133646452bd34a7201e555b0d70229070fa8ac9a889f7f3eb43911775b44"
+    },
+    {
+      "sno": 375484,
+      "file": "json/base/meta/Power/Barbarian_ChallengingShout.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ab3ffb32de19402a7d4913cc07af2fc81a598d507c8e3cafe560db5032530003"
+    },
+    {
+      "sno": 204662,
+      "file": "json/base/meta/Power/Barbarian_Charge.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "45dfc5e29f847e9d1a1aaa18073503234b208c1100c777e4f5de10353ab15afa"
+    },
+    {
+      "sno": 323105,
+      "file": "json/base/meta/Power/Barbarian_DeathBlow.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "abe7bb78eca9ce11df3538bcdfc56a89bcb95b967ddb90a9e8a919edee653e2c"
+    },
+    {
+      "sno": 208000,
+      "file": "json/base/meta/Power/Barbarian_DoubleSwing.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "25017f9c3a08b0523c40de6287a8f3accd00a4bf38dd62aa230883e61dd32ad4"
+    },
+    {
+      "sno": 210919,
+      "file": "json/base/meta/Power/Barbarian_Frenzy.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c2e4cf7b171272492ccbcc5960d767ec062a0ffd92f19207fe4f5462aba28b2c"
+    },
+    {
+      "sno": 186358,
+      "file": "json/base/meta/Power/Barbarian_GroundStomp.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "18e1f7f87cb3c62f9bfe67b590d1d27c628ea3896684993b9515a780f6716ec0"
+    },
+    {
+      "sno": 213673,
+      "file": "json/base/meta/Power/Barbarian_HammeroftheAncients.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2db25dd07283a38d5bb1519fb856abcbb8f593b904c84cb387c1870f77048006"
+    },
+    {
+      "sno": 217175,
+      "file": "json/base/meta/Power/Barbarian_IronMaelstrom.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9fb373b59a23eef3d5e455d42411817c5842267ba294fff0e86815b7c62a6bb2"
+    },
+    {
+      "sno": 512222,
+      "file": "json/base/meta/Power/Barbarian_IronSkin.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7dc6df2218f3d127cd9433d0da9720842ff749ee9eee752a442935edfcf14713"
+    },
+    {
+      "sno": 199516,
+      "file": "json/base/meta/Power/Barbarian_Kick.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "feaaa87eb3ab6b96f1d2d6244cc235128f33dda6e33d7e9c09c6199621e2b415"
+    },
+    {
+      "sno": 196545,
+      "file": "json/base/meta/Power/Barbarian_Leap.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "92416ecd69ba5542c842fa5d30eff933b01c82ac612b1261326e7497d5895544"
+    },
+    {
+      "sno": 206504,
+      "file": "json/base/meta/Power/Barbarian_LungingStrike.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "28b85e54dd46ad38725248ffdb4d44098ca49cea9550bbd5ac3d2c693c7afcb6"
+    },
+    {
+      "sno": 210431,
+      "file": "json/base/meta/Power/Barbarian_Maim.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "07810bbc2fcd9ddc52a32b4d3df26c28f4ea7daa5f6d0a1793f452a7780e073f"
+    },
+    {
+      "sno": 211938,
+      "file": "json/base/meta/Power/Barbarian_RallyingCry.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9f145efef6a69fca995f3ecfbfd425b2d88af460cb4a983dae9fa2d7bcdf7f0f"
+    },
+    {
+      "sno": 214786,
+      "file": "json/base/meta/Power/Barbarian_Rend.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "255c95330aeb30fd67c1754344b11494cc773d89d9ef7244bdb1b0fb80d56f1d"
+    },
+    {
+      "sno": 215027,
+      "file": "json/base/meta/Power/Barbarian_Rupture.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a756d2d4a160275494779368242ee5ba7b6efc8d6b00ed9152307f87f6914793"
+    },
+    {
+      "sno": 964631,
+      "file": "json/base/meta/Power/Barbarian_SteelGrasp.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1dbb6c83bd8b61ba5b5bbe841df23f103115eb479d02fa8b53df96b7e79bcc72"
+    },
+    {
+      "sno": 202484,
+      "file": "json/base/meta/Power/Barbarian_Upheaval.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "de4b03df99a02e766aa059d0c1fa223344bc4b3119f5bc23dd0cd0fe9ff3e8a4"
+    },
+    {
+      "sno": 184600,
+      "file": "json/base/meta/Power/Barbarian_WarCry.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "806bd45bb512d29b5a193d5b5b190ffe6e7cfdcde9f121e31e19cddd24732354"
+    },
+    {
+      "sno": 206435,
+      "file": "json/base/meta/Power/Barbarian_Whirlwind.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b152e5ac81dd894316bc3da8d1d1469411c5a4f26c742bd068cfec371b3c58ad"
+    },
+    {
+      "sno": 211871,
+      "file": "json/base/meta/Power/Barbarian_WrathoftheBerserker.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bb1c984781ba9f993775584ddd8fada78bfbfe2a020ae6a4b183d5699fe28580"
+    },
+    {
+      "sno": 566517,
+      "file": "json/base/meta/Power/Druid_BloodHowl.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ea3813fa2dd25362a25f6cede7095bbdb779dc9d8297c5bf1cdca36a9bd97da4"
+    },
+    {
+      "sno": 238345,
+      "file": "json/base/meta/Power/Druid_Boulder.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b769789e0788e93bec2d3b939deffe5fab63a2074f1aa25279c11a29c8f8c9d0"
+    },
+    {
+      "sno": 266570,
+      "file": "json/base/meta/Power/Druid_Cataclysm.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ed58e26e18348497054d3d4d7e16cd17d3574cc5e76cd2dc228d1ea89bfe2358"
+    },
+    {
+      "sno": 439581,
+      "file": "json/base/meta/Power/Druid_Claw.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ea884b684df322f1485649989895858aa76f3c9d599769b5bee82957aea277c0"
+    },
+    {
+      "sno": 280119,
+      "file": "json/base/meta/Power/Druid_CycloneArmor.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2a4b98474725fcaeb187e9938b4f2cb3fb4dbfc0f90bfe0f7d53bd2533433d06"
+    },
+    {
+      "sno": 336238,
+      "file": "json/base/meta/Power/Druid_DebilitatingRoar.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "872bcfb458d333ed19c886d85d7b721428b083626f514b2f547843f695076175"
+    },
+    {
+      "sno": 333421,
+      "file": "json/base/meta/Power/Druid_EarthenBulwark.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4185edf84ec00a427bcf544c714d2d59314c62f28a4950e33a925ce847e64404"
+    },
+    {
+      "sno": 543387,
+      "file": "json/base/meta/Power/Druid_Earthspike_Instant.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e7c3a591495fd8b1801b1a179203fd10ca5156f77e5aa2967a749f46191d69af"
+    },
+    {
+      "sno": 267021,
+      "file": "json/base/meta/Power/Druid_GrizzlyRage.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "dd73551b105364dec072d354657482035811fee04defd54316fbe7797aa1b10b"
+    },
+    {
+      "sno": 258990,
+      "file": "json/base/meta/Power/Druid_Hurricane.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "767ebe6c3543706235ce315da653d47ffd6a85d583d1bdb94918192b7e8b302b"
+    },
+    {
+      "sno": 394251,
+      "file": "json/base/meta/Power/Druid_Lacerate.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "888fdca5c7857cb98d91340a631656c9125c004bf38da0f20472eab7556aced9"
+    },
+    {
+      "sno": 313893,
+      "file": "json/base/meta/Power/Druid_landslide.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2baa469321d76235462607d6c8ccc09b94cdef06bc5bfdcbc121424748b107e6"
+    },
+    {
+      "sno": 548399,
+      "file": "json/base/meta/Power/Druid_LightningStorm.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "df5d7c8f92679936b25d6a8a873760dcb2b23c15df7c633d597a9c28e947ace6"
+    },
+    {
+      "sno": 309070,
+      "file": "json/base/meta/Power/Druid_Maul.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "02e4caedd63d8f159ec99cddbc377db6df94d3ac05071a75b715001d93cb647e"
+    },
+    {
+      "sno": 351722,
+      "file": "json/base/meta/Power/Druid_Petrify.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bc873d0e9a54d70ebaa384e9387b3fbb7ec3ecbfbe7b0a0db30371b0ae3eeee7"
+    },
+    {
+      "sno": 272138,
+      "file": "json/base/meta/Power/Druid_Pulverize.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "55107a53dd3e025f8ea3706050027a5d344519d597efb39b09c1c05feb065024"
+    },
+    {
+      "sno": 416337,
+      "file": "json/base/meta/Power/Druid_Rabies.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "da42d2c48c44ce95ee1ddfafe87fcccf4a262b0c273ff9022c626c6e5420a47a"
+    },
+    {
+      "sno": 281516,
+      "file": "json/base/meta/Power/Druid_Ravens.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8219da38aa0e8c70004dc001084306291b1b70b76cf891d25f8caf581663928d"
+    },
+    {
+      "sno": 1256958,
+      "file": "json/base/meta/Power/Druid_Shred_NEW.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "74d05d962a26168f518ee2d6074173cea1e28b1e096cc94469180383ffc17ffa"
+    },
+    {
+      "sno": 1473878,
+      "file": "json/base/meta/Power/Druid_StoneBurst.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a1fd38837f8cedc34b1aa5f1e0248a5164b4feae1ee1787ad143cf824829577a"
+    },
+    {
+      "sno": 309320,
+      "file": "json/base/meta/Power/Druid_StormStrike.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e652649147181fa70f6b2b84e18e67bbfb58c77624248163934cdc12a3f3d2fb"
+    },
+    {
+      "sno": 304065,
+      "file": "json/base/meta/Power/Druid_Tornado.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "945d333e74d3c24cadc0656dd9fe917094dbc8e7224f3e6c0c2b6c0336ed475b"
+    },
+    {
+      "sno": 258243,
+      "file": "json/base/meta/Power/Druid_Trample.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9600c22c3d9fbb734c773c44a703befb3b6f6b09a7eb6cd6a32675dd33d71ad0"
+    },
+    {
+      "sno": 314601,
+      "file": "json/base/meta/Power/Druid_VineCreeper.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "797642e38341f97f62338643956e3ea5f7b33c25a9acaa8e27dfff850584b0de"
+    },
+    {
+      "sno": 356587,
+      "file": "json/base/meta/Power/Druid_WindShear.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4c6728a28ca47c0787f42bac9fe9ce16bd8e425067d9d9c8a7e6d57f0c026b89"
+    },
+    {
+      "sno": 265663,
+      "file": "json/base/meta/Power/Druid_WolfPack.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1f60ec7dd07eb73c1024c221e209eb144f744e58db843df4e83624a35fdde9cf"
+    },
+    {
+      "sno": 497193,
+      "file": "json/base/meta/Power/Necromancer_ArmyoftheDead.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1ea147280f550cb2cf8804ea7ea7ada31c51e3f0fbb52dd4fc8e283bf7faa5de"
+    },
+    {
+      "sno": 481293,
+      "file": "json/base/meta/Power/Necromancer_Blight.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6f6ee1e47970472f4cef31116d0ef4f8338180b8c29898317a82049d88221480"
+    },
+    {
+      "sno": 501629,
+      "file": "json/base/meta/Power/Necromancer_BloodLance.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e8d055fd7cfc375ef72afd9849eec95b275a6451aa6e4fe9f1d4abd7604a9dcf"
+    },
+    {
+      "sno": 493422,
+      "file": "json/base/meta/Power/Necromancer_BloodMist.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "64fc23161a85e7bcb0c10b8a06c021896e4e3ba47118f3472e139758cc69e0bd"
+    },
+    {
+      "sno": 592163,
+      "file": "json/base/meta/Power/Necromancer_BloodSurge.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f49701148c7c5d5a44763babee1f379c126e9d35da3ed6a295e979ff4d7c9fda"
+    },
+    {
+      "sno": 658216,
+      "file": "json/base/meta/Power/Necromancer_BloodWave.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b0ff999133f415b99637c3c101a0cd63b50fdb2448620ea3a2974bd47f030609"
+    },
+    {
+      "sno": 493453,
+      "file": "json/base/meta/Power/Necromancer_BonePrison.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0ed71017c27687c2ca1d25bb8f351b8c628f2140029fe09e37dd061d4641c68a"
+    },
+    {
+      "sno": 432879,
+      "file": "json/base/meta/Power/Necromancer_BoneSpear.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "58a7ac35e8a9d74784331ff1e58754eb6caf266765bb429379bd72cd48c02553"
+    },
+    {
+      "sno": 469641,
+      "file": "json/base/meta/Power/Necromancer_BoneSpirit.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "865fc8307773738d951005ba7bfff3d882b8b8f5765feb3d44088f716ff1ef32"
+    },
+    {
+      "sno": 500962,
+      "file": "json/base/meta/Power/Necromancer_BoneSplinters.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "36627f5e8cf79b204e1f7ae25c219204695b616afc9cfda73f41e5f1ee09a8c8"
+    },
+    {
+      "sno": 499281,
+      "file": "json/base/meta/Power/Necromancer_BoneStorm.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f127e7d06498f2caf7768ec0eb344137dcfcdb1a6b254260f0b75263258fc238"
+    },
+    {
+      "sno": 432897,
+      "file": "json/base/meta/Power/Necromancer_CorpseExplosion.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ae1efd544c8c42ecae16a43a1c0b90056f2885fc8df4ddb57a16cbf674bcecd9"
+    },
+    {
+      "sno": 463349,
+      "file": "json/base/meta/Power/Necromancer_CorpseTendrils.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "659e59bcc7eda5a637f9e84889d79949252d6566c3dfc3b24f03503f45c945c4"
+    },
+    {
+      "sno": 463175,
+      "file": "json/base/meta/Power/Necromancer_Decompose.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "01883b7e69858d7017e0fcd271de59046be923bbc7bf14c5e8a5cb8b7b5c6001"
+    },
+    {
+      "sno": 915150,
+      "file": "json/base/meta/Power/Necromancer_Decrepify.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "29781d0639a838b7536543e175768c963a1b47b5bc3de4406a81d186bdc9787f"
+    },
+    {
+      "sno": 440463,
+      "file": "json/base/meta/Power/Necromancer_Golem.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8f3be1a1b135d88c88a5de119a69ee87ae2fb328ae7b264726ef13466d3fad4e"
+    },
+    {
+      "sno": 484661,
+      "file": "json/base/meta/Power/Necromancer_Hemorrhage.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8b740dccbab1584ecf4458e615f94bc8b912cf4ea0deb0ab57e9533f59919107"
+    },
+    {
+      "sno": 915152,
+      "file": "json/base/meta/Power/Necromancer_IronMaiden.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e18549ff8dade96da51c22002e24871af3d84dedd492226c3d960e137f0f51ed"
+    },
+    {
+      "sno": 432896,
+      "file": "json/base/meta/Power/Necromancer_Reap.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d41d9e705657c8333c2e4cdd0fb3645b2c5f48ddad0f34787552e70c1d2e6016"
+    },
+    {
+      "sno": 481785,
+      "file": "json/base/meta/Power/Necromancer_Sever.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "aed71121e592f87fe5a4e76751ef88fbf64548644a53abad4fe3136b65bd5ad8"
+    },
+    {
+      "sno": 440313,
+      "file": "json/base/meta/Power/Necromancer_SkeletonMage.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1f96d06f49ea4aef8a9d893e94c20126a0ca93b3cf1888d7773d674ff8dd229a"
+    },
+    {
+      "sno": 439912,
+      "file": "json/base/meta/Power/Necromancer_SkeletonWarrior.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5bf7752ac66dc3512ca47674fe562ef42c0680f0684dec987a2bd35da83f1308"
+    },
+    {
+      "sno": 2329865,
+      "file": "json/base/meta/Power/Paladin_Advance_lunge.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4c841edbace8d996dcec7b2a2da6e8d12fed2c2a0f35c4f79618566ff25a1adc"
+    },
+    {
+      "sno": 2107555,
+      "file": "json/base/meta/Power/Paladin_BlessedHammer.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5c256f7d741015fbbd20201b82e28f06ff0d78e3224cd120a5901845564ab053"
+    },
+    {
+      "sno": 2082021,
+      "file": "json/base/meta/Power/Paladin_BlessedShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b928822eb59e16661b8a6faa150c217ad2bc41278befdf06457f4289184226e6"
+    },
+    {
+      "sno": 2265693,
+      "file": "json/base/meta/Power/Paladin_Brandish.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "93ea75a1542bf726b2aae55ad176b253a66a1285d8454c817be99bf96c8ebe6c"
+    },
+    {
+      "sno": 2226109,
+      "file": "json/base/meta/Power/Paladin_Condemn.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c684487154adb0ed45a58dd147e940845b2c5206e6b62e1ed9657e4dd7230e19"
+    },
+    {
+      "sno": 2283781,
+      "file": "json/base/meta/Power/Paladin_Consecration.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b1ddee6595b44f26cd9788e57c8f11fc032376c0ca003549863ee0af3ff1943c"
+    },
+    {
+      "sno": 2187578,
+      "file": "json/base/meta/Power/Paladin_Defensive_Aura.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b7a05a49b88dc2d183c453eb0d90e5c848a477a0b8cf38707098dae7e70ac867"
+    },
+    {
+      "sno": 2297125,
+      "file": "json/base/meta/Power/Paladin_Disciple_of_Justice.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f146bf2bb110d5157ad52247c32db7b9d2ab3ea1a72b325583bc35dad0eb3838"
+    },
+    {
+      "sno": 2301078,
+      "file": "json/base/meta/Power/Paladin_Fortress.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7a535fa4ad998bbdf6a187587745aa3a1bf1c39b5fde569bbf512131a4ee79cd"
+    },
+    {
+      "sno": 2273081,
+      "file": "json/base/meta/Power/Paladin_HeavensFury.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ea542fd2fe7b1942c9d14a26e8842153d02b07dc05d3867422663e7265b9daa0"
+    },
+    {
+      "sno": 2297097,
+      "file": "json/base/meta/Power/Paladin_HolyShock_Aura.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8fddd139221a5ccbf8c6372db640c8a15e914a1d62c45252b741cf34d9737468"
+    },
+    {
+      "sno": 2120228,
+      "file": "json/base/meta/Power/Paladin_Impale.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bc770534d8c618a008c89cdfb85ee7e6bfed43fe421d4f070802236e9cab62a8"
+    },
+    {
+      "sno": 2106904,
+      "file": "json/base/meta/Power/Paladin_LanceDive_OLD.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5dba1e088166fce5253935f86121aa4f23710e3df4f73c915d2237656027e9a5"
+    },
+    {
+      "sno": 2187741,
+      "file": "json/base/meta/Power/Paladin_Offensive_Aura.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3d2a66216285c0fd827e6a1e1aa7fd79450ce3dd7d35b15b6705716b67cb949b"
+    },
+    {
+      "sno": 2132824,
+      "file": "json/base/meta/Power/Paladin_PreTrailZeal.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "fc406db9a2c085254ceeea5df7b33f2797cb75b69b94ec429f236fa28754339e"
+    },
+    {
+      "sno": 2097465,
+      "file": "json/base/meta/Power/Paladin_Punish.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6676738e03d69df03863b16eaf707b6248dc1d754265b31ad9f5e6ceef78094e"
+    },
+    {
+      "sno": 2261380,
+      "file": "json/base/meta/Power/Paladin_Purify.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8ebb6b2f92ef7e34ad1723074c1777891ae14ca6c02e47e138242d842d63b840"
+    },
+    {
+      "sno": 2303677,
+      "file": "json/base/meta/Power/Paladin_Sacrifice.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b0eb017925b02d5a709ec96b936f5fa71a7ec114f27852a1599283ce8c765e32"
+    },
+    {
+      "sno": 2087548,
+      "file": "json/base/meta/Power/Paladin_ShieldBash.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "716ab1132fbbbd6768e636125194caa85ce5ccd37e63142dfa25638dfde91b42"
+    },
+    {
+      "sno": 2466077,
+      "file": "json/base/meta/Power/Paladin_ShieldCharge_Channel_Short.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9443f7cf3daa85e562f50a7030c983fb9d7ff6a5b78dbee221cdb0a925d5223a"
+    },
+    {
+      "sno": 2292204,
+      "file": "json/base/meta/Power/Paladin_Smite_FalconPunch_Recast_1.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f8dd752133ba83ceef47006fac2ab3b4d3fc7e35c2c199a581cde63953dd7b0a"
+    },
+    {
+      "sno": 2100457,
+      "file": "json/base/meta/Power/Paladin_SpearOfTheHeavens.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "74df43c30138bbc9d1dcae264c9ccfdfcb791c100a9406c58cd75ceee196e977"
+    },
+    {
+      "sno": 2174078,
+      "file": "json/base/meta/Power/Paladin_StormBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5751b95e8c7897fad3d1cade321220155ff2534c09128c375aff1fac284e665f"
+    },
+    {
+      "sno": 2302974,
+      "file": "json/base/meta/Power/Paladin_Trinity.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "897969a5f9470d9556a89eb382445b358fdcc60277ade08a307e7e0cdbcb17d9"
+    },
+    {
+      "sno": 439762,
+      "file": "json/base/meta/Power/Rogue_Barrage.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1b034b6a2d45772dc34b84acf0a739d4cb383e545d79681e3ba13ceff039595e"
+    },
+    {
+      "sno": 399111,
+      "file": "json/base/meta/Power/Rogue_BladeShift.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d5ef2b1246bf580a20ee37e7109867d8b79b8d506e99acce973dfb1dc101f0e7"
+    },
+    {
+      "sno": 389667,
+      "file": "json/base/meta/Power/Rogue_Caltrops.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "781a9ff711157d1a359c358349484f548018c19ec656685af049bdfcd1764d3d"
+    },
+    {
+      "sno": 359246,
+      "file": "json/base/meta/Power/Rogue_ColdImbue.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "248f6535fed2185d7d81cb5a5f2e53ed0d843f6c6ca82ce96c73b0b38da07ccb"
+    },
+    {
+      "sno": 1690398,
+      "file": "json/base/meta/Power/Rogue_DanceOfKnives.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d3a8baa8ffecd12a7e818e40f6ff1039d789c5fd16997804019c3e1a9b8fca33"
+    },
+    {
+      "sno": 786381,
+      "file": "json/base/meta/Power/Rogue_DarkShroud.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "646c21bb6b83bf06da9244008a85bf107ba305dbb5f42806803dc0817ad79d78"
+    },
+    {
+      "sno": 358761,
+      "file": "json/base/meta/Power/Rogue_Dash.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ab9a28b830aa67994430fbb890ebb3a019e8a33db254a9bdf450369c20918a57"
+    },
+    {
+      "sno": 421161,
+      "file": "json/base/meta/Power/Rogue_DeathTrap.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "532f5977b345d2d5897777717acd774c7dacc9f188cdf630536daa29df046adc"
+    },
+    {
+      "sno": 358339,
+      "file": "json/base/meta/Power/Rogue_Flurry.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "876b150898f90e9c5e47bd176587e6b18718562be7971137cfaa602d0881afd1"
+    },
+    {
+      "sno": 416272,
+      "file": "json/base/meta/Power/Rogue_ForcefulArrow.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3ae8bf5a03ed6522a2d190d2fcdc2b8a25ea4eb378d5486d2cc4f21343ab6663"
+    },
+    {
+      "sno": 363402,
+      "file": "json/base/meta/Power/Rogue_Heartseeker.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1399f618e4e15b2b18775cc1dd9a775fbea3e91e3f695e4474a3a633d2c39da4"
+    },
+    {
+      "sno": 416057,
+      "file": "json/base/meta/Power/Rogue_InvigoratingStrike.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "393ffaa95f813863ab82bec87656391b3faa2dd603cb0b935d570ccd1d766357"
+    },
+    {
+      "sno": 377137,
+      "file": "json/base/meta/Power/Rogue_PenetratingShot.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2705e7fe132f2c889bf3d88e81a9039f9b2faab00f45ab0cd1fab33eee4528b3"
+    },
+    {
+      "sno": 358508,
+      "file": "json/base/meta/Power/Rogue_PoisonImbue.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3d1ddd223ea0e096e42b5ed43435121c0d39e7c96b7c3a6b7a38e1c19db61b1e"
+    },
+    {
+      "sno": 416528,
+      "file": "json/base/meta/Power/Rogue_PoisonTrap.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0502e4939dbe91ffec736da0866edc195973bed2d20d379e4d5a568433b49b52"
+    },
+    {
+      "sno": 364877,
+      "file": "json/base/meta/Power/Rogue_Puncture.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "cf437858db2d7c907ccdb0fc561dcc18b4f60a406a851a6870802acb9308d42c"
+    },
+    {
+      "sno": 400232,
+      "file": "json/base/meta/Power/Rogue_RainofArrows.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8fa12d2eac70b4ab97f4b083e428cb4b287dc969d1525dc1c471f15cfdaf730f"
+    },
+    {
+      "sno": 355926,
+      "file": "json/base/meta/Power/Rogue_RapidFire.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4e5363f00fc0e331230ef0cc27aca1f7192782b8fb97893eaa375e990c418742"
+    },
+    {
+      "sno": 357628,
+      "file": "json/base/meta/Power/Rogue_ShadowClone.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "35dfacbbd1d23c8240b0f76854ffbaa99c35a5db87f09b4013457d81fcb11e28"
+    },
+    {
+      "sno": 380288,
+      "file": "json/base/meta/Power/Rogue_ShadowImbue.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a13e0eb89ed63544da592fc5c81d105d4f25285fc2fc2564efc7fd34539a6fe5"
+    },
+    {
+      "sno": 355606,
+      "file": "json/base/meta/Power/Rogue_ShadowStep.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "970464e73ff4e2beafc1f5b28f67c42e1c959f943a8c403fe30f89fffaf96a77"
+    },
+    {
+      "sno": 356162,
+      "file": "json/base/meta/Power/Rogue_SmokeBomb.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ff534e3c235d47c96149c76b29dc3004438f3fc2b60f1ea8c690adda9b49a4f4"
+    },
+    {
+      "sno": 794965,
+      "file": "json/base/meta/Power/Rogue_Stealth.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "571fd43af3f1f0e65b1b99b0a1f61b616a87f5ecfa62ca7ad1aabe9d6da371c0"
+    },
+    {
+      "sno": 398258,
+      "file": "json/base/meta/Power/Rogue_TwistingBlades.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "48ecbfb90fbf1b5cb1d96ab07ec057e2f9e96e635d466445e31c346736facb48"
+    },
+    {
+      "sno": 297902,
+      "file": "json/base/meta/Power/Sorcerer_ArcLash.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7de04760b8a23531f885a72fbd60574dae5d1c82ce815818c8153e010f18137e"
+    },
+    {
+      "sno": 514030,
+      "file": "json/base/meta/Power/Sorcerer_BallLightning.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c9e80de11c6cf8f6dcb1b96edeb1900e2357f8acb01bceddd9447c3bf7d9b636"
+    },
+    {
+      "sno": 291403,
+      "file": "json/base/meta/Power/Sorcerer_Blizzard.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "44ffc7bb80ef63f4c080c7753dad408e036a8ab70d5c3f3b7eb6955a1e13ac88"
+    },
+    {
+      "sno": 292757,
+      "file": "json/base/meta/Power/Sorcerer_ChainLightning.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "dcfd76ff64031204a3621d7f4c596b340dd8f78d10583c5db096afc6fccea3f3"
+    },
+    {
+      "sno": 171937,
+      "file": "json/base/meta/Power/Sorcerer_ChargedBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9cb7bdd4b3415b419591f29831123dfd44db4f3589a0b18a80f5fa8cf0b50cd8"
+    },
+    {
+      "sno": 291827,
+      "file": "json/base/meta/Power/Sorcerer_DeepFreeze.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bd306b157a335dc17693210b45bd35f244b9c0195ad9b3f36461b3dc820cd47d"
     },
     {
       "sno": 165023,
@@ -75,16 +867,478 @@
       "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8"
     },
     {
+      "sno": 111422,
+      "file": "json/base/meta/Power/Sorcerer_Firewall.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "618b7289ac9c28c0b5ad1e6bc1fc492e7c6d09f78e845483becf056f6e2bc5ce"
+    },
+    {
       "sno": 167341,
       "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
       "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
       "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d"
     },
     {
+      "sno": 287256,
+      "file": "json/base/meta/Power/Sorcerer_FrostBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "103b9c6298f65cc97240d3d7dbef5fc37b674961657afa8b9ebb8d2bf2098c5c"
+    },
+    {
+      "sno": 291215,
+      "file": "json/base/meta/Power/Sorcerer_FrostNova.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "507f50469b98a7d19fc61009776a20b47f348615afb09bc2cda8ddc438a26f5b"
+    },
+    {
+      "sno": 291347,
+      "file": "json/base/meta/Power/Sorcerer_FrozenOrb.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4ac011559991442fbcc9910b9edace963e996f35ebac43cb4e45c5d7fc0846ef"
+    },
+    {
+      "sno": 146743,
+      "file": "json/base/meta/Power/Sorcerer_Hydra.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8e04bb79508e21cffb7686a6f0bacbfeb3dea347e81559a248d16423c8bdd900"
+    },
+    {
+      "sno": 297039,
+      "file": "json/base/meta/Power/Sorcerer_IceArmor.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "fe970c147ad16d8fbcf7ef59016c1539492686e46d3d016f6c441531b2b0eb56"
+    },
+    {
+      "sno": 291492,
+      "file": "json/base/meta/Power/Sorcerer_IceBlades.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "abf247dd960d7c8bc007ea1541f109cd06dfb25ab1fa09e0bd1300db8f12ca69"
+    },
+    {
+      "sno": 293195,
+      "file": "json/base/meta/Power/Sorcerer_IceShards.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "778cc7de45e3d655543be50a014efb54cf2a9720511ec97a0eff3a7d9703e944"
+    },
+    {
+      "sno": 292737,
+      "file": "json/base/meta/Power/Sorcerer_Incinerate.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5e3b81dc822369d385057049fbd7eb6cd18c9ffd0ea7e77c1d8e01bb6b163c47"
+    },
+    {
+      "sno": 294198,
+      "file": "json/base/meta/Power/Sorcerer_Inferno.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0541920b93bd7f26d468d8c521049cf61a4b86fbc15d241e7ef0bc2a5ea94dad"
+    },
+    {
+      "sno": 292074,
+      "file": "json/base/meta/Power/Sorcerer_LightningSpear.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d6d38fadd0fe540d6d452ce7bb600e8532ecf5938689a251e2afc0f5bd1afc76"
+    },
+    {
+      "sno": 296998,
+      "file": "json/base/meta/Power/Sorcerer_Meteor.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ee25012d848665eefd5d1f558618314fe2e320fc1759f1ca96fc77d6ed839df1"
+    },
+    {
+      "sno": 143483,
+      "file": "json/base/meta/Power/Sorcerer_Spark.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7747f7370ae0b63f45a62dc11fab3c51f5cd281a38703abac55a23f99ae117d5"
+    },
+    {
+      "sno": 288106,
+      "file": "json/base/meta/Power/Sorcerer_Teleport.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c34e469315a61742d941635dfbd0274c2719cc7a30558d59db6ea84443f39ff4"
+    },
+    {
+      "sno": 517417,
+      "file": "json/base/meta/Power/Sorcerer_UnstableCurrents.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "196c95c2a9125a3433c1e04ef0704233eaedd135d0b8058aeaceb6aaef2333ed"
+    },
+    {
+      "sno": 1834471,
+      "file": "json/base/meta/Power/Spiritborn_Centipede_Basic.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "aa24317dd6ce72dcff971433768ba5d3bc28b181bdbc47523b72f50cb96ec1c2"
+    },
+    {
+      "sno": 1836008,
+      "file": "json/base/meta/Power/Spiritborn_Centipede_Core.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3468d565970a50d6c2fe1a9b98613e5751e6682393795c49f1be65260f554e36"
+    },
+    {
+      "sno": 1871801,
+      "file": "json/base/meta/Power/Spiritborn_Centipede_Defensive.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bb2e644660c60a72ec1ab7639d2a8d8034ff420e9652402378fec7e7f62ffed4"
+    },
+    {
+      "sno": 1871813,
+      "file": "json/base/meta/Power/Spiritborn_Centipede_Focus.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "14924efeb277687cc32644ca361e4faa20f2b0c1c18742156680dd31fb3aeffb"
+    },
+    {
+      "sno": 1871809,
+      "file": "json/base/meta/Power/Spiritborn_Centipede_Potency.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3da59c9c59aad6f82c75f015feceb4ce002f423766ebed9d6a53df1572654444"
+    },
+    {
+      "sno": 1663210,
+      "file": "json/base/meta/Power/Spiritborn_Centipede_Ultimate.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "083cbde5912671847620034c217c6d0e3420bb2b4810da5542ca55fae4884eb0"
+    },
+    {
+      "sno": 1834476,
+      "file": "json/base/meta/Power/Spiritborn_Eagle_Basic.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "33f727e5b30c151925c8307b6cfcbd5953f79d0aa2e0913f3ed2e3d56a1995ca"
+    },
+    {
+      "sno": 1519048,
+      "file": "json/base/meta/Power/Spiritborn_Eagle_Core.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b6d2f941d6d9a5fe1b1395beb867ae9e58c6c9452f53ef77a522134c5fdbe636"
+    },
+    {
+      "sno": 1489641,
+      "file": "json/base/meta/Power/Spiritborn_Eagle_Focus.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a250b07c862cb0764267c21128fd18a373d69bd3d167f9987ca0cf66d91bcf38"
+    },
+    {
+      "sno": 1871821,
+      "file": "json/base/meta/Power/Spiritborn_Eagle_Focus2.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6ae2f4a9bfd113fa50287e1cf54fe206856c7c2613fb3c458c157c4640e670cf"
+    },
+    {
+      "sno": 1871807,
+      "file": "json/base/meta/Power/Spiritborn_Eagle_Potency1.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7c53169dafc518f14744088952399f5c66b1acb4ae2aadde0ae6cf9953426f87"
+    },
+    {
+      "sno": 1663204,
+      "file": "json/base/meta/Power/Spiritborn_Eagle_Ultimate.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d88a36236036f1e87a23cbf26ecc7f41b93414e6055f1a4e1446557c3c517c5c"
+    },
+    {
+      "sno": 1817045,
+      "file": "json/base/meta/Power/Spiritborn_Gorilla_Basic.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "30b32bdd09f460db1233741340de735af6ff97a94d8af8a80995976821370b96"
+    },
+    {
+      "sno": 1519050,
+      "file": "json/base/meta/Power/Spiritborn_Gorilla_Core.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8cabcfe08a4ece32cb00267517e71096e1181be329006a087e3c18c0064c37f2"
+    },
+    {
+      "sno": 1871764,
+      "file": "json/base/meta/Power/Spiritborn_Gorilla_Defensive1.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "06ef87aee2ffd28237bf2ef5ff1dea344c4e35e07d1907f21383ff758ca9a88e"
+    },
+    {
+      "sno": 1871825,
+      "file": "json/base/meta/Power/Spiritborn_Gorilla_Defensive2.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4e58a027273f63c3f60ca2f4023acad7cd9c0900a64426aa8f7efec90bda3117"
+    },
+    {
+      "sno": 1871823,
+      "file": "json/base/meta/Power/Spiritborn_Gorilla_Potency.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5dd1316d4becf7decd27c2fa9af2184073e4a7216389b6795e53fbb922c4dbeb"
+    },
+    {
+      "sno": 1663208,
+      "file": "json/base/meta/Power/Spiritborn_Gorilla_Ultimate.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "82fd41d60fb9ee65045740f02696d4ad4a82b1207aadd76f2396acd16528c950"
+    },
+    {
+      "sno": 1834473,
+      "file": "json/base/meta/Power/Spiritborn_Jaguar_Basic.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e03dc42b0cf1841332791c504bc001fca47f801bd75ac80b6474428e8da2f62d"
+    },
+    {
+      "sno": 1640931,
+      "file": "json/base/meta/Power/Spiritborn_Jaguar_Core.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ed7211da8f27f70b034b5e42381d67acaa882e0e66d6a7a5599442fd6073ef3a"
+    },
+    {
+      "sno": 1871819,
+      "file": "json/base/meta/Power/Spiritborn_Jaguar_Defensive.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0bb57b40fbcef5874a0a9b283f4f15168c30a1f24e1af2b0d68df2bbc5295ebe"
+    },
+    {
+      "sno": 1862773,
+      "file": "json/base/meta/Power/Spiritborn_Jaguar_Focus.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "646b8fc19e738a65cbdd572be64cde3bb784a823241b13a942eb927357549cb1"
+    },
+    {
+      "sno": 1871761,
+      "file": "json/base/meta/Power/Spiritborn_Jaguar_Potency.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "03314cd84d3ce08710a9e314d8708cff023f079071036854b309fa82dc4dcbd2"
+    },
+    {
+      "sno": 1663206,
+      "file": "json/base/meta/Power/Spiritborn_Jaguar_Ultimate.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1727b4e71cb592b966e677a722e12552a5cc2b06877ca0c7fdf9b50642926d41"
+    },
+    {
+      "sno": 2215096,
+      "file": "json/base/meta/Power/Warlock_ArchDemon.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "60137ff7f64b4d4a1d523f9b9cb94237a7a31c84d22fb1c15c54bd926bcfef56"
+    },
+    {
+      "sno": 2215258,
+      "file": "json/base/meta/Power/Warlock_BrimstoneOrb.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c45ccd41a3a252c677dce8db5845e247da574783ced1f80ea5a11d73e929ba99"
+    },
+    {
+      "sno": 2213860,
+      "file": "json/base/meta/Power/Warlock_BurningSkull.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ae531aaa7f0db46b1a1f2f2ae5eb7a304de56a7d14201bb292704471c836e62c"
+    },
+    {
+      "sno": 2218200,
+      "file": "json/base/meta/Power/Warlock_ChainLash.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "203d5f2ec9a8fd1783806a900f66c6e574ca034e412bda3f4bb1e401e898a7a8"
+    },
+    {
+      "sno": 2418214,
+      "file": "json/base/meta/Power/Warlock_ChainTotem.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0b54157adfbb9cc9a8ebed68f28d6a39451d75fc240e2fd0c538c06ce20ba96f"
+    },
+    {
+      "sno": 2456540,
+      "file": "json/base/meta/Power/Warlock_Command_Legion_Demon.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1c720c33de341fabe75a9b8e174f3c6d3afcc206bb8d1271abe86b4c19f04c5e"
+    },
+    {
+      "sno": 2471034,
+      "file": "json/base/meta/Power/Warlock_Command_Mastermind_Demon.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7fb3ee34a1d1e284ed945e0efddfb99c5f5df1b716dd49bdec986db932d39b6d"
+    },
+    {
+      "sno": 2469892,
+      "file": "json/base/meta/Power/Warlock_Command_Ritualist_Demon.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "43026ba6dd60c6516c56078e8ab3c65c5471b431a4a38e2a549c450b5dc04000"
+    },
+    {
+      "sno": 2424438,
+      "file": "json/base/meta/Power/Warlock_Command_Vanguard_Demon.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "039727addeab319c31b7b4681747c93bb835fa654aac950d7803d9c5cce69c8b"
+    },
+    {
+      "sno": 2228435,
+      "file": "json/base/meta/Power/Warlock_Demon_Wall.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6d8ae6c95faa9772c46a730a696e9cfa54b3cb96c482d5c236537e144b646b81"
+    },
+    {
+      "sno": 2245730,
+      "file": "json/base/meta/Power/Warlock_DemonDefender.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2b00a862d88f1c7ad99b4b7df18adc224c004718e276e0ef5b7c4f4e46b9c64d"
+    },
+    {
+      "sno": 2214419,
+      "file": "json/base/meta/Power/Warlock_Demonic_Breath.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3276377e250c8c3632fa2c45d524d14eefc36ab14a7c8d1f147eee0fc38e3010"
+    },
+    {
+      "sno": 2289261,
+      "file": "json/base/meta/Power/Warlock_Demonic_Drain.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ad67b9c077873b9f45394b0f930b816ed8b67445789ee88dd39db83d990cb8ed"
+    },
+    {
+      "sno": 2245719,
+      "file": "json/base/meta/Power/Warlock_DemonicBombard.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "432ac4a48f86f7b6ed132def317be2f55ef0a7f737790b9ef67af6b488c71483"
+    },
+    {
+      "sno": 2301447,
+      "file": "json/base/meta/Power/Warlock_DemonicGrasp.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "178c56dcca235cd4ed69872a5e86604a75e36a0b94ddc252ceb423f2eb16b904"
+    },
+    {
+      "sno": 2221282,
+      "file": "json/base/meta/Power/Warlock_DemonicSlash.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "edef876b5567a20ddcf0594b34e2d31130ce7988481c34edb2efa275a691f8bf"
+    },
+    {
+      "sno": 2221260,
+      "file": "json/base/meta/Power/Warlock_Doombringer.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "728547467379bf1c237254c908e0628fe3c31131545ea848bf2e27d4fdbf74a0"
+    },
+    {
+      "sno": 2164252,
+      "file": "json/base/meta/Power/Warlock_Fissure.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ee941edf7395a313ae35f19bc00e9464f3a7d4e3bab14189fcb625c29bb09dc5"
+    },
+    {
+      "sno": 2216334,
+      "file": "json/base/meta/Power/Warlock_HellStorm.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "34eb25197155ba7ba02a78347b167275187b2235d8079fde67e48fa695b8f1a3"
+    },
+    {
+      "sno": 2218204,
+      "file": "json/base/meta/Power/Warlock_HexCast.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8438f6d8f79ce12478f3f41015c2ad10ac78de27c4be6a226510796c0c14a493"
+    },
+    {
+      "sno": 2385787,
+      "file": "json/base/meta/Power/Warlock_ShadowShred.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "235bde8a5d69905745073cfcc9fc9736a90cd29d761b159179e6eb6f96b4c08d"
+    },
+    {
+      "sno": 2218213,
+      "file": "json/base/meta/Power/Warlock_SigilOfFlames.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d3ca1ead91af2519c818e1f9f5105cb2ac874d26771924f24d8dde71c1f63c3c"
+    },
+    {
+      "sno": 2218209,
+      "file": "json/base/meta/Power/Warlock_SigilOfShadows.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "06885db80d65e6c59abd815f1cf2ac04ff6d331204e3b459be2cdeee7cded58d"
+    },
+    {
+      "sno": 2221240,
+      "file": "json/base/meta/Power/Warlock_SigilOfSummons.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2a0f88851cc2fb8b990b45bcd8115d61d6dcfddd56a6b6c72ab214641d35198f"
+    },
+    {
+      "sno": 2212801,
+      "file": "json/base/meta/Power/Warlock_Summon_Lunatic.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6f537aa490335e2cc53dc3be3219937d65100382e9ab3d82435eb454a36e75f8"
+    },
+    {
+      "sno": 2420679,
+      "file": "json/base/meta/Power/Warlock_TailWhip.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "72dea5e49b65512625bf8d980226c7e03bbc0c37dad2f429f3bd68015e21ab9d"
+    },
+    {
+      "sno": 2244457,
+      "file": "json/base/meta/Power/Warlock_UltimateDemon.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "96343ff1053ad09c87dcefe4c3bd76f3594a56f9a1d20a09d3176c0c565c092e"
+    },
+    {
+      "sno": 2218211,
+      "file": "json/base/meta/Power/Warlock_WraithStep.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "fb979dd3e9cd59d3e3d66ebdb6ed80307c447a4de99ab314617c599165fe45c1"
+    },
+    {
+      "sno": 1611316,
+      "file": "json/base/meta/Power/X1_Barbarian_WeaponThrow.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8e4ebbae207a4e79fa0522822a98e45ee8102d74b53f2ba7d7b2e7deb4d43e13"
+    },
+    {
+      "sno": 1644584,
+      "file": "json/base/meta/Power/X1_Necromancer_Ultimate4.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "678e617980ede817a490d5d88e818182f6296bec86826429c3e147c4b047f633"
+    },
+    {
+      "sno": 1627075,
+      "file": "json/base/meta/Power/X1_Sorcerer_Familiar.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "19d8a8cbeb6de631467d034f2ccf46557661331925b5198f89a621c00cda5d96"
+    },
+    {
+      "sno": 169806,
+      "file": "json/base/meta/SkillKit/Barbarian.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5098d3010e581556d5711568bc2e60a262b97b894dfd4b509bff343ad299aa6a"
+    },
+    {
+      "sno": 164706,
+      "file": "json/base/meta/SkillKit/Druid.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6f377dc532ecf46886d55e918734f6044b7dfc9a9e3eca3d42a9092eb93a391f"
+    },
+    {
+      "sno": 199280,
+      "file": "json/base/meta/SkillKit/Necromancer.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "52ef1b904659dff4acdce64ac5d169e2cd22e34dd966115125ff6b69c778dfc4"
+    },
+    {
+      "sno": 2336990,
+      "file": "json/base/meta/SkillKit/Paladin_NEW.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c3482c3e8bfb451149243af970c202f1d969ba56a7b1fc7d927e75fb6555e757"
+    },
+    {
+      "sno": 199278,
+      "file": "json/base/meta/SkillKit/Rogue.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "295050efb29d4588e1ab8393f8528f856d1e3eb6c990322b224bda44545c258e"
+    },
+    {
       "sno": 72984,
       "file": "json/base/meta/SkillKit/Sorcerer.skl.json",
       "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
       "sha256": "78c63c43b8a9abc95cddf8099f562459786191c2cb6984e162fe959d87cdf4af"
+    },
+    {
+      "sno": 1663193,
+      "file": "json/base/meta/SkillKit/Spiritborn.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "090b4d83cb95324446a29fa6ee61d12f5da978f88af4eb7ff09c2aaff59d76ac"
+    },
+    {
+      "sno": 2208849,
+      "file": "json/base/meta/SkillKit/Warlock.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ec80d12a44536fe08ba66128133dcb45ee8f6396f5e7ffb97976948e7cee5bc2"
     },
     {
       "sno": 1105974,
@@ -105,6 +1359,756 @@
       "sha256": "f85facc91b5cac1afba0979b6520d6ea9ac4c646d6ddc613d8d4c08baa4cc6fc"
     },
     {
+      "sno": 1119053,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Bash.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3467876d742ebe345b8db6758940f0f29db04c5fe35d347dbbf17f35020c9db2"
+    },
+    {
+      "sno": 1116923,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_CalloftheAncients.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2bd7a444f7af81de68d08b2132f7985f37a9837b64dfe7fa81670c819687c71f"
+    },
+    {
+      "sno": 1117199,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_ChallengingShout.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4fcb3c215e4eb1fb253e8520f7af2c53330af92b470141344afd612867ee9aa7"
+    },
+    {
+      "sno": 1117892,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Charge.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2026ad2e805483ea16a8f8b782fddc360e58e6031c06f8e6183fd476f258f420"
+    },
+    {
+      "sno": 1116617,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_DeathBlow.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d824b8d60e1ae300c3aeb7470a170d948f85f8cb92bcb74ea21dbe5bfa148716"
+    },
+    {
+      "sno": 1114952,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_DoubleSwing.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "647803ce51af98f3e546ceb4f1ec5dfcf5f369aae92554e1eb2767b8d5ed92e8"
+    },
+    {
+      "sno": 1115030,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Frenzy.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "51dbf2f89cd5b0e568f806a4c231ecdc1c5093bd69f7f549a8d29ce6b01848f3"
+    },
+    {
+      "sno": 1119280,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_GroundStomp.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "21bc3eef18210ecc7169c3d09ff9404721a2379374b129657b4350d58f887012"
+    },
+    {
+      "sno": 1116778,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_HammeroftheAncients.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "22304e1c8498e22f2051d75ce801d22c5b89b2b7eceef4637298482828d54032"
+    },
+    {
+      "sno": 1120169,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_IronMaelstrom.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c4188ed6952106a3ac6a306e15ef4c8eff6a44d0d9688ec965c876c3026d7d21"
+    },
+    {
+      "sno": 1115337,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_IronSkin.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8ec8f11d7ecb31ecdfaf689624a72f95a652c39b38440f96d970745dd483cebf"
+    },
+    {
+      "sno": 1120097,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Kick.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "18e8dce9b88194af53d10d40d75cac24dfdba63c7f59b1426692473b01735977"
+    },
+    {
+      "sno": 1118192,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Leap.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5896a2782f7f20fcb5a81ac57134da18236f9429a825d30e8692ed5d8e834728"
+    },
+    {
+      "sno": 1115629,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_LungingStrike.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "056dc6c9b136f8e152127d7625238e280b35c4323a014b0c2dc0f765cd57a457"
+    },
+    {
+      "sno": 1118867,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Maim.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7164be720c39a7c6adac42e1357e44e4a8ceeeb4e9055ff46976c79e4a792dd3"
+    },
+    {
+      "sno": 1117298,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_RallyingCry.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "227442d246674f9773ea32d736adaf806274980b7c794028fa55cbae902ad78c"
+    },
+    {
+      "sno": 1119154,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Rend.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2752142c4a9ab2abcdf9ea07b63a219e8ab4a6c87b184ce500e714f32f2644e3"
+    },
+    {
+      "sno": 1114918,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Rupture.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f7094ae4b44d2dc189de14de59cdd4f33329daa672394ba9c091a809c17f1e2b"
+    },
+    {
+      "sno": 1117513,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_SteelGrasp.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ddd8b9c640a055ad5a8f75ddfef355eb5dc19d2ef9b3f3790d3c6cb5d2b56af7"
+    },
+    {
+      "sno": 1117368,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Upheaval.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "cffb8adfcb363c0b8a473f58ecbf45228573efff03ff3d9e464b294ca20e484f"
+    },
+    {
+      "sno": 1115841,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_WarCry.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e04b7dd28e0f853de326385e99e32a3d34cb234e57cce4a20051249b7475a0b3"
+    },
+    {
+      "sno": 1115470,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_Whirlwind.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6585a0c949fb97f8fd2404f80a554820d3b99e3f9fa70a8abaf7d2f7e4d06578"
+    },
+    {
+      "sno": 1116905,
+      "file": "json/enUS_Text/meta/StringList/Power_Barbarian_WrathoftheBerserker.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e1f24d4a88f42a2c0fc054803957088d03e2d4815771b45fb2404bd5cfae1f82"
+    },
+    {
+      "sno": 1115288,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_BloodHowl.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "966257cafd08f618ebc44bd2467e24d95ef559da8df9396a1648424cadddb33d"
+    },
+    {
+      "sno": 1117489,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Boulder.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "49d290847cf68402ac8144029443636057b6081677adc8e843d3df64678fdccf"
+    },
+    {
+      "sno": 1118015,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Cataclysm.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "732a19c7b232b769b1261778afdeb8ff049d24cb5820cdd733d19ef0720ce4e9"
+    },
+    {
+      "sno": 1117923,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Claw.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "dc4935abd0068362b53110ed1eed1b49ba7ece7989c7911fdf4e6e82356f2cc8"
+    },
+    {
+      "sno": 1115883,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_CycloneArmor.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "fc261d9a92ff6832aa8dc8546f73964a8073ab0e99e97951b4e8af731e544e5c"
+    },
+    {
+      "sno": 1116586,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_DebilitatingRoar.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c5ff58e5d078d5c3dcb3c83cb10194373de7cbf802439ae34876d7e52174b360"
+    },
+    {
+      "sno": 1116054,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_EarthenBulwark.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c52bb559d65bcacd37a784f9d1a5b5115e38a548e0698cdf2e78813ce3c9aedb"
+    },
+    {
+      "sno": 1116604,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Earthspike_Instant.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "63239211517ab794a5f3f7ba3cb81a324289d3d24e7b0a89f2811f26ce017e1b"
+    },
+    {
+      "sno": 1119061,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_GrizzlyRage.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9830f3e5a4ce7a796f35dc520a52ec879b3040e9e25e2d307fcb03a7c675a4c9"
+    },
+    {
+      "sno": 1115732,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Hurricane.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8c0d751e6fe73dc5f3457828f3abb4d32a51ad11e5d4ec99a39ec1e14005c661"
+    },
+    {
+      "sno": 1115056,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Lacerate.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e521a48cc1ff7f0cff4013bf4cd008e54f8d176fc77d06d4924caede8e4dd583"
+    },
+    {
+      "sno": 1115292,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Landslide.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b797b9b7f300338b02ddde54c9057cb08996b96d80149b7ce6f0ea56c5b6385b"
+    },
+    {
+      "sno": 1115937,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_LightningStorm.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ff9fb907a30f38e6ebeba79984406d7eada164f005e8e950b334a6359f4669f5"
+    },
+    {
+      "sno": 1115514,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Maul.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3fe9b667fbc9d4d855555fb3aad3cde354a6990e1d40814b81da0ed1ac81c045"
+    },
+    {
+      "sno": 1115754,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Petrify.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6bdbb8e1186e307fc5f8e96f87336566607addaf3218b4c4a42fd53cb66cfe17"
+    },
+    {
+      "sno": 1116961,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Pulverize.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2966850cec08e09cd67110a58fb5f2bffc274a0150b885d907c301f590c7efff"
+    },
+    {
+      "sno": 1120153,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Rabies.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ea2441edb7de30d5205c2bdba9f6c0bff6e99c05b7b2eaa027d5d2c47d4687dd"
+    },
+    {
+      "sno": 1117943,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Ravens.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ac8c72d88601cf691aca71432811da54555fd54fb8fd58efa7e6a97288416949"
+    },
+    {
+      "sno": 1256957,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Shred_NEW.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0f14bc38beb87fdc3b01b12a8dd397f2ab482ee858289a69b49edbf36898f2a0"
+    },
+    {
+      "sno": 1473879,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_StoneBurst.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "acd986ea806fb4a7a97675ade2a70b0ee6f9d04a6223d34964bd7ac6058a3ba9"
+    },
+    {
+      "sno": 1116038,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_StormStrike.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1ca669201add45627b7ba13adf9d6d7598b1695bb040988c3b0ced731efcd1f4"
+    },
+    {
+      "sno": 1118262,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Tornado.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "33f7f3d4c9017bb1c21c24a5c467bd9beea9ba88e8ca8a50f741799854e80066"
+    },
+    {
+      "sno": 1119680,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_Trample.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3c3da7bb6c399c36c3c98e90e6ad0ccf89c21b46ad72b731578a35f92be12918"
+    },
+    {
+      "sno": 1116941,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_VineCreeper.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e67cf94d741fadec4e7f9ff61318166195037d807e28d9f90d83934d23998e9b"
+    },
+    {
+      "sno": 1116082,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_WindShear.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "33d469b33129693e5648089b1948c2ffcd52ad310c405f1aba848eb183ce0129"
+    },
+    {
+      "sno": 1119339,
+      "file": "json/enUS_Text/meta/StringList/Power_Druid_WolfPack.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "729fef4bc0a885bfacb8d1a3490e5742cfd287f16c09fb5fedebfe5150ef9918"
+    },
+    {
+      "sno": 1118959,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_ArmyoftheDead.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d0b036859068da8f641f82aad6e5f1bfa0baa3c9f6ac9948c85417b692b9d5bf"
+    },
+    {
+      "sno": 1117570,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_Blight.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9d8933023c44e561bcdc2f52a9dd285cacbb079df512ada925a66e4d065e5deb"
+    },
+    {
+      "sno": 1120046,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BloodLance.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f6973bc859b7256e5cac777f21e729258603b7977a4dede7902c6f8d4396563b"
+    },
+    {
+      "sno": 1116079,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BloodMist.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "fb89d6195e3bb45669f0d6563d403722f99c77c79f54397f6c29c8b4eaf91c44"
+    },
+    {
+      "sno": 1116178,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BloodSurge.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f1176a301809fac6dd78a14ef77a0de582a493b045e876c60d64fc44fff014b6"
+    },
+    {
+      "sno": 1115346,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BloodWave.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9c71b7d7fd96a6373d4a333127fd43710157fbd1a72034d023a596ee8411fb61"
+    },
+    {
+      "sno": 1116110,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BonePrison.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1ff073b203e985876394e851b132d63139a8cd0cb8cfe4d6522a5c13c804cb94"
+    },
+    {
+      "sno": 1116028,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BoneSpear.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f269fdf117eda0d664de748e2b2aa126187230112f674f7405e4faa06d1654c8"
+    },
+    {
+      "sno": 1117504,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BoneSpirit.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9d9162ebc45c1e5278c001858ce8fee206de31490044bcfc7894db467f54f8c9"
+    },
+    {
+      "sno": 1118401,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BoneSplinters.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a3119c095c837313742fc455f590f79172102efcd6dd7ddf7a7a29d9e6045abd"
+    },
+    {
+      "sno": 1119179,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_BoneStorm.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e921d46e6cd78a46d128961cb251d3d347aa6709f35c903f36f32620a0ff8000"
+    },
+    {
+      "sno": 1116113,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_CorpseExplosion.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "beaf46eca56e1ccd959586a6446c109b04157879e599159a9179077acc5efe03"
+    },
+    {
+      "sno": 1118797,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_CorpseTendrils.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8057da4bc5303bde8070d6338e2c19cf4d47eb0784c4c25e58a1845ccd42f32e"
+    },
+    {
+      "sno": 1118035,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_Decompose.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7198e2482b8c7b2266339708541233b6f3d1697f69fc1e9cb48660da6f722998"
+    },
+    {
+      "sno": 1117774,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_Decrepify.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "832825b6036e28babae43e548ca76a458d77003166d1c1622fcd8a01a97dfd9a"
+    },
+    {
+      "sno": 1115193,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_Golem.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e2fa9662e5bc1bcb7e2ba95228c4a89ccbcf47e2d6f2cd4b99fc82c5c93bae98"
+    },
+    {
+      "sno": 1116230,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_Hemorrhage.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "260fedd6e267ad7dc36370c1507726655da30d9edcd46aaf99e699ad580e111d"
+    },
+    {
+      "sno": 1117794,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_IronMaiden.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "be75c7c8107c76a49915951953a981a2371026e030ba40318799377375a52eee"
+    },
+    {
+      "sno": 1116096,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_Reap.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "502c7c209ba8df5a00267037daaab1a00b23f82dcee2edb40eed1bae15018706"
+    },
+    {
+      "sno": 1118354,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_Sever.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "cf658cd1f7246df682148e69e278602003a6cfca2bed1be2eae4662b61c4e5d7"
+    },
+    {
+      "sno": 1119748,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_SkeletonMage.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0044fdbd23c9ebe48179a82808a5c8adf80efd0bec708f633cd46d74ea08bea3"
+    },
+    {
+      "sno": 1118944,
+      "file": "json/enUS_Text/meta/StringList/Power_Necromancer_SkeletonWarrior.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "986289cde63d1be6bee6c70195a2462732f83f5b075bd40736e90a40bdf8fa4c"
+    },
+    {
+      "sno": 2329866,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Advance_lunge.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "27489ae534df551298bb2ae2d233fa7dffe7aaf36f7885abf938d6e3d54b662d"
+    },
+    {
+      "sno": 2107556,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_BlessedHammer.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e13b3c1bfa1f6e0efad35881101c0e46dd3b2215bcedc3c6553b884c6dfde277"
+    },
+    {
+      "sno": 2082022,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_BlessedShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e863df5715f68b1fd34a387dd44f93dbb62dbe7eacfde4dd3b2070ab7fea40cf"
+    },
+    {
+      "sno": 2265694,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Brandish.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bfa256e2599ce62d1b05c081cbd55751122ade7ca77bfe372721c452a3cce94d"
+    },
+    {
+      "sno": 2226111,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Condemn.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d479119aec5e00d5c08265ad5ce97b7e469c6cb086bbab89438f8b2a647596d6"
+    },
+    {
+      "sno": 2283782,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Consecration.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d1438888d1fb02f7323dd5455d5d4edbfe95ca56a7ffc771fd932cf1375672b6"
+    },
+    {
+      "sno": 2187579,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Defensive_Aura.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d8ee3074a8ebeadb1e32bc922e4707c0f02a829f9247726462eaf92b7976b10c"
+    },
+    {
+      "sno": 2297126,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Disciple_of_Justice.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1de211023687b05207a33f8b5a3613515af20928f59818bbf33bb4c108b09046"
+    },
+    {
+      "sno": 2301079,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Fortress.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "82795bfcaf39820badd09f6782f96c9d3e06a799e7598fe2c546d4b71f0e09d4"
+    },
+    {
+      "sno": 2273082,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_HeavensFury.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "79cf8a1c3119d4208789c4cb0359aeae9e6f5d16c67d710b8b6efb531838a4e9"
+    },
+    {
+      "sno": 2297098,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_HolyShock_Aura.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2e63ce6fd8be4699909a18462563e6c3e0f1768875bfbe644600d1516a1bf2f4"
+    },
+    {
+      "sno": 2120227,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Impale.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3c4fc1b6ce54580942aa6d6c055c6ffa25721becf8367bea76c17915e1d28d93"
+    },
+    {
+      "sno": 2106905,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_LanceDive_OLD.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b07d80fba7411fcafb605a34ba116cd4e15b22644008f92445fbcbcf6ce98b0f"
+    },
+    {
+      "sno": 2187740,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Offensive_Aura.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c0dfaf7ae48c6f234dc4e13d2eb7ae3dce268948cc4e6c1766e44fc7a5d797cc"
+    },
+    {
+      "sno": 2132823,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_PreTrailZeal.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "99d205f3d9eb6fb721d371da3f8c4f2ec7b8a4b9c980587b0482252a86a17434"
+    },
+    {
+      "sno": 2097466,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Punish.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b3be1932fdf96f1ee6ec9d952af5396642f9c100b9db19be92d6cbf237b01f81"
+    },
+    {
+      "sno": 2261381,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Purify.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6616ab7727e567a8864e1f1ed142fdad1c3df8c404d581852fb7249817ffa8de"
+    },
+    {
+      "sno": 2303678,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Sacrifice.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ebc07c8bf8618c36660c53499608dcff2347c1ce5d279961ea9a0c83581f7bbc"
+    },
+    {
+      "sno": 2087549,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_ShieldBash.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "79348c5606ad648fa017e692d22bdb50ec075e9a80280b7a4dd66a22e42afa3c"
+    },
+    {
+      "sno": 2466076,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_ShieldCharge_Channel_Short.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "965bbb42640f47ddc039209ac6f2fcb4dd4aa743cd302be39a2e26cbd713b155"
+    },
+    {
+      "sno": 2292205,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Smite_FalconPunch_Recast_1.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8de6aaf9e598ea17c41a911a5cb314a669f4f6a41e38915538694aaa93fc621d"
+    },
+    {
+      "sno": 2100456,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_SpearOfTheHeavens.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a313e5ef0e24e44b08eefb69eabf221a268dc7cc85c8e1723f70d08ff1a0a893"
+    },
+    {
+      "sno": 2174079,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_StormBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "016e673ebb4c590f7fcddb6180cfc4673cdf4e7cbca2a2230035f233ca142d5a"
+    },
+    {
+      "sno": 2302975,
+      "file": "json/enUS_Text/meta/StringList/Power_Paladin_Trinity.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "86ee4d28ff47ca19615a42db5d972fdfaa26eb5941892ee9a59c3e3d80764b3a"
+    },
+    {
+      "sno": 1118463,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_Barrage.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5c8c2a1d5c00ff429d17fd009dec908d2569b50f8f5935ede9fcbe4d2740f507"
+    },
+    {
+      "sno": 1120009,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_BladeShift.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4c94505a1f42a66c8e6a540576fbb5a4f649a40e5067b78ad7751c5f6b6c6898"
+    },
+    {
+      "sno": 1118930,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_Caltrops.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ce70e04f3b5dd676461c0cb7c3e9ec1b01779c9bb5ec7028ecf3216baf2e5085"
+    },
+    {
+      "sno": 1117398,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_ColdImbue.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6d4ace605bd45323a8a87cdb81355a91bdd96a66cbee28ca01d41209276dbfcf"
+    },
+    {
+      "sno": 1690397,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_DanceOfKnives.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "03eba9bd28e9e8db818a4bbd59b36741965082ada848691397b7c91d66d7e59d"
+    },
+    {
+      "sno": 1115525,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_DarkShroud.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "aeb1f56702bc090cd557e2ebb9b18b663bd0dd79551d303a947ffc973d5f5722"
+    },
+    {
+      "sno": 1116159,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_Dash.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a90bb15e6673e36879893aca4baab375a63e6526d963582aeece9825d66eff0b"
+    },
+    {
+      "sno": 1120150,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_DeathTrap.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a21b2c6245b0d4bee54a050976d97cfdb4fbb96ef1ad4d0ba7efd9d23ff9b198"
+    },
+    {
+      "sno": 1120106,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_Flurry.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0db204e40327f3a8ea3edcc5587ddfa8a9067c7eb4eab5c01a8ab40c63ed4854"
+    },
+    {
+      "sno": 1119987,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_ForcefulArrow.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "94bad28d0d8bcc58074929476ba990b1b628142b0049e4b0622c542d5a27a739"
+    },
+    {
+      "sno": 1114965,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_Heartseeker.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b485ec489605473a5c00d45dcfd407bea2be2578829a137dc5a42e68876887dd"
+    },
+    {
+      "sno": 1119522,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_InvigoratingStrike.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "82b90f0e57f7d2296bed788c8be107a4f8cb6d39d32cb10aa69b1f1d81058a32"
+    },
+    {
+      "sno": 1116149,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_PenetratingShot.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "df48f85dea0c827696f2d2e1a5cfc09e5924116b839780fcdb224cef97a8fa8f"
+    },
+    {
+      "sno": 1115367,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_PoisonImbue.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f5feb0db4cb69486ab687902c6d231c9140c4cc3acc77b2990a0f7af93d914f9"
+    },
+    {
+      "sno": 1115335,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_PoisonTrap.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a70d48d0ecc91ec15909f14fb254fbe03728dd0ead5fda99c1f766dd5ded31cb"
+    },
+    {
+      "sno": 1117990,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_Puncture.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4a190268d8e82d47558864498508d8aebc506669f1152e1c271139d9606dc849"
+    },
+    {
+      "sno": 1117019,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_RainofArrows.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a1af39eb083912d258b8bb65b9e1cff56525f841591c41c1cab2fed7c61822ad"
+    },
+    {
+      "sno": 1119140,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_RapidFire.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6c3f44f1807202b3668c42bec38d3104c0235c49b072666448ba4520d74e6183"
+    },
+    {
+      "sno": 1118414,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_ShadowClone.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f6e36c13df33976e4798f2f2c52fa2e6fad95c29713cdd4d6a36a8bf54b8c6d2"
+    },
+    {
+      "sno": 1119603,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_ShadowImbue.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e19ce9b50671a72f86b8ab09c39854fc84545029bb89dc923a769350a4bc1229"
+    },
+    {
+      "sno": 1117935,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_ShadowStep.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9faa85c0b871bf0427ce55239663f6a9b423b83fba9f15814e0277c789fad837"
+    },
+    {
+      "sno": 1120116,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_SmokeBomb.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7f586217190fa9edbda4c2e38aa84714740c5bfe40668c6ff2f04b04839bee66"
+    },
+    {
+      "sno": 1118076,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_Stealth.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "38f8ce2ed03652de3c8000a1f22b51a38155b987a5eca68cdd0eaa3f5d6f9032"
+    },
+    {
+      "sno": 1118057,
+      "file": "json/enUS_Text/meta/StringList/Power_Rogue_TwistingBlades.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "1b470c60e1fb399c58fbd566ea6d4b3cfa4004aa726c1bc6721db07fc217833e"
+    },
+    {
+      "sno": 1116370,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_ArcLash.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4da30c804ad63a3d51e7bec9ff612cd9f8c98d30c29964b5ef4d0ddea96092ef"
+    },
+    {
+      "sno": 1119078,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_BallLightning.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4492b9291ac22f7b4cda44b978edb97b55a08eda74788aebe36da952bd9e5294"
+    },
+    {
+      "sno": 1119601,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Blizzard.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c6b71c1a93c15eda91cbeb12ba246a5b7419c9883ccdbe78a11ced10f4348c5a"
+    },
+    {
+      "sno": 1117106,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_ChainLightning.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7778560bb67ceee0ef9f6add9e2bf7daeb6c847409608cccc478096a32795179"
+    },
+    {
+      "sno": 1119651,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_ChargedBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "04dc3f26ed2360bd6f6284b331c9f0dd6a0bd1176398011d0ddecfe1a23dd105"
+    },
+    {
+      "sno": 1115156,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_DeepFreeze.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3dff553d9e91d4f7ba8ee88b56c8083badc4beb3a14aa837e701f166e4d8bdc6"
+    },
+    {
       "sno": 1119300,
       "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
       "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
@@ -117,10 +2121,430 @@
       "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242"
     },
     {
+      "sno": 1117793,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Firewall.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "29b87ab4f7ad9550d2d42352196b5a59a18926f12028248e61cebb44b8aeb80c"
+    },
+    {
       "sno": 1119794,
       "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
       "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
       "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01"
+    },
+    {
+      "sno": 1116582,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FrostBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2980378016c31caad03be4e8adb431ab15337a8a84517e5006228f1a6fe2f4ef"
+    },
+    {
+      "sno": 1119272,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FrostNova.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5d471d0ccf7fc9cdd45d0f044335cb6c22a8e329e72fc75f5a6fbcc96d14565b"
+    },
+    {
+      "sno": 1119480,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FrozenOrb.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "53b947c9036cfae0436f9936dd684c6dda05843f4e0cdfb92404aacdeb66de4c"
+    },
+    {
+      "sno": 1116974,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Hydra.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d7ff21a815ce121a34d4517d461890a7f0e8a68ce544a2617b064f9de7fe7d91"
+    },
+    {
+      "sno": 1119984,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_IceArmor.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f556c7501c67fb2bd23a3b9d3df45462e5eef01ecea76841f35cb8c6416c128c"
+    },
+    {
+      "sno": 1119774,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_IceBlades.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7482745976cc688fcb11e9e436aac7dcaf4338bc4072b61b47787da7ad636569"
+    },
+    {
+      "sno": 1117932,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_IceShards.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "82991967f6cb0638bc96a440f799d69d2179ed8bc476798cedde52f7d35c36be"
+    },
+    {
+      "sno": 1117085,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Incinerate.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "91f04ac60a25a65c9e3e17932e5f0867462e85caee850b43b9d647e2068a23e6"
+    },
+    {
+      "sno": 1119844,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Inferno.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6a1dd95e382ccefa53edf7a85e40c4db7c2715935dc839348af38090d04372ca"
+    },
+    {
+      "sno": 1115710,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_LightningSpear.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ab4a320f30f0c122503416dde50aada66b45113cf26e1f9e2edadcc576686fcf"
+    },
+    {
+      "sno": 1119801,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Meteor.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4d14124d57c1d8b655b455e89a298f2758b96760bf0192803a476e681c656732"
+    },
+    {
+      "sno": 1115352,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Spark.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b18473f24f9c406facf544993d3419474ed859f018643bf9a7678dc332362698"
+    },
+    {
+      "sno": 1118422,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Teleport.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "200c4b0705b1b92597ba9ea4f2c8f1079b3c2b9c3528786bdd4a10367755ebd8"
+    },
+    {
+      "sno": 1117993,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_UnstableCurrents.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f3c14e5c1b4333267479e20538e3e369b9544cc9f6e60ac4e4d4c8cb131721db"
+    },
+    {
+      "sno": 1834470,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Basic.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3ed7c6ccef3a27512ecd72c57186e0127e9f1b9d94a40b1d4ef8b1aac9696903"
+    },
+    {
+      "sno": 1836007,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Core.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "cf9d77e07986e00ff713554f923e9bdaba59b5531286d14802d54718313af1af"
+    },
+    {
+      "sno": 1871800,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Defensive.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e8ebca0985833bde3c7f32093e3ae252ff7afc5001634924aea21df24725338a"
+    },
+    {
+      "sno": 1871812,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Focus.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5e22fa7405ba97e8b1a7e24cd61f0d1feee109a149fdabfd534cf1ebb363d600"
+    },
+    {
+      "sno": 1871808,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Potency.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8bdee339ec03dad138d4149d3380f52745fc431dd1c4189915ae7b5b80e716b6"
+    },
+    {
+      "sno": 1663209,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Ultimate.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "554da180147292563bc2ef59ebf60884510665e494d246cad71115065e3835a2"
+    },
+    {
+      "sno": 1834475,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Basic.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9799063ad25b3ed3e548063300fc8f380e899348d67421521952a47ee118a60e"
+    },
+    {
+      "sno": 1519047,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Core.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f5ed8e6a7d8b61d771ab818fc7162febe907a723dd0430e36393545dbf5f222f"
+    },
+    {
+      "sno": 1489640,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Focus.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4253821dd57195dca49e9fa399c4e7570373b3d9292d94aa5ac996e75226a63c"
+    },
+    {
+      "sno": 1871820,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Focus2.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "db1d0f10bb4ccbba7a0d06e49063adcea03adb76f2f39c4a5ccb01a528bb6b74"
+    },
+    {
+      "sno": 1871806,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Potency1.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2aa8b1bec0c474db604a74709c45200e6b79da77b44a514cccd6bde67fbea27a"
+    },
+    {
+      "sno": 1663203,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Ultimate.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a9a8f4ae095e492778fe1da7dea80f7d66b38c7b159e563a8eb810a77641340b"
+    },
+    {
+      "sno": 1817046,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Basic.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "791d97c04240547eef4d6ab920db40528ce9bca5e277e02bdd807a2530dda6cb"
+    },
+    {
+      "sno": 1519049,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Core.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "fd93c35482e788d00b33744bfb02ec3a580815783e88c3557fbefd91bfbb7b4f"
+    },
+    {
+      "sno": 1871763,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Defensive1.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "98486cf621f24047fd4d149eaa96bfe8e8ab841eeedafe03c028afbcc92ef854"
+    },
+    {
+      "sno": 1871824,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Defensive2.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "ba5e2d0237c41b3eb738221c6fb32410c8be06f01b6e3924a0e5a24303a98c69"
+    },
+    {
+      "sno": 1871822,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Potency.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "0953fc5a6dfb82bee76ddd78401a19c09280375043829acd6ef98f939ff40915"
+    },
+    {
+      "sno": 1663207,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Ultimate.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "c5d2c9eb972c97bf974efd9b3b7e7e2c8c064d788df6c644a8bc3f006ac93f16"
+    },
+    {
+      "sno": 1834472,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Basic.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "19c5390b5bfc017dd6f71744d52493cf2b2c853710ddebde71b59f3d5b62a1d2"
+    },
+    {
+      "sno": 1640930,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Core.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5439589e728970db3a897a52cec9004321ebea48d09c2bd1cebbd05d6e0af867"
+    },
+    {
+      "sno": 1871818,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Defensive.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "25feecbc51a9907775b63cd453dcc6ba953e6610e8bd96da16e83079f116dcbd"
+    },
+    {
+      "sno": 1862772,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Focus.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "8448d6adbbd53979d34d0ea23a50604c9a1109aa13be613a77501a0791b81c72"
+    },
+    {
+      "sno": 1871760,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Potency.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e4d9ce05d750fcb0ed9ddb51b66aadac486026c018556c4cbab768be514de648"
+    },
+    {
+      "sno": 1663205,
+      "file": "json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Ultimate.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4f2f50dc166e2743a33078378adaf8b38120f3414dd73d6dd4733ab646a0bb7f"
+    },
+    {
+      "sno": 2215095,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_ArchDemon.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f9cd06e3b9ed14d03a4e66bf6bf3e398bc93da80f5e947de8294e7ecc58bf84a"
+    },
+    {
+      "sno": 2215257,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_BrimstoneOrb.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "a2f1d8569c4c3d421cc16e337fa407a7f64b41367833adea02c9113600806ee5"
+    },
+    {
+      "sno": 2213859,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_BurningSkull.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "364d235f31ed36f4c62275b84b6f5ccca4eb5196cc0ab71e1c109d162001ada0"
+    },
+    {
+      "sno": 2218199,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_ChainLash.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "75989e9230ae5760120b9fb6bdf72e2aa262c2d128603cfc2fb4ebb499b535e7"
+    },
+    {
+      "sno": 2418213,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_ChainTotem.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "3312ead4e161ac514a73c7e0a75cbbec9528d74ceef84b8c6901beb79b39fe29"
+    },
+    {
+      "sno": 2456539,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Command_Legion_Demon.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "852636aeb076fbb615c0e4098f2bc204861a46d2de21cfee273d963100cbecae"
+    },
+    {
+      "sno": 2471033,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Command_Mastermind_Demon.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7e74bf188c372ea811822d77623140cb6e0da2a3fc74e837391cdd3cede508e5"
+    },
+    {
+      "sno": 2469891,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Command_Ritualist_Demon.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e0d7264e8213cfaa471e8f6dcd2d22d64d2cedbe4448f774089bbb02713461e8"
+    },
+    {
+      "sno": 2424439,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Command_Vanguard_Demon.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "b9ecc19bfa3fce19c694340e3b0652f7cf5a054428937192c817e6fbaa27c6e2"
+    },
+    {
+      "sno": 2228434,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Demon_Wall.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6c035c9e02863ef11888e80f0c1f898dcaef995844d041c60fa402db1d8ccffc"
+    },
+    {
+      "sno": 2245729,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_DemonDefender.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "82486297e3da9a67ba14afd2b859b83d36c17aeb51cdc456b4b78069272ebc41"
+    },
+    {
+      "sno": 2214418,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Demonic_Breath.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "99b47687e97e4d48971e5cf65c59f7ed7711e9c89171a12a070c4dd8f23f68c1"
+    },
+    {
+      "sno": 2289260,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Demonic_Drain.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "dbd02ba566b13a26e22cd8668d78062079da4db55ca344c152a597f0c1b286da"
+    },
+    {
+      "sno": 2245718,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_DemonicBombard.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d73523fd9883b525326758887949c0add1838394d500d5ab2d56883f16319ad0"
+    },
+    {
+      "sno": 2301446,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_DemonicGrasp.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "cb91b620441af4a669f8baf972694bf4ab1d4831319651892c25a4c7cda5409d"
+    },
+    {
+      "sno": 2221281,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_DemonicSlash.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "497b60546038531e85834cd8b60a25c081545d290ba8d01ed5da60becb444762"
+    },
+    {
+      "sno": 2221258,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Doombringer.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "2643874d10810c177b8c74a714d5e75f709358611594ad03bb9dfc02d8fbf37c"
+    },
+    {
+      "sno": 2164253,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Fissure.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "326a632820929b985ded47383611bbff8f1f697c68e90fba464f4bbb769e61bf"
+    },
+    {
+      "sno": 2216333,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_HellStorm.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "38d27e03b3dbe69faabb917b81a414c394fa29bdb9211513b4350d9710a32d51"
+    },
+    {
+      "sno": 2218203,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_HexCast.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4e4fc0a1d19bb2a70d6da9bfd3c085a8ad03381bdee7b904b30e0bc381a41876"
+    },
+    {
+      "sno": 2385786,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_ShadowShred.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e4b4c11383030a72a5be8592b305ae42e3597db65e62b1765aaf24d053414937"
+    },
+    {
+      "sno": 2218212,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_SigilOfFlames.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f00899202e6abd9a34d0b7f51f9441474dd2320d82dc6c352baa1a33251b5aa1"
+    },
+    {
+      "sno": 2218208,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_SigilOfShadows.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "175f8cac5f509433173936ed13e233f4e4185f5bbb069ab98f8ad1352fbdfd34"
+    },
+    {
+      "sno": 2221239,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_SigilOfSummons.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "4816ee4d662b50d99f07cc9cb0bc04422a16a723e032c66c2de6af718ab4bc6d"
+    },
+    {
+      "sno": 2212802,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_Summon_Lunatic.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "64a86eb22373bfb4b4a4d8e5e652f741afb7c6526f528732696c1cddfe03d01d"
+    },
+    {
+      "sno": 2420678,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_TailWhip.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "fbdeb4d1a16b9daa268cb4b1b487018f4c9f88a549cf163173b853aa3301a7c1"
+    },
+    {
+      "sno": 2244456,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_UltimateDemon.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7db6309f0b8049d0c1be516b1d37b747fd475f706dd1f7a1b81a3778c70ecffd"
+    },
+    {
+      "sno": 2218210,
+      "file": "json/enUS_Text/meta/StringList/Power_Warlock_WraithStep.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7361ad824701780b45252700961790cce6522e5ae30a2e8418460d08130f016a"
+    },
+    {
+      "sno": 1611317,
+      "file": "json/enUS_Text/meta/StringList/Power_X1_Barbarian_WeaponThrow.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e49346997a35f703325d4993f82bbf2b91461ee088b48b426590943c822d0eb6"
+    },
+    {
+      "sno": 1644585,
+      "file": "json/enUS_Text/meta/StringList/Power_X1_Necromancer_Ultimate4.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "49f3bdbf187e473ffcab936382254167aa012c45948ac39ca7d35adcb1241164"
+    },
+    {
+      "sno": 1627076,
+      "file": "json/enUS_Text/meta/StringList/Power_X1_Sorcerer_Familiar.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "863ab48e58ebfd8b475b9f859bc0f12ffc138fe413099b74bcf0f1f764bd27c9"
     }
   ]
 }

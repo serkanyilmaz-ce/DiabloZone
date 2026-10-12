@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <Reference Include="WiseOwl.Casc"><HintPath>../../../.tmp/wiseowl-casc/src/WiseOwl.Casc/bin/Debug/net8.0/WiseOwl.Casc.dll</HintPath></Reference>
+    <Reference Include="WiseOwl.Casc.Diablo4"><HintPath>../../../.tmp/wiseowl-casc/src/WiseOwl.Casc.Diablo4/bin/Debug/net8.0/WiseOwl.Casc.Diablo4.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

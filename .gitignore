@@ -11,6 +11,8 @@ d4data/
 data/private/
 output/
 build/
+scripts/assets/CascExport/bin/
+scripts/assets/CascExport/obj/
 *.key
 *.pem
 Notlar.md

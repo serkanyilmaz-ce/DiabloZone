@@ -1,158 +1,2582 @@
 [
   {
-    "id": "9cb3afdc-e7e1-4a61-a49a-be3113f3fa04",
+    "id": "78994366-6c41-47ce-8e9c-1ac028ebd292",
     "kind": "normalized_export",
     "locator": "catalog:affixes",
     "sha256": "7aba87a59effaaf8cb0cbd7de7ecb74942776ef62932c0b021ca10d59c24596b"
   },
   {
-    "id": "458b11b5-4b9d-4414-a7e7-9a6b7d258889",
+    "id": "a569e1d4-5fc2-4389-be96-39a99e0136e5",
     "kind": "normalized_export",
     "locator": "catalog:aspects",
-    "sha256": "f33f57a0ebc5f898fbc5d8274b1d923031189f5b805fcc39c7546a6ce64bf750"
+    "sha256": "53f1c8aa6e71088a0cf3d2a0d9d63c4433e3fc49d798458acbb5d79611da8e7a"
   },
   {
-    "id": "cf0f75b2-2983-4bdd-96e6-8839be2e942b",
+    "id": "cfd4df27-eeb5-4637-b975-496db124e43e",
     "kind": "normalized_export",
     "locator": "catalog:classes",
-    "sha256": "d8f7d263f966693ce49b6d504c05e9f493b39bae2668f7cd67b334c95d20c824"
+    "sha256": "063254ff52f6a8c02aa50ce25fb664e96ef250427cbf4c83c7a3d8973fa3d411"
   },
   {
-    "id": "efe40cf2-ea7a-41a1-9716-8df44a2399be",
+    "id": "c0eac746-5847-4658-961f-53cbe1a617ce",
     "kind": "normalized_export",
     "locator": "catalog:items",
-    "sha256": "59a74c0ae3f9f8cb9f8e38977212caff5eef13c36d47a2219cd0205bac1184fb"
+    "sha256": "fccc03879b8128aa38d047351c98bc2fc3ed5c41273365438ce52f63520798f6"
   },
   {
-    "id": "ca38f4a6-eabd-4935-bdd7-d19bcd46299b",
+    "id": "b242fb98-2d1f-4ca7-8b93-118defd52c1f",
     "kind": "normalized_export",
     "locator": "catalog:skill-tree",
-    "sha256": "6e14daa00ae71fd64a998a817a8a79d2a5f10253322e564d67b35df71d4422bf"
+    "sha256": "b4d7e31b4a44c89bc82a0f035ff0cab94c4190156c1fbb778c36bff73e91fd9c"
   },
   {
-    "id": "6872317f-60c8-4551-8268-24f752d2316a",
+    "id": "02ab060e-45f9-4c8d-81e4-a81af06df918",
     "kind": "normalized_export",
     "locator": "catalog:skills",
-    "sha256": "17771cb76858926355a5eddb72698bb7e19ecfa09776473c790acda2318b31d1"
+    "sha256": "bc53dd8bda3475b2b71493102d1f4e3c73d3e809c32b74ff2b94c21086afa49d"
   },
   {
-    "id": "45671968-678d-480f-8d56-880e112085cd",
+    "id": "6af42df5-39ba-41fe-93c4-b27b783b1647",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/Helm_Unique_Generic_002.aff.json",
     "sha256": "6262e9f88f26f7b70cee86d9262bc7697fc5afdabece59a16a7c932e63fcd56b"
   },
   {
-    "id": "98ff7fe4-dd5c-46bb-bdbf-c5affa062ac3",
+    "id": "f9ee0f0c-1c6a-41a3-8884-c928423b866b",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_CooldownReductionCDR_HarlequinCrest.aff.json",
     "sha256": "09bb8a7c3f13e5d155814c1b7eb456549cce85e0d15377a2366aa46252bf5406"
   },
   {
-    "id": "79127cad-4e51-4551-a9b2-d076a83f5213",
+    "id": "d58a457c-74e5-4e6c-a982-7adaec03b605",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_FlatArmor_HarlequinCrest.aff.json",
     "sha256": "d4b690881471784fdbaca6ff73a663ae88cf6bbf8ecc41b5cdcc41386f574be7"
   },
   {
-    "id": "8e247f48-1f1d-4e1b-887c-4d5c36a69092",
+    "id": "dec24c35-453b-4cd4-b21d-489ec4559d44",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_LifeFlat_ShroudOfFalseDeath.aff.json",
     "sha256": "bd721f761df1fc68448983a918e9e7503b9977fa8c635d831de6964c3a8fbc2f"
   },
   {
-    "id": "505cf9c1-b64a-4378-bd92-68db6be7f0c1",
+    "id": "d78ca8eb-fabf-4174-a6c5-e0b47f14e4c4",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_Resource_Max_AllClasses_HarlequinCrest.aff.json",
     "sha256": "98643cc6aef2aaaca98132232c485ef34b8c2048fb3301b69be2380f37fde425"
   },
   {
-    "id": "4d32a06c-3d0d-43c0-af20-5d3bf1ccc1b3",
+    "id": "00bc60c6-44f3-443a-91d8-2cddd16d8cce",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/legendary_sorc_004.aff.json",
     "sha256": "e9a8f395941c52dd545b810b63b7ea613b3011cc05715884bb4a5fe55d11ad21"
   },
   {
-    "id": "7a624f1e-9e94-4062-b6f7-8180ea08b5b7",
+    "id": "40221a68-fd19-4294-9bb1-a3b1fc67ebc5",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Aspect/Asp_Legendary_Sorc_004.asp.json",
     "sha256": "dafe4d8b3af2ce11cfe1bea487a15694df0ffd2a6566e9dbf385ad9ce7821ef5"
   },
   {
-    "id": "cde9ead9-9cf1-4c9c-934e-038ab227266b",
+    "id": "dc31bbe3-ace6-40e6-b201-9a19f4b4fff2",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/GameBalance/SkillTreeRewards.gam.json",
     "sha256": "d0eb183a09773865d34f9285c9b5b9d3fe7224389ada45a437ce10955c8ab3ab"
   },
   {
-    "id": "202a5fb1-21bb-4310-9e6e-25ef6cc5e2a1",
+    "id": "e22afc6e-8f4c-4c04-9324-0223513640c7",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Item/Helm_Unique_Generic_002.itm.json",
     "sha256": "5c51019007e40827300300c29a4a3bdba35eb78b471453e4ea8d853e15c11aa1"
   },
   {
-    "id": "0e007d48-2bf1-4859-af48-fed8ab648ae8",
+    "id": "769807f5-ff0f-4a8d-98a5-5e535e9909ee",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Barbarian.pcl.json",
+    "sha256": "e31102f0bce0c9331d936567973d0a31e5a2a2f49edcb68bc23bc01b0ab75584"
+  },
+  {
+    "id": "fe26aa1e-98a0-4104-8d7c-68f986d01a4c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Druid.pcl.json",
+    "sha256": "b29713de7f47c1a6bc10b0d49b32f820c5c0b7a87de1d21958e29668082b020e"
+  },
+  {
+    "id": "98710a80-73c9-4907-87b7-36547d832883",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Necromancer.pcl.json",
+    "sha256": "a287ad71a991dc2a2ff008ed43df2149cf5434444886441cede724b541c938a3"
+  },
+  {
+    "id": "28e017ed-6f68-4240-b50f-73354745235a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Paladin.pcl.json",
+    "sha256": "53df69660a5a5692ba98d75ed2896be438a0bf565f2b24dfd3e4d4557f4d2f1b"
+  },
+  {
+    "id": "72408cfe-f6f9-49f5-ad81-f505319b01db",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Rogue.pcl.json",
+    "sha256": "f72642b543fd766555bd8525433ed547e97a100eda5470ad144811f1d2203588"
+  },
+  {
+    "id": "a2fc5847-3762-4bdc-941a-447859c78a3f",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Sorcerer.pcl.json",
     "sha256": "16a94796c34345720a899c42ad4574163d59ad30e76838be355f78516861c272"
   },
   {
-    "id": "ecfa09ad-1f7f-46f2-a58b-c52a06e82adc",
+    "id": "aba14bba-00ee-4b16-8148-77aa8ee13d02",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Spiritborn.pcl.json",
+    "sha256": "57616b1afeef4ea1c10db40749ac13a78d203b0935ea99d470ecfc92113e785b"
+  },
+  {
+    "id": "8695f1a8-6cbf-4c1f-aeaa-8d0e8ba0651c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Warlock.pcl.json",
+    "sha256": "8eb50983a0b16741f014ca948108bc9451fb1181359c1a5995bcb48e722ae890"
+  },
+  {
+    "id": "3a24407c-d9a1-4f46-846d-a7dcae5021a5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Bash.pow.json",
+    "sha256": "75e5941885d91f4e79d6cba10a739928f9008f669aa35ef5d5f8f5c40bc08a01"
+  },
+  {
+    "id": "db697188-5e0b-4173-a107-cd279cdc82b7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_CalloftheAncients.pow.json",
+    "sha256": "9749133646452bd34a7201e555b0d70229070fa8ac9a889f7f3eb43911775b44"
+  },
+  {
+    "id": "5ac8e828-9a93-4f07-ab20-b3993982975a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_ChallengingShout.pow.json",
+    "sha256": "ab3ffb32de19402a7d4913cc07af2fc81a598d507c8e3cafe560db5032530003"
+  },
+  {
+    "id": "2397f4bc-0174-4c46-9b5b-92bb06ca7789",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Charge.pow.json",
+    "sha256": "45dfc5e29f847e9d1a1aaa18073503234b208c1100c777e4f5de10353ab15afa"
+  },
+  {
+    "id": "8f73b872-effe-440b-a878-91d447d9c667",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_DeathBlow.pow.json",
+    "sha256": "abe7bb78eca9ce11df3538bcdfc56a89bcb95b967ddb90a9e8a919edee653e2c"
+  },
+  {
+    "id": "76e92eac-8636-4842-8359-027736a1a1ff",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_DoubleSwing.pow.json",
+    "sha256": "25017f9c3a08b0523c40de6287a8f3accd00a4bf38dd62aa230883e61dd32ad4"
+  },
+  {
+    "id": "7b5f229b-4d8e-4cb9-9593-d3eeb511e580",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Frenzy.pow.json",
+    "sha256": "c2e4cf7b171272492ccbcc5960d767ec062a0ffd92f19207fe4f5462aba28b2c"
+  },
+  {
+    "id": "8aef0a87-9319-4660-84c1-834aea3835ef",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_GroundStomp.pow.json",
+    "sha256": "18e1f7f87cb3c62f9bfe67b590d1d27c628ea3896684993b9515a780f6716ec0"
+  },
+  {
+    "id": "e43494bd-b5ff-4aaf-a8b3-5eadad1d9a0b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_HammeroftheAncients.pow.json",
+    "sha256": "2db25dd07283a38d5bb1519fb856abcbb8f593b904c84cb387c1870f77048006"
+  },
+  {
+    "id": "59f86d36-a613-4417-8f2c-58149cfba9ed",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_IronMaelstrom.pow.json",
+    "sha256": "9fb373b59a23eef3d5e455d42411817c5842267ba294fff0e86815b7c62a6bb2"
+  },
+  {
+    "id": "6dad16b6-6cbc-4c27-9d8b-98fc783b8f4c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_IronSkin.pow.json",
+    "sha256": "7dc6df2218f3d127cd9433d0da9720842ff749ee9eee752a442935edfcf14713"
+  },
+  {
+    "id": "332664e0-3d70-4e9c-8a04-f634ca421506",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Kick.pow.json",
+    "sha256": "feaaa87eb3ab6b96f1d2d6244cc235128f33dda6e33d7e9c09c6199621e2b415"
+  },
+  {
+    "id": "ccc2e68b-b401-40fe-b45d-e6d5b448797d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Leap.pow.json",
+    "sha256": "92416ecd69ba5542c842fa5d30eff933b01c82ac612b1261326e7497d5895544"
+  },
+  {
+    "id": "43098e83-33b6-4cb9-b4f1-5f5eeaece3e2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_LungingStrike.pow.json",
+    "sha256": "28b85e54dd46ad38725248ffdb4d44098ca49cea9550bbd5ac3d2c693c7afcb6"
+  },
+  {
+    "id": "534fbea8-181a-4e72-928e-02457b6c6a7d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Maim.pow.json",
+    "sha256": "07810bbc2fcd9ddc52a32b4d3df26c28f4ea7daa5f6d0a1793f452a7780e073f"
+  },
+  {
+    "id": "b7dd71a8-c5ed-4389-a95c-fd8e6d93e821",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_RallyingCry.pow.json",
+    "sha256": "9f145efef6a69fca995f3ecfbfd425b2d88af460cb4a983dae9fa2d7bcdf7f0f"
+  },
+  {
+    "id": "f818defa-c6d9-4229-9d22-9a0be0e86f41",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Rend.pow.json",
+    "sha256": "255c95330aeb30fd67c1754344b11494cc773d89d9ef7244bdb1b0fb80d56f1d"
+  },
+  {
+    "id": "9b192c2a-b85e-47ac-8d16-678aed3cbeec",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Rupture.pow.json",
+    "sha256": "a756d2d4a160275494779368242ee5ba7b6efc8d6b00ed9152307f87f6914793"
+  },
+  {
+    "id": "1a83e0f3-4f20-4905-8692-649613ff77d5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_SteelGrasp.pow.json",
+    "sha256": "1dbb6c83bd8b61ba5b5bbe841df23f103115eb479d02fa8b53df96b7e79bcc72"
+  },
+  {
+    "id": "035196a7-70ec-498c-9896-65fab23f3919",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Upheaval.pow.json",
+    "sha256": "de4b03df99a02e766aa059d0c1fa223344bc4b3119f5bc23dd0cd0fe9ff3e8a4"
+  },
+  {
+    "id": "ba4027d4-34d1-4773-a0e6-c65ce63dc278",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_WarCry.pow.json",
+    "sha256": "806bd45bb512d29b5a193d5b5b190ffe6e7cfdcde9f121e31e19cddd24732354"
+  },
+  {
+    "id": "6ee88f31-bd94-4bf4-b574-2f63e387f66b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_Whirlwind.pow.json",
+    "sha256": "b152e5ac81dd894316bc3da8d1d1469411c5a4f26c742bd068cfec371b3c58ad"
+  },
+  {
+    "id": "62bc3691-bcc3-473a-9cf5-e4286ee69837",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Barbarian_WrathoftheBerserker.pow.json",
+    "sha256": "bb1c984781ba9f993775584ddd8fada78bfbfe2a020ae6a4b183d5699fe28580"
+  },
+  {
+    "id": "33eaee17-7432-43cd-b312-241691629534",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_BloodHowl.pow.json",
+    "sha256": "ea3813fa2dd25362a25f6cede7095bbdb779dc9d8297c5bf1cdca36a9bd97da4"
+  },
+  {
+    "id": "31dd5bc3-f96a-4af3-884c-0c9dcbb762d9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Boulder.pow.json",
+    "sha256": "b769789e0788e93bec2d3b939deffe5fab63a2074f1aa25279c11a29c8f8c9d0"
+  },
+  {
+    "id": "4c7a2817-64ad-48a6-be11-8c2ac3d16f77",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Cataclysm.pow.json",
+    "sha256": "ed58e26e18348497054d3d4d7e16cd17d3574cc5e76cd2dc228d1ea89bfe2358"
+  },
+  {
+    "id": "99f67824-1661-4803-a5d0-9419b60a9e72",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Claw.pow.json",
+    "sha256": "ea884b684df322f1485649989895858aa76f3c9d599769b5bee82957aea277c0"
+  },
+  {
+    "id": "7ca15747-23cd-4553-ba36-0c0076ac40be",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_CycloneArmor.pow.json",
+    "sha256": "2a4b98474725fcaeb187e9938b4f2cb3fb4dbfc0f90bfe0f7d53bd2533433d06"
+  },
+  {
+    "id": "c9288830-0205-4d76-9118-203415e64524",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_DebilitatingRoar.pow.json",
+    "sha256": "872bcfb458d333ed19c886d85d7b721428b083626f514b2f547843f695076175"
+  },
+  {
+    "id": "339b4625-0ac4-4557-9308-6e8e65e2e81b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_EarthenBulwark.pow.json",
+    "sha256": "4185edf84ec00a427bcf544c714d2d59314c62f28a4950e33a925ce847e64404"
+  },
+  {
+    "id": "392d87c8-4a42-4d0a-bdac-a45fd62ef44d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Earthspike_Instant.pow.json",
+    "sha256": "e7c3a591495fd8b1801b1a179203fd10ca5156f77e5aa2967a749f46191d69af"
+  },
+  {
+    "id": "ffaa1498-dfb2-4823-b413-12ccf2429332",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_GrizzlyRage.pow.json",
+    "sha256": "dd73551b105364dec072d354657482035811fee04defd54316fbe7797aa1b10b"
+  },
+  {
+    "id": "294321fa-eaef-4913-96c1-b404fefeecb7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Hurricane.pow.json",
+    "sha256": "767ebe6c3543706235ce315da653d47ffd6a85d583d1bdb94918192b7e8b302b"
+  },
+  {
+    "id": "869c1543-237b-4bf3-857d-b9a39eb637bb",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Lacerate.pow.json",
+    "sha256": "888fdca5c7857cb98d91340a631656c9125c004bf38da0f20472eab7556aced9"
+  },
+  {
+    "id": "e32dd328-aa7d-4fb9-b4b0-d45ee315fcd9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_LightningStorm.pow.json",
+    "sha256": "df5d7c8f92679936b25d6a8a873760dcb2b23c15df7c633d597a9c28e947ace6"
+  },
+  {
+    "id": "575805aa-1258-472c-9983-fc7e9719dc27",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Maul.pow.json",
+    "sha256": "02e4caedd63d8f159ec99cddbc377db6df94d3ac05071a75b715001d93cb647e"
+  },
+  {
+    "id": "a2cfcee5-09ab-4214-b41e-0ff2311ceb8a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Petrify.pow.json",
+    "sha256": "bc873d0e9a54d70ebaa384e9387b3fbb7ec3ecbfbe7b0a0db30371b0ae3eeee7"
+  },
+  {
+    "id": "55d9b5e3-6b85-407c-aa86-fe00fef31fb1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Pulverize.pow.json",
+    "sha256": "55107a53dd3e025f8ea3706050027a5d344519d597efb39b09c1c05feb065024"
+  },
+  {
+    "id": "cdf254b4-2de7-46f7-a929-67e0a7bfe3a7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Rabies.pow.json",
+    "sha256": "da42d2c48c44ce95ee1ddfafe87fcccf4a262b0c273ff9022c626c6e5420a47a"
+  },
+  {
+    "id": "c38959a8-9c66-43eb-a94f-409b9a40034b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Ravens.pow.json",
+    "sha256": "8219da38aa0e8c70004dc001084306291b1b70b76cf891d25f8caf581663928d"
+  },
+  {
+    "id": "d8721bed-eb8b-4b27-b63b-9ebb8426f1fb",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Shred_NEW.pow.json",
+    "sha256": "74d05d962a26168f518ee2d6074173cea1e28b1e096cc94469180383ffc17ffa"
+  },
+  {
+    "id": "93cbb063-d4a5-4d91-aa1a-e5935d1a9367",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_StoneBurst.pow.json",
+    "sha256": "a1fd38837f8cedc34b1aa5f1e0248a5164b4feae1ee1787ad143cf824829577a"
+  },
+  {
+    "id": "a8748da0-b8c0-4675-a7b5-0ed9566ed5a8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_StormStrike.pow.json",
+    "sha256": "e652649147181fa70f6b2b84e18e67bbfb58c77624248163934cdc12a3f3d2fb"
+  },
+  {
+    "id": "19399148-ed7a-4b29-aa12-56af2543d206",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Tornado.pow.json",
+    "sha256": "945d333e74d3c24cadc0656dd9fe917094dbc8e7224f3e6c0c2b6c0336ed475b"
+  },
+  {
+    "id": "653485ff-ec6e-43f1-ac84-03f929d9bfb8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_Trample.pow.json",
+    "sha256": "9600c22c3d9fbb734c773c44a703befb3b6f6b09a7eb6cd6a32675dd33d71ad0"
+  },
+  {
+    "id": "e0ca5553-4a62-4482-8e8b-4262f214c4fd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_VineCreeper.pow.json",
+    "sha256": "797642e38341f97f62338643956e3ea5f7b33c25a9acaa8e27dfff850584b0de"
+  },
+  {
+    "id": "c4a14685-28bb-4231-a793-841f227ce166",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_WindShear.pow.json",
+    "sha256": "4c6728a28ca47c0787f42bac9fe9ce16bd8e425067d9d9c8a7e6d57f0c026b89"
+  },
+  {
+    "id": "d0dc99ff-da45-4394-8931-ea0bd9b409f2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_WolfPack.pow.json",
+    "sha256": "1f60ec7dd07eb73c1024c221e209eb144f744e58db843df4e83624a35fdde9cf"
+  },
+  {
+    "id": "bf70c490-8d0b-4123-b04c-c08983a04264",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Druid_landslide.pow.json",
+    "sha256": "2baa469321d76235462607d6c8ccc09b94cdef06bc5bfdcbc121424748b107e6"
+  },
+  {
+    "id": "107a6260-1ac3-4728-90fd-ffb418f08b9a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_ArmyoftheDead.pow.json",
+    "sha256": "1ea147280f550cb2cf8804ea7ea7ada31c51e3f0fbb52dd4fc8e283bf7faa5de"
+  },
+  {
+    "id": "80fef9a1-11ad-4e81-bb83-5791c60c656a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_Blight.pow.json",
+    "sha256": "6f6ee1e47970472f4cef31116d0ef4f8338180b8c29898317a82049d88221480"
+  },
+  {
+    "id": "ca561ea5-8a8f-452a-9cf8-39410e1bef4d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BloodLance.pow.json",
+    "sha256": "e8d055fd7cfc375ef72afd9849eec95b275a6451aa6e4fe9f1d4abd7604a9dcf"
+  },
+  {
+    "id": "42eed10f-6db8-455e-9888-63347d6799cb",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BloodMist.pow.json",
+    "sha256": "64fc23161a85e7bcb0c10b8a06c021896e4e3ba47118f3472e139758cc69e0bd"
+  },
+  {
+    "id": "ee3128aa-3e85-4927-9816-f126d17999b1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BloodSurge.pow.json",
+    "sha256": "f49701148c7c5d5a44763babee1f379c126e9d35da3ed6a295e979ff4d7c9fda"
+  },
+  {
+    "id": "c5be21f4-d613-4e33-9c53-0e198fc2ac9f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BloodWave.pow.json",
+    "sha256": "b0ff999133f415b99637c3c101a0cd63b50fdb2448620ea3a2974bd47f030609"
+  },
+  {
+    "id": "ba05d1e1-7d32-4b3e-ad1e-0ab6aa6b991f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BonePrison.pow.json",
+    "sha256": "0ed71017c27687c2ca1d25bb8f351b8c628f2140029fe09e37dd061d4641c68a"
+  },
+  {
+    "id": "102af413-21ce-4829-9128-f5f2190cdfe7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BoneSpear.pow.json",
+    "sha256": "58a7ac35e8a9d74784331ff1e58754eb6caf266765bb429379bd72cd48c02553"
+  },
+  {
+    "id": "d3670e6d-c852-4a33-90c1-5fed3f12be10",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BoneSpirit.pow.json",
+    "sha256": "865fc8307773738d951005ba7bfff3d882b8b8f5765feb3d44088f716ff1ef32"
+  },
+  {
+    "id": "86181029-02e9-40c2-82b9-06d87ead103f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BoneSplinters.pow.json",
+    "sha256": "36627f5e8cf79b204e1f7ae25c219204695b616afc9cfda73f41e5f1ee09a8c8"
+  },
+  {
+    "id": "887777e8-26fc-41af-ab4c-82d2423f1f89",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_BoneStorm.pow.json",
+    "sha256": "f127e7d06498f2caf7768ec0eb344137dcfcdb1a6b254260f0b75263258fc238"
+  },
+  {
+    "id": "af5d801b-62a7-462b-9c04-e28333e07896",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_CorpseExplosion.pow.json",
+    "sha256": "ae1efd544c8c42ecae16a43a1c0b90056f2885fc8df4ddb57a16cbf674bcecd9"
+  },
+  {
+    "id": "31fad10e-e775-4a21-9001-cbe127890673",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_CorpseTendrils.pow.json",
+    "sha256": "659e59bcc7eda5a637f9e84889d79949252d6566c3dfc3b24f03503f45c945c4"
+  },
+  {
+    "id": "640e7eb2-0121-4168-b771-07679d8baa7e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_Decompose.pow.json",
+    "sha256": "01883b7e69858d7017e0fcd271de59046be923bbc7bf14c5e8a5cb8b7b5c6001"
+  },
+  {
+    "id": "5a5a6579-fe1a-470d-ae56-6d3b8645d8b8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_Decrepify.pow.json",
+    "sha256": "29781d0639a838b7536543e175768c963a1b47b5bc3de4406a81d186bdc9787f"
+  },
+  {
+    "id": "82550e69-81e4-40aa-9fc3-b691f04d31bd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_Golem.pow.json",
+    "sha256": "8f3be1a1b135d88c88a5de119a69ee87ae2fb328ae7b264726ef13466d3fad4e"
+  },
+  {
+    "id": "24913b24-cac2-4caf-a5b8-beea9e31345f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_Hemorrhage.pow.json",
+    "sha256": "8b740dccbab1584ecf4458e615f94bc8b912cf4ea0deb0ab57e9533f59919107"
+  },
+  {
+    "id": "9f9d634d-6aec-47f1-8ce2-5cb700df551b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_IronMaiden.pow.json",
+    "sha256": "e18549ff8dade96da51c22002e24871af3d84dedd492226c3d960e137f0f51ed"
+  },
+  {
+    "id": "8f479bc1-2e0c-4ffe-822f-14a45b388061",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_Reap.pow.json",
+    "sha256": "d41d9e705657c8333c2e4cdd0fb3645b2c5f48ddad0f34787552e70c1d2e6016"
+  },
+  {
+    "id": "281ab628-cbbe-4f01-af6c-b307644236c2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_Sever.pow.json",
+    "sha256": "aed71121e592f87fe5a4e76751ef88fbf64548644a53abad4fe3136b65bd5ad8"
+  },
+  {
+    "id": "dc3febe5-ba39-448b-97de-cba150736771",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_SkeletonMage.pow.json",
+    "sha256": "1f96d06f49ea4aef8a9d893e94c20126a0ca93b3cf1888d7773d674ff8dd229a"
+  },
+  {
+    "id": "2013388f-d12e-4cc9-a6b2-feb8d616ade8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Necromancer_SkeletonWarrior.pow.json",
+    "sha256": "5bf7752ac66dc3512ca47674fe562ef42c0680f0684dec987a2bd35da83f1308"
+  },
+  {
+    "id": "cb6b7073-89f6-48e4-83a2-e09ccd013651",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Advance_lunge.pow.json",
+    "sha256": "4c841edbace8d996dcec7b2a2da6e8d12fed2c2a0f35c4f79618566ff25a1adc"
+  },
+  {
+    "id": "df66e4fd-1033-413a-9bad-e8bff3eb56b4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_BlessedHammer.pow.json",
+    "sha256": "5c256f7d741015fbbd20201b82e28f06ff0d78e3224cd120a5901845564ab053"
+  },
+  {
+    "id": "39fc62b3-9902-4f20-9855-c102a3111ff4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_BlessedShield.pow.json",
+    "sha256": "b928822eb59e16661b8a6faa150c217ad2bc41278befdf06457f4289184226e6"
+  },
+  {
+    "id": "c52ac0f3-7af4-4407-953d-5b919a34a8d0",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Brandish.pow.json",
+    "sha256": "93ea75a1542bf726b2aae55ad176b253a66a1285d8454c817be99bf96c8ebe6c"
+  },
+  {
+    "id": "badeb1ff-0c9b-45de-a74f-7c419aea23bc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Condemn.pow.json",
+    "sha256": "c684487154adb0ed45a58dd147e940845b2c5206e6b62e1ed9657e4dd7230e19"
+  },
+  {
+    "id": "b8dfbe95-a53b-47c1-b550-ef6c81a9f5b9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Consecration.pow.json",
+    "sha256": "b1ddee6595b44f26cd9788e57c8f11fc032376c0ca003549863ee0af3ff1943c"
+  },
+  {
+    "id": "011820f5-fc6b-4dfa-a4a6-34784967238a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Defensive_Aura.pow.json",
+    "sha256": "b7a05a49b88dc2d183c453eb0d90e5c848a477a0b8cf38707098dae7e70ac867"
+  },
+  {
+    "id": "dbfe517f-c49b-4339-9876-f33274dfede4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Disciple_of_Justice.pow.json",
+    "sha256": "f146bf2bb110d5157ad52247c32db7b9d2ab3ea1a72b325583bc35dad0eb3838"
+  },
+  {
+    "id": "da9f097b-827e-4a28-80eb-eea0eca59274",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Fortress.pow.json",
+    "sha256": "7a535fa4ad998bbdf6a187587745aa3a1bf1c39b5fde569bbf512131a4ee79cd"
+  },
+  {
+    "id": "8f027765-3346-4fc2-933d-33b6226f47bf",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_HeavensFury.pow.json",
+    "sha256": "ea542fd2fe7b1942c9d14a26e8842153d02b07dc05d3867422663e7265b9daa0"
+  },
+  {
+    "id": "e9f8c353-57bb-49f8-b788-c254ba1b6acd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_HolyShock_Aura.pow.json",
+    "sha256": "8fddd139221a5ccbf8c6372db640c8a15e914a1d62c45252b741cf34d9737468"
+  },
+  {
+    "id": "29748bec-b0b4-452c-8456-8bfebee07dac",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Impale.pow.json",
+    "sha256": "bc770534d8c618a008c89cdfb85ee7e6bfed43fe421d4f070802236e9cab62a8"
+  },
+  {
+    "id": "6ca5a322-2043-4164-b0a9-f1e70166ec83",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_LanceDive_OLD.pow.json",
+    "sha256": "5dba1e088166fce5253935f86121aa4f23710e3df4f73c915d2237656027e9a5"
+  },
+  {
+    "id": "edeb0544-5902-40b7-9110-14fb6c300dad",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Offensive_Aura.pow.json",
+    "sha256": "3d2a66216285c0fd827e6a1e1aa7fd79450ce3dd7d35b15b6705716b67cb949b"
+  },
+  {
+    "id": "dee79bc0-5483-40e0-a93a-3ca4467bcf53",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_PreTrailZeal.pow.json",
+    "sha256": "fc406db9a2c085254ceeea5df7b33f2797cb75b69b94ec429f236fa28754339e"
+  },
+  {
+    "id": "ee28d737-84c0-4a85-9b5e-d1a71aba1421",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Punish.pow.json",
+    "sha256": "6676738e03d69df03863b16eaf707b6248dc1d754265b31ad9f5e6ceef78094e"
+  },
+  {
+    "id": "3b7c5b35-fbb2-49aa-a5c5-e3acb171cf9f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Purify.pow.json",
+    "sha256": "8ebb6b2f92ef7e34ad1723074c1777891ae14ca6c02e47e138242d842d63b840"
+  },
+  {
+    "id": "52576451-f035-45b4-a86c-d1cec0a327c1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Sacrifice.pow.json",
+    "sha256": "b0eb017925b02d5a709ec96b936f5fa71a7ec114f27852a1599283ce8c765e32"
+  },
+  {
+    "id": "25001ef8-cf56-48af-a722-98d2aa59ea34",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_ShieldBash.pow.json",
+    "sha256": "716ab1132fbbbd6768e636125194caa85ce5ccd37e63142dfa25638dfde91b42"
+  },
+  {
+    "id": "f3a6d5fc-23d1-49bc-a8c0-e93ff3a11aa4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_ShieldCharge_Channel_Short.pow.json",
+    "sha256": "9443f7cf3daa85e562f50a7030c983fb9d7ff6a5b78dbee221cdb0a925d5223a"
+  },
+  {
+    "id": "bb483fb0-607a-4c30-af17-908babf80701",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Smite_FalconPunch_Recast_1.pow.json",
+    "sha256": "f8dd752133ba83ceef47006fac2ab3b4d3fc7e35c2c199a581cde63953dd7b0a"
+  },
+  {
+    "id": "6e64dc51-3ea9-448d-a1af-74417f6f83d5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_SpearOfTheHeavens.pow.json",
+    "sha256": "74df43c30138bbc9d1dcae264c9ccfdfcb791c100a9406c58cd75ceee196e977"
+  },
+  {
+    "id": "517e8089-373b-4ecd-bb45-4ec78c268eef",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_StormBolt.pow.json",
+    "sha256": "5751b95e8c7897fad3d1cade321220155ff2534c09128c375aff1fac284e665f"
+  },
+  {
+    "id": "539bb649-440c-46de-b8ca-eda7066d5de6",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Paladin_Trinity.pow.json",
+    "sha256": "897969a5f9470d9556a89eb382445b358fdcc60277ade08a307e7e0cdbcb17d9"
+  },
+  {
+    "id": "ed9afb03-ff5f-4b7a-9092-63b06eaf7ee6",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_Barrage.pow.json",
+    "sha256": "1b034b6a2d45772dc34b84acf0a739d4cb383e545d79681e3ba13ceff039595e"
+  },
+  {
+    "id": "6d5bfbc3-817c-4e08-a93d-b1843508950b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_BladeShift.pow.json",
+    "sha256": "d5ef2b1246bf580a20ee37e7109867d8b79b8d506e99acce973dfb1dc101f0e7"
+  },
+  {
+    "id": "066af6df-215c-4a0b-820f-07309884880b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_Caltrops.pow.json",
+    "sha256": "781a9ff711157d1a359c358349484f548018c19ec656685af049bdfcd1764d3d"
+  },
+  {
+    "id": "fdf73ba6-5cf8-4aa0-9f70-ad07233d88e7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_ColdImbue.pow.json",
+    "sha256": "248f6535fed2185d7d81cb5a5f2e53ed0d843f6c6ca82ce96c73b0b38da07ccb"
+  },
+  {
+    "id": "2f51d7b3-c86f-4b0a-809f-e8e99f4f127e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_DanceOfKnives.pow.json",
+    "sha256": "d3a8baa8ffecd12a7e818e40f6ff1039d789c5fd16997804019c3e1a9b8fca33"
+  },
+  {
+    "id": "51dd1684-a055-4883-96d9-c378140e3c51",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_DarkShroud.pow.json",
+    "sha256": "646c21bb6b83bf06da9244008a85bf107ba305dbb5f42806803dc0817ad79d78"
+  },
+  {
+    "id": "a2e857c7-0226-453b-8e70-427a03291786",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_Dash.pow.json",
+    "sha256": "ab9a28b830aa67994430fbb890ebb3a019e8a33db254a9bdf450369c20918a57"
+  },
+  {
+    "id": "a0d7b75b-8e8d-4a25-a222-825cb762984b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_DeathTrap.pow.json",
+    "sha256": "532f5977b345d2d5897777717acd774c7dacc9f188cdf630536daa29df046adc"
+  },
+  {
+    "id": "535a285c-b752-4dd8-89ce-48074809f6ec",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_Flurry.pow.json",
+    "sha256": "876b150898f90e9c5e47bd176587e6b18718562be7971137cfaa602d0881afd1"
+  },
+  {
+    "id": "b5ed1e5f-e437-4901-a8ac-ffa047ac6dbe",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_ForcefulArrow.pow.json",
+    "sha256": "3ae8bf5a03ed6522a2d190d2fcdc2b8a25ea4eb378d5486d2cc4f21343ab6663"
+  },
+  {
+    "id": "3e19bc2f-8fe9-4735-b334-2c5d4fded169",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_Heartseeker.pow.json",
+    "sha256": "1399f618e4e15b2b18775cc1dd9a775fbea3e91e3f695e4474a3a633d2c39da4"
+  },
+  {
+    "id": "b099f7fe-3192-4931-b51c-9a7651c94f1f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_InvigoratingStrike.pow.json",
+    "sha256": "393ffaa95f813863ab82bec87656391b3faa2dd603cb0b935d570ccd1d766357"
+  },
+  {
+    "id": "d08dd0c4-ce15-42c7-a094-f0253a31df7d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_PenetratingShot.pow.json",
+    "sha256": "2705e7fe132f2c889bf3d88e81a9039f9b2faab00f45ab0cd1fab33eee4528b3"
+  },
+  {
+    "id": "cebc3a6c-f65c-46e0-82ce-bd8ae938b9e1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_PoisonImbue.pow.json",
+    "sha256": "3d1ddd223ea0e096e42b5ed43435121c0d39e7c96b7c3a6b7a38e1c19db61b1e"
+  },
+  {
+    "id": "f203d937-a0f2-4cfb-b8ba-0502dd52af33",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_PoisonTrap.pow.json",
+    "sha256": "0502e4939dbe91ffec736da0866edc195973bed2d20d379e4d5a568433b49b52"
+  },
+  {
+    "id": "a046d3b7-7660-4bea-b3f7-900ebe93b8d0",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_Puncture.pow.json",
+    "sha256": "cf437858db2d7c907ccdb0fc561dcc18b4f60a406a851a6870802acb9308d42c"
+  },
+  {
+    "id": "042024ec-a493-4441-81a6-8ac87f6ac26b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_RainofArrows.pow.json",
+    "sha256": "8fa12d2eac70b4ab97f4b083e428cb4b287dc969d1525dc1c471f15cfdaf730f"
+  },
+  {
+    "id": "d0d6bd41-816c-490e-a58f-1fcb1b0054c4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_RapidFire.pow.json",
+    "sha256": "4e5363f00fc0e331230ef0cc27aca1f7192782b8fb97893eaa375e990c418742"
+  },
+  {
+    "id": "dbecdc5a-41b9-4f37-931f-8e9c49f222b1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_ShadowClone.pow.json",
+    "sha256": "35dfacbbd1d23c8240b0f76854ffbaa99c35a5db87f09b4013457d81fcb11e28"
+  },
+  {
+    "id": "08e10bd8-1d17-4010-9e9c-477975abdf33",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_ShadowImbue.pow.json",
+    "sha256": "a13e0eb89ed63544da592fc5c81d105d4f25285fc2fc2564efc7fd34539a6fe5"
+  },
+  {
+    "id": "a006664f-26a2-45ff-91c1-340b105a4e83",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_ShadowStep.pow.json",
+    "sha256": "970464e73ff4e2beafc1f5b28f67c42e1c959f943a8c403fe30f89fffaf96a77"
+  },
+  {
+    "id": "02ba84fc-d61b-4b78-baa3-6aea4a237877",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_SmokeBomb.pow.json",
+    "sha256": "ff534e3c235d47c96149c76b29dc3004438f3fc2b60f1ea8c690adda9b49a4f4"
+  },
+  {
+    "id": "12292822-fe25-4279-9eb9-9510f8f3e5f1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_Stealth.pow.json",
+    "sha256": "571fd43af3f1f0e65b1b99b0a1f61b616a87f5ecfa62ca7ad1aabe9d6da371c0"
+  },
+  {
+    "id": "b996c809-e92c-4b43-9466-9d2388229d03",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Rogue_TwistingBlades.pow.json",
+    "sha256": "48ecbfb90fbf1b5cb1d96ab07ec057e2f9e96e635d466445e31c346736facb48"
+  },
+  {
+    "id": "76f110e9-9240-4da5-a2f6-e789e2d2e689",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_ArcLash.pow.json",
+    "sha256": "7de04760b8a23531f885a72fbd60574dae5d1c82ce815818c8153e010f18137e"
+  },
+  {
+    "id": "cf7aa5f3-bff0-428b-8916-7c410f231f0e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_BallLightning.pow.json",
+    "sha256": "c9e80de11c6cf8f6dcb1b96edeb1900e2357f8acb01bceddd9447c3bf7d9b636"
+  },
+  {
+    "id": "10e0837d-4f13-4137-9ba0-5f511081f13b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Blizzard.pow.json",
+    "sha256": "44ffc7bb80ef63f4c080c7753dad408e036a8ab70d5c3f3b7eb6955a1e13ac88"
+  },
+  {
+    "id": "e8833df6-5104-4e77-a339-c4d822f8f41f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_ChainLightning.pow.json",
+    "sha256": "dcfd76ff64031204a3621d7f4c596b340dd8f78d10583c5db096afc6fccea3f3"
+  },
+  {
+    "id": "9401a342-5c61-4cbd-a678-4ee756bcfafe",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_ChargedBolt.pow.json",
+    "sha256": "9cb7bdd4b3415b419591f29831123dfd44db4f3589a0b18a80f5fa8cf0b50cd8"
+  },
+  {
+    "id": "d05a5873-3f03-4383-b83f-af3333500836",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_DeepFreeze.pow.json",
+    "sha256": "bd306b157a335dc17693210b45bd35f244b9c0195ad9b3f36461b3dc820cd47d"
+  },
+  {
+    "id": "4e925f0b-9516-4176-96cf-bf44b0c116a6",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_FireBolt.pow.json",
     "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8"
   },
   {
-    "id": "21df7a49-e138-459c-b1c8-df14fdb786c2",
+    "id": "adf74e7d-f46b-4132-bd5d-8f70b1a110ae",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Fireball.pow.json",
     "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2"
   },
   {
-    "id": "8f9e5aa1-c12d-4f20-bf79-0bf0b68e0150",
+    "id": "912d2154-57ae-47a0-b3ac-9288f7271c2f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Firewall.pow.json",
+    "sha256": "618b7289ac9c28c0b5ad1e6bc1fc492e7c6d09f78e845483becf056f6e2bc5ce"
+  },
+  {
+    "id": "2d7f0ab9-f7c5-4f15-a409-cdd6e88fdea0",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_FlameShield.pow.json",
     "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d"
   },
   {
-    "id": "a4daeb9a-2da0-4d0a-864f-3a19f61f8ab4",
+    "id": "c2266e95-0984-41c8-b356-94529f410a4e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_FrostBolt.pow.json",
+    "sha256": "103b9c6298f65cc97240d3d7dbef5fc37b674961657afa8b9ebb8d2bf2098c5c"
+  },
+  {
+    "id": "c19266b6-2f84-4a22-b24e-d72d85ef7ba2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_FrostNova.pow.json",
+    "sha256": "507f50469b98a7d19fc61009776a20b47f348615afb09bc2cda8ddc438a26f5b"
+  },
+  {
+    "id": "37e07073-ccde-4e2e-b175-c9938801e411",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_FrozenOrb.pow.json",
+    "sha256": "4ac011559991442fbcc9910b9edace963e996f35ebac43cb4e45c5d7fc0846ef"
+  },
+  {
+    "id": "36f83cf3-6856-4a38-b5fb-061a2f2ce949",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Hydra.pow.json",
+    "sha256": "8e04bb79508e21cffb7686a6f0bacbfeb3dea347e81559a248d16423c8bdd900"
+  },
+  {
+    "id": "ce85139d-ad2d-4daf-b22d-2a869613411f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_IceArmor.pow.json",
+    "sha256": "fe970c147ad16d8fbcf7ef59016c1539492686e46d3d016f6c441531b2b0eb56"
+  },
+  {
+    "id": "3fdccdc3-d514-4c2d-9ed5-c490107f82ca",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_IceBlades.pow.json",
+    "sha256": "abf247dd960d7c8bc007ea1541f109cd06dfb25ab1fa09e0bd1300db8f12ca69"
+  },
+  {
+    "id": "239cca2b-af9a-41c7-a3ae-289d1d89d73d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_IceShards.pow.json",
+    "sha256": "778cc7de45e3d655543be50a014efb54cf2a9720511ec97a0eff3a7d9703e944"
+  },
+  {
+    "id": "beefeab0-f3d1-4f65-a7e2-3224e364ede9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Incinerate.pow.json",
+    "sha256": "5e3b81dc822369d385057049fbd7eb6cd18c9ffd0ea7e77c1d8e01bb6b163c47"
+  },
+  {
+    "id": "0f3e99b3-c556-4ab2-914a-65c418245e6c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Inferno.pow.json",
+    "sha256": "0541920b93bd7f26d468d8c521049cf61a4b86fbc15d241e7ef0bc2a5ea94dad"
+  },
+  {
+    "id": "3678eb10-24a5-4b28-b674-b91cefddd268",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_LightningSpear.pow.json",
+    "sha256": "d6d38fadd0fe540d6d452ce7bb600e8532ecf5938689a251e2afc0f5bd1afc76"
+  },
+  {
+    "id": "4d63068c-be68-4efb-b8c5-cbaa96135acf",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Meteor.pow.json",
+    "sha256": "ee25012d848665eefd5d1f558618314fe2e320fc1759f1ca96fc77d6ed839df1"
+  },
+  {
+    "id": "3db56ffd-432a-4322-97a0-f582c7d31b4c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Spark.pow.json",
+    "sha256": "7747f7370ae0b63f45a62dc11fab3c51f5cd281a38703abac55a23f99ae117d5"
+  },
+  {
+    "id": "93415ebf-e038-464d-b52e-3039375c247a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Teleport.pow.json",
+    "sha256": "c34e469315a61742d941635dfbd0274c2719cc7a30558d59db6ea84443f39ff4"
+  },
+  {
+    "id": "3acdb47b-d05d-49ba-bcdc-13b521a39711",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_UnstableCurrents.pow.json",
+    "sha256": "196c95c2a9125a3433c1e04ef0704233eaedd135d0b8058aeaceb6aaef2333ed"
+  },
+  {
+    "id": "08edb9bb-4ffd-4e16-b569-6f0a4866e14e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Centipede_Basic.pow.json",
+    "sha256": "aa24317dd6ce72dcff971433768ba5d3bc28b181bdbc47523b72f50cb96ec1c2"
+  },
+  {
+    "id": "202ae7d6-0870-4b37-bfda-9aad670dea2e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Centipede_Core.pow.json",
+    "sha256": "3468d565970a50d6c2fe1a9b98613e5751e6682393795c49f1be65260f554e36"
+  },
+  {
+    "id": "636287af-74e4-47cb-859e-eaa2f1d5ce45",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Centipede_Defensive.pow.json",
+    "sha256": "bb2e644660c60a72ec1ab7639d2a8d8034ff420e9652402378fec7e7f62ffed4"
+  },
+  {
+    "id": "7d108408-44e2-41a7-90ac-37e233b3240f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Centipede_Focus.pow.json",
+    "sha256": "14924efeb277687cc32644ca361e4faa20f2b0c1c18742156680dd31fb3aeffb"
+  },
+  {
+    "id": "29867974-d0b1-4a1e-8213-4054409429ad",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Centipede_Potency.pow.json",
+    "sha256": "3da59c9c59aad6f82c75f015feceb4ce002f423766ebed9d6a53df1572654444"
+  },
+  {
+    "id": "e1f36a77-b351-4d62-83c2-06bcc02a52f4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Centipede_Ultimate.pow.json",
+    "sha256": "083cbde5912671847620034c217c6d0e3420bb2b4810da5542ca55fae4884eb0"
+  },
+  {
+    "id": "6ba3c77d-3c1f-438a-84ce-0332a185a445",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Eagle_Basic.pow.json",
+    "sha256": "33f727e5b30c151925c8307b6cfcbd5953f79d0aa2e0913f3ed2e3d56a1995ca"
+  },
+  {
+    "id": "491c453d-1bd5-4297-a56a-6b1f39093736",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Eagle_Core.pow.json",
+    "sha256": "b6d2f941d6d9a5fe1b1395beb867ae9e58c6c9452f53ef77a522134c5fdbe636"
+  },
+  {
+    "id": "e632df04-ba3f-4827-a828-650985e4e6fb",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Eagle_Focus.pow.json",
+    "sha256": "a250b07c862cb0764267c21128fd18a373d69bd3d167f9987ca0cf66d91bcf38"
+  },
+  {
+    "id": "6000c427-9f2f-4ca3-87e1-979cbe125b43",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Eagle_Focus2.pow.json",
+    "sha256": "6ae2f4a9bfd113fa50287e1cf54fe206856c7c2613fb3c458c157c4640e670cf"
+  },
+  {
+    "id": "a122785f-3cb7-48b6-8942-0c34fc74ef65",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Eagle_Potency1.pow.json",
+    "sha256": "7c53169dafc518f14744088952399f5c66b1acb4ae2aadde0ae6cf9953426f87"
+  },
+  {
+    "id": "d1eea0c3-6633-4764-a528-0bc2710cebd7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Eagle_Ultimate.pow.json",
+    "sha256": "d88a36236036f1e87a23cbf26ecc7f41b93414e6055f1a4e1446557c3c517c5c"
+  },
+  {
+    "id": "f28d3d90-1d79-42f3-92b0-a3b71f6883d8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Gorilla_Basic.pow.json",
+    "sha256": "30b32bdd09f460db1233741340de735af6ff97a94d8af8a80995976821370b96"
+  },
+  {
+    "id": "2aa69a4e-3080-4659-a400-9cd24d9292ba",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Gorilla_Core.pow.json",
+    "sha256": "8cabcfe08a4ece32cb00267517e71096e1181be329006a087e3c18c0064c37f2"
+  },
+  {
+    "id": "8dd8d1d3-8a25-42fd-a743-ca0557fbae0e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Gorilla_Defensive1.pow.json",
+    "sha256": "06ef87aee2ffd28237bf2ef5ff1dea344c4e35e07d1907f21383ff758ca9a88e"
+  },
+  {
+    "id": "cbd1be79-56f0-4832-a41c-291fff2d6218",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Gorilla_Defensive2.pow.json",
+    "sha256": "4e58a027273f63c3f60ca2f4023acad7cd9c0900a64426aa8f7efec90bda3117"
+  },
+  {
+    "id": "f4c50273-3f47-40f6-9481-1015bda896f2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Gorilla_Potency.pow.json",
+    "sha256": "5dd1316d4becf7decd27c2fa9af2184073e4a7216389b6795e53fbb922c4dbeb"
+  },
+  {
+    "id": "a63b58e9-8654-4d8d-a7df-cf05088ecea3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Gorilla_Ultimate.pow.json",
+    "sha256": "82fd41d60fb9ee65045740f02696d4ad4a82b1207aadd76f2396acd16528c950"
+  },
+  {
+    "id": "c68be692-353e-4868-b599-2db8110a2acd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Jaguar_Basic.pow.json",
+    "sha256": "e03dc42b0cf1841332791c504bc001fca47f801bd75ac80b6474428e8da2f62d"
+  },
+  {
+    "id": "a61c46b8-0f8e-4aba-9636-d87a569a114c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Jaguar_Core.pow.json",
+    "sha256": "ed7211da8f27f70b034b5e42381d67acaa882e0e66d6a7a5599442fd6073ef3a"
+  },
+  {
+    "id": "5313f45f-0b55-425e-8be9-729b56080dcc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Jaguar_Defensive.pow.json",
+    "sha256": "0bb57b40fbcef5874a0a9b283f4f15168c30a1f24e1af2b0d68df2bbc5295ebe"
+  },
+  {
+    "id": "76e3b1f2-5351-4000-be74-c4807c2246f5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Jaguar_Focus.pow.json",
+    "sha256": "646b8fc19e738a65cbdd572be64cde3bb784a823241b13a942eb927357549cb1"
+  },
+  {
+    "id": "ce73afdb-77d4-4fbf-b58c-c9fd83fb6871",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Jaguar_Potency.pow.json",
+    "sha256": "03314cd84d3ce08710a9e314d8708cff023f079071036854b309fa82dc4dcbd2"
+  },
+  {
+    "id": "6fd04cb0-c3a1-4bfd-b088-d65f3d42216a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Spiritborn_Jaguar_Ultimate.pow.json",
+    "sha256": "1727b4e71cb592b966e677a722e12552a5cc2b06877ca0c7fdf9b50642926d41"
+  },
+  {
+    "id": "5c7bcc19-80f0-4962-8796-e0a8619c883a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_ArchDemon.pow.json",
+    "sha256": "60137ff7f64b4d4a1d523f9b9cb94237a7a31c84d22fb1c15c54bd926bcfef56"
+  },
+  {
+    "id": "86a0e066-906a-4c50-8aa9-3604c47b67fd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_BrimstoneOrb.pow.json",
+    "sha256": "c45ccd41a3a252c677dce8db5845e247da574783ced1f80ea5a11d73e929ba99"
+  },
+  {
+    "id": "795d5e96-841c-497e-a980-f7bf59ce449d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_BurningSkull.pow.json",
+    "sha256": "ae531aaa7f0db46b1a1f2f2ae5eb7a304de56a7d14201bb292704471c836e62c"
+  },
+  {
+    "id": "a40b79ca-6b2e-4366-afcf-f197f79bf694",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_ChainLash.pow.json",
+    "sha256": "203d5f2ec9a8fd1783806a900f66c6e574ca034e412bda3f4bb1e401e898a7a8"
+  },
+  {
+    "id": "10d23a35-345f-4cc9-96ba-54153d86c02d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_ChainTotem.pow.json",
+    "sha256": "0b54157adfbb9cc9a8ebed68f28d6a39451d75fc240e2fd0c538c06ce20ba96f"
+  },
+  {
+    "id": "623ad8b5-d9fe-4902-9939-bb09464ab53c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Command_Legion_Demon.pow.json",
+    "sha256": "1c720c33de341fabe75a9b8e174f3c6d3afcc206bb8d1271abe86b4c19f04c5e"
+  },
+  {
+    "id": "80f2494a-e226-4f0a-89bb-e5a539674abb",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Command_Mastermind_Demon.pow.json",
+    "sha256": "7fb3ee34a1d1e284ed945e0efddfb99c5f5df1b716dd49bdec986db932d39b6d"
+  },
+  {
+    "id": "594c93ea-7b8e-4b61-af85-8f56ff3edf98",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Command_Ritualist_Demon.pow.json",
+    "sha256": "43026ba6dd60c6516c56078e8ab3c65c5471b431a4a38e2a549c450b5dc04000"
+  },
+  {
+    "id": "56c7668f-d78c-4da4-a463-b5cc63d420bf",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Command_Vanguard_Demon.pow.json",
+    "sha256": "039727addeab319c31b7b4681747c93bb835fa654aac950d7803d9c5cce69c8b"
+  },
+  {
+    "id": "b65421fc-8515-4531-a035-962310a0fdc2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_DemonDefender.pow.json",
+    "sha256": "2b00a862d88f1c7ad99b4b7df18adc224c004718e276e0ef5b7c4f4e46b9c64d"
+  },
+  {
+    "id": "b2a22e32-7054-4682-b0a7-65329df9a2ef",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Demon_Wall.pow.json",
+    "sha256": "6d8ae6c95faa9772c46a730a696e9cfa54b3cb96c482d5c236537e144b646b81"
+  },
+  {
+    "id": "e699cc39-3cc8-4ae8-a8e8-4b036df55762",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_DemonicBombard.pow.json",
+    "sha256": "432ac4a48f86f7b6ed132def317be2f55ef0a7f737790b9ef67af6b488c71483"
+  },
+  {
+    "id": "227be34f-5bf2-4c6f-8100-5b461e7aabee",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_DemonicGrasp.pow.json",
+    "sha256": "178c56dcca235cd4ed69872a5e86604a75e36a0b94ddc252ceb423f2eb16b904"
+  },
+  {
+    "id": "a1dc7d14-1969-4df0-97be-7d0e579d8f52",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_DemonicSlash.pow.json",
+    "sha256": "edef876b5567a20ddcf0594b34e2d31130ce7988481c34edb2efa275a691f8bf"
+  },
+  {
+    "id": "a8952e5d-c863-42fa-866d-40ba2e937489",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Demonic_Breath.pow.json",
+    "sha256": "3276377e250c8c3632fa2c45d524d14eefc36ab14a7c8d1f147eee0fc38e3010"
+  },
+  {
+    "id": "69051695-4129-42da-9501-bb57f6b067f8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Demonic_Drain.pow.json",
+    "sha256": "ad67b9c077873b9f45394b0f930b816ed8b67445789ee88dd39db83d990cb8ed"
+  },
+  {
+    "id": "f4cb9c4e-289d-46b2-91dd-d9c96df7a966",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Doombringer.pow.json",
+    "sha256": "728547467379bf1c237254c908e0628fe3c31131545ea848bf2e27d4fdbf74a0"
+  },
+  {
+    "id": "56bf7030-1e1a-4353-87a3-02566e032f40",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Fissure.pow.json",
+    "sha256": "ee941edf7395a313ae35f19bc00e9464f3a7d4e3bab14189fcb625c29bb09dc5"
+  },
+  {
+    "id": "22fdd75b-8a1a-445a-b06e-8ff770223241",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_HellStorm.pow.json",
+    "sha256": "34eb25197155ba7ba02a78347b167275187b2235d8079fde67e48fa695b8f1a3"
+  },
+  {
+    "id": "ed81dab2-b5bf-471c-b098-d802bd21b0ba",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_HexCast.pow.json",
+    "sha256": "8438f6d8f79ce12478f3f41015c2ad10ac78de27c4be6a226510796c0c14a493"
+  },
+  {
+    "id": "3fefcc9e-ff24-490e-a333-9a221ab6080f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_ShadowShred.pow.json",
+    "sha256": "235bde8a5d69905745073cfcc9fc9736a90cd29d761b159179e6eb6f96b4c08d"
+  },
+  {
+    "id": "e78a9513-211c-4e47-8824-35ddc9a9c30f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_SigilOfFlames.pow.json",
+    "sha256": "d3ca1ead91af2519c818e1f9f5105cb2ac874d26771924f24d8dde71c1f63c3c"
+  },
+  {
+    "id": "4e9cf551-db41-4b12-9167-477f019e7d34",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_SigilOfShadows.pow.json",
+    "sha256": "06885db80d65e6c59abd815f1cf2ac04ff6d331204e3b459be2cdeee7cded58d"
+  },
+  {
+    "id": "c4cbf286-cab8-48e7-857e-43110210aefb",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_SigilOfSummons.pow.json",
+    "sha256": "2a0f88851cc2fb8b990b45bcd8115d61d6dcfddd56a6b6c72ab214641d35198f"
+  },
+  {
+    "id": "b9bf2850-bfc0-4624-9393-dd41b8601a33",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_Summon_Lunatic.pow.json",
+    "sha256": "6f537aa490335e2cc53dc3be3219937d65100382e9ab3d82435eb454a36e75f8"
+  },
+  {
+    "id": "d15e5b87-c844-4f64-a0cc-aaf6e49d7567",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_TailWhip.pow.json",
+    "sha256": "72dea5e49b65512625bf8d980226c7e03bbc0c37dad2f429f3bd68015e21ab9d"
+  },
+  {
+    "id": "04e3348e-05bc-468d-9e21-a5f285ec4621",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_UltimateDemon.pow.json",
+    "sha256": "96343ff1053ad09c87dcefe4c3bd76f3594a56f9a1d20a09d3176c0c565c092e"
+  },
+  {
+    "id": "dcc00231-9182-4f2e-8165-0ca8b3db0a7f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Warlock_WraithStep.pow.json",
+    "sha256": "fb979dd3e9cd59d3e3d66ebdb6ed80307c447a4de99ab314617c599165fe45c1"
+  },
+  {
+    "id": "ec2f6691-bccf-4538-817a-db9dd40fece9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/X1_Barbarian_WeaponThrow.pow.json",
+    "sha256": "8e4ebbae207a4e79fa0522822a98e45ee8102d74b53f2ba7d7b2e7deb4d43e13"
+  },
+  {
+    "id": "7cf8d6c3-53d2-42ff-a2a6-53a88bd17f4f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/X1_Necromancer_Ultimate4.pow.json",
+    "sha256": "678e617980ede817a490d5d88e818182f6296bec86826429c3e147c4b047f633"
+  },
+  {
+    "id": "dd900d4c-5242-4a82-a0bf-c0298c9945c3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/X1_Sorcerer_Familiar.pow.json",
+    "sha256": "19d8a8cbeb6de631467d034f2ccf46557661331925b5198f89a621c00cda5d96"
+  },
+  {
+    "id": "e9361ca5-8e36-486b-9d66-b5e5018d13c0",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Barbarian.skl.json",
+    "sha256": "5098d3010e581556d5711568bc2e60a262b97b894dfd4b509bff343ad299aa6a"
+  },
+  {
+    "id": "11c60c70-f244-40d2-9c3b-db83cbef3e04",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Druid.skl.json",
+    "sha256": "6f377dc532ecf46886d55e918734f6044b7dfc9a9e3eca3d42a9092eb93a391f"
+  },
+  {
+    "id": "7f9ef346-28e2-49e0-b2ae-15679578b70a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Necromancer.skl.json",
+    "sha256": "52ef1b904659dff4acdce64ac5d169e2cd22e34dd966115125ff6b69c778dfc4"
+  },
+  {
+    "id": "859de04b-77a2-42d7-ac71-3108b311e36b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Paladin_NEW.skl.json",
+    "sha256": "c3482c3e8bfb451149243af970c202f1d969ba56a7b1fc7d927e75fb6555e757"
+  },
+  {
+    "id": "c52a9182-b2f8-4be7-97b2-e5e85ba8018c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Rogue.skl.json",
+    "sha256": "295050efb29d4588e1ab8393f8528f856d1e3eb6c990322b224bda44545c258e"
+  },
+  {
+    "id": "227e9d78-6368-4635-b2b0-7a884a8fab65",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Sorcerer.skl.json",
     "sha256": "78c63c43b8a9abc95cddf8099f562459786191c2cb6984e162fe959d87cdf4af"
   },
   {
-    "id": "f434665c-8421-4171-9d44-948beaa0ec33",
+    "id": "53e1ae06-dd8b-4f8f-93fb-c8d42d7ab343",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Spiritborn.skl.json",
+    "sha256": "090b4d83cb95324446a29fa6ee61d12f5da978f88af4eb7ff09c2aaff59d76ac"
+  },
+  {
+    "id": "dfe86c5b-d42c-4c0b-8ee6-bac7b31500fb",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Warlock.skl.json",
+    "sha256": "ec80d12a44536fe08ba66128133dcb45ee8f6396f5e7ffb97976948e7cee5bc2"
+  },
+  {
+    "id": "cb8c4de2-ddb6-4e9f-9f22-52540a265ee9",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Affix_Helm_Unique_Generic_002.stl.json",
     "sha256": "7ae512faa3bba81dcd8f319bfa4af774d2220a831dade5d19b6b9ac12c12d9c9"
   },
   {
-    "id": "3c601f8b-c827-439f-bc18-07cb401e350f",
+    "id": "a609d580-9cf0-4613-8082-23307e465ca4",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Affix_legendary_sorc_004.stl.json",
     "sha256": "6a985dd262b1d7a5621bd9114152131a88b5f567e3ff8e1f86993ff73f416ccd"
   },
   {
-    "id": "e65c1a91-0be5-40e1-b238-a7f06e264e5b",
+    "id": "bb317002-ce22-4eca-b996-c9e76f5e99f1",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Item_Helm_Unique_Generic_002.stl.json",
     "sha256": "f85facc91b5cac1afba0979b6520d6ea9ac4c646d6ddc613d8d4c08baa4cc6fc"
   },
   {
-    "id": "0cd08a9b-26b7-4021-8cbe-ddd21226d5cd",
+    "id": "255da588-83c0-40e7-aaa9-366816bf96dc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Bash.stl.json",
+    "sha256": "3467876d742ebe345b8db6758940f0f29db04c5fe35d347dbbf17f35020c9db2"
+  },
+  {
+    "id": "b9c7ea0c-9aec-4d30-95c7-f9823343ce90",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_CalloftheAncients.stl.json",
+    "sha256": "2bd7a444f7af81de68d08b2132f7985f37a9837b64dfe7fa81670c819687c71f"
+  },
+  {
+    "id": "13412734-61a2-438b-b9a4-aef49d1e84cc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_ChallengingShout.stl.json",
+    "sha256": "4fcb3c215e4eb1fb253e8520f7af2c53330af92b470141344afd612867ee9aa7"
+  },
+  {
+    "id": "8902f6ca-4a1a-43e7-8608-4e99b8d3156c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Charge.stl.json",
+    "sha256": "2026ad2e805483ea16a8f8b782fddc360e58e6031c06f8e6183fd476f258f420"
+  },
+  {
+    "id": "9acfed0d-be6b-415c-81e7-92e57e3db05c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_DeathBlow.stl.json",
+    "sha256": "d824b8d60e1ae300c3aeb7470a170d948f85f8cb92bcb74ea21dbe5bfa148716"
+  },
+  {
+    "id": "cee32b5e-a1b8-4c57-b036-56b6a122f76e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_DoubleSwing.stl.json",
+    "sha256": "647803ce51af98f3e546ceb4f1ec5dfcf5f369aae92554e1eb2767b8d5ed92e8"
+  },
+  {
+    "id": "164a7222-109f-4f50-b2bf-4d959fe6c277",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Frenzy.stl.json",
+    "sha256": "51dbf2f89cd5b0e568f806a4c231ecdc1c5093bd69f7f549a8d29ce6b01848f3"
+  },
+  {
+    "id": "4c53d6c1-4dc0-4932-9891-b0c16d43897d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_GroundStomp.stl.json",
+    "sha256": "21bc3eef18210ecc7169c3d09ff9404721a2379374b129657b4350d58f887012"
+  },
+  {
+    "id": "07a35335-19a4-4437-8f82-709091f6686d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_HammeroftheAncients.stl.json",
+    "sha256": "22304e1c8498e22f2051d75ce801d22c5b89b2b7eceef4637298482828d54032"
+  },
+  {
+    "id": "f9e464f5-b394-40cf-8b34-6f5f67854194",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_IronMaelstrom.stl.json",
+    "sha256": "c4188ed6952106a3ac6a306e15ef4c8eff6a44d0d9688ec965c876c3026d7d21"
+  },
+  {
+    "id": "d49ae26a-06d1-44a5-b151-72a64fcea9b3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_IronSkin.stl.json",
+    "sha256": "8ec8f11d7ecb31ecdfaf689624a72f95a652c39b38440f96d970745dd483cebf"
+  },
+  {
+    "id": "5b666d10-9815-492d-9f4f-6820c64cd212",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Kick.stl.json",
+    "sha256": "18e8dce9b88194af53d10d40d75cac24dfdba63c7f59b1426692473b01735977"
+  },
+  {
+    "id": "e6489e6f-f319-4080-b06f-76093a05ac63",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Leap.stl.json",
+    "sha256": "5896a2782f7f20fcb5a81ac57134da18236f9429a825d30e8692ed5d8e834728"
+  },
+  {
+    "id": "1178670e-ca0a-484e-bf0a-440e2851bcab",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_LungingStrike.stl.json",
+    "sha256": "056dc6c9b136f8e152127d7625238e280b35c4323a014b0c2dc0f765cd57a457"
+  },
+  {
+    "id": "1e0ff0da-9967-4f4d-810f-e5724167d297",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Maim.stl.json",
+    "sha256": "7164be720c39a7c6adac42e1357e44e4a8ceeeb4e9055ff46976c79e4a792dd3"
+  },
+  {
+    "id": "055a062d-99fc-4e9d-adc3-91af6b5aa0c5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_RallyingCry.stl.json",
+    "sha256": "227442d246674f9773ea32d736adaf806274980b7c794028fa55cbae902ad78c"
+  },
+  {
+    "id": "0356e64b-67e4-4c1e-be40-33427307e1ee",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Rend.stl.json",
+    "sha256": "2752142c4a9ab2abcdf9ea07b63a219e8ab4a6c87b184ce500e714f32f2644e3"
+  },
+  {
+    "id": "8e96ffdf-d1ab-4121-8373-1426b4f1e99d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Rupture.stl.json",
+    "sha256": "f7094ae4b44d2dc189de14de59cdd4f33329daa672394ba9c091a809c17f1e2b"
+  },
+  {
+    "id": "db151818-3540-49f2-8664-50b5d7b6b98c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_SteelGrasp.stl.json",
+    "sha256": "ddd8b9c640a055ad5a8f75ddfef355eb5dc19d2ef9b3f3790d3c6cb5d2b56af7"
+  },
+  {
+    "id": "f8971172-b5ca-4e3c-99f5-3cca17eed9d1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Upheaval.stl.json",
+    "sha256": "cffb8adfcb363c0b8a473f58ecbf45228573efff03ff3d9e464b294ca20e484f"
+  },
+  {
+    "id": "7fc61700-99fb-4dc8-8532-d3e7ea754ddd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_WarCry.stl.json",
+    "sha256": "e04b7dd28e0f853de326385e99e32a3d34cb234e57cce4a20051249b7475a0b3"
+  },
+  {
+    "id": "4acf6308-5781-4a3f-af0a-71bd5aaeeb6d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_Whirlwind.stl.json",
+    "sha256": "6585a0c949fb97f8fd2404f80a554820d3b99e3f9fa70a8abaf7d2f7e4d06578"
+  },
+  {
+    "id": "1615cacf-a5b0-4fc2-a6ee-8ff27e1cf9be",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Barbarian_WrathoftheBerserker.stl.json",
+    "sha256": "e1f24d4a88f42a2c0fc054803957088d03e2d4815771b45fb2404bd5cfae1f82"
+  },
+  {
+    "id": "6e2f1c0f-67e1-4272-a207-ff500b356234",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_BloodHowl.stl.json",
+    "sha256": "966257cafd08f618ebc44bd2467e24d95ef559da8df9396a1648424cadddb33d"
+  },
+  {
+    "id": "27e64bab-6f97-4f1d-b3c2-d2f20d16ab90",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Boulder.stl.json",
+    "sha256": "49d290847cf68402ac8144029443636057b6081677adc8e843d3df64678fdccf"
+  },
+  {
+    "id": "3f3cd77f-1e0e-4440-9b8c-afb95bfa4496",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Cataclysm.stl.json",
+    "sha256": "732a19c7b232b769b1261778afdeb8ff049d24cb5820cdd733d19ef0720ce4e9"
+  },
+  {
+    "id": "50349b95-80e9-4e6a-b5df-4417580079fc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Claw.stl.json",
+    "sha256": "dc4935abd0068362b53110ed1eed1b49ba7ece7989c7911fdf4e6e82356f2cc8"
+  },
+  {
+    "id": "da8d51b1-479e-4cca-8ec4-207bfeb255c5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_CycloneArmor.stl.json",
+    "sha256": "fc261d9a92ff6832aa8dc8546f73964a8073ab0e99e97951b4e8af731e544e5c"
+  },
+  {
+    "id": "55b08ca4-97b5-47b7-944c-8fab933970d5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_DebilitatingRoar.stl.json",
+    "sha256": "c5ff58e5d078d5c3dcb3c83cb10194373de7cbf802439ae34876d7e52174b360"
+  },
+  {
+    "id": "d6c28b3a-a355-48d5-95a2-f942d2636c11",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_EarthenBulwark.stl.json",
+    "sha256": "c52bb559d65bcacd37a784f9d1a5b5115e38a548e0698cdf2e78813ce3c9aedb"
+  },
+  {
+    "id": "c6fc2388-193a-45fe-b38c-2bda0c793ff3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Earthspike_Instant.stl.json",
+    "sha256": "63239211517ab794a5f3f7ba3cb81a324289d3d24e7b0a89f2811f26ce017e1b"
+  },
+  {
+    "id": "530d2805-0c50-4c3b-8edb-116051247eaf",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_GrizzlyRage.stl.json",
+    "sha256": "9830f3e5a4ce7a796f35dc520a52ec879b3040e9e25e2d307fcb03a7c675a4c9"
+  },
+  {
+    "id": "049df822-722b-4a18-938b-9ae8f9bf6eca",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Hurricane.stl.json",
+    "sha256": "8c0d751e6fe73dc5f3457828f3abb4d32a51ad11e5d4ec99a39ec1e14005c661"
+  },
+  {
+    "id": "276dadf9-e37e-4f42-b621-de935f4e6cf2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Lacerate.stl.json",
+    "sha256": "e521a48cc1ff7f0cff4013bf4cd008e54f8d176fc77d06d4924caede8e4dd583"
+  },
+  {
+    "id": "7d3b7f4e-ca93-471b-8730-22134d0391e2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Landslide.stl.json",
+    "sha256": "b797b9b7f300338b02ddde54c9057cb08996b96d80149b7ce6f0ea56c5b6385b"
+  },
+  {
+    "id": "d59f260c-7fe5-4c84-a7ff-6cf6c6c82aa8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_LightningStorm.stl.json",
+    "sha256": "ff9fb907a30f38e6ebeba79984406d7eada164f005e8e950b334a6359f4669f5"
+  },
+  {
+    "id": "df20e4b6-6d0d-4892-8a38-e57cc129ed57",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Maul.stl.json",
+    "sha256": "3fe9b667fbc9d4d855555fb3aad3cde354a6990e1d40814b81da0ed1ac81c045"
+  },
+  {
+    "id": "41500b62-ecda-4ab7-9cd0-92179c877cd7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Petrify.stl.json",
+    "sha256": "6bdbb8e1186e307fc5f8e96f87336566607addaf3218b4c4a42fd53cb66cfe17"
+  },
+  {
+    "id": "c8b9634c-b272-4085-b26b-77f638f8d878",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Pulverize.stl.json",
+    "sha256": "2966850cec08e09cd67110a58fb5f2bffc274a0150b885d907c301f590c7efff"
+  },
+  {
+    "id": "bb8dbeae-89a8-4653-be33-639f475aa1ea",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Rabies.stl.json",
+    "sha256": "ea2441edb7de30d5205c2bdba9f6c0bff6e99c05b7b2eaa027d5d2c47d4687dd"
+  },
+  {
+    "id": "6c1c0f50-cd85-42d4-ab9d-009d28e5a6a7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Ravens.stl.json",
+    "sha256": "ac8c72d88601cf691aca71432811da54555fd54fb8fd58efa7e6a97288416949"
+  },
+  {
+    "id": "9bdf6551-2a03-42d1-8c80-83d3121f3454",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Shred_NEW.stl.json",
+    "sha256": "0f14bc38beb87fdc3b01b12a8dd397f2ab482ee858289a69b49edbf36898f2a0"
+  },
+  {
+    "id": "c20fd8eb-d429-49d1-92c0-1ba8430acaa6",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_StoneBurst.stl.json",
+    "sha256": "acd986ea806fb4a7a97675ade2a70b0ee6f9d04a6223d34964bd7ac6058a3ba9"
+  },
+  {
+    "id": "12278b65-603c-45c0-8e53-63cd9b8b4505",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_StormStrike.stl.json",
+    "sha256": "1ca669201add45627b7ba13adf9d6d7598b1695bb040988c3b0ced731efcd1f4"
+  },
+  {
+    "id": "02dd355a-57d5-4241-8092-3b8b8ae3fe9b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Tornado.stl.json",
+    "sha256": "33f7f3d4c9017bb1c21c24a5c467bd9beea9ba88e8ca8a50f741799854e80066"
+  },
+  {
+    "id": "78a74824-dd31-46d3-b789-9609025b4aee",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_Trample.stl.json",
+    "sha256": "3c3da7bb6c399c36c3c98e90e6ad0ccf89c21b46ad72b731578a35f92be12918"
+  },
+  {
+    "id": "865855ac-53c3-4304-b822-fe693f6e5660",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_VineCreeper.stl.json",
+    "sha256": "e67cf94d741fadec4e7f9ff61318166195037d807e28d9f90d83934d23998e9b"
+  },
+  {
+    "id": "c3f6d664-7d60-4986-901b-7e97c7e88232",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_WindShear.stl.json",
+    "sha256": "33d469b33129693e5648089b1948c2ffcd52ad310c405f1aba848eb183ce0129"
+  },
+  {
+    "id": "aa88b3a5-608b-43cf-85b1-1af40c8dc67f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Druid_WolfPack.stl.json",
+    "sha256": "729fef4bc0a885bfacb8d1a3490e5742cfd287f16c09fb5fedebfe5150ef9918"
+  },
+  {
+    "id": "60511c76-9b74-415a-a7f2-be171718adda",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_ArmyoftheDead.stl.json",
+    "sha256": "d0b036859068da8f641f82aad6e5f1bfa0baa3c9f6ac9948c85417b692b9d5bf"
+  },
+  {
+    "id": "951cb97c-adc9-4e4d-8e1f-59d85233dc3a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_Blight.stl.json",
+    "sha256": "9d8933023c44e561bcdc2f52a9dd285cacbb079df512ada925a66e4d065e5deb"
+  },
+  {
+    "id": "d341599d-1d6a-4e76-a2cc-57f905019912",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BloodLance.stl.json",
+    "sha256": "f6973bc859b7256e5cac777f21e729258603b7977a4dede7902c6f8d4396563b"
+  },
+  {
+    "id": "93909f6a-e04b-4156-9fe6-e001f11edfb3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BloodMist.stl.json",
+    "sha256": "fb89d6195e3bb45669f0d6563d403722f99c77c79f54397f6c29c8b4eaf91c44"
+  },
+  {
+    "id": "2031cf10-98ba-4c58-8d0f-44f781656822",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BloodSurge.stl.json",
+    "sha256": "f1176a301809fac6dd78a14ef77a0de582a493b045e876c60d64fc44fff014b6"
+  },
+  {
+    "id": "88fceabe-6d5f-4268-bb3c-054a5b7f2429",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BloodWave.stl.json",
+    "sha256": "9c71b7d7fd96a6373d4a333127fd43710157fbd1a72034d023a596ee8411fb61"
+  },
+  {
+    "id": "b252fee0-2261-401e-babe-5211ce18a805",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BonePrison.stl.json",
+    "sha256": "1ff073b203e985876394e851b132d63139a8cd0cb8cfe4d6522a5c13c804cb94"
+  },
+  {
+    "id": "1a142225-d4bd-4208-8b00-e2e98c435201",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BoneSpear.stl.json",
+    "sha256": "f269fdf117eda0d664de748e2b2aa126187230112f674f7405e4faa06d1654c8"
+  },
+  {
+    "id": "48097d8b-8c4d-4c91-861a-1435c54d6d0f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BoneSpirit.stl.json",
+    "sha256": "9d9162ebc45c1e5278c001858ce8fee206de31490044bcfc7894db467f54f8c9"
+  },
+  {
+    "id": "23aa3384-8e86-4281-a943-9b0feb23c448",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BoneSplinters.stl.json",
+    "sha256": "a3119c095c837313742fc455f590f79172102efcd6dd7ddf7a7a29d9e6045abd"
+  },
+  {
+    "id": "afce9c97-75e7-4e7d-a715-aa2cbc99db14",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_BoneStorm.stl.json",
+    "sha256": "e921d46e6cd78a46d128961cb251d3d347aa6709f35c903f36f32620a0ff8000"
+  },
+  {
+    "id": "0f38cb57-8d9b-4c00-abcd-6fa4ff3990bf",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_CorpseExplosion.stl.json",
+    "sha256": "beaf46eca56e1ccd959586a6446c109b04157879e599159a9179077acc5efe03"
+  },
+  {
+    "id": "b0b18bba-3e16-4358-9cc4-31cfe0b5c59d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_CorpseTendrils.stl.json",
+    "sha256": "8057da4bc5303bde8070d6338e2c19cf4d47eb0784c4c25e58a1845ccd42f32e"
+  },
+  {
+    "id": "a4ec0899-ba9f-4c3d-8212-62806f33cc57",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_Decompose.stl.json",
+    "sha256": "7198e2482b8c7b2266339708541233b6f3d1697f69fc1e9cb48660da6f722998"
+  },
+  {
+    "id": "fec4e2f4-1d38-4b4b-bbe0-f6fd461b1017",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_Decrepify.stl.json",
+    "sha256": "832825b6036e28babae43e548ca76a458d77003166d1c1622fcd8a01a97dfd9a"
+  },
+  {
+    "id": "38bf81c4-09d1-4770-a0ce-22b0c4065096",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_Golem.stl.json",
+    "sha256": "e2fa9662e5bc1bcb7e2ba95228c4a89ccbcf47e2d6f2cd4b99fc82c5c93bae98"
+  },
+  {
+    "id": "00b1ddc4-92bf-4917-bbdd-b8abe7b0009e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_Hemorrhage.stl.json",
+    "sha256": "260fedd6e267ad7dc36370c1507726655da30d9edcd46aaf99e699ad580e111d"
+  },
+  {
+    "id": "e6aa99ea-5d2c-479b-88fb-11aea7761e41",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_IronMaiden.stl.json",
+    "sha256": "be75c7c8107c76a49915951953a981a2371026e030ba40318799377375a52eee"
+  },
+  {
+    "id": "7392fe5d-557f-480f-a5d8-b7aa210bb095",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_Reap.stl.json",
+    "sha256": "502c7c209ba8df5a00267037daaab1a00b23f82dcee2edb40eed1bae15018706"
+  },
+  {
+    "id": "061f4f58-0984-4476-97de-477e84d758c3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_Sever.stl.json",
+    "sha256": "cf658cd1f7246df682148e69e278602003a6cfca2bed1be2eae4662b61c4e5d7"
+  },
+  {
+    "id": "5609cb79-e90d-406c-a06d-006225705e7b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_SkeletonMage.stl.json",
+    "sha256": "0044fdbd23c9ebe48179a82808a5c8adf80efd0bec708f633cd46d74ea08bea3"
+  },
+  {
+    "id": "357aa1e4-9833-4ec7-a398-e9a3f4f37b2c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Necromancer_SkeletonWarrior.stl.json",
+    "sha256": "986289cde63d1be6bee6c70195a2462732f83f5b075bd40736e90a40bdf8fa4c"
+  },
+  {
+    "id": "d15ebaf1-04bb-4311-9486-415f86aff361",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Advance_lunge.stl.json",
+    "sha256": "27489ae534df551298bb2ae2d233fa7dffe7aaf36f7885abf938d6e3d54b662d"
+  },
+  {
+    "id": "80ad9992-bdb6-47ea-928f-ea1d5ecfde5d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_BlessedHammer.stl.json",
+    "sha256": "e13b3c1bfa1f6e0efad35881101c0e46dd3b2215bcedc3c6553b884c6dfde277"
+  },
+  {
+    "id": "0059c2a0-d385-4f35-9f0d-08f5a434fcb2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_BlessedShield.stl.json",
+    "sha256": "e863df5715f68b1fd34a387dd44f93dbb62dbe7eacfde4dd3b2070ab7fea40cf"
+  },
+  {
+    "id": "c4e192a1-45bd-4659-8e32-6469fad94cef",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Brandish.stl.json",
+    "sha256": "bfa256e2599ce62d1b05c081cbd55751122ade7ca77bfe372721c452a3cce94d"
+  },
+  {
+    "id": "b21ea11d-0d64-4c8d-b55e-6d58b4479356",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Condemn.stl.json",
+    "sha256": "d479119aec5e00d5c08265ad5ce97b7e469c6cb086bbab89438f8b2a647596d6"
+  },
+  {
+    "id": "18555186-a639-4b08-a15b-e921f315c13a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Consecration.stl.json",
+    "sha256": "d1438888d1fb02f7323dd5455d5d4edbfe95ca56a7ffc771fd932cf1375672b6"
+  },
+  {
+    "id": "3e9a9ab7-200b-4174-a68b-9a78c74ab511",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Defensive_Aura.stl.json",
+    "sha256": "d8ee3074a8ebeadb1e32bc922e4707c0f02a829f9247726462eaf92b7976b10c"
+  },
+  {
+    "id": "c78865a3-a1fd-40f2-ac91-b47a736c0845",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Disciple_of_Justice.stl.json",
+    "sha256": "1de211023687b05207a33f8b5a3613515af20928f59818bbf33bb4c108b09046"
+  },
+  {
+    "id": "3deaf8a2-05cc-4994-9632-b0f53f7eb8d2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Fortress.stl.json",
+    "sha256": "82795bfcaf39820badd09f6782f96c9d3e06a799e7598fe2c546d4b71f0e09d4"
+  },
+  {
+    "id": "5fc5b5f8-ca8f-4420-a020-0c2e7eca368c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_HeavensFury.stl.json",
+    "sha256": "79cf8a1c3119d4208789c4cb0359aeae9e6f5d16c67d710b8b6efb531838a4e9"
+  },
+  {
+    "id": "6ba487e4-2a41-49be-a9c0-f393fd3c0d5c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_HolyShock_Aura.stl.json",
+    "sha256": "2e63ce6fd8be4699909a18462563e6c3e0f1768875bfbe644600d1516a1bf2f4"
+  },
+  {
+    "id": "cd91bb63-2990-4100-b489-e286096efe63",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Impale.stl.json",
+    "sha256": "3c4fc1b6ce54580942aa6d6c055c6ffa25721becf8367bea76c17915e1d28d93"
+  },
+  {
+    "id": "f3db1221-d633-4b44-a18b-b6734eab218f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_LanceDive_OLD.stl.json",
+    "sha256": "b07d80fba7411fcafb605a34ba116cd4e15b22644008f92445fbcbcf6ce98b0f"
+  },
+  {
+    "id": "2273b685-cde9-4243-8772-d5e5358988d5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Offensive_Aura.stl.json",
+    "sha256": "c0dfaf7ae48c6f234dc4e13d2eb7ae3dce268948cc4e6c1766e44fc7a5d797cc"
+  },
+  {
+    "id": "ea8cf98e-1a3a-4a73-b137-2e6b8ffb0f76",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_PreTrailZeal.stl.json",
+    "sha256": "99d205f3d9eb6fb721d371da3f8c4f2ec7b8a4b9c980587b0482252a86a17434"
+  },
+  {
+    "id": "44a4e617-2525-463a-8ee2-5c145248d44a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Punish.stl.json",
+    "sha256": "b3be1932fdf96f1ee6ec9d952af5396642f9c100b9db19be92d6cbf237b01f81"
+  },
+  {
+    "id": "799b73a1-e744-4e6d-b683-f11ee40296c0",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Purify.stl.json",
+    "sha256": "6616ab7727e567a8864e1f1ed142fdad1c3df8c404d581852fb7249817ffa8de"
+  },
+  {
+    "id": "97b59db3-6f49-42fc-baaf-86d22c47404d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Sacrifice.stl.json",
+    "sha256": "ebc07c8bf8618c36660c53499608dcff2347c1ce5d279961ea9a0c83581f7bbc"
+  },
+  {
+    "id": "8ebde470-785a-43b7-a792-584e33cbe802",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_ShieldBash.stl.json",
+    "sha256": "79348c5606ad648fa017e692d22bdb50ec075e9a80280b7a4dd66a22e42afa3c"
+  },
+  {
+    "id": "0c909847-5955-41ff-b24a-70fed3f83985",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_ShieldCharge_Channel_Short.stl.json",
+    "sha256": "965bbb42640f47ddc039209ac6f2fcb4dd4aa743cd302be39a2e26cbd713b155"
+  },
+  {
+    "id": "7c500ada-2b82-427e-b461-422fa1e42e61",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Smite_FalconPunch_Recast_1.stl.json",
+    "sha256": "8de6aaf9e598ea17c41a911a5cb314a669f4f6a41e38915538694aaa93fc621d"
+  },
+  {
+    "id": "014b84ff-b8eb-45ab-8cf8-7ca19db93255",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_SpearOfTheHeavens.stl.json",
+    "sha256": "a313e5ef0e24e44b08eefb69eabf221a268dc7cc85c8e1723f70d08ff1a0a893"
+  },
+  {
+    "id": "21f93209-92db-4e9a-9beb-5bad8605740e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_StormBolt.stl.json",
+    "sha256": "016e673ebb4c590f7fcddb6180cfc4673cdf4e7cbca2a2230035f233ca142d5a"
+  },
+  {
+    "id": "3339831f-0e84-460d-aa18-8ea61081bb67",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Paladin_Trinity.stl.json",
+    "sha256": "86ee4d28ff47ca19615a42db5d972fdfaa26eb5941892ee9a59c3e3d80764b3a"
+  },
+  {
+    "id": "06192aa4-a4f1-4016-a4cc-4903fd1756b5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_Barrage.stl.json",
+    "sha256": "5c8c2a1d5c00ff429d17fd009dec908d2569b50f8f5935ede9fcbe4d2740f507"
+  },
+  {
+    "id": "049bb8e4-c5bd-4fa3-8892-098f571244b3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_BladeShift.stl.json",
+    "sha256": "4c94505a1f42a66c8e6a540576fbb5a4f649a40e5067b78ad7751c5f6b6c6898"
+  },
+  {
+    "id": "ab3505a8-8875-41e2-a378-9b25b9991333",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_Caltrops.stl.json",
+    "sha256": "ce70e04f3b5dd676461c0cb7c3e9ec1b01779c9bb5ec7028ecf3216baf2e5085"
+  },
+  {
+    "id": "30858414-ab24-4906-bf0a-c28fb08cfeb2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_ColdImbue.stl.json",
+    "sha256": "6d4ace605bd45323a8a87cdb81355a91bdd96a66cbee28ca01d41209276dbfcf"
+  },
+  {
+    "id": "85961b26-0d09-4c49-9841-3ac85f5ed7db",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_DanceOfKnives.stl.json",
+    "sha256": "03eba9bd28e9e8db818a4bbd59b36741965082ada848691397b7c91d66d7e59d"
+  },
+  {
+    "id": "630c876d-22e7-4886-b73b-2a34a71d5b66",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_DarkShroud.stl.json",
+    "sha256": "aeb1f56702bc090cd557e2ebb9b18b663bd0dd79551d303a947ffc973d5f5722"
+  },
+  {
+    "id": "6aaa5e2e-c447-4e97-9a10-f240c0f4f613",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_Dash.stl.json",
+    "sha256": "a90bb15e6673e36879893aca4baab375a63e6526d963582aeece9825d66eff0b"
+  },
+  {
+    "id": "3d7e42f2-a0d1-4ccd-bdd2-bbfe5a32856e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_DeathTrap.stl.json",
+    "sha256": "a21b2c6245b0d4bee54a050976d97cfdb4fbb96ef1ad4d0ba7efd9d23ff9b198"
+  },
+  {
+    "id": "27b25c2f-6468-4fea-bb2f-ad114e4339d1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_Flurry.stl.json",
+    "sha256": "0db204e40327f3a8ea3edcc5587ddfa8a9067c7eb4eab5c01a8ab40c63ed4854"
+  },
+  {
+    "id": "7d3a482e-8f03-4df2-82d3-704bea8ee424",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_ForcefulArrow.stl.json",
+    "sha256": "94bad28d0d8bcc58074929476ba990b1b628142b0049e4b0622c542d5a27a739"
+  },
+  {
+    "id": "bd317fd4-a365-4013-9e0c-be0c048c2435",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_Heartseeker.stl.json",
+    "sha256": "b485ec489605473a5c00d45dcfd407bea2be2578829a137dc5a42e68876887dd"
+  },
+  {
+    "id": "efccb250-ff4a-4908-8bd4-ec10aedd10e3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_InvigoratingStrike.stl.json",
+    "sha256": "82b90f0e57f7d2296bed788c8be107a4f8cb6d39d32cb10aa69b1f1d81058a32"
+  },
+  {
+    "id": "8fcb5663-5561-4929-9dd9-d2707ec434a8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_PenetratingShot.stl.json",
+    "sha256": "df48f85dea0c827696f2d2e1a5cfc09e5924116b839780fcdb224cef97a8fa8f"
+  },
+  {
+    "id": "207f39f6-bc65-4e90-ac82-3d8d2ea4e02e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_PoisonImbue.stl.json",
+    "sha256": "f5feb0db4cb69486ab687902c6d231c9140c4cc3acc77b2990a0f7af93d914f9"
+  },
+  {
+    "id": "34b14bec-778d-4b11-874b-f137ab745aea",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_PoisonTrap.stl.json",
+    "sha256": "a70d48d0ecc91ec15909f14fb254fbe03728dd0ead5fda99c1f766dd5ded31cb"
+  },
+  {
+    "id": "b6a83149-1d60-4c34-a60c-91335e430dd6",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_Puncture.stl.json",
+    "sha256": "4a190268d8e82d47558864498508d8aebc506669f1152e1c271139d9606dc849"
+  },
+  {
+    "id": "038635aa-3c73-41a9-82c6-889c68d49e59",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_RainofArrows.stl.json",
+    "sha256": "a1af39eb083912d258b8bb65b9e1cff56525f841591c41c1cab2fed7c61822ad"
+  },
+  {
+    "id": "6dd5411c-544c-487d-a795-271f4a955d4b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_RapidFire.stl.json",
+    "sha256": "6c3f44f1807202b3668c42bec38d3104c0235c49b072666448ba4520d74e6183"
+  },
+  {
+    "id": "6fd1f8c3-207c-4ecb-900a-8599473135fc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_ShadowClone.stl.json",
+    "sha256": "f6e36c13df33976e4798f2f2c52fa2e6fad95c29713cdd4d6a36a8bf54b8c6d2"
+  },
+  {
+    "id": "442834de-2f4f-4303-ab42-5fb673dc3c1f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_ShadowImbue.stl.json",
+    "sha256": "e19ce9b50671a72f86b8ab09c39854fc84545029bb89dc923a769350a4bc1229"
+  },
+  {
+    "id": "05bf1e90-5e0e-4409-9b1a-aa77c38fb375",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_ShadowStep.stl.json",
+    "sha256": "9faa85c0b871bf0427ce55239663f6a9b423b83fba9f15814e0277c789fad837"
+  },
+  {
+    "id": "bcfdb86d-5ee9-456b-99c2-e0fa2929bd40",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_SmokeBomb.stl.json",
+    "sha256": "7f586217190fa9edbda4c2e38aa84714740c5bfe40668c6ff2f04b04839bee66"
+  },
+  {
+    "id": "867d942d-e61e-4b00-ab9a-977409bb85f3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_Stealth.stl.json",
+    "sha256": "38f8ce2ed03652de3c8000a1f22b51a38155b987a5eca68cdd0eaa3f5d6f9032"
+  },
+  {
+    "id": "1b2f7ca3-4c12-46cf-b61b-dfd18387ba08",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Rogue_TwistingBlades.stl.json",
+    "sha256": "1b470c60e1fb399c58fbd566ea6d4b3cfa4004aa726c1bc6721db07fc217833e"
+  },
+  {
+    "id": "4791f7a6-a033-44ff-b1ca-74829bc3d200",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_ArcLash.stl.json",
+    "sha256": "4da30c804ad63a3d51e7bec9ff612cd9f8c98d30c29964b5ef4d0ddea96092ef"
+  },
+  {
+    "id": "0ded2fad-78ab-40e8-8142-34801041c375",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_BallLightning.stl.json",
+    "sha256": "4492b9291ac22f7b4cda44b978edb97b55a08eda74788aebe36da952bd9e5294"
+  },
+  {
+    "id": "cb123da4-c835-4bfa-b20f-2a39740f32e3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Blizzard.stl.json",
+    "sha256": "c6b71c1a93c15eda91cbeb12ba246a5b7419c9883ccdbe78a11ced10f4348c5a"
+  },
+  {
+    "id": "95aa004a-d0d9-411c-b5eb-8e99df07bd99",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_ChainLightning.stl.json",
+    "sha256": "7778560bb67ceee0ef9f6add9e2bf7daeb6c847409608cccc478096a32795179"
+  },
+  {
+    "id": "a1eb8866-d660-4450-9ee2-4701a37080fe",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_ChargedBolt.stl.json",
+    "sha256": "04dc3f26ed2360bd6f6284b331c9f0dd6a0bd1176398011d0ddecfe1a23dd105"
+  },
+  {
+    "id": "355e106c-8f0b-4fca-885a-678d6c2e1952",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_DeepFreeze.stl.json",
+    "sha256": "3dff553d9e91d4f7ba8ee88b56c8083badc4beb3a14aa837e701f166e4d8bdc6"
+  },
+  {
+    "id": "6f8487ae-2e97-48c6-bede-12fb7f888fea",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
     "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242"
   },
   {
-    "id": "57848230-3e08-47f7-952a-2e6c5aca32f0",
+    "id": "0abe45fc-f77b-4160-a150-d17da5b9ea44",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
     "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd"
   },
   {
-    "id": "0bbd67a2-fbf9-4579-aedb-97afc742ca1b",
+    "id": "e86b1b19-38e0-4d1e-adcb-590ae3ffdcd2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Firewall.stl.json",
+    "sha256": "29b87ab4f7ad9550d2d42352196b5a59a18926f12028248e61cebb44b8aeb80c"
+  },
+  {
+    "id": "f7dcf2bc-8655-4c7c-b3b8-dde38d943c4e",
     "kind": "datamine",
     "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
     "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01"
+  },
+  {
+    "id": "d69729c9-ea5b-494a-8dd4-0789a8c25154",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_FrostBolt.stl.json",
+    "sha256": "2980378016c31caad03be4e8adb431ab15337a8a84517e5006228f1a6fe2f4ef"
+  },
+  {
+    "id": "d70fd544-3a94-401a-9803-b85f89cda016",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_FrostNova.stl.json",
+    "sha256": "5d471d0ccf7fc9cdd45d0f044335cb6c22a8e329e72fc75f5a6fbcc96d14565b"
+  },
+  {
+    "id": "4019aaeb-961a-45dc-8080-5a2b7de8b43e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_FrozenOrb.stl.json",
+    "sha256": "53b947c9036cfae0436f9936dd684c6dda05843f4e0cdfb92404aacdeb66de4c"
+  },
+  {
+    "id": "d401014a-cfd8-47d3-86ef-e0f1394cc341",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Hydra.stl.json",
+    "sha256": "d7ff21a815ce121a34d4517d461890a7f0e8a68ce544a2617b064f9de7fe7d91"
+  },
+  {
+    "id": "0f753cec-03d9-4aa5-85ed-19de478888d5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_IceArmor.stl.json",
+    "sha256": "f556c7501c67fb2bd23a3b9d3df45462e5eef01ecea76841f35cb8c6416c128c"
+  },
+  {
+    "id": "f38ddc59-0962-4e24-8a85-1d33845580f7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_IceBlades.stl.json",
+    "sha256": "7482745976cc688fcb11e9e436aac7dcaf4338bc4072b61b47787da7ad636569"
+  },
+  {
+    "id": "3795fe40-8222-4bbb-a1a7-022e0ad4cb51",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_IceShards.stl.json",
+    "sha256": "82991967f6cb0638bc96a440f799d69d2179ed8bc476798cedde52f7d35c36be"
+  },
+  {
+    "id": "40596817-1b30-4548-bd46-a921870297e5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Incinerate.stl.json",
+    "sha256": "91f04ac60a25a65c9e3e17932e5f0867462e85caee850b43b9d647e2068a23e6"
+  },
+  {
+    "id": "b703a8b0-1c45-4a7e-ade4-e623b607c3a2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Inferno.stl.json",
+    "sha256": "6a1dd95e382ccefa53edf7a85e40c4db7c2715935dc839348af38090d04372ca"
+  },
+  {
+    "id": "721a436b-059e-4d6a-9aeb-168e2776d39d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_LightningSpear.stl.json",
+    "sha256": "ab4a320f30f0c122503416dde50aada66b45113cf26e1f9e2edadcc576686fcf"
+  },
+  {
+    "id": "debba94f-3da4-440a-b5f6-a1fa53f567e1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Meteor.stl.json",
+    "sha256": "4d14124d57c1d8b655b455e89a298f2758b96760bf0192803a476e681c656732"
+  },
+  {
+    "id": "eaf03c9f-76fe-4a11-8e49-3cd4ff027bea",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Spark.stl.json",
+    "sha256": "b18473f24f9c406facf544993d3419474ed859f018643bf9a7678dc332362698"
+  },
+  {
+    "id": "fd5f8878-bd61-4815-bbc4-c5eb59f22b9d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Teleport.stl.json",
+    "sha256": "200c4b0705b1b92597ba9ea4f2c8f1079b3c2b9c3528786bdd4a10367755ebd8"
+  },
+  {
+    "id": "a88a6f9e-fc12-4ef2-97e3-ca466218b2d3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_UnstableCurrents.stl.json",
+    "sha256": "f3c14e5c1b4333267479e20538e3e369b9544cc9f6e60ac4e4d4c8cb131721db"
+  },
+  {
+    "id": "394bfe20-eff5-45d1-b327-48a0f2c788d7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Basic.stl.json",
+    "sha256": "3ed7c6ccef3a27512ecd72c57186e0127e9f1b9d94a40b1d4ef8b1aac9696903"
+  },
+  {
+    "id": "ae72bbd5-e398-41dd-af74-2776296a6255",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Core.stl.json",
+    "sha256": "cf9d77e07986e00ff713554f923e9bdaba59b5531286d14802d54718313af1af"
+  },
+  {
+    "id": "72796dcd-1e18-486b-9fee-008dffc2abaa",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Defensive.stl.json",
+    "sha256": "e8ebca0985833bde3c7f32093e3ae252ff7afc5001634924aea21df24725338a"
+  },
+  {
+    "id": "e0d44646-c931-4e37-b4f8-2c2bf036376c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Focus.stl.json",
+    "sha256": "5e22fa7405ba97e8b1a7e24cd61f0d1feee109a149fdabfd534cf1ebb363d600"
+  },
+  {
+    "id": "1ce6332c-6364-4e57-a949-0e84819ea00b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Potency.stl.json",
+    "sha256": "8bdee339ec03dad138d4149d3380f52745fc431dd1c4189915ae7b5b80e716b6"
+  },
+  {
+    "id": "be40021d-590c-4179-afe3-24ffb87b9033",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Centipede_Ultimate.stl.json",
+    "sha256": "554da180147292563bc2ef59ebf60884510665e494d246cad71115065e3835a2"
+  },
+  {
+    "id": "2ce804e5-75d8-4991-9426-0eb482c363a9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Basic.stl.json",
+    "sha256": "9799063ad25b3ed3e548063300fc8f380e899348d67421521952a47ee118a60e"
+  },
+  {
+    "id": "b2e0cbc8-3d5f-49f9-88cc-802fb2adf10d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Core.stl.json",
+    "sha256": "f5ed8e6a7d8b61d771ab818fc7162febe907a723dd0430e36393545dbf5f222f"
+  },
+  {
+    "id": "4e344bca-4db5-49c3-88f9-96fac8a014d5",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Focus.stl.json",
+    "sha256": "4253821dd57195dca49e9fa399c4e7570373b3d9292d94aa5ac996e75226a63c"
+  },
+  {
+    "id": "6c20f557-c88b-42a6-b496-3eb84c104b95",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Focus2.stl.json",
+    "sha256": "db1d0f10bb4ccbba7a0d06e49063adcea03adb76f2f39c4a5ccb01a528bb6b74"
+  },
+  {
+    "id": "d45da989-c8b5-4cde-b356-f81a25e91acd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Potency1.stl.json",
+    "sha256": "2aa8b1bec0c474db604a74709c45200e6b79da77b44a514cccd6bde67fbea27a"
+  },
+  {
+    "id": "3687fe89-edd1-4891-b1ae-c77419b24003",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Eagle_Ultimate.stl.json",
+    "sha256": "a9a8f4ae095e492778fe1da7dea80f7d66b38c7b159e563a8eb810a77641340b"
+  },
+  {
+    "id": "804643b9-3c48-4782-a265-3c888a2b9848",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Basic.stl.json",
+    "sha256": "791d97c04240547eef4d6ab920db40528ce9bca5e277e02bdd807a2530dda6cb"
+  },
+  {
+    "id": "5cfb9369-dd06-4e4f-99f7-fa46260208a6",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Core.stl.json",
+    "sha256": "fd93c35482e788d00b33744bfb02ec3a580815783e88c3557fbefd91bfbb7b4f"
+  },
+  {
+    "id": "b030457d-e9f1-4437-bb06-7eef4d73a732",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Defensive1.stl.json",
+    "sha256": "98486cf621f24047fd4d149eaa96bfe8e8ab841eeedafe03c028afbcc92ef854"
+  },
+  {
+    "id": "5a2f4f56-440d-4a88-8087-cedc3e68aab9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Defensive2.stl.json",
+    "sha256": "ba5e2d0237c41b3eb738221c6fb32410c8be06f01b6e3924a0e5a24303a98c69"
+  },
+  {
+    "id": "af5d88f7-f192-453c-81ba-7c69a4908b2f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Potency.stl.json",
+    "sha256": "0953fc5a6dfb82bee76ddd78401a19c09280375043829acd6ef98f939ff40915"
+  },
+  {
+    "id": "1c79595f-b7c7-4bd0-b6f4-e90147d7dcea",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Gorilla_Ultimate.stl.json",
+    "sha256": "c5d2c9eb972c97bf974efd9b3b7e7e2c8c064d788df6c644a8bc3f006ac93f16"
+  },
+  {
+    "id": "0ad26425-76ed-46d2-af6d-2256a759d523",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Basic.stl.json",
+    "sha256": "19c5390b5bfc017dd6f71744d52493cf2b2c853710ddebde71b59f3d5b62a1d2"
+  },
+  {
+    "id": "4c4c9828-90fd-427b-87da-3c322fbd0333",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Core.stl.json",
+    "sha256": "5439589e728970db3a897a52cec9004321ebea48d09c2bd1cebbd05d6e0af867"
+  },
+  {
+    "id": "10163de3-2657-43f2-be34-ff4367146986",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Defensive.stl.json",
+    "sha256": "25feecbc51a9907775b63cd453dcc6ba953e6610e8bd96da16e83079f116dcbd"
+  },
+  {
+    "id": "b81e85c6-612f-4205-b654-442959ba8995",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Focus.stl.json",
+    "sha256": "8448d6adbbd53979d34d0ea23a50604c9a1109aa13be613a77501a0791b81c72"
+  },
+  {
+    "id": "ffad68ca-666d-4fbf-afdc-fed7388a8e52",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Potency.stl.json",
+    "sha256": "e4d9ce05d750fcb0ed9ddb51b66aadac486026c018556c4cbab768be514de648"
+  },
+  {
+    "id": "a81a9db0-c536-4cf6-be2c-4e6afe158a52",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Spiritborn_Jaguar_Ultimate.stl.json",
+    "sha256": "4f2f50dc166e2743a33078378adaf8b38120f3414dd73d6dd4733ab646a0bb7f"
+  },
+  {
+    "id": "56e4aa88-0a62-466e-8f6d-04a1ee1134a8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_ArchDemon.stl.json",
+    "sha256": "f9cd06e3b9ed14d03a4e66bf6bf3e398bc93da80f5e947de8294e7ecc58bf84a"
+  },
+  {
+    "id": "896be381-d407-4887-8f1f-f6a6dcec27d9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_BrimstoneOrb.stl.json",
+    "sha256": "a2f1d8569c4c3d421cc16e337fa407a7f64b41367833adea02c9113600806ee5"
+  },
+  {
+    "id": "0ddc939a-b090-4e1c-823c-7974b8c95335",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_BurningSkull.stl.json",
+    "sha256": "364d235f31ed36f4c62275b84b6f5ccca4eb5196cc0ab71e1c109d162001ada0"
+  },
+  {
+    "id": "f95d9778-f6d2-480f-8619-944c7244cd08",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_ChainLash.stl.json",
+    "sha256": "75989e9230ae5760120b9fb6bdf72e2aa262c2d128603cfc2fb4ebb499b535e7"
+  },
+  {
+    "id": "3415343e-5b6d-4a56-9516-98557677e7df",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_ChainTotem.stl.json",
+    "sha256": "3312ead4e161ac514a73c7e0a75cbbec9528d74ceef84b8c6901beb79b39fe29"
+  },
+  {
+    "id": "044e4294-9e73-4f6d-98e2-349783989e95",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Command_Legion_Demon.stl.json",
+    "sha256": "852636aeb076fbb615c0e4098f2bc204861a46d2de21cfee273d963100cbecae"
+  },
+  {
+    "id": "f6a380ea-c426-4f57-a1b0-7f5d743d65d3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Command_Mastermind_Demon.stl.json",
+    "sha256": "7e74bf188c372ea811822d77623140cb6e0da2a3fc74e837391cdd3cede508e5"
+  },
+  {
+    "id": "772d1db3-4e73-4fc5-b358-8acd806f7c09",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Command_Ritualist_Demon.stl.json",
+    "sha256": "e0d7264e8213cfaa471e8f6dcd2d22d64d2cedbe4448f774089bbb02713461e8"
+  },
+  {
+    "id": "82dcddf7-e9c4-4e3e-afd5-e4f2cf0425cc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Command_Vanguard_Demon.stl.json",
+    "sha256": "b9ecc19bfa3fce19c694340e3b0652f7cf5a054428937192c817e6fbaa27c6e2"
+  },
+  {
+    "id": "dad115ff-6deb-4511-835b-2327a1e2312a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_DemonDefender.stl.json",
+    "sha256": "82486297e3da9a67ba14afd2b859b83d36c17aeb51cdc456b4b78069272ebc41"
+  },
+  {
+    "id": "07940a26-c6fb-46ce-99bd-def791ad0844",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Demon_Wall.stl.json",
+    "sha256": "6c035c9e02863ef11888e80f0c1f898dcaef995844d041c60fa402db1d8ccffc"
+  },
+  {
+    "id": "4dc55048-c88e-4533-80a2-842310e96639",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_DemonicBombard.stl.json",
+    "sha256": "d73523fd9883b525326758887949c0add1838394d500d5ab2d56883f16319ad0"
+  },
+  {
+    "id": "36ec5f49-0486-4f28-8777-b74fde6a3681",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_DemonicGrasp.stl.json",
+    "sha256": "cb91b620441af4a669f8baf972694bf4ab1d4831319651892c25a4c7cda5409d"
+  },
+  {
+    "id": "75dbe501-0265-4d8b-9171-8f7961f84909",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_DemonicSlash.stl.json",
+    "sha256": "497b60546038531e85834cd8b60a25c081545d290ba8d01ed5da60becb444762"
+  },
+  {
+    "id": "3179a08f-e209-4450-aca9-55161ab774a4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Demonic_Breath.stl.json",
+    "sha256": "99b47687e97e4d48971e5cf65c59f7ed7711e9c89171a12a070c4dd8f23f68c1"
+  },
+  {
+    "id": "da04d42d-ec9e-43c3-aaa3-6d83823e300b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Demonic_Drain.stl.json",
+    "sha256": "dbd02ba566b13a26e22cd8668d78062079da4db55ca344c152a597f0c1b286da"
+  },
+  {
+    "id": "7dab32b8-0f08-4f0a-b229-70be741f5362",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Doombringer.stl.json",
+    "sha256": "2643874d10810c177b8c74a714d5e75f709358611594ad03bb9dfc02d8fbf37c"
+  },
+  {
+    "id": "23a415cf-eb6c-4a93-8ce3-22693a4308b9",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Fissure.stl.json",
+    "sha256": "326a632820929b985ded47383611bbff8f1f697c68e90fba464f4bbb769e61bf"
+  },
+  {
+    "id": "dc8068a3-be2c-426e-87c9-e129f1fafc54",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_HellStorm.stl.json",
+    "sha256": "38d27e03b3dbe69faabb917b81a414c394fa29bdb9211513b4350d9710a32d51"
+  },
+  {
+    "id": "8908fefe-3afd-4d7e-9a96-fa80e431c7e7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_HexCast.stl.json",
+    "sha256": "4e4fc0a1d19bb2a70d6da9bfd3c085a8ad03381bdee7b904b30e0bc381a41876"
+  },
+  {
+    "id": "3afca3a7-42f6-40ee-8a87-af898e1ad779",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_ShadowShred.stl.json",
+    "sha256": "e4b4c11383030a72a5be8592b305ae42e3597db65e62b1765aaf24d053414937"
+  },
+  {
+    "id": "035d7748-8425-4b48-a5fa-0d6ea9a7f0f1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_SigilOfFlames.stl.json",
+    "sha256": "f00899202e6abd9a34d0b7f51f9441474dd2320d82dc6c352baa1a33251b5aa1"
+  },
+  {
+    "id": "d1994875-f759-47de-a05e-0e0b1c5eaa56",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_SigilOfShadows.stl.json",
+    "sha256": "175f8cac5f509433173936ed13e233f4e4185f5bbb069ab98f8ad1352fbdfd34"
+  },
+  {
+    "id": "fdd62fde-0979-4543-a492-fdb7de9eb49e",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_SigilOfSummons.stl.json",
+    "sha256": "4816ee4d662b50d99f07cc9cb0bc04422a16a723e032c66c2de6af718ab4bc6d"
+  },
+  {
+    "id": "c91e1c8e-bf48-4783-9df6-ed66caf7f60b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_Summon_Lunatic.stl.json",
+    "sha256": "64a86eb22373bfb4b4a4d8e5e652f741afb7c6526f528732696c1cddfe03d01d"
+  },
+  {
+    "id": "34a677e9-1c1e-4e8e-9a53-aea93406de4c",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_TailWhip.stl.json",
+    "sha256": "fbdeb4d1a16b9daa268cb4b1b487018f4c9f88a549cf163173b853aa3301a7c1"
+  },
+  {
+    "id": "1289fd81-e128-46de-aeed-9a8914fb7759",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_UltimateDemon.stl.json",
+    "sha256": "7db6309f0b8049d0c1be516b1d37b747fd475f706dd1f7a1b81a3778c70ecffd"
+  },
+  {
+    "id": "92b2fa2f-8d93-428f-80f4-a1f604e4711d",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Warlock_WraithStep.stl.json",
+    "sha256": "7361ad824701780b45252700961790cce6522e5ae30a2e8418460d08130f016a"
+  },
+  {
+    "id": "96610700-68c1-4f2b-b5f7-5806cd3a0b57",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_X1_Barbarian_WeaponThrow.stl.json",
+    "sha256": "e49346997a35f703325d4993f82bbf2b91461ee088b48b426590943c822d0eb6"
+  },
+  {
+    "id": "72bbda69-7fb1-4bfc-aa1c-a0d62077d298",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_X1_Necromancer_Ultimate4.stl.json",
+    "sha256": "49f3bdbf187e473ffcab936382254167aa012c45948ac39ca7d35adcb1241164"
+  },
+  {
+    "id": "0af1705d-ae49-4e98-abee-ed3aa42bb09a",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_X1_Sorcerer_Familiar.stl.json",
+    "sha256": "863ab48e58ebfd8b475b9f859bc0f12ffc138fe413099b74bcf0f1f764bd27c9"
   }
 ]

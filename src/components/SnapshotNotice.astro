@@ -1,11 +1,13 @@
 ---
 import { metadata } from '../lib/data';
+import {assetManifest} from '../lib/assets';
 const base=import.meta.env.BASE_URL;
 ---
 {metadata.gameBuild && <aside class="snapshot-notice" aria-label="Arşiv sürümü">
   <div><strong>Sezon {metadata.season} · {metadata.sourceVersion}</strong><span>{metadata.sample?'İlk gerçek veri grubu · Katalog genişletiliyor':'Kaydedilmiş oyun arşivi'}</span></div>
   <a href={`${base}classes/`}>Sınıfları incele →</a>
   <p>Sezon başlangıç verisi. Kaynak adları ve açıklamaları İngilizce; çözümlenmeyen formüller ham hâliyle gösterilir.</p>
+  {assetManifest.sourceVersion&&<p>Özgün oyun görselleri: yerel {assetManifest.sourceVersion} kurulumu.</p>}
   {metadata.snapshotId && <details><summary>Arşiv kaydı</summary><code>{metadata.snapshotId}</code></details>}
 </aside>}
 <style>

@@ -84,20 +84,26 @@ try {
   assert.equal(games.data[0].id,gameId);
   assert.equal(games.data[0].manifest.inputSha256,catalog.inputSha256);
   for(const file of catalog.files){
-    const response=await fetch(`${origin}/api/v1/snapshots/${gameId}/records?kind=${file.kind}`);
-    assert.equal(response.status,200);
-    const result=await response.json();
-    assert.equal(result.total,file.records.length);
-    assert.equal(result.snapshot.id,gameId);
+    const payloads=new Map();
+    for(let page=1;page<=Math.max(1,Math.ceil(file.records.length/24));page++){
+      const response=await fetch(`${origin}/api/v1/snapshots/${gameId}/records?kind=${file.kind}&page=${page}`);
+      assert.equal(response.status,200);
+      const result=await response.json();
+      assert.equal(result.total,file.records.length);assert.equal(result.snapshot.id,gameId);
+      for(const row of result.data){assert(!payloads.has(row.id));payloads.set(row.id,row.payload);}
+    }
+    assert.equal(payloads.size,file.records.length);
     for(const record of file.records){
-      assert.equal(canonical(result.data.find(value=>value.id===record.id).payload),canonical(record));
-      if(file.kind==='skill-tree')continue;
-      const page=await fetch(`${origin}/${file.kind}/${record.slug}/`);
-      assert.equal(page.status,200);
-      const html=await page.text();
-      assert(html.includes(gameId));
-      assert(html.includes(String(record.source.sno)));
-      assert(html.includes(record.name??record.internalName));
+      assert.equal(canonical(payloads.get(record.id)),canonical(record));
+    }
+    if(file.kind==='skill-tree')continue;
+    for(let offset=0;offset<file.records.length;offset+=8){
+      await Promise.all(file.records.slice(offset,offset+8).map(async record=>{
+        const page=await fetch(`${origin}/${file.kind}/${record.slug}/`);assert.equal(page.status,200);
+        const html=await page.text();assert(html.includes(gameId));assert(html.includes(String(record.source.sno)));
+        const escaped=(record.name??record.internalName).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+        assert(html.includes(escaped));
+      }));
     }
   }
   const linkCount=(await reader.query('select count(*)::int as count from record_links where snapshot_id=$1',[gameId])).rows[0].count;
@@ -110,7 +116,7 @@ try {
   await writer.query('rollback');
   checked('All real game API payloads match the PostgreSQL export; detail HTML carries the same snapshot; reader and immutable links protected');
   const treeHtml=await (await fetch(origin+'/skill-tree/')).text();
-  assert(treeHtml.includes('165023')&&treeHtml.includes('131965')&&treeHtml.includes('excerpt'));
+  for(const board of catalog.files.find(file=>file.kind==='skill-tree').records){assert(treeHtml.includes(board.id));assert(treeHtml.includes(board.scope));}
   assert.equal((await fetch('http://127.0.0.1:3001/')).status,200);
   assert.equal((await fetch('https://aryaland.online/')).status,200);
   checked('Existing Aryaland remains available on its current domain');

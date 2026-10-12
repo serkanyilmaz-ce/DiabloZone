@@ -3,16 +3,17 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
 const read = async (file:string) => JSON.parse(await readFile(file,'utf8'));
-// Run after data:skills and data:tree; verifies the imported game boards, not sample counts.
-const tree = await read('data/generated/skill-tree.json');
+// Compare normalized or DB-exported boards against every original source coordinate.
+const directory=process.env.D4_CATALOG_DIR??'data/generated';
+const tree = await read(`${directory}/skill-tree.json`);
 const classes = ['barbarian','druid','necromancer','rogue','sorcerer','spiritborn','paladin','warlock'];
 test('all eight classes have complete game boards', () => {
   assert.deepEqual(Object.keys(tree.classes).sort(), [...classes].sort());
-  assert.equal(tree.layout,'game-coordinates');
+  assert(Object.values(tree.classes).every((board:any)=>board.scope==='full'));
 });
 for (const cls of classes) test(`${cls}: preserve every game node and path; resolve all skill names`, async () => {
   const board=tree.classes[cls];
-  const source=await read(`.tmp/d4data/${board.sourceFile}`);
+  const source=await read(`.tmp/d4data/${board.source.file}`);
   assert.equal(board.nodes.length,source.arNodes.length);
   assert.equal(board.edges.length,source.arConnections.length);
   assert.ok(board.nodes.filter((n:any)=>n.kind==='active').length>=20);

@@ -15,7 +15,7 @@ try{
     await client.query('insert into builds(id,season_id,patch,channel) values($1,$2,$3,$4) on conflict(id) do nothing',[context.gameBuild,context.season,context.patch,context.channel]);
     const actual=(await client.query('select season_id,channel,patch from builds where id=$1',[context.gameBuild])).rows[0];
     if(actual.season_id!==context.season||actual.channel!==context.channel||actual.patch!==context.patch)throw new Error('Build context mismatch');
-    const manifest={kind:'game_data',schemaVersion:2,inputSha256:catalog.inputSha256,...context,phase:'F02',provenance:catalog.provenance,files:catalog.files.map(file=>({kind:file.kind,sha256:file.sha256,count:file.records.length})),links:catalog.links.length};
+    const manifest={kind:'game_data',schemaVersion:2,inputSha256:catalog.inputSha256,...context,phase:catalog.metadata.phase??'unspecified',provenance:catalog.provenance,files:catalog.files.map(file=>({kind:file.kind,sha256:file.sha256,count:file.records.length})),links:catalog.links.length};
     const snapshotId=(await client.query('insert into snapshots(build_id,manifest) values($1,$2) returning id',[context.gameBuild,JSON.stringify(manifest)])).rows[0].id;
     const sourceIds=new Map<string,string>();
     for(const source of catalog.provenance){
