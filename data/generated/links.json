@@ -1,0 +1,534 @@
+[
+  {
+    "source_kind": "aspects",
+    "source_id": "1775673",
+    "target_kind": "affixes",
+    "target_id": "579749",
+    "relation": "aspect_affix"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249:mod:1",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249:mod:10",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249:mod:4",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249:mod:6",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249:mod:7",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249:mod:8",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "153249:mod:9",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023:mod:10",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023:mod:11",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023:mod:12",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023:mod:2",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023:mod:6",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023:mod:8",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "165023:mod:9",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341:mod:1",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341:mod:10",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341:mod:4",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341:mod:6",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341:mod:7",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341:mod:8",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "classes",
+    "source_id": "131965",
+    "target_kind": "skills",
+    "target_id": "167341:mod:9",
+    "relation": "class_skill"
+  },
+  {
+    "source_kind": "items",
+    "source_id": "609820",
+    "target_kind": "affixes",
+    "target_id": "2067850",
+    "relation": "item_affix"
+  },
+  {
+    "source_kind": "items",
+    "source_id": "609820",
+    "target_kind": "affixes",
+    "target_id": "2067852",
+    "relation": "item_affix"
+  },
+  {
+    "source_kind": "items",
+    "source_id": "609820",
+    "target_kind": "affixes",
+    "target_id": "2067856",
+    "relation": "item_affix"
+  },
+  {
+    "source_kind": "items",
+    "source_id": "609820",
+    "target_kind": "affixes",
+    "target_id": "2113430",
+    "relation": "item_affix"
+  },
+  {
+    "source_kind": "items",
+    "source_id": "609820",
+    "target_kind": "affixes",
+    "target_id": "609821",
+    "relation": "item_affix"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "classes",
+    "target_id": "131965",
+    "relation": "tree_class"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249:mod:1",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249:mod:10",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249:mod:4",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249:mod:6",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249:mod:7",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249:mod:8",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "153249:mod:9",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023:mod:10",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023:mod:11",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023:mod:12",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023:mod:2",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023:mod:6",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023:mod:8",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "165023:mod:9",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341:mod:1",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341:mod:10",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341:mod:4",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341:mod:6",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341:mod:7",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341:mod:8",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skill-tree",
+    "source_id": "72984",
+    "target_kind": "skills",
+    "target_id": "167341:mod:9",
+    "relation": "tree_skill"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "153249",
+    "target_kind": "skills",
+    "target_id": "153249:mod:1",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "153249",
+    "target_kind": "skills",
+    "target_id": "153249:mod:10",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "153249",
+    "target_kind": "skills",
+    "target_id": "153249:mod:4",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "153249",
+    "target_kind": "skills",
+    "target_id": "153249:mod:6",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "153249",
+    "target_kind": "skills",
+    "target_id": "153249:mod:7",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "153249",
+    "target_kind": "skills",
+    "target_id": "153249:mod:8",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "153249",
+    "target_kind": "skills",
+    "target_id": "153249:mod:9",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "165023",
+    "target_kind": "skills",
+    "target_id": "165023:mod:10",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "165023",
+    "target_kind": "skills",
+    "target_id": "165023:mod:11",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "165023",
+    "target_kind": "skills",
+    "target_id": "165023:mod:12",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "165023",
+    "target_kind": "skills",
+    "target_id": "165023:mod:2",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "165023",
+    "target_kind": "skills",
+    "target_id": "165023:mod:6",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "165023",
+    "target_kind": "skills",
+    "target_id": "165023:mod:8",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "165023",
+    "target_kind": "skills",
+    "target_id": "165023:mod:9",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "167341",
+    "target_kind": "skills",
+    "target_id": "167341:mod:1",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "167341",
+    "target_kind": "skills",
+    "target_id": "167341:mod:10",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "167341",
+    "target_kind": "skills",
+    "target_id": "167341:mod:4",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "167341",
+    "target_kind": "skills",
+    "target_id": "167341:mod:6",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "167341",
+    "target_kind": "skills",
+    "target_id": "167341:mod:7",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "167341",
+    "target_kind": "skills",
+    "target_id": "167341:mod:8",
+    "relation": "skill_modifier"
+  },
+  {
+    "source_kind": "skills",
+    "source_id": "167341",
+    "target_kind": "skills",
+    "target_id": "167341:mod:9",
+    "relation": "skill_modifier"
+  }
+]

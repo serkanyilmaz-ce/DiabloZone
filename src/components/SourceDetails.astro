@@ -1,10 +1,14 @@
 ---
-interface Ref { file: string; sno?: string | number; }
-interface Props { source?: Ref; localizationSource?: Ref; patch?: string; template?: string; }
-const {source, localizationSource, patch, template}=Astro.props;
+interface Ref { file: string; sno?: string | number;sha256?:string;commit?:string; }
+interface Props { source?: Ref; localizationSource?: Ref; patch?: string; template?: string;formulas?:Array<{path:string;expression:string}>; }
+const {source, localizationSource, patch, template,formulas=[]}=Astro.props;
 ---
 <details class="detail-section"><summary>Kaynak & ham formül bilgisi</summary>
   <p class="source-note">Kaynak sürüm: {patch ?? 'Bilinmiyor'}. Ham şablon hesaplanmamıştır; tek başına oyun mekaniğini doğrulamaz.</p>
   <dl class="detail-grid">{source && <div><dt>Kaynak dosyası</dt><dd>{source.file}</dd></div>}{localizationSource && <div><dt>Yerelleştirme dosyası</dt><dd>{localizationSource.file}</dd></div>}</dl>
+  {source?.sno!==undefined&&<dl class="detail-grid"><div><dt>Kaynak SNO</dt><dd>{source.sno}</dd></div></dl>}
+  {source?.commit&&<p><a href={`https://github.com/DiabloTools/d4data/blob/${source.commit}/${source.file}`} target="_blank" rel="noreferrer">Sabit kaynak kaydını aç ↗</a></p>}
+  {source?.sha256&&<p class="source-note">SHA256: <code>{source.sha256}</code></p>}
   {template ? <pre>{template}</pre> : <p class="source-note">Bu kayıtta ham açıklama şablonu yok.</p>}
+  {formulas.length>0&&<details><summary>{formulas.length} ham ifade · Henüz çözümlenmedi</summary>{formulas.map(formula=><div><p class="source-note">{formula.path}</p><pre>{formula.expression}</pre></div>)}</details>}
 </details>

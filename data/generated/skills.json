@@ -1,0 +1,3594 @@
+[
+  {
+    "id": "153249",
+    "name": "Fire Bolt",
+    "slug": "fire-bolt-153249",
+    "tags": [
+      "Skill_Fire",
+      "Search_DoT"
+    ],
+    "type": "active",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 15,
+    "category": "basic",
+    "description": "Mana Cost: {Resource Cost}\nLucky Hit Chance: [{Combat_Effect_Chance_Script_Formula_Override:17}|%|]\nHurl a flaming bolt, dealing {payload:DAMAGE} damage and an additional {dot:BURNING} Burning damage over {buffduration:BURNING} seconds.",
+    "rawFormulas": [
+      {
+        "path": "$.tAutoChannelledDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.tAttackSpeed",
+        "expression": "Attacks_Per_Second_Total*1.25"
+      },
+      {
+        "path": "$.tCombatEffectChance",
+        "expression": "SF_18"
+      },
+      {
+        "path": "$.arResourceCosts.0.tMinRequired",
+        "expression": "SF_21 ? SF_22 : 0"
+      },
+      {
+        "path": "$.arResourceCosts.0.tInitialCost",
+        "expression": "SF_21 ? SF_22 : 0"
+      },
+      {
+        "path": "$.arResourceCosts.0.tChannellingCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.tHealthCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.tChargeCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMaxCharges",
+        "expression": "0"
+      },
+      {
+        "path": "$.tRechargeTime",
+        "expression": "0"
+      },
+      {
+        "path": "$.tRechargeAmount",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCooldownTime",
+        "expression": "0"
+      },
+      {
+        "path": "$.tResourceCostReductionCoefficient",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCooldownReductionCoefficient",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCastTargetNecroCorpsesOnly",
+        "expression": "0"
+      },
+      {
+        "path": "$.unk_b9b985",
+        "expression": "0"
+      },
+      {
+        "path": "$.unk_807540f",
+        "expression": "6"
+      },
+      {
+        "path": "$.unk_e7fc6fa",
+        "expression": "0"
+      },
+      {
+        "path": "$.tAttackRadius",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMovementPowerData.unk_b1f0f4e",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMovementPowerData.tPowerStartDistance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.0.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.0.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.0.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.1.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.1.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.1.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.2.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.2.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.2.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.3.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.3.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.3.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.4.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.4.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.4.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.5.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.5.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.5.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.6.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.6.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.6.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.7.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.7.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.7.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.9.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.9.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.9.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.10.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.10.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.10.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.11.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.11.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.11.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.12.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.12.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.12.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.13.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.13.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.13.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDuration",
+        "expression": "SF_0"
+      },
+      {
+        "path": "$.arBuffs.0.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tDamage.tHitpointScalar",
+        "expression": "SF_2"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tCombatEffectOverride",
+        "expression": "SF_19"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.0.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDuration",
+        "expression": "SF_37"
+      },
+      {
+        "path": "$.arBuffs.1.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tMaxStackCount",
+        "expression": "5"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.1.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDuration",
+        "expression": "SF_0"
+      },
+      {
+        "path": "$.arBuffs.2.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tDamage.tHitpointScalar",
+        "expression": "SF_25"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tCombatEffectOverride",
+        "expression": "SF_19"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.2.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDuration",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.3.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tMaxStackCount",
+        "expression": "10"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.3.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDuration",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.4.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.4.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDuration",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.5.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.5.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.ptScriptFormulas.0.tFormula",
+        "expression": "6"
+      },
+      {
+        "path": "$.ptScriptFormulas.1.tFormula",
+        "expression": "SF_2 * SF_0"
+      },
+      {
+        "path": "$.ptScriptFormulas.2.tFormula",
+        "expression": "0.9 * (Mod.Upgrade3 ? (1 + SF_31) : 1) * Table(34,sLevel) / SF_0"
+      },
+      {
+        "path": "$.ptScriptFormulas.3.tFormula",
+        "expression": "Table(34, sLevel)"
+      },
+      {
+        "path": "$.ptScriptFormulas.4.tFormula",
+        "expression": "SF_13 * Table(34,sLevel)"
+      },
+      {
+        "path": "$.ptScriptFormulas.5.tFormula",
+        "expression": "25"
+      },
+      {
+        "path": "$.ptScriptFormulas.6.tFormula",
+        "expression": "PowerTag.SystemsTuningGlobals.\"Script Formula 0\""
+      },
+      {
+        "path": "$.ptScriptFormulas.7.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.8.tFormula",
+        "expression": "0.4"
+      },
+      {
+        "path": "$.ptScriptFormulas.9.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.10.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.11.tFormula",
+        "expression": "Mod.UpgradeC? 0 : (AoE_Size_Bonus_Per_Skill_Tag#Skill_Fire/2)"
+      },
+      {
+        "path": "$.ptScriptFormulas.12.tFormula",
+        "expression": "Min(1.5, 1 + (AoE_Size_Bonus_Per_Power#Sorcerer_FireBolt/ 2) + SF_11)"
+      },
+      {
+        "path": "$.ptScriptFormulas.13.tFormula",
+        "expression": "0.18"
+      },
+      {
+        "path": "$.ptScriptFormulas.14.tFormula",
+        "expression": "SF_13 * 100 * Table(34,3)"
+      },
+      {
+        "path": "$.ptScriptFormulas.15.tFormula",
+        "expression": "0"
+      },
+      {
+        "path": "$.ptScriptFormulas.16.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.17.tFormula",
+        "expression": "35"
+      },
+      {
+        "path": "$.ptScriptFormulas.18.tFormula",
+        "expression": "(1-POW(1-SF_17/100,1/2))*100"
+      },
+      {
+        "path": "$.ptScriptFormulas.19.tFormula",
+        "expression": "(1-POW(1-SF_18/100,1/(SF_0*2)))*100"
+      },
+      {
+        "path": "$.ptScriptFormulas.20.tFormula",
+        "expression": "Percent_Bonus_Projectiles_Per_Power#Sorcerer_FireBolt + Percent_Bonus_Projectiles_All + Percent_Bonus_Projectiles_Per_Skill_Tag#Skill_Primary_Basic"
+      },
+      {
+        "path": "$.ptScriptFormulas.21.tFormula",
+        "expression": "AffixIsEquipped(SNO.Affix.S05_BSK_Generic_004) > 0"
+      },
+      {
+        "path": "$.ptScriptFormulas.22.tFormula",
+        "expression": "Affix.S05_BSK_Generic_004.\"Static Value 1\""
+      },
+      {
+        "path": "$.ptScriptFormulas.23.tFormula",
+        "expression": "SF_4 * 1.5"
+      },
+      {
+        "path": "$.ptScriptFormulas.24.tFormula",
+        "expression": "4"
+      },
+      {
+        "path": "$.ptScriptFormulas.25.tFormula",
+        "expression": "SF_2 * 2"
+      },
+      {
+        "path": "$.ptScriptFormulas.26.tFormula",
+        "expression": "SF_5 * 0.65"
+      },
+      {
+        "path": "$.ptScriptFormulas.27.tFormula",
+        "expression": "1"
+      },
+      {
+        "path": "$.ptScriptFormulas.28.tFormula",
+        "expression": "0.02"
+      },
+      {
+        "path": "$.ptScriptFormulas.29.tFormula",
+        "expression": "2"
+      },
+      {
+        "path": "$.ptScriptFormulas.30.tFormula",
+        "expression": "4"
+      },
+      {
+        "path": "$.ptScriptFormulas.31.tFormula",
+        "expression": "0.5"
+      },
+      {
+        "path": "$.ptScriptFormulas.32.tFormula",
+        "expression": "0.2"
+      },
+      {
+        "path": "$.ptScriptFormulas.33.tFormula",
+        "expression": "1"
+      },
+      {
+        "path": "$.ptScriptFormulas.34.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.35.tFormula",
+        "expression": "4"
+      },
+      {
+        "path": "$.ptScriptFormulas.36.tFormula",
+        "expression": "SF_6 * 0.8"
+      },
+      {
+        "path": "$.ptScriptFormulas.37.tFormula",
+        "expression": "1.25 + RandomFloat(0.0, 0.25)"
+      },
+      {
+        "path": "$.ptScriptFormulas.38.tFormula",
+        "expression": "0.35"
+      },
+      {
+        "path": "$.ptScriptFormulas.39.tFormula",
+        "expression": "3"
+      },
+      {
+        "path": "$.ptScriptFormulas.40.tFormula",
+        "expression": "SF_4 * 1.4"
+      },
+      {
+        "path": "$.ptScriptFormulas.41.tFormula",
+        "expression": "1.1 * SF_12"
+      },
+      {
+        "path": "$.arPayloads.0.tDamage.tHitpointScalar",
+        "expression": "SF_4"
+      },
+      {
+        "path": "$.arPayloads.0.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.1.tDamage.tHitpointScalar",
+        "expression": "SF_40"
+      },
+      {
+        "path": "$.arPayloads.1.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.2.tDamage.tHitpointScalar",
+        "expression": "SF_23"
+      },
+      {
+        "path": "$.arPayloads.2.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.unk_143fe9f",
+        "expression": "10"
+      },
+      {
+        "path": "$.tRecastTimeoutSeconds",
+        "expression": "0"
+      }
+    ],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{if:SF_21}{c_label}Mana Cost: {/c}{c_resource}{Resource Cost}{/c}\r\n{/if}{if:ADVANCED_TOOLTIP}{c_label}Lucky Hit Chance: {/c}{c_resource}[{Combat_Effect_Chance_Script_Formula_Override:17}|%|]{/c}\r\n{/if}Hurl a flaming bolt, dealing {c_number}{payload:DAMAGE}{/c} damage and an additional {c_number}{dot:BURNING}{/c} Burning damage over {c_number}{buffduration:BURNING}{/c} seconds."
+  },
+  {
+    "id": "153249:mod:1",
+    "name": "Twin Flame",
+    "slug": "twin-flame-153249-mod-1",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "basic",
+    "parentId": "153249",
+    "description": "Fire Bolt launches an additional parallel bolt, dealing {payload:DAMAGE} Fire damage.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{c_important}Fire Bolt{/c} launches an additional parallel bolt, dealing {c_number}{payload:DAMAGE}{/c} Fire damage."
+  },
+  {
+    "id": "153249:mod:10",
+    "name": "Overpower",
+    "slug": "overpower-153249-mod-10",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "basic",
+    "parentId": "153249",
+    "description": "Fire Bolt grants [SF_33] stack of Overpower.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{c_important}Fire Bolt{/c} grants {c_number}[SF_33]{/c} stack of {c_important}{u}Overpower{/u}{/c}."
+  },
+  {
+    "id": "153249:mod:4",
+    "name": "Firefly",
+    "slug": "firefly-153249-mod-4",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "basic",
+    "parentId": "153249",
+    "description": "Fire Bolt shoots out a firefly that attaches itself to an enemy and explodes {SF_39} times after a delay, dealing {payload:UPGRADEB_FIREFLY_AOE_DAMAGE} damage with each explosion.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{c_important}Fire Bolt{/c} shoots out a firefly that attaches itself to an enemy and explodes {c_number}{SF_39}{/c} times after a delay, dealing {c_number}{payload:UPGRADEB_FIREFLY_AOE_DAMAGE}{/c} damage with each explosion."
+  },
+  {
+    "id": "153249:mod:6",
+    "name": "Shiver",
+    "slug": "shiver-153249-mod-6",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "basic",
+    "parentId": "153249",
+    "description": "Fire Bolt becomes a Frost Skill, dealing {payload:UPGRADEC_DAMAGE} Cold damage and {dot:UPGRADEC_FROSTBITE} Frostbite damage over [SF_0] seconds.\n\nFire Bolt pierces [SF_27] time and makes enemies Vulnerable for {SF_24} seconds.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{c_important}Fire Bolt{/c} becomes a {c_important}Frost{/c} Skill, dealing {c_number}{payload:UPGRADEC_DAMAGE}{/c} Cold damage and {c_number}{dot:UPGRADEC_FROSTBITE}{/c} Frostbite damage over {c_number}[SF_0]{/c} seconds.\r\n\r\n{c_important}Fire Bolt{/c} pierces {c_number}[SF_27]{/c} time and makes enemies {c_important}{u}Vulnerable{/c}{/u} for {c_number}{SF_24}{/c} seconds."
+  },
+  {
+    "id": "153249:mod:7",
+    "name": "Healing",
+    "slug": "healing-153249-mod-7",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "basic",
+    "parentId": "153249",
+    "description": "Fire Bolt heals you for [SF_28 * 100]% of your Maximum Life ([PlayerHealthMax() * SF_28]) when it hits the first enemy.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{c_important}Fire Bolt{/c} heals you for {c_number}[SF_28 * 100]%{/c} of your Maximum Life {c_number}([PlayerHealthMax() * SF_28]){/c} when it hits the first enemy."
+  },
+  {
+    "id": "153249:mod:8",
+    "name": "Resource Generation",
+    "slug": "resource-generation-153249-mod-8",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "basic",
+    "parentId": "153249",
+    "description": "Fire Bolt generates [SF_29] Mana when it hits the first enemy, or [SF_30] Mana if the enemy is already Frostbitten{else}Burning.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{c_important}Fire Bolt{/c} generates {c_number}[SF_29]{/c} Mana when it hits the first enemy, or {c_number}[SF_30]{/c} Mana if the enemy is already {if:Mod.UpgradeC}Frostbitten{else}Burning{/if}."
+  },
+  {
+    "id": "153249:mod:9",
+    "name": "Damage Bonus",
+    "slug": "damage-bonus-153249-mod-9",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8",
+      "gitBlob": "2df96c2c711688ef5f8ffbd87b14c4d1d3545d89"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "basic",
+    "parentId": "153249",
+    "description": "Fire Bolt deals [{SF_31}*100}|%x|] increased Frostbite{else}Burning damage.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242",
+      "gitBlob": "2a895d921f528703bb45c005478fcb175e77df01"
+    },
+    "descriptionTemplate": "{c_important}Fire Bolt{/c} deals {c_number}[{SF_31}*100}|%x|]{/c} increased {if:Mod.UpgradeC}Frostbite{else}Burning{/if} damage."
+  },
+  {
+    "id": "165023",
+    "name": "Fireball",
+    "slug": "fireball-165023",
+    "tags": [
+      "Skill_Fire"
+    ],
+    "type": "active",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 15,
+    "category": "core",
+    "description": "Mana Cost: {Resource Cost}\nLucky Hit Chance: [{Combat Effect Chance}|%|]\nHurl an exploding ball of fire, dealing {payload:PAYLOAD_PROJECTILE} damage to enemies.",
+    "rawFormulas": [
+      {
+        "path": "$.tAutoChannelledDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.tAttackSpeed",
+        "expression": "Attacks_Per_Second_Total"
+      },
+      {
+        "path": "$.tCombatEffectChance",
+        "expression": "SF_7"
+      },
+      {
+        "path": "$.arResourceCosts.0.tMinRequired",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arResourceCosts.0.tInitialCost",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arResourceCosts.0.tChannellingCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.tHealthCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.tChargeCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMaxCharges",
+        "expression": "0"
+      },
+      {
+        "path": "$.tRechargeTime",
+        "expression": "0"
+      },
+      {
+        "path": "$.tRechargeAmount",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCooldownTime",
+        "expression": "0"
+      },
+      {
+        "path": "$.tResourceCostReductionCoefficient",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCooldownReductionCoefficient",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCastTargetNecroCorpsesOnly",
+        "expression": "0"
+      },
+      {
+        "path": "$.unk_b9b985",
+        "expression": "0"
+      },
+      {
+        "path": "$.unk_807540f",
+        "expression": "6"
+      },
+      {
+        "path": "$.unk_e7fc6fa",
+        "expression": "0"
+      },
+      {
+        "path": "$.tAttackRadius",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMovementPowerData.unk_b1f0f4e",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMovementPowerData.tPowerStartDistance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.0.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.0.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.0.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.1.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.1.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.1.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.2.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.2.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.2.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.3.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.3.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.3.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.4.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.4.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.4.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.5.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.5.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.5.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.6.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.6.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.6.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.7.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.7.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.7.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.9.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.9.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.9.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.10.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.10.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.10.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.11.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.11.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.11.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.12.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.12.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.12.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.13.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.13.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.13.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDuration",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.0.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.0.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDuration",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.1.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.1.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDuration",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.2.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.2.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDuration",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.3.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.3.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDuration",
+        "expression": "SF_15"
+      },
+      {
+        "path": "$.arBuffs.4.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tCombatEffectOverride",
+        "expression": ""
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.4.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDuration",
+        "expression": "SF_15"
+      },
+      {
+        "path": "$.arBuffs.5.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tCombatEffectOverride",
+        "expression": ""
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.5.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.ptScriptFormulas.0.tFormula",
+        "expression": "SF_6 * Table(34,sLevel) * (1 + Mod.UpgradeA ? SF_20 : 0)"
+      },
+      {
+        "path": "$.ptScriptFormulas.1.tFormula",
+        "expression": "10 * (1 + Sorc_Fireball_ProjectileSpeed) * (1 + Mod.UpgradeA ? SF_19 : 0)"
+      },
+      {
+        "path": "$.ptScriptFormulas.2.tFormula",
+        "expression": "PowerTag.SystemsTuningGlobals.\"Script Formula 0\""
+      },
+      {
+        "path": "$.ptScriptFormulas.3.tFormula",
+        "expression": "2.5 * SF_36"
+      },
+      {
+        "path": "$.ptScriptFormulas.4.tFormula",
+        "expression": "SF_2/SF_1"
+      },
+      {
+        "path": "$.ptScriptFormulas.5.tFormula",
+        "expression": "(35 + (Mod.Upgrade3 ? SF_17 : 0))"
+      },
+      {
+        "path": "$.ptScriptFormulas.6.tFormula",
+        "expression": "1.7"
+      },
+      {
+        "path": "$.ptScriptFormulas.7.tFormula",
+        "expression": "33"
+      },
+      {
+        "path": "$.ptScriptFormulas.8.tFormula",
+        "expression": "0.6"
+      },
+      {
+        "path": "$.ptScriptFormulas.9.tFormula",
+        "expression": "SF_6 * 100 * Table(34,3)"
+      },
+      {
+        "path": "$.ptScriptFormulas.10.tFormula",
+        "expression": "PowerTag.Sorcerer_Enchantment_FireBall.\"Script Formula 0\""
+      },
+      {
+        "path": "$.ptScriptFormulas.11.tFormula",
+        "expression": "SF_0 * SF_10"
+      },
+      {
+        "path": "$.ptScriptFormulas.12.tFormula",
+        "expression": "Percent_Bonus_Projectiles_Per_Power#Sorcerer_Fireball + Percent_Bonus_Projectiles_All + Percent_Bonus_Projectiles_Per_Skill_Tag#Skill_Primary_Core"
+      },
+      {
+        "path": "$.ptScriptFormulas.13.tFormula",
+        "expression": "0.3"
+      },
+      {
+        "path": "$.ptScriptFormulas.14.tFormula",
+        "expression": "0.3"
+      },
+      {
+        "path": "$.ptScriptFormulas.15.tFormula",
+        "expression": "4"
+      },
+      {
+        "path": "$.ptScriptFormulas.16.tFormula",
+        "expression": "0.4"
+      },
+      {
+        "path": "$.ptScriptFormulas.17.tFormula",
+        "expression": "15"
+      },
+      {
+        "path": "$.ptScriptFormulas.18.tFormula",
+        "expression": "0.5 / 2"
+      },
+      {
+        "path": "$.ptScriptFormulas.19.tFormula",
+        "expression": "2"
+      },
+      {
+        "path": "$.ptScriptFormulas.20.tFormula",
+        "expression": "0.75"
+      },
+      {
+        "path": "$.ptScriptFormulas.21.tFormula",
+        "expression": "0.75"
+      },
+      {
+        "path": "$.ptScriptFormulas.22.tFormula",
+        "expression": "2"
+      },
+      {
+        "path": "$.ptScriptFormulas.23.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.24.tFormula",
+        "expression": "3"
+      },
+      {
+        "path": "$.ptScriptFormulas.25.tFormula",
+        "expression": "3.5"
+      },
+      {
+        "path": "$.ptScriptFormulas.26.tFormula",
+        "expression": "SF_3 * 0.8"
+      },
+      {
+        "path": "$.ptScriptFormulas.27.tFormula",
+        "expression": "(100-Affix_Value_1#Gloves_Unique_Sorc_002) / 100"
+      },
+      {
+        "path": "$.ptScriptFormulas.28.tFormula",
+        "expression": "2"
+      },
+      {
+        "path": "$.ptScriptFormulas.29.tFormula",
+        "expression": "SF_0 / (SF_28+1) * 1.5"
+      },
+      {
+        "path": "$.ptScriptFormulas.30.tFormula",
+        "expression": "Sorc_Fireball_ResourceOnHit"
+      },
+      {
+        "path": "$.ptScriptFormulas.31.tFormula",
+        "expression": "15"
+      },
+      {
+        "path": "$.ptScriptFormulas.32.tFormula",
+        "expression": "3"
+      },
+      {
+        "path": "$.ptScriptFormulas.33.tFormula",
+        "expression": "Affix_Value_1#2HStaff_Unique_Sorc_002 / 100"
+      },
+      {
+        "path": "$.ptScriptFormulas.34.tFormula",
+        "expression": "1"
+      },
+      {
+        "path": "$.ptScriptFormulas.35.tFormula",
+        "expression": "Mod.UpgradeC? 0 : (AoE_Size_Bonus_Per_Skill_Tag#Skill_Fire / 2)"
+      },
+      {
+        "path": "$.ptScriptFormulas.36.tFormula",
+        "expression": "Min(1.5, 1 + (AoE_Size_Bonus_Per_Power#Sorcerer_Fireball/2) + SF_35 + (Mod.Upgrade4 ? SF_18 : 0))"
+      },
+      {
+        "path": "$.arPayloads.0.tDamage.tHitpointScalar",
+        "expression": "SF_0"
+      },
+      {
+        "path": "$.arPayloads.0.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.1.tDamage.tHitpointScalar",
+        "expression": "SF_0"
+      },
+      {
+        "path": "$.arPayloads.1.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.2.tDamage.tHitpointScalar",
+        "expression": "SF_29"
+      },
+      {
+        "path": "$.arPayloads.2.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.unk_143fe9f",
+        "expression": "10"
+      },
+      {
+        "path": "$.tRecastTimeoutSeconds",
+        "expression": "0"
+      }
+    ],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_label}Mana Cost: {/c}{c_resource}{Resource Cost}{/c}\r\n{if:ADVANCED_TOOLTIP}{c_label}Lucky Hit Chance: {/c}{c_resource}[{Combat Effect Chance}|%|]{/c}\r\n{/if}Hurl an exploding ball of fire, dealing {c_number}{payload:PAYLOAD_PROJECTILE}{/c} damage to enemies."
+  },
+  {
+    "id": "165023:mod:10",
+    "name": "Damage Over Time",
+    "slug": "damage-over-time-165023-mod-10",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "core",
+    "parentId": "165023",
+    "description": "Fireball's direct damage deals an additional [SF_14 * 100]% damage over [SF_15] seconds.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_important}Fireball's{/c} direct damage deals an additional {c_number}[SF_14 * 100]%{/c} damage over {c_number}[SF_15]{/c} seconds."
+  },
+  {
+    "id": "165023:mod:11",
+    "name": "Damage Bonus",
+    "slug": "damage-bonus-165023-mod-11",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "core",
+    "parentId": "165023",
+    "description": "Fireball deals [{SF_16}*100|%x|] increased damage, but its Mana cost is increased by {SF_17}.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_important}Fireball{/c} deals {c_number}[{SF_16}*100|%x|]{/c} increased damage, but its Mana cost is increased by {c_number}{SF_17}{/c}."
+  },
+  {
+    "id": "165023:mod:12",
+    "name": "Size Bonus",
+    "slug": "size-bonus-165023-mod-12",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "core",
+    "parentId": "165023",
+    "description": "Fireball's Size is increased by [(SF_18 * 100 * 2)|%+|].",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_important}Fireball's{/c} Size is increased by {c_number}[(SF_18 * 100 * 2)|%+|]{/c}."
+  },
+  {
+    "id": "165023:mod:2",
+    "name": "Instantaneous Destruction",
+    "slug": "instantaneous-destruction-165023-mod-2",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "core",
+    "parentId": "165023",
+    "description": "Fireball travels [SF_19*100|%|] faster and deals [SF_20*100|%x|] increased damage.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_important}Fireball{/c} travels {c_number}[SF_19*100|%|]{/c} faster and deals {c_number}[SF_20*100|%x|]{/c} increased damage."
+  },
+  {
+    "id": "165023:mod:6",
+    "name": "Illumination",
+    "slug": "illumination-165023-mod-6",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "core",
+    "parentId": "165023",
+    "description": "Fireball now bounces as it travels and explodes each time it hits the ground, dealing [SF_21 * 100|%|] of normal damage.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_important}Fireball{/c_important} now bounces as it travels and explodes each time it hits the ground, dealing {c_number}[SF_21 * 100|%|]{/c} of normal damage."
+  },
+  {
+    "id": "165023:mod:8",
+    "name": "Frostball",
+    "slug": "frostball-165023-mod-8",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "core",
+    "parentId": "165023",
+    "description": "Fireball becomes a Frost Skill that deals Cold damage.\n\nWhen Fireball hits an enemy it creates [SF_28+1] Ice Spikes around them, dealing {payload:UPGRADEC_ICESPIKE_TOOLTIP} damage each.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_important}Fireball{/c} becomes a {c_important}Frost{/c} Skill that deals Cold damage.\r\n\r\nWhen {c_important}Fireball{/c} hits an enemy it creates {c_number}[SF_28+1]{/c} {c_important}{u}Ice Spikes{/c}{/u} around them, dealing {c_number}{payload:UPGRADEC_ICESPIKE_TOOLTIP}{/c} damage each."
+  },
+  {
+    "id": "165023:mod:9",
+    "name": "Critical Strike Damage",
+    "slug": "critical-strike-damage-165023-mod-9",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2",
+      "gitBlob": "444012f0fb4d18f125aaea439b680270bb596eb3"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "core",
+    "parentId": "165023",
+    "description": "Fireball deals [SF_13*100|%x|] increased Critical Strike Damage.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd",
+      "gitBlob": "8d91e80cf2947002e28c03cc47971a9a54d29e43"
+    },
+    "descriptionTemplate": "{c_important}Fireball{/c} deals {c_number}[SF_13*100|%x|]{/c} increased Critical Strike Damage."
+  },
+  {
+    "id": "167341",
+    "name": "Flame Shield",
+    "slug": "flame-shield-167341",
+    "tags": [
+      "Skill_Fire",
+      "Keyword_Immune",
+      "Search_Fire",
+      "Search_DamageReduction",
+      "Keyword_Unstoppable",
+      "Search_DoT"
+    ],
+    "type": "active",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 15,
+    "category": "defensive",
+    "description": "Cooldown: {Cooldown Time} seconds\nCharges: [SF_9 + 1]\nCharge Cooldown: {Recharge Time} seconds\nLucky Hit Chance: [{Combat_Effect_Chance_Script_Formula_Override:17}|%|]\nEngulf yourself in flames for [{buffduration:FLAMESHIELD_BUFF}|1|] |4second:seconds;, becoming Immune and dealing {dot:TOOLTIP_BURNING_DAMAGE} Burning damage over [{buffDuration:BURNING_DAMAGE}] seconds to surrounding enemies.",
+    "rawFormulas": [
+      {
+        "path": "$.tAutoChannelledDuration",
+        "expression": "6"
+      },
+      {
+        "path": "$.tAttackSpeed",
+        "expression": "Attacks_Per_Second_Total"
+      },
+      {
+        "path": "$.tCombatEffectChance",
+        "expression": "SF_17"
+      },
+      {
+        "path": "$.tHealthCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.tChargeCost",
+        "expression": "SF_25 ? 1 : 0"
+      },
+      {
+        "path": "$.tMaxCharges",
+        "expression": "SF_25 ? (SF_9 + 1) : 0"
+      },
+      {
+        "path": "$.tRechargeTime",
+        "expression": "SF_25 ? (SF_6 - SF_41) : 0"
+      },
+      {
+        "path": "$.tRechargeAmount",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCooldownTime",
+        "expression": "SF_25 ? 0.25 : (SF_6 - SF_41)"
+      },
+      {
+        "path": "$.tResourceCostReductionCoefficient",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCooldownReductionCoefficient",
+        "expression": "1"
+      },
+      {
+        "path": "$.tCastTargetNecroCorpsesOnly",
+        "expression": "0"
+      },
+      {
+        "path": "$.unk_b9b985",
+        "expression": "0"
+      },
+      {
+        "path": "$.unk_807540f",
+        "expression": "6"
+      },
+      {
+        "path": "$.unk_e7fc6fa",
+        "expression": "0"
+      },
+      {
+        "path": "$.tAttackRadius",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMovementPowerData.unk_b1f0f4e",
+        "expression": "0"
+      },
+      {
+        "path": "$.tMovementPowerData.tPowerStartDistance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.0.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.0.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.0.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.1.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.1.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.1.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.2.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.2.tUsableDuringCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.2.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.3.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.3.tUsableDuringCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.3.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.4.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.4.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.4.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.5.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.5.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.5.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.6.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.6.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.6.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.7.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.7.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.7.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tBreaksCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tUsableDuringCC",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.8.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.9.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.9.tUsableDuringCC",
+        "expression": "1"
+      },
+      {
+        "path": "$.arCCInfo.9.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.10.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.10.tUsableDuringCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.10.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.11.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.11.tUsableDuringCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.11.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.12.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.12.tUsableDuringCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.12.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arCCInfo.13.tBreaksCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.13.tUsableDuringCC",
+        "expression": "SF_11"
+      },
+      {
+        "path": "$.arCCInfo.13.tImmuneToCCDuring",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.0.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.0.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.0.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.1.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.1.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.1.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDuration",
+        "expression": "SF_4"
+      },
+      {
+        "path": "$.arBuffs.2.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tDamage.tHitpointScalar",
+        "expression": "SF_3"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDOT.tCombatEffectOverride",
+        "expression": "SF_18"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.2.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.2.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDuration",
+        "expression": "SF_4"
+      },
+      {
+        "path": "$.arBuffs.3.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tDamage.tHitpointScalar",
+        "expression": "SF_3"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDOT.tCombatEffectOverride",
+        "expression": "SF_18"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.3.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.3.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDuration",
+        "expression": "SF_4"
+      },
+      {
+        "path": "$.arBuffs.4.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tDamage.tHitpointScalar",
+        "expression": "SF_3"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDOT.tCombatEffectOverride",
+        "expression": "SF_18"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.4.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.4.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.5.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.5.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.5.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.6.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.6.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.6.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.6.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.6.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.6.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.6.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.6.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.6.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.6.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.6.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.7.tDuration",
+        "expression": "SF_21"
+      },
+      {
+        "path": "$.arBuffs.7.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.7.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.7.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.7.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.7.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.7.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.7.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.7.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.7.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.7.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.8.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.8.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.8.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.8.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.8.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.8.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.8.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.8.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.8.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.8.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.8.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.9.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.9.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.9.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.9.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.9.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.9.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.9.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.9.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.9.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.9.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.9.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.10.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.10.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.10.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.10.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.10.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.10.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.10.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.10.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.10.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.10.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.10.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.11.tDuration",
+        "expression": "SF_5"
+      },
+      {
+        "path": "$.arBuffs.11.tMaxExtendDuration",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.11.tMaxStackCount",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.11.tDOT.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.11.tDOT.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.11.tDOT.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arBuffs.11.tCrowdControl.tSlowAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.11.tCrowdControl.tChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.11.tCrowdControl.tStaggerMultiplier",
+        "expression": "1"
+      },
+      {
+        "path": "$.arBuffs.11.tDamageShield.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arBuffs.11.tDamageShield.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.ptScriptFormulas.0.tFormula",
+        "expression": "1 + (1/60)"
+      },
+      {
+        "path": "$.ptScriptFormulas.1.tFormula",
+        "expression": "0.25"
+      },
+      {
+        "path": "$.ptScriptFormulas.2.tFormula",
+        "expression": "2"
+      },
+      {
+        "path": "$.ptScriptFormulas.3.tFormula",
+        "expression": "(SF_8 * Table(38,sLevel)) * SF_19"
+      },
+      {
+        "path": "$.ptScriptFormulas.4.tFormula",
+        "expression": "4"
+      },
+      {
+        "path": "$.ptScriptFormulas.5.tFormula",
+        "expression": "SF_0 + SF_43"
+      },
+      {
+        "path": "$.ptScriptFormulas.6.tFormula",
+        "expression": "20"
+      },
+      {
+        "path": "$.ptScriptFormulas.7.tFormula",
+        "expression": "0.12"
+      },
+      {
+        "path": "$.ptScriptFormulas.8.tFormula",
+        "expression": "0.8"
+      },
+      {
+        "path": "$.ptScriptFormulas.9.tFormula",
+        "expression": "GetBonusMaxChargesForPower(SNO.Power.Sorcerer_FlameShield)"
+      },
+      {
+        "path": "$.ptScriptFormulas.10.tFormula",
+        "expression": "SF_9 ? 0 : 1"
+      },
+      {
+        "path": "$.ptScriptFormulas.11.tFormula",
+        "expression": "Mod.UpgradeC ? 0 : 1"
+      },
+      {
+        "path": "$.ptScriptFormulas.12.tFormula",
+        "expression": "SF_19 / PowerFinalizedAttackSpeed"
+      },
+      {
+        "path": "$.ptScriptFormulas.13.tFormula",
+        "expression": "SF_19 / PowerFinalizedAttackSpeed"
+      },
+      {
+        "path": "$.ptScriptFormulas.14.tFormula",
+        "expression": "(SF_3 * 1.7) / 4"
+      },
+      {
+        "path": "$.ptScriptFormulas.15.tFormula",
+        "expression": "1"
+      },
+      {
+        "path": "$.ptScriptFormulas.16.tFormula",
+        "expression": "8"
+      },
+      {
+        "path": "$.ptScriptFormulas.17.tFormula",
+        "expression": "35"
+      },
+      {
+        "path": "$.ptScriptFormulas.18.tFormula",
+        "expression": "(1-POW(1-SF_17/100,1/(SF_5*(1/SF_1)*2)))*100"
+      },
+      {
+        "path": "$.ptScriptFormulas.19.tFormula",
+        "expression": "0.25"
+      },
+      {
+        "path": "$.ptScriptFormulas.20.tFormula",
+        "expression": "PowerTag.SystemsTuningGlobals.\"Script Formula 2\""
+      },
+      {
+        "path": "$.ptScriptFormulas.21.tFormula",
+        "expression": "3"
+      },
+      {
+        "path": "$.ptScriptFormulas.22.tFormula",
+        "expression": "SF_3 * 0.7"
+      },
+      {
+        "path": "$.ptScriptFormulas.23.tFormula",
+        "expression": "SF_20"
+      },
+      {
+        "path": "$.ptScriptFormulas.24.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.25.tFormula",
+        "expression": "AffixIsEquipped(SNO.Affix.legendary_sorc_017_x2)"
+      },
+      {
+        "path": "$.ptScriptFormulas.26.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.27.tFormula",
+        "expression": "0.5"
+      },
+      {
+        "path": "$.ptScriptFormulas.28.tFormula",
+        "expression": "1 * Table(34,sLevel)"
+      },
+      {
+        "path": "$.ptScriptFormulas.29.tFormula",
+        "expression": "SF_3 / (1 / SF_12)"
+      },
+      {
+        "path": "$.ptScriptFormulas.30.tFormula",
+        "expression": "1.75"
+      },
+      {
+        "path": "$.ptScriptFormulas.31.tFormula",
+        "expression": "0.35 * Table(37,sLevel)"
+      },
+      {
+        "path": "$.ptScriptFormulas.32.tFormula",
+        "expression": "0.15 * (1 + (1 - Table(35,sLevel)))"
+      },
+      {
+        "path": "$.ptScriptFormulas.33.tFormula",
+        "expression": "SF_28 / SF_1"
+      },
+      {
+        "path": "$.ptScriptFormulas.34.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.35.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.36.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.37.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.38.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.39.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.40.tFormula",
+        "expression": "4"
+      },
+      {
+        "path": "$.ptScriptFormulas.41.tFormula",
+        "expression": "Mod.Upgrade2 ? SF_40 : 0"
+      },
+      {
+        "path": "$.ptScriptFormulas.42.tFormula",
+        "expression": "0.5"
+      },
+      {
+        "path": "$.ptScriptFormulas.43.tFormula",
+        "expression": "Mod.Upgrade3 ? SF_42 : 0"
+      },
+      {
+        "path": "$.ptScriptFormulas.44.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.45.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.46.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.ptScriptFormulas.47.tFormula",
+        "expression": ""
+      },
+      {
+        "path": "$.arPayloads.0.tDamage.tHitpointScalar",
+        "expression": "SF_22"
+      },
+      {
+        "path": "$.arPayloads.0.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.0.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.1.tDamage.tHitpointScalar",
+        "expression": "SF_14"
+      },
+      {
+        "path": "$.arPayloads.1.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.1.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.2.tDamage.tHitpointScalar",
+        "expression": "SF_29"
+      },
+      {
+        "path": "$.arPayloads.2.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.2.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.3.tDamage.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tHeal.tHitpointScalar",
+        "expression": "SF_1 * SF_7"
+      },
+      {
+        "path": "$.arPayloads.3.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.3.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.arPayloads.4.tDamage.tHitpointScalar",
+        "expression": "SF_3 * (1/SF_12)"
+      },
+      {
+        "path": "$.arPayloads.4.tDamage.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tDamageVariance",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tVulnerableDurationSecondsOverride",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.unk_7c2668d",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tFortifiedHealth.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tFortifiedHealth.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tApplyFreeze",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tApplyChillAmount",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tHeal.tHitpointScalar",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tHeal.tFlatLevel",
+        "expression": "0"
+      },
+      {
+        "path": "$.arPayloads.4.tCombatEffectOverride",
+        "expression": "100"
+      },
+      {
+        "path": "$.unk_143fe9f",
+        "expression": "10"
+      },
+      {
+        "path": "$.tRecastTimeoutSeconds",
+        "expression": "0"
+      }
+    ],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "{if:SF_10}{c_label}Cooldown:{/c_label} {c_resource}{Cooldown Time}{/c} seconds\r\n{/if}{if:SF_9}{c_label}Charges:{/c} {c_resource}[SF_9 + 1]{/c}\r\n{c_label}Charge Cooldown:{/c_label} {c_resource}{Recharge Time}{/c} seconds\r\n{/if}{if:ADVANCED_TOOLTIP}{c_label}Lucky Hit Chance: {/c}{c_resource}[{Combat_Effect_Chance_Script_Formula_Override:17}|%|]{/c}\r\n{/if}Engulf yourself in flames for {c_number}[{buffduration:FLAMESHIELD_BUFF}|1|]{/c} |4second:seconds;, becoming {u}{c_important}Immune{/c}{/u} and dealing {c_number}{dot:TOOLTIP_BURNING_DAMAGE}{/c} Burning damage over {c_number}[{buffDuration:BURNING_DAMAGE}]{/c} seconds to surrounding enemies."
+  },
+  {
+    "id": "167341:mod:1",
+    "name": "Scorch",
+    "slug": "scorch-167341-mod-1",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "defensive",
+    "parentId": "167341",
+    "description": "Flame Shield instantly scorches close enemies, dealing {payload:UPGRADEA_DAMAGE} damage and Immobilizing them for {buffDuration:UPGRADEA_IMMOBILIZE} seconds.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield{/c} instantly scorches close enemies, dealing {c_number}{payload:UPGRADEA_DAMAGE}{/c} damage and Immobilizing them for {c_number}{buffDuration:UPGRADEA_IMMOBILIZE}{/c} seconds."
+  },
+  {
+    "id": "167341:mod:10",
+    "name": "Overpower",
+    "slug": "overpower-167341-mod-10",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "defensive",
+    "parentId": "167341",
+    "description": "Flame Shield grants {SF_15} stack of Overpower.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield{/c} grants {c_number}{SF_15}{/c} stack of {u}{c_important}Overpower{/c}{/u}."
+  },
+  {
+    "id": "167341:mod:4",
+    "name": "Firebird",
+    "slug": "firebird-167341-mod-4",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "defensive",
+    "parentId": "167341",
+    "description": "Flame Shield rains down [1 / SF_13] Meteorites per second that deal {payload:UPGRADEB_METEORITE_DAMAGE} damage.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield{/c} rains down {c_number}[1 / SF_13]{/c} {u}{c_important}Meteorites{/c}{/u} per second that deal {c_number}{payload:UPGRADEB_METEORITE_DAMAGE}{/c} damage."
+  },
+  {
+    "id": "167341:mod:6",
+    "name": "Flash",
+    "slug": "flash-167341-mod-6",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "defensive",
+    "parentId": "167341",
+    "description": "Flame Shield becomes a Shock Skill, deals Sparking damage, and triggers its Cooldown on Cast.\n\nInstead of becoming Immune you embody lightning, generating {SF_33} Crackling Energy per second and gaining [SF_31 * 100|x%|] Movement Speed and [SF_32 * 100|1%|] Dodge.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield{/c} becomes a {c_important}Shock{/c} Skill, deals Sparking damage, and triggers its Cooldown on Cast.\r\n\r\nInstead of becoming {u}{c_important}Immune{/c}{/u} you embody lightning, generating {c_number}{SF_33}{/c} {u}{c_important}Crackling Energy{/c}{/u} per second and gaining {c_number}[SF_31 * 100|x%|]{/c} Movement Speed and {c_number}[SF_32 * 100|1%|]{/c} Dodge."
+  },
+  {
+    "id": "167341:mod:7",
+    "name": "Healing",
+    "slug": "healing-167341-mod-7",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "defensive",
+    "parentId": "167341",
+    "description": "While Flame Shield is active, you heal for [SF_7 * 100|%|] of your Maximum Life ([PlayerHealthMax() * SF_7]) per second.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "While {c_important}Flame Shield{/c} is active, you heal for {c_number}[SF_7 * 100|%|]{/c} of your Maximum Life {c_number}([PlayerHealthMax() * SF_7]){/c} per second."
+  },
+  {
+    "id": "167341:mod:8",
+    "name": "Cooldown Reduction",
+    "slug": "cooldown-reduction-167341-mod-8",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "defensive",
+    "parentId": "167341",
+    "description": "Flame Shield's Cooldown is reduced by {SF_40} seconds.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield's{/c} Cooldown is reduced by {c_number}{SF_40}{/c} seconds."
+  },
+  {
+    "id": "167341:mod:9",
+    "name": "Duration Bonus",
+    "slug": "duration-bonus-167341-mod-9",
+    "tags": [],
+    "type": "modifier",
+    "class": "sorcerer",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d",
+      "gitBlob": "4b61ca6f4bf1a87c0961a31e5e72606ca5e61492"
+    },
+    "classId": "131965",
+    "maxRank": 3,
+    "category": "defensive",
+    "parentId": "167341",
+    "description": "Flame Shield's duration is increased to [SF_0+SF_42|1|] seconds.",
+    "rawFormulas": [],
+    "localizationSource": {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01",
+      "gitBlob": "eaf7be7f5ca01b37705652fc3b0630d7e6826a3e"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield's{/c} duration is increased to {c_number}[SF_0+SF_42|1|]{/c} seconds."
+  }
+]

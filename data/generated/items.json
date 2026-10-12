@@ -1,0 +1,37 @@
+[
+  {
+    "id": "609820",
+    "name": "Harlequin Crest",
+    "slot": "helm",
+    "slug": "harlequin-crest-609820",
+    "patch": "3.2.1.73552",
+    "flavor": "\"This headdress was once worn by an assassin disguised as a court mage. Her treachery was unveiled, but not before she used its magic to curse the king's entire lineage.\"\r\n- The Fall of House Aston",
+    "rarity": "mythic",
+    "source": {
+      "sno": 609820,
+      "file": "json/base/meta/Item/Helm_Unique_Generic_002.itm.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5c51019007e40827300300c29a4a3bdba35eb78b471453e4ea8d853e15c11aa1",
+      "gitBlob": "3620e6ed9dc301dafa957a7077ed4f9600f65612"
+    },
+    "classes": [],
+    "affixIds": [
+      "609821",
+      "2067852",
+      "2113430",
+      "2067856",
+      "2067850"
+    ],
+    "rawFormulas": [],
+    "requiredLevel": 35,
+    "fixedPowerLevel": 850,
+    "localizationSource": {
+      "sno": 942664,
+      "file": "json/enUS_Text/meta/StringList/Item_Helm_Unique_Generic_002.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f85facc91b5cac1afba0979b6520d6ea9ac4c646d6ddc613d8d4c08baa4cc6fc",
+      "gitBlob": "204451eda38407ee690b9957e7941e78daa48a03"
+    },
+    "classRestrictionStatus": "unknown"
+  }
+]

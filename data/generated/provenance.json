@@ -1,0 +1,126 @@
+{
+  "sourceCommit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+  "sourceVersion": "3.2.1.73552",
+  "files": [
+    {
+      "sno": 609821,
+      "file": "json/base/meta/Affix/Helm_Unique_Generic_002.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6262e9f88f26f7b70cee86d9262bc7697fc5afdabece59a16a7c932e63fcd56b"
+    },
+    {
+      "sno": 579749,
+      "file": "json/base/meta/Affix/legendary_sorc_004.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e9a8f395941c52dd545b810b63b7ea613b3011cc05715884bb4a5fe55d11ad21"
+    },
+    {
+      "sno": 2067852,
+      "file": "json/base/meta/Affix/UBERUNIQUE_CooldownReductionCDR_HarlequinCrest.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "09bb8a7c3f13e5d155814c1b7eb456549cce85e0d15377a2366aa46252bf5406"
+    },
+    {
+      "sno": 2067850,
+      "file": "json/base/meta/Affix/UBERUNIQUE_FlatArmor_HarlequinCrest.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d4b690881471784fdbaca6ff73a663ae88cf6bbf8ecc41b5cdcc41386f574be7"
+    },
+    {
+      "sno": 2113430,
+      "file": "json/base/meta/Affix/UBERUNIQUE_LifeFlat_ShroudOfFalseDeath.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bd721f761df1fc68448983a918e9e7503b9977fa8c635d831de6964c3a8fbc2f"
+    },
+    {
+      "sno": 2067856,
+      "file": "json/base/meta/Affix/UBERUNIQUE_Resource_Max_AllClasses_HarlequinCrest.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "98643cc6aef2aaaca98132232c485ef34b8c2048fb3301b69be2380f37fde425"
+    },
+    {
+      "sno": 1775673,
+      "file": "json/base/meta/Aspect/Asp_Legendary_Sorc_004.asp.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "dafe4d8b3af2ce11cfe1bea487a15694df0ffd2a6566e9dbf385ad9ce7821ef5"
+    },
+    {
+      "sno": 547685,
+      "file": "json/base/meta/GameBalance/SkillTreeRewards.gam.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d0eb183a09773865d34f9285c9b5b9d3fe7224389ada45a437ce10955c8ab3ab"
+    },
+    {
+      "sno": 609820,
+      "file": "json/base/meta/Item/Helm_Unique_Generic_002.itm.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "5c51019007e40827300300c29a4a3bdba35eb78b471453e4ea8d853e15c11aa1"
+    },
+    {
+      "sno": 131965,
+      "file": "json/base/meta/PlayerClass/Sorcerer.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "16a94796c34345720a899c42ad4574163d59ad30e76838be355f78516861c272"
+    },
+    {
+      "sno": 165023,
+      "file": "json/base/meta/Power/Sorcerer_Fireball.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2"
+    },
+    {
+      "sno": 153249,
+      "file": "json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8"
+    },
+    {
+      "sno": 167341,
+      "file": "json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d"
+    },
+    {
+      "sno": 72984,
+      "file": "json/base/meta/SkillKit/Sorcerer.skl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "78c63c43b8a9abc95cddf8099f562459786191c2cb6984e162fe959d87cdf4af"
+    },
+    {
+      "sno": 1105974,
+      "file": "json/enUS_Text/meta/StringList/Affix_Helm_Unique_Generic_002.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7ae512faa3bba81dcd8f319bfa4af774d2220a831dade5d19b6b9ac12c12d9c9"
+    },
+    {
+      "sno": 1106399,
+      "file": "json/enUS_Text/meta/StringList/Affix_legendary_sorc_004.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6a985dd262b1d7a5621bd9114152131a88b5f567e3ff8e1f86993ff73f416ccd"
+    },
+    {
+      "sno": 942664,
+      "file": "json/enUS_Text/meta/StringList/Item_Helm_Unique_Generic_002.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "f85facc91b5cac1afba0979b6520d6ea9ac4c646d6ddc613d8d4c08baa4cc6fc"
+    },
+    {
+      "sno": 1119300,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd"
+    },
+    {
+      "sno": 1118967,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242"
+    },
+    {
+      "sno": 1119794,
+      "file": "json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01"
+    }
+  ]
+}

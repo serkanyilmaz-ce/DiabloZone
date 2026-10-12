@@ -1,0 +1,158 @@
+[
+  {
+    "id": "9cb3afdc-e7e1-4a61-a49a-be3113f3fa04",
+    "kind": "normalized_export",
+    "locator": "catalog:affixes",
+    "sha256": "7aba87a59effaaf8cb0cbd7de7ecb74942776ef62932c0b021ca10d59c24596b"
+  },
+  {
+    "id": "458b11b5-4b9d-4414-a7e7-9a6b7d258889",
+    "kind": "normalized_export",
+    "locator": "catalog:aspects",
+    "sha256": "f33f57a0ebc5f898fbc5d8274b1d923031189f5b805fcc39c7546a6ce64bf750"
+  },
+  {
+    "id": "cf0f75b2-2983-4bdd-96e6-8839be2e942b",
+    "kind": "normalized_export",
+    "locator": "catalog:classes",
+    "sha256": "d8f7d263f966693ce49b6d504c05e9f493b39bae2668f7cd67b334c95d20c824"
+  },
+  {
+    "id": "efe40cf2-ea7a-41a1-9716-8df44a2399be",
+    "kind": "normalized_export",
+    "locator": "catalog:items",
+    "sha256": "59a74c0ae3f9f8cb9f8e38977212caff5eef13c36d47a2219cd0205bac1184fb"
+  },
+  {
+    "id": "ca38f4a6-eabd-4935-bdd7-d19bcd46299b",
+    "kind": "normalized_export",
+    "locator": "catalog:skill-tree",
+    "sha256": "6e14daa00ae71fd64a998a817a8a79d2a5f10253322e564d67b35df71d4422bf"
+  },
+  {
+    "id": "6872317f-60c8-4551-8268-24f752d2316a",
+    "kind": "normalized_export",
+    "locator": "catalog:skills",
+    "sha256": "17771cb76858926355a5eddb72698bb7e19ecfa09776473c790acda2318b31d1"
+  },
+  {
+    "id": "45671968-678d-480f-8d56-880e112085cd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/Helm_Unique_Generic_002.aff.json",
+    "sha256": "6262e9f88f26f7b70cee86d9262bc7697fc5afdabece59a16a7c932e63fcd56b"
+  },
+  {
+    "id": "98ff7fe4-dd5c-46bb-bdbf-c5affa062ac3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_CooldownReductionCDR_HarlequinCrest.aff.json",
+    "sha256": "09bb8a7c3f13e5d155814c1b7eb456549cce85e0d15377a2366aa46252bf5406"
+  },
+  {
+    "id": "79127cad-4e51-4551-a9b2-d076a83f5213",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_FlatArmor_HarlequinCrest.aff.json",
+    "sha256": "d4b690881471784fdbaca6ff73a663ae88cf6bbf8ecc41b5cdcc41386f574be7"
+  },
+  {
+    "id": "8e247f48-1f1d-4e1b-887c-4d5c36a69092",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_LifeFlat_ShroudOfFalseDeath.aff.json",
+    "sha256": "bd721f761df1fc68448983a918e9e7503b9977fa8c635d831de6964c3a8fbc2f"
+  },
+  {
+    "id": "505cf9c1-b64a-4378-bd92-68db6be7f0c1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/UBERUNIQUE_Resource_Max_AllClasses_HarlequinCrest.aff.json",
+    "sha256": "98643cc6aef2aaaca98132232c485ef34b8c2048fb3301b69be2380f37fde425"
+  },
+  {
+    "id": "4d32a06c-3d0d-43c0-af20-5d3bf1ccc1b3",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Affix/legendary_sorc_004.aff.json",
+    "sha256": "e9a8f395941c52dd545b810b63b7ea613b3011cc05715884bb4a5fe55d11ad21"
+  },
+  {
+    "id": "7a624f1e-9e94-4062-b6f7-8180ea08b5b7",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Aspect/Asp_Legendary_Sorc_004.asp.json",
+    "sha256": "dafe4d8b3af2ce11cfe1bea487a15694df0ffd2a6566e9dbf385ad9ce7821ef5"
+  },
+  {
+    "id": "cde9ead9-9cf1-4c9c-934e-038ab227266b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/GameBalance/SkillTreeRewards.gam.json",
+    "sha256": "d0eb183a09773865d34f9285c9b5b9d3fe7224389ada45a437ce10955c8ab3ab"
+  },
+  {
+    "id": "202a5fb1-21bb-4310-9e6e-25ef6cc5e2a1",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Item/Helm_Unique_Generic_002.itm.json",
+    "sha256": "5c51019007e40827300300c29a4a3bdba35eb78b471453e4ea8d853e15c11aa1"
+  },
+  {
+    "id": "0e007d48-2bf1-4859-af48-fed8ab648ae8",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/PlayerClass/Sorcerer.pcl.json",
+    "sha256": "16a94796c34345720a899c42ad4574163d59ad30e76838be355f78516861c272"
+  },
+  {
+    "id": "ecfa09ad-1f7f-46f2-a58b-c52a06e82adc",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_FireBolt.pow.json",
+    "sha256": "6fa1fc3dd75fdee926fe007827e70535541262b5196da445b6c99829eb9282a8"
+  },
+  {
+    "id": "21df7a49-e138-459c-b1c8-df14fdb786c2",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_Fireball.pow.json",
+    "sha256": "818c648a9f1a9978a0979bc165e4554adce672d762c7baec4f1e28142d4ccaa2"
+  },
+  {
+    "id": "8f9e5aa1-c12d-4f20-bf79-0bf0b68e0150",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/Power/Sorcerer_FlameShield.pow.json",
+    "sha256": "f30edad97611dee570079cfdec112ddcc40414bd716f88b113f056b15b1b1c9d"
+  },
+  {
+    "id": "a4daeb9a-2da0-4d0a-864f-3a19f61f8ab4",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/base/meta/SkillKit/Sorcerer.skl.json",
+    "sha256": "78c63c43b8a9abc95cddf8099f562459786191c2cb6984e162fe959d87cdf4af"
+  },
+  {
+    "id": "f434665c-8421-4171-9d44-948beaa0ec33",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Affix_Helm_Unique_Generic_002.stl.json",
+    "sha256": "7ae512faa3bba81dcd8f319bfa4af774d2220a831dade5d19b6b9ac12c12d9c9"
+  },
+  {
+    "id": "3c601f8b-c827-439f-bc18-07cb401e350f",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Affix_legendary_sorc_004.stl.json",
+    "sha256": "6a985dd262b1d7a5621bd9114152131a88b5f567e3ff8e1f86993ff73f416ccd"
+  },
+  {
+    "id": "e65c1a91-0be5-40e1-b238-a7f06e264e5b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Item_Helm_Unique_Generic_002.stl.json",
+    "sha256": "f85facc91b5cac1afba0979b6520d6ea9ac4c646d6ddc613d8d4c08baa4cc6fc"
+  },
+  {
+    "id": "0cd08a9b-26b7-4021-8cbe-ddd21226d5cd",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_FireBolt.stl.json",
+    "sha256": "9e697d104ce81e7e026664d89b34375390777236c519c987ac94576fa3658242"
+  },
+  {
+    "id": "57848230-3e08-47f7-952a-2e6c5aca32f0",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_Fireball.stl.json",
+    "sha256": "6259a72a8274973c721436cd37eb1c30818500da18879a7b0b7a1d6b3f0dbecd"
+  },
+  {
+    "id": "0bbd67a2-fbf9-4579-aedb-97afc742ca1b",
+    "kind": "datamine",
+    "locator": "https://github.com/DiabloTools/d4data/blob/33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0/json/enUS_Text/meta/StringList/Power_Sorcerer_FlameShield.stl.json",
+    "sha256": "efd81e6e4dcf5a2a3cc2775f58ea56c83dffdd4095b3cf816ee23e4dd388ab01"
+  }
+]

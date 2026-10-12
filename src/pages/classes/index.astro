@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { gameClasses,skills } from '../../lib/data';
+import { term } from '../../lib/terms';
+const base=import.meta.env.BASE_URL;
+---
+<BaseLayout title="Sınıflar">
+<section class="page-heading"><p class="eyebrow">SINIF ARŞİVİ</p><h1>Sınıflar</h1><p>İçe alınan sınıf kayıtları ve bağlı yetenekleri.</p></section>
+<div class="card-grid">{gameClasses.map(cls=><a class="data-card" href={`${base}classes/${cls.slug}/`}><p class="card-kicker">{cls.name}</p><h2>{term(cls.code)}</h2><p>{skills.filter(skill=>skill.classId===cls.id).length} yetenek ve geliştirme kaydı</p><span class="chip">{cls.patch}</span></a>)}</div>
+</BaseLayout>

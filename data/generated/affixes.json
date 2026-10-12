@@ -1,0 +1,225 @@
+[
+  {
+    "id": "2067850",
+    "slug": "uberunique-flatarmor-harlequincrest-2067850",
+    "tags": [],
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 2067850,
+      "file": "json/base/meta/Affix/UBERUNIQUE_FlatArmor_HarlequinCrest.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "d4b690881471784fdbaca6ff73a663ae88cf6bbf8ecc41b5cdcc41386f574be7",
+      "gitBlob": "36930c4caa6ec712a2409e23477c7097b78867c8"
+    },
+    "rawFormulas": [
+      {
+        "path": "$.tCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szAttributeFormula",
+        "expression": "1500"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szFlatAttribLevelFormula",
+        "expression": "0"
+      }
+    ],
+    "internalName": "UBERUNIQUE_FlatArmor_HarlequinCrest",
+    "itemPowerMax": 2000,
+    "itemPowerMin": 150,
+    "staticValues": [],
+    "rawAllowedItemLabels": []
+  },
+  {
+    "id": "2067852",
+    "slug": "uberunique-cooldownreductioncdr-harlequincrest-2067852",
+    "tags": [],
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 2067852,
+      "file": "json/base/meta/Affix/UBERUNIQUE_CooldownReductionCDR_HarlequinCrest.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "09bb8a7c3f13e5d155814c1b7eb456549cce85e0d15377a2366aa46252bf5406",
+      "gitBlob": "50bd9d2ab686012fb3a5d3e0a0f5413b4e1af057"
+    },
+    "rawFormulas": [
+      {
+        "path": "$.tCost",
+        "expression": "1"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szAttributeFormula",
+        "expression": "0.10"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szFlatAttribLevelFormula",
+        "expression": "0"
+      }
+    ],
+    "internalName": "UBERUNIQUE_CooldownReductionCDR_HarlequinCrest",
+    "itemPowerMax": 2000,
+    "itemPowerMin": 150,
+    "staticValues": [],
+    "rawAllowedItemLabels": []
+  },
+  {
+    "id": "2067856",
+    "slug": "uberunique-resource-max-allclasses-harlequincrest-2067856",
+    "tags": [],
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 2067856,
+      "file": "json/base/meta/Affix/UBERUNIQUE_Resource_Max_AllClasses_HarlequinCrest.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "98643cc6aef2aaaca98132232c485ef34b8c2048fb3301b69be2380f37fde425",
+      "gitBlob": "a4852978f11357c0c0f2a2059199b8841a1b1b55"
+    },
+    "rawFormulas": [
+      {
+        "path": "$.tCost",
+        "expression": "1"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szAttributeFormula",
+        "expression": "18"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szFlatAttribLevelFormula",
+        "expression": "0"
+      }
+    ],
+    "internalName": "UBERUNIQUE_Resource_Max_AllClasses_HarlequinCrest",
+    "itemPowerMax": 2000,
+    "itemPowerMin": 1,
+    "staticValues": [],
+    "rawAllowedItemLabels": []
+  },
+  {
+    "id": "2113430",
+    "slug": "uberunique-lifeflat-shroudoffalsedeath-2113430",
+    "tags": [],
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 2113430,
+      "file": "json/base/meta/Affix/UBERUNIQUE_LifeFlat_ShroudOfFalseDeath.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "bd721f761df1fc68448983a918e9e7503b9977fa8c635d831de6964c3a8fbc2f",
+      "gitBlob": "ae17dd3c90d1dd45f0bf1eae701f14212ebe84eb"
+    },
+    "rawFormulas": [
+      {
+        "path": "$.tCost",
+        "expression": "1"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szAttributeFormula",
+        "expression": "2000"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szFlatAttribLevelFormula",
+        "expression": "0"
+      }
+    ],
+    "internalName": "UBERUNIQUE_LifeFlat_ShroudOfFalseDeath",
+    "itemPowerMax": 2000,
+    "itemPowerMin": 1,
+    "staticValues": [],
+    "rawAllowedItemLabels": []
+  },
+  {
+    "id": "579749",
+    "name": "of Binding Embers",
+    "slug": "of-binding-embers-579749",
+    "tags": [
+      "FILTER_Legendary_Utility",
+      "FILTER_Flex_Sorc_FlameShield",
+      "Search_CrowdControl",
+      "Skill_Primary_Defensive",
+      "Keyword_Unhindered",
+      "FILTER_Legendary_Defensive",
+      "Archetype_Sorcerer_Pyromancy_Support"
+    ],
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 579749,
+      "file": "json/base/meta/Affix/legendary_sorc_004.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e9a8f395941c52dd545b810b63b7ea613b3011cc05715884bb4a5fe55d11ad21",
+      "gitBlob": "39a88ac7f757e2d512a3fe41633a2351e0eda56e"
+    },
+    "classId": "131965",
+    "description": "Flame Shield grants you Unhindered for its duration. Enemies you move through while Flame Shield is active are Immobilized for [Affix_Value_1|1|] seconds.",
+    "rawFormulas": [
+      {
+        "path": "$.tCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szAttributeFormula",
+        "expression": "1.5+(CurrentLegendaryRank()-1)*0.1"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szFlatAttribLevelFormula",
+        "expression": "0"
+      }
+    ],
+    "internalName": "legendary_sorc_004",
+    "itemPowerMax": 2000,
+    "itemPowerMin": 210,
+    "staticValues": [],
+    "localizationSource": {
+      "sno": 1106399,
+      "file": "json/enUS_Text/meta/StringList/Affix_legendary_sorc_004.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6a985dd262b1d7a5621bd9114152131a88b5f567e3ff8e1f86993ff73f416ccd",
+      "gitBlob": "3ee6c28c212cc92bd8649b0c849c9f98d1f02921"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield{/c} grants you {c_important}{u}Unhindered{/u}{/c} for its duration. Enemies you move through while {c_important}Flame Shield{/c} is active are Immobilized for {c_random}[Affix_Value_1|1|]{/c} seconds.",
+    "rawAllowedItemLabels": [
+      16,
+      17,
+      29,
+      28,
+      26,
+      30
+    ]
+  },
+  {
+    "id": "609821",
+    "slug": "helm-unique-generic-002-609821",
+    "tags": [
+      "FILTER_Build_All_Generic"
+    ],
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 609821,
+      "file": "json/base/meta/Affix/Helm_Unique_Generic_002.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6262e9f88f26f7b70cee86d9262bc7697fc5afdabece59a16a7c932e63fcd56b",
+      "gitBlob": "d95927e9388139650c4b1aa9a577a1f77f68099d"
+    },
+    "description": "Gain +[Affix.\"Static Value 0\"] Rank to all Skills.",
+    "rawFormulas": [
+      {
+        "path": "$.tCost",
+        "expression": "0"
+      }
+    ],
+    "internalName": "Helm_Unique_Generic_002",
+    "itemPowerMax": 2000,
+    "itemPowerMin": 1,
+    "staticValues": [
+      6
+    ],
+    "localizationSource": {
+      "sno": 1105974,
+      "file": "json/enUS_Text/meta/StringList/Affix_Helm_Unique_Generic_002.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "7ae512faa3bba81dcd8f319bfa4af774d2220a831dade5d19b6b9ac12c12d9c9",
+      "gitBlob": "049c11e3dfa995d9812faab1e75c08f7ee46c6dc"
+    },
+    "descriptionTemplate": "Gain {c_number}+[Affix.\"Static Value 0\"]{/c} Rank to all Skills.",
+    "rawAllowedItemLabels": []
+  }
+]

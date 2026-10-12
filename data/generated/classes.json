@@ -1,0 +1,104 @@
+[
+  {
+    "id": "131965",
+    "code": "sorcerer",
+    "name": "Sorcerer",
+    "slug": "sorcerer-131965",
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 131965,
+      "file": "json/base/meta/PlayerClass/Sorcerer.pcl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "16a94796c34345720a899c42ad4574163d59ad30e76838be355f78516861c272",
+      "gitBlob": "435616ec36ac796a40aa2dd6d113bc4d96c0cb75"
+    },
+    "rawData": {
+      "primaryResource": {
+        "eType": 0,
+        "__type__": "PlayerClassResourceData",
+        "__typeHash__": 2028905861
+      },
+      "coreStatBenefits": [
+        {
+          "__type__": "PlayerClassCoreStatBenefitData",
+          "unk_8754bdb": [],
+          "__typeHash__": 466375807
+        },
+        {
+          "__type__": "PlayerClassCoreStatBenefitData",
+          "unk_8754bdb": [
+            {
+              "__type__": "PlayerClassCoreStatBenefitEntry",
+              "unk_aae71b4": 0,
+              "__typeHash__": 2507153527,
+              "eBenefitCondition": 0,
+              "flContributionScalar": 1.625,
+              "eContributingCoreStat": 1
+            }
+          ],
+          "__typeHash__": 466375807
+        },
+        {
+          "__type__": "PlayerClassCoreStatBenefitData",
+          "unk_8754bdb": [
+            {
+              "__type__": "PlayerClassCoreStatBenefitEntry",
+              "unk_aae71b4": 0,
+              "__typeHash__": 2507153527,
+              "eBenefitCondition": 0,
+              "flContributionScalar": 1,
+              "eContributingCoreStat": 3
+            }
+          ],
+          "__typeHash__": 466375807
+        },
+        {
+          "__type__": "PlayerClassCoreStatBenefitData",
+          "unk_8754bdb": [
+            {
+              "__type__": "PlayerClassCoreStatBenefitEntry",
+              "unk_aae71b4": 0,
+              "__typeHash__": 2507153527,
+              "eBenefitCondition": 0,
+              "flContributionScalar": 1,
+              "eContributingCoreStat": 2
+            }
+          ],
+          "__typeHash__": 466375807
+        }
+      ],
+      "secondaryResource": {
+        "eType": -1,
+        "__type__": "PlayerClassResourceData",
+        "__typeHash__": 2028905861
+      }
+    },
+    "skillIds": [
+      "153249",
+      "153249:mod:1",
+      "153249:mod:10",
+      "153249:mod:4",
+      "153249:mod:6",
+      "153249:mod:7",
+      "153249:mod:8",
+      "153249:mod:9",
+      "165023",
+      "165023:mod:10",
+      "165023:mod:11",
+      "165023:mod:12",
+      "165023:mod:2",
+      "165023:mod:6",
+      "165023:mod:8",
+      "165023:mod:9",
+      "167341",
+      "167341:mod:1",
+      "167341:mod:10",
+      "167341:mod:4",
+      "167341:mod:6",
+      "167341:mod:7",
+      "167341:mod:8",
+      "167341:mod:9"
+    ],
+    "skillKitId": "72984"
+  }
+]

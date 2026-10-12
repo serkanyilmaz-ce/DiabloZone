@@ -1,4 +1,4 @@
-export const recordKinds = ['skills','items','aspects','affixes','skill-tree'] as const;
+export const recordKinds = ['skills','items','aspects','affixes','skill-tree','classes'] as const;
 export function parseRecordQuery(params: URLSearchParams) {
   const kind=params.get('kind') ?? 'skills';
   const query=params.get('q') ?? '';

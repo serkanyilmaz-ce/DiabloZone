@@ -9,6 +9,7 @@ const classes = Object.keys(tree.classes);
   <section class="page-heading">
     <p class="eyebrow">GÜCÜN DALLARI</p><h1>Yetenek ağacı</h1>
     <p>İçe aktarılan sınıf verilerinin dallarını ve bağlantılarını incele.</p>
+    <p class="source-note">Faz 2 kesiti: yalnızca üç seçili yetenek, bağlı geliştirmeler ve kaynak bağlantıları. Tam sınıf ağacı sonraki fazda tamamlanacak.</p>
   </section>
   {classes.length === 0 && <DataEmpty kind="yetenek ağacı" />}
   <div class="tree-tabs" hidden={!classes.length} role="tablist" aria-label="Sınıf yetenek ağaçları">
@@ -67,12 +68,12 @@ const classes = Object.keys(tree.classes);
         // Runtime formulas are not evaluated by this browser; never invent game values.
         const raw=node.description??'';
         const description=raw.replace(/\[[^\]]*\]/g,'[çözülemedi]').replace(/\{[^}]*\}/g,'[çözülemedi]');
-        field('description',description||(node.kind==='gate'?`This branch opens at player level ${node.requiredLevel}.`:node.kind==='hub'?'Bu yetenek kümesini incelemek için bağlantılı dalları takip et.':'Bu yeteneğin bağlı düğümlerini incele.'));
+        field('description',description||(node.kind==='gate'?`Kaynak seviye eşiği: ${node.requiredLevel}.`:node.kind==='hub'?'Bu yetenek kümesini incelemek için bağlantılı dalları takip et.':'Bu yeteneğin bağlı düğümlerini incele.'));
         document.querySelector('.tree-formula-note').hidden=!description.includes('[çözülemedi]');
         const emblem=document.querySelector('[data-detail-emblem]');emblem.replaceChildren();
         if(node.icon){const img=document.createElement('img');img.src=base+node.icon;img.alt='';emblem.append(img);}else emblem.textContent=node.kind==='gate'?'◆':'✦';
         const stats=document.querySelector('[data-detail-stats]');stats.replaceChildren();
-        for(const [label,value] of [['En fazla rank',node.maxRanks],['Required level',node.requiredLevel||undefined],['Seçim grubu',node.exclusiveGroup!==undefined?'Birini seç':undefined]]){if(value===undefined)continue;const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=String(value);stats.append(dt,dd);}
+        for(const [label,value] of [['En fazla rank',node.maxRanks],['Gerekli seviye',node.requiredLevel||undefined],['Seçim grubu',node.exclusiveGroup!==undefined?'Birini seç':undefined]]){if(value===undefined)continue;const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=String(value);stats.append(dt,dd);}
         const link=document.querySelector('[data-detail-link]');link.hidden=!node.skillSlug;if(node.skillSlug)link.href=base+'skills/'+node.skillSlug+'/';
         if(focus){scale=Math.max(scale,.18);center(node.x,node.y);elements.get(node.id)?.focus({preventScroll:true});}
       };

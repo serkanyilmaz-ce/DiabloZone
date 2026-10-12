@@ -2,7 +2,7 @@
 import SourceDetails from '../../components/SourceDetails.astro';
 import { term } from '../../lib/terms';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { skills } from '../../lib/data';
+import { skills,gameClasses } from '../../lib/data';
 export function getStaticPaths(){ return skills.map((skill:any)=>({params:{slug:skill.slug},props:{skill}})); }
 const { skill } = Astro.props as any;
 const base = import.meta.env.BASE_URL;
@@ -21,7 +21,8 @@ const base = import.meta.env.BASE_URL;
     <dl class="detail-grid"><div><dt>Tür</dt><dd>{term(skill.type)}</dd></div><div><dt>Kaynak sürüm</dt><dd>{skill.patch}</dd></div><div><dt>Yetenek SNO</dt><dd>{skill.source?.sno ?? '—'}</dd></div><div><dt>Yerelleştirme SNO</dt><dd>{skill.localizationSource?.sno ?? '—'}</dd></div></dl>
     {(skill.tags?.length ?? 0)>0 && <section class="detail-section"><h2>Etiketler</h2><div class="chip-row">{skill.tags.map((t:string)=><span class="chip">{t}</span>)}</div></section>}
     {skill.descriptionTemplate && <section class="detail-section"><h2>Ham açıklama / çözülemeyen formül</h2><pre>{skill.descriptionTemplate}</pre></section>}
-    <SourceDetails source={skill.source} localizationSource={skill.localizationSource} patch={skill.patch} template={skill.descriptionTemplate} />
+    <section class="detail-section"><h2>Bağlı kayıtlar</h2><div class="chip-row">{gameClasses.filter(cls=>cls.id===skill.classId).map(cls=><a class="chip" href={`${base}classes/${cls.slug}/`}>{cls.name}</a>)}{skills.filter(value=>value.id===skill.parentId||value.parentId===skill.id).map(value=><a class="chip" href={`${base}skills/${value.slug}/`}>{value.name}</a>)}</div></section>
+    <SourceDetails source={skill.source} localizationSource={skill.localizationSource} patch={skill.patch} template={skill.descriptionTemplate} formulas={skill.rawFormulas} />
   </article>
   <style>
     .detail-heading{display:flex;align-items:center;gap:24px}.detail-heading h1{margin-bottom:8px}.skill-detail-icon{width:92px;height:92px;flex:0 0 auto;border:1px solid #754937;background:#090605;box-shadow:0 0 0 5px #120b09,0 15px 38px rgba(0,0,0,.35)}@media(max-width:560px){.detail-heading{align-items:flex-start;gap:16px}.skill-detail-icon{width:70px;height:70px}}

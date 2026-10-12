@@ -1,0 +1,14 @@
+---
+import { metadata } from '../lib/data';
+const base=import.meta.env.BASE_URL;
+---
+{metadata.gameBuild && <aside class="snapshot-notice" aria-label="Arşiv sürümü">
+  <div><strong>Sezon {metadata.season} · {metadata.sourceVersion}</strong><span>{metadata.sample?'İlk gerçek veri grubu · Katalog genişletiliyor':'Kaydedilmiş oyun arşivi'}</span></div>
+  <a href={`${base}classes/`}>Sınıfları incele →</a>
+  <p>Sezon başlangıç verisi. Kaynak adları ve açıklamaları İngilizce; çözümlenmeyen formüller ham hâliyle gösterilir.</p>
+  {metadata.snapshotId && <details><summary>Arşiv kaydı</summary><code>{metadata.snapshotId}</code></details>}
+</aside>}
+<style>
+.snapshot-notice{border:1px solid var(--line);border-left:3px solid var(--red);padding:12px 16px;margin:0 0 24px;background:var(--surface);font-size:.78rem;display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px}
+.snapshot-notice div{display:flex;gap:12px;flex-wrap:wrap}.snapshot-notice strong{color:var(--text)}.snapshot-notice span,.snapshot-notice p{color:var(--muted)}.snapshot-notice p{flex-basis:100%;margin:0;line-height:1.6}.snapshot-notice a{margin-left:auto}.snapshot-notice details{width:100%;font-size:.7rem}.snapshot-notice code{overflow-wrap:anywhere}
+</style>

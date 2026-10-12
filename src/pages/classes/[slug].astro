@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceDetails from '../../components/SourceDetails.astro';
+import { gameClasses,skills } from '../../lib/data';
+import { term } from '../../lib/terms';
+export function getStaticPaths(){return gameClasses.map(cls=>({params:{slug:cls.slug},props:{cls}}));}
+const {cls}=Astro.props;
+const base=import.meta.env.BASE_URL;
+const linked=skills.filter(skill=>skill.classId===cls.id);
+---
+<BaseLayout title={cls.name}>
+<a class="back-link" href={`${base}classes/`}>← Sınıflara dön</a>
+<section class="page-heading"><p class="eyebrow">{cls.name}</p><h1>{term(cls.code)}</h1><p>Bu başlangıç grubunda üç ana yetenek ve bunların kaynakta bağlı geliştirmeleri bulunuyor.</p><a class="button secondary" href={`${base}skill-tree/#${cls.code}`}>Yetenek ağacı kesitini aç</a></section>
+<div class="card-grid">{linked.map(skill=><a class="data-card" href={`${base}skills/${skill.slug}/`}><p class="card-kicker">{term(skill.type)} · {term(skill.category)}</p><h2>{skill.name}</h2><p>{skill.description??'Kaynak açıklaması bulunmuyor.'}</p></a>)}</div>
+<SourceDetails source={cls.source} patch={cls.patch}/>
+</BaseLayout>

@@ -1,0 +1,69 @@
+[
+  {
+    "id": "1775673",
+    "name": "of Binding Embers",
+    "slug": "binding-embers-1775673",
+    "tags": [
+      "FILTER_Legendary_Utility",
+      "FILTER_Flex_Sorc_FlameShield",
+      "Search_CrowdControl",
+      "Skill_Primary_Defensive",
+      "Keyword_Unhindered",
+      "FILTER_Legendary_Defensive",
+      "Archetype_Sorcerer_Pyromancy_Support"
+    ],
+    "patch": "3.2.1.73552",
+    "source": {
+      "sno": 1775673,
+      "file": "json/base/meta/Aspect/Asp_Legendary_Sorc_004.asp.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "dafe4d8b3af2ce11cfe1bea487a15694df0ffd2a6566e9dbf385ad9ce7821ef5",
+      "gitBlob": "44f7db25b4752a420c88ceeb4703d4c086e7022a"
+    },
+    "affixId": "579749",
+    "classId": "131965",
+    "classes": [
+      "sorcerer"
+    ],
+    "category": "unknown",
+    "affixSource": {
+      "sno": 579749,
+      "file": "json/base/meta/Affix/legendary_sorc_004.aff.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "e9a8f395941c52dd545b810b63b7ea613b3011cc05715884bb4a5fe55d11ad21",
+      "gitBlob": "39a88ac7f757e2d512a3fe41633a2351e0eda56e"
+    },
+    "description": "Flame Shield grants you Unhindered for its duration. Enemies you move through while Flame Shield is active are Immobilized for [Affix_Value_1|1|] seconds.",
+    "rawFormulas": [
+      {
+        "path": "$.tCost",
+        "expression": "0"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szAttributeFormula",
+        "expression": "1.5+(CurrentLegendaryRank()-1)*0.1"
+      },
+      {
+        "path": "$.ptItemAffixAttributes.0.tAttribute.szFlatAttribLevelFormula",
+        "expression": "0"
+      }
+    ],
+    "allowedSlots": [],
+    "localizationSource": {
+      "sno": 1106399,
+      "file": "json/enUS_Text/meta/StringList/Affix_legendary_sorc_004.stl.json",
+      "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+      "sha256": "6a985dd262b1d7a5621bd9114152131a88b5f567e3ff8e1f86993ff73f416ccd",
+      "gitBlob": "3ee6c28c212cc92bd8649b0c849c9f98d1f02921"
+    },
+    "descriptionTemplate": "{c_important}Flame Shield{/c} grants you {c_important}{u}Unhindered{/u}{/c} for its duration. Enemies you move through while {c_important}Flame Shield{/c} is active are Immobilized for {c_random}[Affix_Value_1|1|]{/c} seconds.",
+    "rawAllowedItemLabels": [
+      16,
+      17,
+      29,
+      28,
+      26,
+      30
+    ]
+  }
+]

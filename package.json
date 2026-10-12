@@ -30,7 +30,9 @@
     "api:start": "node build/service/scripts/service.js",
     "db:bootstrap": "tsx scripts/db/bootstrap.ts",
     "release:package": "node scripts/package-release.mjs",
-    "source:inventory": "node scripts/source/inventory.mjs"
+    "source:inventory": "node scripts/source/inventory.mjs",
+    "data:poc": "tsx scripts/source/normalize-poc.ts",
+    "db:promote": "tsx scripts/db/promote.ts"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",

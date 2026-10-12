@@ -1,11 +1,12 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
+import SnapshotNotice from '../components/SnapshotNotice.astro';
 interface Props { title: string; description?: string; }
 const { title, description = 'Diablo IV yetenekleri, eşyaları ve mekanikleri için bağımsız Türkçe veri ve araştırma arşivi.' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const section = Astro.url.pathname.slice(base.length).split('/')[0] || 'home';
-const navigation = [{name:'Ana sayfa',path:'',section:'home'},{name:'Yetenekler',path:'skills/',section:'skills'},{name:'Eşyalar',path:'items/',section:'items'},{name:'Aspektler',path:'aspects/',section:'aspects'},{name:'Araştırma',path:'research/',section:'research'}];
+const navigation = [{name:'Ana sayfa',path:'',section:'home'},{name:'Sınıflar',path:'classes/',section:'classes'},{name:'Yetenekler',path:'skills/',section:'skills'},{name:'Eşyalar',path:'items/',section:'items'},{name:'Aspektler',path:'aspects/',section:'aspects'},{name:'Araştırma',path:'research/',section:'research'}];
 ---
 <!doctype html>
 <html lang="tr">
@@ -31,7 +32,7 @@ const navigation = [{name:'Ana sayfa',path:'',section:'home'},{name:'Yetenekler'
         <div class="header-controls"><span class="season-badge">SEZON <b>15</b></span><a href={`${base}search/`} class="icon-button" aria-label="Arşivde ara"><Icon name="search" /></a><button class="icon-button menu-toggle" type="button" aria-label="Gezinme menüsü" aria-controls="primary-nav" aria-expanded="false" data-menu><Icon name="menu" /></button></div>
       </div>
     </header>
-    <main class="shell page-shell" id="main"><slot /></main>
+    <main class="shell page-shell" id="main"><SnapshotNotice/><slot /></main>
     <footer class="site-footer"><div class="shell">
       <div class="footer-top"><a class="footer-brand" href={base}>DIABLO<span>ZONE</span></a><p>Oyuncular için. Merak edenler için.</p><div><a href={`${base}research/`}>Araştırma yaklaşımı</a><a href={`${base}research/#kaynaklar`}>Kaynaklar & veri durumu</a></div></div>
       <div class="footer-bottom"><p>Bağımsız bir topluluk projesidir. Blizzard Entertainment ile bağlantılı değildir.</p><p>Diablo IV ve ilgili markalar Blizzard Entertainment’a aittir.</p></div>

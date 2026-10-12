@@ -1,34 +1,37 @@
-import { readFile } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
-import { SkillSchema, ItemSchema, AspectSchema, AffixSchema } from '../../schemas/domain.js';
 import { databasePool } from './config.js';
-import { z } from 'zod';
-const metadata=JSON.parse(await readFile('data/generated/metadata.json','utf8'));
-const season=Number(process.env.DATA_SEASON ?? '15');
-const channel=process.env.DATA_CHANNEL;
-if(!metadata.gameBuild || !Number.isSafeInteger(season) || season<1 || !['live','ptr'].includes(channel ?? '')) throw new Error('Kaynak build, DATA_SEASON ve açık DATA_CHANNEL=live/ptr gerekli. Eksik veriye sezon atama yapılmaz.');
-const schemas={skills:SkillSchema,items:ItemSchema,aspects:AspectSchema,affixes:AffixSchema};
-const loaded = await Promise.all(Object.entries(schemas).map(async([kind,schema])=>{
-  const raw=await readFile(`data/generated/${kind}.json`,'utf8');
-  return {kind,raw,records:z.array(schema).parse(JSON.parse(raw)),hash:createHash('sha256').update(raw).digest('hex')};
-}));
-if(!loaded.some(file=>file.records.length)) throw new Error('Boş veri kümesi oyun verisi olarak yayınlanamaz.');
-if(loaded.some(file=>file.records.some(record=>record.patch!==String(metadata.gameBuild)))) throw new Error('Kayıtların kaynak sürümü metadata build ile eşleşmiyor.');
+import { loadCatalog } from './catalog.js';
+const catalog=await loadCatalog(process.argv[2]??'data/generated');
+if(process.env.DATA_SEASON&&Number(process.env.DATA_SEASON)!==catalog.metadata.season)throw new Error('Explicit season differs from source');
+if(process.env.DATA_CHANNEL&&process.env.DATA_CHANNEL!==catalog.metadata.channel)throw new Error('Explicit channel differs from source');
 const pool=databasePool(),client=await pool.connect();
-try {
+try{
   await client.query('begin');
-  const build=String(metadata.gameBuild);
-  // A build is never silently reassigned to another season/channel.
-  await client.query('insert into builds(id,season_id,patch,channel,observed_at) values($1,$2,$3,$4,now()) on conflict(id) do nothing',[build,season,metadata.patch ?? null,channel]);
-  const actual=await client.query('select season_id,channel from builds where id=$1',[build]);
-  if(actual.rows[0].season_id!==season || actual.rows[0].channel!==channel) throw new Error('Build bağlamı uyuşmuyor.');
-  const snapshot=await client.query('insert into snapshots(build_id,manifest) values($1,$2) returning id',[build,JSON.stringify({kind:'game_data',schemaVersion:1,files:loaded.map(file=>({kind:file.kind,sha256:file.hash,count:file.records.length}))})]);
-  const snapshotId=snapshot.rows[0].id;
-  for(const file of loaded){
-    const source=await client.query('insert into sources(snapshot_id,kind,locator,sha256) values($1,$2,$3,$4) returning id',[snapshotId,'normalized_export',`data/generated/${file.kind}.json`,file.hash]);
-    for(const record of file.records) await client.query('insert into records(snapshot_id,kind,id,slug,name,source_id,payload) values($1,$2,$3,$4,$5,$6,$7)',[snapshotId,file.kind,record.id,'slug' in record?record.slug:null,'name' in record?record.name:null,source.rows[0].id,JSON.stringify(record)]);
+  await client.query('select pg_advisory_xact_lock(150003)');
+  const existing=await client.query("select id from snapshots where state='published' and manifest->>'kind'='game_data' and manifest->>'inputSha256'=$1",[catalog.inputSha256]);
+  if(existing.rows.length){
+    await client.query('commit');console.log(JSON.stringify({snapshotId:existing.rows[0].id,preserved:true,inputSha256:catalog.inputSha256}));
+  }else{
+    const context=catalog.context;
+    await client.query('insert into builds(id,season_id,patch,channel) values($1,$2,$3,$4) on conflict(id) do nothing',[context.gameBuild,context.season,context.patch,context.channel]);
+    const actual=(await client.query('select season_id,channel,patch from builds where id=$1',[context.gameBuild])).rows[0];
+    if(actual.season_id!==context.season||actual.channel!==context.channel||actual.patch!==context.patch)throw new Error('Build context mismatch');
+    const manifest={kind:'game_data',schemaVersion:2,inputSha256:catalog.inputSha256,...context,phase:'F02',provenance:catalog.provenance,files:catalog.files.map(file=>({kind:file.kind,sha256:file.sha256,count:file.records.length})),links:catalog.links.length};
+    const snapshotId=(await client.query('insert into snapshots(build_id,manifest) values($1,$2) returning id',[context.gameBuild,JSON.stringify(manifest)])).rows[0].id;
+    const sourceIds=new Map<string,string>();
+    for(const source of catalog.provenance){
+      const locator=`https://github.com/DiabloTools/d4data/blob/${source.commit}/${source.file}`;
+      const id=(await client.query("insert into sources(snapshot_id,kind,locator,sha256) values($1,'datamine',$2,$3) returning id",[snapshotId,locator,source.sha256])).rows[0].id;
+      sourceIds.set(source.file,id);
+    }
+    for(const file of catalog.files){
+      await client.query("insert into sources(snapshot_id,kind,locator,sha256) values($1,'normalized_export',$2,$3)",[snapshotId,`catalog:${file.kind}`,file.sha256]);
+      for(const record of file.records)await client.query('insert into records(snapshot_id,kind,id,slug,name,source_id,payload) values($1,$2,$3,$4,$5,$6,$7)',[snapshotId,file.kind,record.id,'slug' in record?record.slug:null,'name' in record?record.name:null,sourceIds.get(record.source.file),JSON.stringify(record)]);
+    }
+    for(const link of catalog.links)await client.query('insert into record_links(snapshot_id,source_kind,source_id,target_kind,target_id,relation) values($1,$2,$3,$4,$5,$6)',[snapshotId,link.sourceKind,link.sourceId,link.targetKind,link.targetId,link.relation]);
+    await client.query("update snapshots set state='published' where id=$1",[snapshotId]);
+    await client.query('commit');console.log(JSON.stringify({snapshotId,preserved:false,inputSha256:catalog.inputSha256,records:catalog.files.reduce((sum,file)=>sum+file.records.length,0),links:catalog.links.length}));
   }
-  await client.query("update snapshots set state='published' where id=$1",[snapshotId]);
-  await client.query('commit');console.log(`Published immutable snapshot ${snapshotId}`);
-} catch { await client.query('rollback'); throw new Error('İçe aktarım başarısız; kayıtlar geri alındı. Kaynak, build ve bağlantı bağlamını kontrol et.'); }
-finally {client.release();await pool.end();}
+}catch{
+  await client.query('rollback');
+  throw new Error('Game import failed; transaction rolled back. Check sealed catalogue and database.');
+}finally{client.release();await pool.end();}

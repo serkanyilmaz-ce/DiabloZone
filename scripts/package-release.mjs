@@ -32,7 +32,9 @@ async function manifest(root, relative = '') {
 }
 await manifest(directory);
 const revision = spawnSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' });
-await writeFile(join(directory, 'release.json'), JSON.stringify({ release, commit: revision.status === 0 ? revision.stdout.trim() : null, site: 'https://diablozone.152.70.4.125.sslip.io', files: hashes }, null, 2) + '\n');
+const status=spawnSync('git',['status','--porcelain'],{encoding:'utf8'});
+const draft=status.status!==0||status.stdout.trim().length>0;
+await writeFile(join(directory, 'release.json'), JSON.stringify({ release, commit: revision.status === 0&&!draft ? revision.stdout.trim() : null, basedOn:revision.status===0?revision.stdout.trim():null,draft,site: 'https://diablozone.152.70.4.125.sslip.io', files: hashes }, null, 2) + '\n');
 const archive = `${directory}.tar.gz`;
 const packed = spawnSync('tar', ['-czf', archive, '-C', directory, '.'], { stdio: 'inherit' });
 if (packed.status !== 0) throw new Error('Release packaging failed.');

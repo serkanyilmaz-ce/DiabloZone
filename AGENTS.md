@@ -10,7 +10,7 @@ bütün oyun verilerini ve matematik/RNG ilişkilerini kendi DB'mizde arşivleme
 | --- | --- | --- | --- |
 | F00 | Native altyapı/yayın | Tamamlandı | HTTPS, API, PostgreSQL, Git; docs/progress.md |
 | F01 | Kaynak/build doğrulaması | Tamamlandı | docs/source-audit.md; pinned 3.2.1.73552, hash/envanter |
-| F02 | Küçük gerçek veri akışı | Bekliyor | Gerçek örnek: kaynak→DB→API/export→site |
+| F02 | Küçük gerçek veri akışı | Doğrulama/yayın | Gerçek örnek: kaynak→DB→API/export→site |
 | F03 | Tüm sınıflar/yetenekler/ağaç | Bekliyor | Sınıf katalogları ve bağlı ağaçlar |
 | F04 | Tüm eşyalar/affix/aspekt | Bekliyor | Tam katalog, varyant/roll ve ilişkili detaylar |
 | F05 | Diğer karakter sistemleri | Bekliyor | Paragon/glyph, sınıf özel, gem/rune/minyon |

@@ -1,6 +1,17 @@
 {
-  "source": "DiabloTools/d4data",
-  "gameBuild": null,
-  "generatedAt": null,
-  "schemaVersion": 1
+  "schemaVersion": 2,
+  "source": "DiabloZone PostgreSQL",
+  "snapshotId": "5691d80f-9a80-4720-b5be-806705cd0379",
+  "gameBuild": "73552",
+  "researchBuild": null,
+  "season": 15,
+  "patch": "3.2.1",
+  "channel": "live",
+  "sourceVersion": "3.2.1.73552",
+  "sourceCommit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+  "inputSha256": "2706adec0eccf36de81fb7eb1349c5b893d2094319ff3e9266b570600d385c3c",
+  "sample": true,
+  "phase": "F02",
+  "recordCount": 34,
+  "generatedAt": "2026-10-12T03:10:42.836Z"
 }

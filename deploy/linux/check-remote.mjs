@@ -2,8 +2,12 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { parse } from 'dotenv';
 import pg from 'pg';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { loadCatalog,canonical } from '../../../build/service/scripts/db/catalog.js';
 
 const origin = 'https://diablozone.152.70.4.125.sslip.io';
+const releaseRoot=fileURLToPath(new URL('../../../',import.meta.url));
 const writerPool = new pg.Pool({ connectionString: parse(readFileSync('/etc/diablozone/import.env')).DATABASE_URL, max: 1 });
 const readerPool = new pg.Pool({ connectionString: parse(readFileSync('/etc/diablozone/api.env')).DATABASE_READ_URL, max: 1 });
 // Explicit clients retain the same connection after an expected SQL error.
@@ -73,8 +77,44 @@ try {
     assert.equal((await response.json()).data.length, 0);
   }
   checked('Caddy to API to PostgreSQL: same snapshot, eight unknown areas, zero fabricated game data');
-  assert.equal((await fetch('https://aryaland.152.70.4.125.sslip.io/')).status, 200);
-  checked('Existing Aryaland remains available over HTTPS');
+  const catalog=await loadCatalog(path.join(releaseRoot,'data/generated'));
+  assert(catalog.metadata.snapshotId);
+  const gameId=catalog.metadata.snapshotId;
+  const games=await (await fetch(origin+'/api/v1/snapshots?season=15&channel=live&kind=game_data')).json();
+  assert.equal(games.data[0].id,gameId);
+  assert.equal(games.data[0].manifest.inputSha256,catalog.inputSha256);
+  for(const file of catalog.files){
+    const response=await fetch(`${origin}/api/v1/snapshots/${gameId}/records?kind=${file.kind}`);
+    assert.equal(response.status,200);
+    const result=await response.json();
+    assert.equal(result.total,file.records.length);
+    assert.equal(result.snapshot.id,gameId);
+    for(const record of file.records){
+      assert.equal(canonical(result.data.find(value=>value.id===record.id).payload),canonical(record));
+      if(file.kind==='skill-tree')continue;
+      const page=await fetch(`${origin}/${file.kind}/${record.slug}/`);
+      assert.equal(page.status,200);
+      const html=await page.text();
+      assert(html.includes(gameId));
+      assert(html.includes(String(record.source.sno)));
+      assert(html.includes(record.name??record.internalName));
+    }
+  }
+  const linkCount=(await reader.query('select count(*)::int as count from record_links where snapshot_id=$1',[gameId])).rows[0].count;
+  assert.equal(linkCount,catalog.links.length);
+  await reader.query('begin read write');
+  await rejected(reader,'update records set name=name where false','42501');
+  await reader.query('rollback');
+  await writer.query('begin');
+  await rejected(writer,'delete from record_links where snapshot_id=$1','P0001',[gameId]);
+  await writer.query('rollback');
+  checked('All real game API payloads match the PostgreSQL export; detail HTML carries the same snapshot; reader and immutable links protected');
+  const treeHtml=await (await fetch(origin+'/skill-tree/')).text();
+  assert(treeHtml.includes('165023')&&treeHtml.includes('131965')&&treeHtml.includes('excerpt'));
+  assert.equal((await fetch('http://127.0.0.1:3001/')).status,200);
+  assert.equal((await fetch('https://aryaland.online/')).status,200);
+  checked('Existing Aryaland remains available on its current domain');
+  console.log(JSON.stringify({gameSnapshot:gameId,records:catalog.files.reduce((sum,file)=>sum+file.records.length,0),links:linkCount,seal:catalog.inputSha256}));
   console.log(JSON.stringify({ snapshot: snapshot.id, build: snapshot.build_id, mechanics: 8, verified: 0, checks }));
 } finally {
   await writer.query('rollback').catch(() => {});

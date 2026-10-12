@@ -2,12 +2,14 @@
 set -Eeuo pipefail
 release_id="${1:?Release ID required}"
 archive_hash="${2:?Archive SHA256 required}"
+mode="${3:-activate}"
+[[ "$mode" == activate || "$mode" == prepare ]] || exit 2
 [[ "$EUID" == 0 && "$release_id" =~ ^[0-9]{8}-[0-9]{6}$ && "$archive_hash" =~ ^[a-f0-9]{64}$ ]] || exit 2
 release_root="/srv/diablozone/releases/$release_id"
 archive="/home/ubuntu/diablozone-deploy/$release_id.tar.gz"
 printf '%s  %s\n' "$archive_hash" "$archive" | sha256sum --check
 systemctl is-active --quiet caddy postgresql@16-main aryaland
-curl --fail --silent --output /dev/null https://aryaland.152.70.4.125.sslip.io/
+curl --fail --silent --output /dev/null http://127.0.0.1:3001/
 if ! id diablozone >/dev/null 2>&1; then
     useradd --system --home-dir /var/lib/diablozone --create-home --shell /usr/sbin/nologin diablozone
 fi
@@ -46,6 +48,10 @@ chown -R root:root "$release_root"
 chmod -R a+rX "$release_root"
 python3 "$release_root/source/deploy/linux/provision.py"
 python3 "$release_root/source/deploy/linux/run-admin.py" "$release_root" bootstrap
+if [[ "$mode" == prepare ]]; then
+    echo "Prepared $release_id for database import/export; current release was preserved."
+    exit 0
+fi
 install -m 0644 "$release_root/source/deploy/linux/diablozone-api.service" /etc/systemd/system/diablozone-api.service
 systemd-analyze verify /etc/systemd/system/diablozone-api.service
 previous_release="$(readlink /srv/diablozone/current || true)"
@@ -88,6 +94,6 @@ if ! caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile; then
     exit 1
 fi
 systemctl reload caddy
-curl --fail --silent --output /dev/null https://aryaland.152.70.4.125.sslip.io/
+curl --fail --silent --output /dev/null http://127.0.0.1:3001/
 systemctl is-active diablozone-api caddy aryaland
 echo "Installed release $release_id; previous release: ${previous_release:-none}. HTTPS verification follows separately."

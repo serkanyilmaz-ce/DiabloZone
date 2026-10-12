@@ -1,24 +1,39 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir,writeFile } from 'node:fs/promises';
 import { databasePool } from './config.js';
+import { isUuid } from '../../src/lib/api-query.js';
+import { loadCatalog } from './catalog.js';
 const snapshotId=process.argv[2];
-if(!snapshotId || !/^[0-9a-f-]{36}$/i.test(snapshotId)) throw new Error('Kullanım: pnpm db:export <snapshot-uuid>. Çıktı output/snapshots içine yazılır.');
+if(!snapshotId||!isUuid(snapshotId))throw new Error('Usage: db:export <snapshot UUID>');
 const pool=databasePool(true),client=await pool.connect();
 try{
   await client.query('begin isolation level repeatable read read only');
-  const snapshot=await client.query("select s.*,b.season_id,b.patch,b.channel from snapshots s join builds b on b.id=s.build_id where s.id=$1 and s.state='published'",[snapshotId]);
-  if(!snapshot.rows.length) throw new Error('Yayınlanmış snapshot bulunamadı.');
-  const root=`output/snapshots/${snapshotId}`;await mkdir(root,{recursive:true});
+  const snapshot=(await client.query("select s.*,b.season_id,b.patch,b.channel from snapshots s join builds b on b.id=s.build_id where s.id=$1 and s.state='published'",[snapshotId])).rows[0];
+  if(!snapshot)throw new Error('Published snapshot not found');
+  const root=`output/snapshots/${snapshotId}`;
+  await mkdir(root,{recursive:true});
+  const write=async(name:string,value:unknown)=>writeFile(`${root}/${name}.json`,JSON.stringify(value,null,2)+'\n');
+  const isGame=snapshot.manifest.kind==='game_data';
   let total=0;
-  for(const kind of ['skills','items','aspects','affixes']){
+  for(const kind of ['skills','items','aspects','affixes','classes']){
     const records=await client.query('select payload from records where snapshot_id=$1 and kind=$2 order by id',[snapshotId,kind]);
-    total+=records.rows.length;
-    await writeFile(`${root}/${kind}.json`,JSON.stringify(records.rows.map(row=>row.payload),null,2)+'\n');
+    total+=records.rows.length;await write(kind,records.rows.map(row=>row.payload));
   }
-  const mechanics=await client.query('select id,slug,domain,title,status,assumptions from mechanics where snapshot_id=$1 order by slug',[snapshotId]);
-  const formulas=await client.query('select f.*,s.kind as source_kind,s.locator,s.sha256 from formulas f join sources s on s.id=f.source_id where f.snapshot_id=$1',[snapshotId]);
-  const dependencies=await client.query('select * from formula_dependencies where snapshot_id=$1',[snapshotId]);
-  const rng=await client.query('select r.*,s.kind as source_kind,s.locator,s.sha256 from rng_models r join sources s on s.id=r.source_id where r.snapshot_id=$1',[snapshotId]);
-  await writeFile(`${root}/research.json`,JSON.stringify({build:snapshot.rows[0].build_id,snapshotId,mechanics:mechanics.rows,formulas:formulas.rows,dependencies:dependencies.rows,rng:rng.rows},null,2)+'\n');
-  await writeFile(`${root}/metadata.json`,JSON.stringify({source:'DiabloZone PostgreSQL',gameBuild:total?snapshot.rows[0].build_id:null,researchBuild:snapshot.rows[0].build_id,season:snapshot.rows[0].season_id,patch:snapshot.rows[0].patch,channel:snapshot.rows[0].channel,snapshotId,generatedAt:new Date().toISOString(),schemaVersion:1},null,2)+'\n');
-  await client.query('commit');console.log(`Exported ${root}; existing generated data was preserved.`);
+  const boards=(await client.query("select payload from records where snapshot_id=$1 and kind='skill-tree' order by id",[snapshotId])).rows;
+  await write('skill-tree',{gameBuild:isGame?snapshot.build_id:null,classes:Object.fromEntries(boards.map(row=>[row.payload.classCode,row.payload]))});
+  const mechanics=(await client.query('select id,slug,domain,title,status,assumptions from mechanics where snapshot_id=$1 order by slug',[snapshotId])).rows;
+  const formulas=(await client.query('select * from formulas where snapshot_id=$1',[snapshotId])).rows;
+  const rng=(await client.query('select * from rng_models where snapshot_id=$1',[snapshotId])).rows;
+  const sources=(await client.query('select id,kind,locator,sha256 from sources where snapshot_id=$1 order by locator',[snapshotId])).rows;
+  const links=(await client.query('select source_kind,source_id,target_kind,target_id,relation from record_links where snapshot_id=$1 order by source_kind,source_id,relation,target_id',[snapshotId])).rows;
+  await write('research',{snapshotId,mechanics,formulas,rng});
+  await write('sources',sources);await write('links',links);
+  if(isGame)await write('provenance',{sourceCommit:snapshot.manifest.sourceCommit,sourceVersion:snapshot.manifest.sourceVersion,files:snapshot.manifest.provenance});
+  await write('metadata',{schemaVersion:isGame?2:1,source:'DiabloZone PostgreSQL',snapshotId,gameBuild:isGame?snapshot.build_id:null,researchBuild:!isGame?snapshot.build_id:null,
+    season:snapshot.season_id,patch:snapshot.patch,channel:snapshot.channel,sourceVersion:snapshot.manifest.sourceVersion,sourceCommit:snapshot.manifest.sourceCommit,
+    inputSha256:snapshot.manifest.inputSha256,sample:snapshot.manifest.sample===true,phase:snapshot.manifest.phase,recordCount:total+boards.length,generatedAt:new Date().toISOString()});
+  if(isGame){
+    const checked=await loadCatalog(root);
+    if(checked.inputSha256!==snapshot.manifest.inputSha256||checked.links.length!==links.length)throw new Error('Database export seal or relationship count mismatch');
+  }
+  await client.query('commit');console.log(JSON.stringify({exportDirectory:root,snapshotId,kind:snapshot.manifest.kind,records:total+boards.length,links:links.length,verified:true}));
 }finally{client.release();await pool.end();}

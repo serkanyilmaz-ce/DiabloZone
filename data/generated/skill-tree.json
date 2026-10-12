@@ -1,0 +1,1572 @@
+{
+  "gameBuild": "73552",
+  "classes": {
+    "sorcerer": {
+      "id": "72984",
+      "name": "Sorcerer",
+      "slug": "sorcerer-72984",
+      "edges": [
+        {
+          "to": 603,
+          "from": 717,
+          "points": [
+            {
+              "x": 2206.820068359375,
+              "y": -1752.739990234375
+            },
+            {
+              "x": 2371.260009765625,
+              "y": -2667.320068359375
+            }
+          ]
+        },
+        {
+          "to": 654,
+          "from": 650,
+          "points": [
+            {
+              "x": -92.0031967163086,
+              "y": -6048.52001953125
+            },
+            {
+              "x": 647.3870239257812,
+              "y": -6835.4599609375
+            }
+          ]
+        },
+        {
+          "to": 657,
+          "from": 718,
+          "points": [
+            {
+              "x": -2394.89990234375,
+              "y": -3855.530029296875
+            },
+            {
+              "x": -584.77099609375,
+              "y": -4291.580078125
+            }
+          ]
+        },
+        {
+          "to": 885,
+          "from": 883,
+          "points": [
+            {
+              "x": 152.39100646972656,
+              "y": -7144.52978515625
+            },
+            {
+              "x": 646.2039794921875,
+              "y": -7143.2900390625
+            }
+          ]
+        },
+        {
+          "to": 890,
+          "from": 884,
+          "points": [
+            {
+              "x": 1300.199951171875,
+              "y": -7274.259765625
+            },
+            {
+              "x": 1795.469970703125,
+              "y": -7271.8701171875
+            }
+          ]
+        },
+        {
+          "to": 887,
+          "from": 884,
+          "points": [
+            {
+              "x": 1300.199951171875,
+              "y": -7274.259765625
+            },
+            {
+              "x": 1797.969970703125,
+              "y": -7494.68994140625
+            }
+          ]
+        },
+        {
+          "to": 885,
+          "from": 889,
+          "points": [
+            {
+              "x": 153.67999267578125,
+              "y": -7364.080078125
+            },
+            {
+              "x": 646.2039794921875,
+              "y": -7143.2900390625
+            }
+          ]
+        },
+        {
+          "to": 886,
+          "from": 888,
+          "points": [
+            {
+              "x": 480.15301513671875,
+              "y": -7801.31982421875
+            },
+            {
+              "x": 980.5750122070312,
+              "y": -7535.52001953125
+            }
+          ]
+        },
+        {
+          "to": 892,
+          "from": 886,
+          "points": [
+            {
+              "x": 980.5750122070312,
+              "y": -7535.52001953125
+            },
+            {
+              "x": 980.6749877929688,
+              "y": -7976.31982421875
+            }
+          ]
+        },
+        {
+          "to": 891,
+          "from": 886,
+          "points": [
+            {
+              "x": 980.5750122070312,
+              "y": -7535.52001953125
+            },
+            {
+              "x": 1470.97998046875,
+              "y": -7801.10009765625
+            }
+          ]
+        },
+        {
+          "to": 654,
+          "from": 885,
+          "points": [
+            {
+              "x": 646.2039794921875,
+              "y": -7143.2900390625
+            },
+            {
+              "x": 647.3870239257812,
+              "y": -6835.4599609375
+            }
+          ]
+        },
+        {
+          "to": 884,
+          "from": 654,
+          "points": [
+            {
+              "x": 647.3870239257812,
+              "y": -6835.4599609375
+            },
+            {
+              "x": 1289.1300048828125,
+              "y": -6844.5498046875
+            },
+            {
+              "x": 1300.199951171875,
+              "y": -7274.259765625
+            }
+          ]
+        },
+        {
+          "to": 928,
+          "from": 926,
+          "points": [
+            {
+              "x": 725.7139892578125,
+              "y": -4730.0400390625
+            },
+            {
+              "x": 1554.9000244140625,
+              "y": -4732.580078125
+            }
+          ]
+        },
+        {
+          "to": 927,
+          "from": 926,
+          "points": [
+            {
+              "x": 725.7139892578125,
+              "y": -4730.0400390625
+            },
+            {
+              "x": 1224.2900390625,
+              "y": -4993.2001953125
+            }
+          ]
+        },
+        {
+          "to": 929,
+          "from": 926,
+          "points": [
+            {
+              "x": 725.7139892578125,
+              "y": -4730.0400390625
+            },
+            {
+              "x": 1226.6600341796875,
+              "y": -4466.2001953125
+            }
+          ]
+        },
+        {
+          "to": 930,
+          "from": 932,
+          "points": [
+            {
+              "x": 235.39100646972656,
+              "y": -4291.72998046875
+            },
+            {
+              "x": 237.05299377441406,
+              "y": -4557.169921875
+            }
+          ]
+        },
+        {
+          "to": 931,
+          "from": 930,
+          "points": [
+            {
+              "x": 237.05299377441406,
+              "y": -4557.169921875
+            },
+            {
+              "x": 658.8079833984375,
+              "y": -4291.0498046875
+            }
+          ]
+        },
+        {
+          "to": 934,
+          "from": 933,
+          "points": [
+            {
+              "x": -94.61640167236328,
+              "y": -5170.81982421875
+            },
+            {
+              "x": -93.96170043945312,
+              "y": -4906.259765625
+            }
+          ]
+        },
+        {
+          "to": 935,
+          "from": 934,
+          "points": [
+            {
+              "x": -93.96170043945312,
+              "y": -4906.259765625
+            },
+            {
+              "x": 327.2200012207031,
+              "y": -5169.6201171875
+            }
+          ]
+        },
+        {
+          "to": 930,
+          "from": 657,
+          "points": [
+            {
+              "x": -584.77099609375,
+              "y": -4291.580078125
+            },
+            {
+              "x": -340.6809997558594,
+              "y": -4300.330078125
+            },
+            {
+              "x": -343.7349853515625,
+              "y": -4562.52978515625
+            },
+            {
+              "x": 237.05299377441406,
+              "y": -4557.169921875
+            }
+          ]
+        },
+        {
+          "to": 934,
+          "from": 657,
+          "points": [
+            {
+              "x": -584.77099609375,
+              "y": -4291.580078125
+            },
+            {
+              "x": -859.2109985351562,
+              "y": -4298.3701171875
+            },
+            {
+              "x": -859.4569702148438,
+              "y": -4914.33984375
+            },
+            {
+              "x": -93.96170043945312,
+              "y": -4906.259765625
+            }
+          ]
+        },
+        {
+          "to": 1005,
+          "from": 1011,
+          "points": [
+            {
+              "x": 3193.260009765625,
+              "y": -2929.6298828125
+            },
+            {
+              "x": 3610.679931640625,
+              "y": -2666.8798828125
+            }
+          ]
+        },
+        {
+          "to": 1006,
+          "from": 1014,
+          "points": [
+            {
+              "x": 3681.22998046875,
+              "y": -3107.669921875
+            },
+            {
+              "x": 4170.18994140625,
+              "y": -3365.050048828125
+            }
+          ]
+        },
+        {
+          "to": 1009,
+          "from": 1007,
+          "points": [
+            {
+              "x": 2860.050048828125,
+              "y": -3545.25
+            },
+            {
+              "x": 2862.889892578125,
+              "y": -3282.949951171875
+            }
+          ]
+        },
+        {
+          "to": 1008,
+          "from": 1009,
+          "points": [
+            {
+              "x": 2862.889892578125,
+              "y": -3282.949951171875
+            },
+            {
+              "x": 3285.469970703125,
+              "y": -3547.14990234375
+            }
+          ]
+        },
+        {
+          "to": 1011,
+          "from": 1010,
+          "points": [
+            {
+              "x": 3189.81005859375,
+              "y": -2668.320068359375
+            },
+            {
+              "x": 3193.260009765625,
+              "y": -2929.6298828125
+            }
+          ]
+        },
+        {
+          "to": 1012,
+          "from": 1014,
+          "points": [
+            {
+              "x": 3681.22998046875,
+              "y": -3107.669921875
+            },
+            {
+              "x": 4178.64990234375,
+              "y": -2839.989990234375
+            }
+          ]
+        },
+        {
+          "to": 1013,
+          "from": 1014,
+          "points": [
+            {
+              "x": 3681.22998046875,
+              "y": -3107.669921875
+            },
+            {
+              "x": 4505.25,
+              "y": -3107.199951171875
+            }
+          ]
+        },
+        {
+          "to": 886,
+          "from": 654,
+          "points": [
+            {
+              "x": 647.3870239257812,
+              "y": -6835.4599609375
+            },
+            {
+              "x": 964.6320190429688,
+              "y": -6932.0498046875
+            },
+            {
+              "x": 980.5750122070312,
+              "y": -7535.52001953125
+            }
+          ]
+        },
+        {
+          "to": 926,
+          "from": 657,
+          "points": [
+            {
+              "x": -584.77099609375,
+              "y": -4291.580078125
+            },
+            {
+              "x": -602.9409790039062,
+              "y": -4738.89990234375
+            },
+            {
+              "x": 725.7139892578125,
+              "y": -4730.0400390625
+            }
+          ]
+        },
+        {
+          "to": 1014,
+          "from": 603,
+          "points": [
+            {
+              "x": 2371.260009765625,
+              "y": -2667.320068359375
+            },
+            {
+              "x": 2353.340087890625,
+              "y": -3114.239990234375
+            },
+            {
+              "x": 3681.22998046875,
+              "y": -3107.669921875
+            }
+          ]
+        },
+        {
+          "to": 1011,
+          "from": 603,
+          "points": [
+            {
+              "x": 2371.260009765625,
+              "y": -2667.320068359375
+            },
+            {
+              "x": 2617.68994140625,
+              "y": -2672.699951171875
+            },
+            {
+              "x": 2615.840087890625,
+              "y": -2937.2900390625
+            },
+            {
+              "x": 3193.260009765625,
+              "y": -2929.6298828125
+            }
+          ]
+        },
+        {
+          "to": 1009,
+          "from": 603,
+          "points": [
+            {
+              "x": 2371.260009765625,
+              "y": -2667.320068359375
+            },
+            {
+              "x": 2104.739990234375,
+              "y": -2671.300048828125
+            },
+            {
+              "x": 2104.7099609375,
+              "y": -3287.110107421875
+            },
+            {
+              "x": 2862.889892578125,
+              "y": -3282.949951171875
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "x": 2371.260009765625,
+          "y": -2667.320068359375,
+          "id": 603,
+          "kind": "active",
+          "name": "Flame Shield",
+          "skillId": "167341",
+          "category": "defensive",
+          "maxRanks": 15,
+          "powerSno": 167341,
+          "skillSlug": "flame-shield-167341",
+          "rewardName": "Sorc_Unlock_FlameShield",
+          "description": "Cooldown: {Cooldown Time} seconds\nCharges: [SF_9 + 1]\nCharge Cooldown: {Recharge Time} seconds\nLucky Hit Chance: [{Combat_Effect_Chance_Script_Formula_Override:17}|%|]\nEngulf yourself in flames for [{buffduration:FLAMESHIELD_BUFF}|1|] |4second:seconds;, becoming Immune and dealing {dot:TOOLTIP_BURNING_DAMAGE} Burning damage over [{buffDuration:BURNING_DAMAGE}] seconds to surrounding enemies.",
+          "requiredLevel": 2
+        },
+        {
+          "x": -2394.909912109375,
+          "y": 353.7950134277344,
+          "id": 646,
+          "kind": "hub",
+          "name": "Yetenek kümesi",
+          "requiredLevel": 8
+        },
+        {
+          "x": -92.60220336914062,
+          "y": 5964.97021484375,
+          "id": 647,
+          "kind": "hub",
+          "name": "Yetenek kümesi",
+          "requiredLevel": 19
+        },
+        {
+          "x": -90.74710083007812,
+          "y": 2896.840087890625,
+          "id": 648,
+          "kind": "hub",
+          "name": "Yetenek kümesi",
+          "requiredLevel": 13
+        },
+        {
+          "x": -92.0031967163086,
+          "y": -6048.52001953125,
+          "id": 650,
+          "kind": "hub",
+          "name": "Yetenek kümesi",
+          "requiredLevel": 0
+        },
+        {
+          "x": 647.3870239257812,
+          "y": -6835.4599609375,
+          "id": 654,
+          "kind": "active",
+          "name": "Fire Bolt",
+          "skillId": "153249",
+          "category": "basic",
+          "maxRanks": 15,
+          "powerSno": 153249,
+          "skillSlug": "fire-bolt-153249",
+          "rewardName": "Sorc_Unlock_FireBolt",
+          "description": "Mana Cost: {Resource Cost}\nLucky Hit Chance: [{Combat_Effect_Chance_Script_Formula_Override:17}|%|]\nHurl a flaming bolt, dealing {payload:DAMAGE} damage and an additional {dot:BURNING} Burning damage over {buffduration:BURNING} seconds.",
+          "requiredLevel": 2
+        },
+        {
+          "x": -584.77099609375,
+          "y": -4291.580078125,
+          "id": 657,
+          "kind": "active",
+          "name": "Fireball",
+          "skillId": "165023",
+          "category": "core",
+          "maxRanks": 15,
+          "powerSno": 165023,
+          "skillSlug": "fireball-165023",
+          "rewardName": "Sorc_Unlock_Fireball",
+          "description": "Mana Cost: {Resource Cost}\nLucky Hit Chance: [{Combat Effect Chance}|%|]\nHurl an exploding ball of fire, dealing {payload:PAYLOAD_PROJECTILE} damage to enemies.",
+          "requiredLevel": 2
+        },
+        {
+          "x": 2206.820068359375,
+          "y": -1752.739990234375,
+          "id": 717,
+          "kind": "hub",
+          "name": "Yetenek kümesi",
+          "requiredLevel": 4
+        },
+        {
+          "x": -2394.89990234375,
+          "y": -3855.530029296875,
+          "id": 718,
+          "kind": "hub",
+          "name": "Yetenek kümesi",
+          "requiredLevel": 3
+        },
+        {
+          "x": 2042.6700439453125,
+          "y": -6046.22021484375,
+          "id": 864,
+          "kind": "gate",
+          "name": "Seviye 9",
+          "requiredLevel": 9
+        },
+        {
+          "x": 2539.780029296875,
+          "y": -6223.8701171875,
+          "id": 865,
+          "kind": "gate",
+          "name": "Seviye 14",
+          "requiredLevel": 14
+        },
+        {
+          "x": 1718.719970703125,
+          "y": -6398.759765625,
+          "id": 727,
+          "kind": "gate",
+          "name": "Seviye 5",
+          "requiredLevel": 5
+        },
+        {
+          "x": 152.39100646972656,
+          "y": -7144.52978515625,
+          "id": 883,
+          "kind": "modifier",
+          "name": "Healing",
+          "skillId": "153249:mod:7",
+          "category": "basic",
+          "maxRanks": 3,
+          "powerSno": 153249,
+          "skillSlug": "healing-153249-mod-7",
+          "rewardName": "Sorc_Mod_FireBolt_Upgrade1",
+          "description": "Fire Bolt heals you for [SF_28 * 100]% of your Maximum Life ([PlayerHealthMax() * SF_28]) when it hits the first enemy.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 111
+        },
+        {
+          "x": 1300.199951171875,
+          "y": -7274.259765625,
+          "id": 884,
+          "kind": "gate",
+          "name": "Seviye 9",
+          "requiredLevel": 9
+        },
+        {
+          "x": 646.2039794921875,
+          "y": -7143.2900390625,
+          "id": 885,
+          "kind": "gate",
+          "name": "Seviye 5",
+          "requiredLevel": 5
+        },
+        {
+          "x": 980.5750122070312,
+          "y": -7535.52001953125,
+          "id": 886,
+          "kind": "gate",
+          "name": "Seviye 14",
+          "requiredLevel": 14
+        },
+        {
+          "x": 1797.969970703125,
+          "y": -7494.68994140625,
+          "id": 887,
+          "kind": "modifier",
+          "name": "Overpower",
+          "skillId": "153249:mod:10",
+          "category": "basic",
+          "maxRanks": 3,
+          "powerSno": 153249,
+          "skillSlug": "overpower-153249-mod-10",
+          "rewardName": "Sorc_Mod_FireBolt_Upgrade4",
+          "description": "Fire Bolt grants [SF_33] stack of Overpower.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 110
+        },
+        {
+          "x": 480.15301513671875,
+          "y": -7801.31982421875,
+          "id": 888,
+          "kind": "modifier",
+          "name": "Twin Flame",
+          "skillId": "153249:mod:1",
+          "category": "basic",
+          "maxRanks": 3,
+          "powerSno": 153249,
+          "skillSlug": "twin-flame-153249-mod-1",
+          "rewardName": "Sorc_Mod_FireBolt_UpgradeA",
+          "description": "Fire Bolt launches an additional parallel bolt, dealing {payload:DAMAGE} Fire damage.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 4
+        },
+        {
+          "x": 153.67999267578125,
+          "y": -7364.080078125,
+          "id": 889,
+          "kind": "modifier",
+          "name": "Resource Generation",
+          "skillId": "153249:mod:8",
+          "category": "basic",
+          "maxRanks": 3,
+          "powerSno": 153249,
+          "skillSlug": "resource-generation-153249-mod-8",
+          "rewardName": "Sorc_Mod_FireBolt_Upgrade2",
+          "description": "Fire Bolt generates [SF_29] Mana when it hits the first enemy, or [SF_30] Mana if the enemy is already Frostbitten{else}Burning.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 111
+        },
+        {
+          "x": 1795.469970703125,
+          "y": -7271.8701171875,
+          "id": 890,
+          "kind": "modifier",
+          "name": "Damage Bonus",
+          "skillId": "153249:mod:9",
+          "category": "basic",
+          "maxRanks": 3,
+          "powerSno": 153249,
+          "skillSlug": "damage-bonus-153249-mod-9",
+          "rewardName": "Sorc_Mod_FireBolt_Upgrade3",
+          "description": "Fire Bolt deals [{SF_31}*100}|%x|] increased Frostbite{else}Burning damage.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 110
+        },
+        {
+          "x": 1470.97998046875,
+          "y": -7801.10009765625,
+          "id": 891,
+          "kind": "modifier",
+          "name": "Shiver",
+          "skillId": "153249:mod:6",
+          "category": "basic",
+          "maxRanks": 3,
+          "powerSno": 153249,
+          "skillSlug": "shiver-153249-mod-6",
+          "rewardName": "Sorc_Mod_FireBolt_UpgradeC",
+          "description": "Fire Bolt becomes a Frost Skill, dealing {payload:UPGRADEC_DAMAGE} Cold damage and {dot:UPGRADEC_FROSTBITE} Frostbite damage over [SF_0] seconds.\n\nFire Bolt pierces [SF_27] time and makes enemies Vulnerable for {SF_24} seconds.",
+          "requiredLevel": 30,
+          "exclusiveGroup": 4
+        },
+        {
+          "x": 980.6749877929688,
+          "y": -7976.31982421875,
+          "id": 892,
+          "kind": "modifier",
+          "name": "Firefly",
+          "skillId": "153249:mod:4",
+          "category": "basic",
+          "maxRanks": 3,
+          "powerSno": 153249,
+          "skillSlug": "firefly-153249-mod-4",
+          "rewardName": "Sorc_Mod_FireBolt_UpgradeB",
+          "description": "Fire Bolt shoots out a firefly that attaches itself to an enemy and explodes {SF_39} times after a delay, dealing {payload:UPGRADEB_FIREFLY_AOE_DAMAGE} damage with each explosion.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 4
+        },
+        {
+          "x": -1162.4000244140625,
+          "y": -7539.3798828125,
+          "id": 900,
+          "kind": "gate",
+          "name": "Seviye 14",
+          "requiredLevel": 14
+        },
+        {
+          "x": -831.676025390625,
+          "y": -7142.72021484375,
+          "id": 901,
+          "kind": "gate",
+          "name": "Seviye 5",
+          "requiredLevel": 5
+        },
+        {
+          "x": -1492.47998046875,
+          "y": -7275.72998046875,
+          "id": 902,
+          "kind": "gate",
+          "name": "Seviye 9",
+          "requiredLevel": 9
+        },
+        {
+          "x": -2720.43994140625,
+          "y": -6222.31982421875,
+          "id": 906,
+          "kind": "gate",
+          "name": "Seviye 14",
+          "requiredLevel": 14
+        },
+        {
+          "x": -1910.56005859375,
+          "y": -6399.3798828125,
+          "id": 908,
+          "kind": "gate",
+          "name": "Seviye 5",
+          "requiredLevel": 5
+        },
+        {
+          "x": -2232.219970703125,
+          "y": -6048.7998046875,
+          "id": 911,
+          "kind": "gate",
+          "name": "Seviye 9",
+          "requiredLevel": 9
+        },
+        {
+          "x": 735.1719970703125,
+          "y": -3505.699951171875,
+          "id": 919,
+          "kind": "gate",
+          "name": "Seviye 15",
+          "requiredLevel": 15
+        },
+        {
+          "x": 235.31500244140625,
+          "y": -3330.389892578125,
+          "id": 920,
+          "kind": "gate",
+          "name": "Seviye 10",
+          "requiredLevel": 10
+        },
+        {
+          "x": -3.6568500995635986,
+          "y": -3680.5400390625,
+          "id": 922,
+          "kind": "gate",
+          "name": "Seviye 6",
+          "requiredLevel": 6
+        },
+        {
+          "x": 725.7139892578125,
+          "y": -4730.0400390625,
+          "id": 926,
+          "kind": "gate",
+          "name": "Seviye 15",
+          "requiredLevel": 15
+        },
+        {
+          "x": 1224.2900390625,
+          "y": -4993.2001953125,
+          "id": 927,
+          "kind": "modifier",
+          "name": "Instantaneous Destruction",
+          "skillId": "165023:mod:2",
+          "category": "core",
+          "maxRanks": 3,
+          "powerSno": 165023,
+          "skillSlug": "instantaneous-destruction-165023-mod-2",
+          "rewardName": "Sorc_Mod_Fireball_UpgradeA",
+          "description": "Fireball travels [SF_19*100|%|] faster and deals [SF_20*100|%x|] increased damage.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 212
+        },
+        {
+          "x": 1554.9000244140625,
+          "y": -4732.580078125,
+          "id": 928,
+          "kind": "modifier",
+          "name": "Illumination",
+          "skillId": "165023:mod:6",
+          "category": "core",
+          "maxRanks": 3,
+          "powerSno": 165023,
+          "skillSlug": "illumination-165023-mod-6",
+          "rewardName": "Sorc_Mod_Fireball_UpgradeB",
+          "description": "Fireball now bounces as it travels and explodes each time it hits the ground, dealing [SF_21 * 100|%|] of normal damage.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 212
+        },
+        {
+          "x": 1226.6600341796875,
+          "y": -4466.2001953125,
+          "id": 929,
+          "kind": "modifier",
+          "name": "Frostball",
+          "skillId": "165023:mod:8",
+          "category": "core",
+          "maxRanks": 3,
+          "powerSno": 165023,
+          "skillSlug": "frostball-165023-mod-8",
+          "rewardName": "Sorc_Mod_Fireball_UpgradeC",
+          "description": "Fireball becomes a Frost Skill that deals Cold damage.\n\nWhen Fireball hits an enemy it creates [SF_28+1] Ice Spikes around them, dealing {payload:UPGRADEC_ICESPIKE_TOOLTIP} damage each.",
+          "requiredLevel": 32,
+          "exclusiveGroup": 212
+        },
+        {
+          "x": 237.05299377441406,
+          "y": -4557.169921875,
+          "id": 930,
+          "kind": "gate",
+          "name": "Seviye 10",
+          "requiredLevel": 10
+        },
+        {
+          "x": 658.8079833984375,
+          "y": -4291.0498046875,
+          "id": 931,
+          "kind": "modifier",
+          "name": "Damage Bonus",
+          "skillId": "165023:mod:11",
+          "category": "core",
+          "maxRanks": 3,
+          "powerSno": 165023,
+          "skillSlug": "damage-bonus-165023-mod-11",
+          "rewardName": "Sorc_Mod_Fireball_Upgrade3",
+          "description": "Fireball deals [{SF_16}*100|%x|] increased damage, but its Mana cost is increased by {SF_17}.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 211
+        },
+        {
+          "x": 235.39100646972656,
+          "y": -4291.72998046875,
+          "id": 932,
+          "kind": "modifier",
+          "name": "Size Bonus",
+          "skillId": "165023:mod:12",
+          "category": "core",
+          "maxRanks": 3,
+          "powerSno": 165023,
+          "skillSlug": "size-bonus-165023-mod-12",
+          "rewardName": "Sorc_Mod_Fireball_Upgrade4",
+          "description": "Fireball's Size is increased by [(SF_18 * 100 * 2)|%+|].",
+          "requiredLevel": 2,
+          "exclusiveGroup": 211
+        },
+        {
+          "x": -94.61640167236328,
+          "y": -5170.81982421875,
+          "id": 933,
+          "kind": "modifier",
+          "name": "Damage Over Time",
+          "skillId": "165023:mod:10",
+          "category": "core",
+          "maxRanks": 3,
+          "powerSno": 165023,
+          "skillSlug": "damage-over-time-165023-mod-10",
+          "rewardName": "Sorc_Mod_Fireball_Upgrade2",
+          "description": "Fireball's direct damage deals an additional [SF_14 * 100]% damage over [SF_15] seconds.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 210
+        },
+        {
+          "x": -93.96170043945312,
+          "y": -4906.259765625,
+          "id": 934,
+          "kind": "gate",
+          "name": "Seviye 6",
+          "requiredLevel": 6
+        },
+        {
+          "x": 327.2200012207031,
+          "y": -5169.6201171875,
+          "id": 935,
+          "kind": "modifier",
+          "name": "Critical Strike Damage",
+          "skillId": "165023:mod:9",
+          "category": "core",
+          "maxRanks": 3,
+          "powerSno": 165023,
+          "skillSlug": "critical-strike-damage-165023-mod-9",
+          "rewardName": "Sorc_Mod_Fireball_Upgrade1",
+          "description": "Fireball deals [SF_13*100|%x|] increased Critical Strike Damage.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 210
+        },
+        {
+          "x": -4862.64990234375,
+          "y": -5170.580078125,
+          "id": 962,
+          "kind": "gate",
+          "name": "Seviye 15",
+          "requiredLevel": 15
+        },
+        {
+          "x": -4043.610107421875,
+          "y": -5346.72021484375,
+          "id": 963,
+          "kind": "gate",
+          "name": "Seviye 6",
+          "requiredLevel": 6
+        },
+        {
+          "x": -4366.669921875,
+          "y": -4995.56982421875,
+          "id": 964,
+          "kind": "gate",
+          "name": "Seviye 10",
+          "requiredLevel": 10
+        },
+        {
+          "x": -1575.5,
+          "y": -2851.169921875,
+          "id": 966,
+          "kind": "gate",
+          "name": "Seviye 6",
+          "requiredLevel": 6
+        },
+        {
+          "x": -2230.739990234375,
+          "y": -2674.5400390625,
+          "id": 967,
+          "kind": "gate",
+          "name": "Seviye 10",
+          "requiredLevel": 10
+        },
+        {
+          "x": -1902.989990234375,
+          "y": -2410.949951171875,
+          "id": 968,
+          "kind": "gate",
+          "name": "Seviye 15",
+          "requiredLevel": 15
+        },
+        {
+          "x": -4198.10009765625,
+          "y": -2412.070068359375,
+          "id": 986,
+          "kind": "gate",
+          "name": "Seviye 15",
+          "requiredLevel": 15
+        },
+        {
+          "x": -3876.719970703125,
+          "y": -2672.7900390625,
+          "id": 987,
+          "kind": "gate",
+          "name": "Seviye 10",
+          "requiredLevel": 10
+        },
+        {
+          "x": -4535.1201171875,
+          "y": -2850.080078125,
+          "id": 990,
+          "kind": "gate",
+          "name": "Seviye 6",
+          "requiredLevel": 6
+        },
+        {
+          "x": -4365.0400390625,
+          "y": -4119.89990234375,
+          "id": 994,
+          "kind": "gate",
+          "name": "Seviye 6",
+          "requiredLevel": 6
+        },
+        {
+          "x": -4700.080078125,
+          "y": -3593.0400390625,
+          "id": 995,
+          "kind": "gate",
+          "name": "Seviye 10",
+          "requiredLevel": 10
+        },
+        {
+          "x": -5189.47998046875,
+          "y": -3859.64990234375,
+          "id": 996,
+          "kind": "gate",
+          "name": "Seviye 15",
+          "requiredLevel": 15
+        },
+        {
+          "x": 3610.679931640625,
+          "y": -2666.8798828125,
+          "id": 1005,
+          "kind": "modifier",
+          "name": "Duration Bonus",
+          "skillId": "167341:mod:9",
+          "category": "defensive",
+          "maxRanks": 3,
+          "powerSno": 167341,
+          "skillSlug": "duration-bonus-167341-mod-9",
+          "rewardName": "Sorc_Mod_FlameShield_Upgrade3",
+          "description": "Flame Shield's duration is increased to [SF_0+SF_42|1|] seconds.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 301
+        },
+        {
+          "x": 4170.18994140625,
+          "y": -3365.050048828125,
+          "id": 1006,
+          "kind": "modifier",
+          "name": "Scorch",
+          "skillId": "167341:mod:1",
+          "category": "defensive",
+          "maxRanks": 3,
+          "powerSno": 167341,
+          "skillSlug": "scorch-167341-mod-1",
+          "rewardName": "Sorc_Mod_FlameShield_UpgradeA",
+          "description": "Flame Shield instantly scorches close enemies, dealing {payload:UPGRADEA_DAMAGE} damage and Immobilizing them for {buffDuration:UPGRADEA_IMMOBILIZE} seconds.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 302
+        },
+        {
+          "x": 2860.050048828125,
+          "y": -3545.25,
+          "id": 1007,
+          "kind": "modifier",
+          "name": "Cooldown Reduction",
+          "skillId": "167341:mod:8",
+          "category": "defensive",
+          "maxRanks": 3,
+          "powerSno": 167341,
+          "skillSlug": "cooldown-reduction-167341-mod-8",
+          "rewardName": "Sorc_Mod_FlameShield_Upgrade2",
+          "description": "Flame Shield's Cooldown is reduced by {SF_40} seconds.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 300
+        },
+        {
+          "x": 3285.469970703125,
+          "y": -3547.14990234375,
+          "id": 1008,
+          "kind": "modifier",
+          "name": "Healing",
+          "skillId": "167341:mod:7",
+          "category": "defensive",
+          "maxRanks": 3,
+          "powerSno": 167341,
+          "skillSlug": "healing-167341-mod-7",
+          "rewardName": "Sorc_Mod_FlameShield_Upgrade1",
+          "description": "While Flame Shield is active, you heal for [SF_7 * 100|%|] of your Maximum Life ([PlayerHealthMax() * SF_7]) per second.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 300
+        },
+        {
+          "x": 2862.889892578125,
+          "y": -3282.949951171875,
+          "id": 1009,
+          "kind": "gate",
+          "name": "Seviye 7",
+          "requiredLevel": 7
+        },
+        {
+          "x": 3189.81005859375,
+          "y": -2668.320068359375,
+          "id": 1010,
+          "kind": "modifier",
+          "name": "Overpower",
+          "skillId": "167341:mod:10",
+          "category": "defensive",
+          "maxRanks": 3,
+          "powerSno": 167341,
+          "skillSlug": "overpower-167341-mod-10",
+          "rewardName": "Sorc_Mod_FlameShield_Upgrade4",
+          "description": "Flame Shield grants {SF_15} stack of Overpower.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 301
+        },
+        {
+          "x": 3193.260009765625,
+          "y": -2929.6298828125,
+          "id": 1011,
+          "kind": "gate",
+          "name": "Seviye 11",
+          "requiredLevel": 11
+        },
+        {
+          "x": 4178.64990234375,
+          "y": -2839.989990234375,
+          "id": 1012,
+          "kind": "modifier",
+          "name": "Flash",
+          "skillId": "167341:mod:6",
+          "category": "defensive",
+          "maxRanks": 3,
+          "powerSno": 167341,
+          "skillSlug": "flash-167341-mod-6",
+          "rewardName": "Sorc_Mod_FlameShield_UpgradeC",
+          "description": "Flame Shield becomes a Shock Skill, deals Sparking damage, and triggers its Cooldown on Cast.\n\nInstead of becoming Immune you embody lightning, generating {SF_33} Crackling Energy per second and gaining [SF_31 * 100|x%|] Movement Speed and [SF_32 * 100|1%|] Dodge.",
+          "requiredLevel": 34,
+          "exclusiveGroup": 302
+        },
+        {
+          "x": 4505.25,
+          "y": -3107.199951171875,
+          "id": 1013,
+          "kind": "modifier",
+          "name": "Firebird",
+          "skillId": "167341:mod:4",
+          "category": "defensive",
+          "maxRanks": 3,
+          "powerSno": 167341,
+          "skillSlug": "firebird-167341-mod-4",
+          "rewardName": "Sorc_Mod_FlameShield_UpgradeB",
+          "description": "Flame Shield rains down [1 / SF_13] Meteorites per second that deal {payload:UPGRADEB_METEORITE_DAMAGE} damage.",
+          "requiredLevel": 2,
+          "exclusiveGroup": 302
+        },
+        {
+          "x": 3681.22998046875,
+          "y": -3107.669921875,
+          "id": 1014,
+          "kind": "gate",
+          "name": "Seviye 16",
+          "requiredLevel": 16
+        },
+        {
+          "x": 5501.10986328125,
+          "y": -2316.409912109375,
+          "id": 1021,
+          "kind": "gate",
+          "name": "Seviye 16",
+          "requiredLevel": 16
+        },
+        {
+          "x": 4676.830078125,
+          "y": -2491.64990234375,
+          "id": 1022,
+          "kind": "gate",
+          "name": "Seviye 7",
+          "requiredLevel": 7
+        },
+        {
+          "x": 5005.2099609375,
+          "y": -2141.10009765625,
+          "id": 1023,
+          "kind": "gate",
+          "name": "Seviye 11",
+          "requiredLevel": 11
+        },
+        {
+          "x": 5503.669921875,
+          "y": -1178.31005859375,
+          "id": 1030,
+          "kind": "gate",
+          "name": "Seviye 16",
+          "requiredLevel": 16
+        },
+        {
+          "x": 4754.56005859375,
+          "y": -1351.530029296875,
+          "id": 1031,
+          "kind": "gate",
+          "name": "Seviye 7",
+          "requiredLevel": 7
+        },
+        {
+          "x": 5001.60009765625,
+          "y": -1000.4400024414062,
+          "id": 1034,
+          "kind": "gate",
+          "name": "Seviye 11",
+          "requiredLevel": 11
+        },
+        {
+          "x": 3194.080078125,
+          "y": -212.13800048828125,
+          "id": 1042,
+          "kind": "gate",
+          "name": "Seviye 11",
+          "requiredLevel": 11
+        },
+        {
+          "x": 3680.52001953125,
+          "y": -389.3489990234375,
+          "id": 1043,
+          "kind": "gate",
+          "name": "Seviye 16",
+          "requiredLevel": 16
+        },
+        {
+          "x": 2949.580078125,
+          "y": -561.31201171875,
+          "id": 1044,
+          "kind": "gate",
+          "name": "Seviye 7",
+          "requiredLevel": 7
+        },
+        {
+          "x": 72.91400146484375,
+          "y": 87.64119720458984,
+          "id": 1046,
+          "kind": "gate",
+          "name": "Seviye 12",
+          "requiredLevel": 12
+        },
+        {
+          "x": 401.22698974609375,
+          "y": 617.0709838867188,
+          "id": 1048,
+          "kind": "gate",
+          "name": "Seviye 17",
+          "requiredLevel": 17
+        },
+        {
+          "x": 894.3359985351562,
+          "y": 352.0920104980469,
+          "id": 1049,
+          "kind": "gate",
+          "name": "Seviye 20",
+          "requiredLevel": 20
+        },
+        {
+          "x": -3547.260009765625,
+          "y": -611.0009765625,
+          "id": 1058,
+          "kind": "gate",
+          "name": "Seviye 17",
+          "requiredLevel": 17
+        },
+        {
+          "x": -3214.449951171875,
+          "y": -961.4970092773438,
+          "id": 1062,
+          "kind": "gate",
+          "name": "Seviye 12",
+          "requiredLevel": 12
+        },
+        {
+          "x": -4038.179931640625,
+          "y": -787.4299926757812,
+          "id": 1066,
+          "kind": "gate",
+          "name": "Seviye 20",
+          "requiredLevel": 20
+        },
+        {
+          "x": -4861.52001953125,
+          "y": 617.666015625,
+          "id": 1068,
+          "kind": "gate",
+          "name": "Seviye 17",
+          "requiredLevel": 17
+        },
+        {
+          "x": -4533.2900390625,
+          "y": 87.85970306396484,
+          "id": 1069,
+          "kind": "gate",
+          "name": "Seviye 12",
+          "requiredLevel": 12
+        },
+        {
+          "x": -5356.6298828125,
+          "y": 353.1619873046875,
+          "id": 1070,
+          "kind": "gate",
+          "name": "Seviye 20",
+          "requiredLevel": 20
+        },
+        {
+          "x": -3299.159912109375,
+          "y": 1317.8299560546875,
+          "id": 1077,
+          "kind": "gate",
+          "name": "Seviye 12",
+          "requiredLevel": 12
+        },
+        {
+          "x": -4042.39990234375,
+          "y": 1493.1199951171875,
+          "id": 1080,
+          "kind": "gate",
+          "name": "Seviye 20",
+          "requiredLevel": 20
+        },
+        {
+          "x": -3542.820068359375,
+          "y": 1667.6400146484375,
+          "id": 1084,
+          "kind": "gate",
+          "name": "Seviye 17",
+          "requiredLevel": 17
+        },
+        {
+          "x": 2703.64990234375,
+          "y": 2895.860107421875,
+          "id": 1088,
+          "kind": "gate",
+          "name": "Seviye 23",
+          "requiredLevel": 23
+        },
+        {
+          "x": 2215.010009765625,
+          "y": 3158.56005859375,
+          "id": 1092,
+          "kind": "gate",
+          "name": "Seviye 21",
+          "requiredLevel": 21
+        },
+        {
+          "x": 1881.969970703125,
+          "y": 2633.320068359375,
+          "id": 1096,
+          "kind": "gate",
+          "name": "Seviye 18",
+          "requiredLevel": 18
+        },
+        {
+          "x": 1552.1700439453125,
+          "y": 4298.81982421875,
+          "id": 1099,
+          "kind": "gate",
+          "name": "Seviye 21",
+          "requiredLevel": 21
+        },
+        {
+          "x": 1305.25,
+          "y": 3947.8701171875,
+          "id": 1100,
+          "kind": "gate",
+          "name": "Seviye 18",
+          "requiredLevel": 18
+        },
+        {
+          "x": 2050.469970703125,
+          "y": 4121.830078125,
+          "id": 1101,
+          "kind": "gate",
+          "name": "Seviye 23",
+          "requiredLevel": 23
+        },
+        {
+          "x": -2231.110107421875,
+          "y": 4121.43994140625,
+          "id": 1114,
+          "kind": "gate",
+          "name": "Seviye 23",
+          "requiredLevel": 23
+        },
+        {
+          "x": -1486.97998046875,
+          "y": 3949.389892578125,
+          "id": 1115,
+          "kind": "gate",
+          "name": "Seviye 18",
+          "requiredLevel": 18
+        },
+        {
+          "x": -1736.75,
+          "y": 4299.509765625,
+          "id": 1116,
+          "kind": "gate",
+          "name": "Seviye 21",
+          "requiredLevel": 21
+        },
+        {
+          "x": -2883.47998046875,
+          "y": 2896.31005859375,
+          "id": 1124,
+          "kind": "gate",
+          "name": "Seviye 23",
+          "requiredLevel": 23
+        },
+        {
+          "x": -2068.260009765625,
+          "y": 2633.64990234375,
+          "id": 1125,
+          "kind": "gate",
+          "name": "Seviye 18",
+          "requiredLevel": 18
+        },
+        {
+          "x": -2396.330078125,
+          "y": 3158.610107421875,
+          "id": 1126,
+          "kind": "gate",
+          "name": "Seviye 21",
+          "requiredLevel": 21
+        },
+        {
+          "x": -2389.669921875,
+          "y": 6317.740234375,
+          "id": 1129,
+          "kind": "gate",
+          "name": "Seviye 24",
+          "requiredLevel": 24
+        },
+        {
+          "x": -2059.050048828125,
+          "y": 5615.83984375,
+          "id": 1130,
+          "kind": "gate",
+          "name": "Seviye 22",
+          "requiredLevel": 22
+        },
+        {
+          "x": -2878.820068359375,
+          "y": 5967.0498046875,
+          "id": 1131,
+          "kind": "gate",
+          "name": "Seviye 25",
+          "requiredLevel": 25
+        },
+        {
+          "x": -746.9520263671875,
+          "y": 7193.0498046875,
+          "id": 1139,
+          "kind": "gate",
+          "name": "Seviye 24",
+          "requiredLevel": 24
+        },
+        {
+          "x": 567.3259887695312,
+          "y": 7020.39990234375,
+          "id": 1142,
+          "kind": "gate",
+          "name": "Seviye 22",
+          "requiredLevel": 22
+        },
+        {
+          "x": -91.81520080566406,
+          "y": 7458.41015625,
+          "id": 1143,
+          "kind": "gate",
+          "name": "Seviye 25",
+          "requiredLevel": 25
+        },
+        {
+          "x": 1886.56005859375,
+          "y": 5615.64990234375,
+          "id": 1149,
+          "kind": "gate",
+          "name": "Seviye 22",
+          "requiredLevel": 22
+        },
+        {
+          "x": 2216.14990234375,
+          "y": 6317.52978515625,
+          "id": 1150,
+          "kind": "gate",
+          "name": "Seviye 24",
+          "requiredLevel": 24
+        },
+        {
+          "x": 2706.179931640625,
+          "y": 5965.759765625,
+          "id": 1151,
+          "kind": "gate",
+          "name": "Seviye 25",
+          "requiredLevel": 25
+        }
+      ],
+      "patch": "3.2.1.73552",
+      "scope": "excerpt",
+      "bounds": {
+        "maxX": 5503.669921875,
+        "maxY": 7458.41015625,
+        "minX": -5356.6298828125,
+        "minY": -7976.31982421875
+      },
+      "source": {
+        "sno": 72984,
+        "file": "json/base/meta/SkillKit/Sorcerer.skl.json",
+        "commit": "33e0bfbb5f717d3e560d14a7fb27d5a7f17fd2c0",
+        "sha256": "78c63c43b8a9abc95cddf8099f562459786191c2cb6984e162fe959d87cdf4af",
+        "gitBlob": "ef7523427e25fd2d942c9c03c3a28dddbcb6e5d2"
+      },
+      "classId": "131965",
+      "classCode": "sorcerer",
+      "sourceEdgeCount": 276,
+      "sourceNodeCount": 282
+    }
+  }
+}

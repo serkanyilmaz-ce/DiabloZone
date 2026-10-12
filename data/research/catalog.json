@@ -7,7 +7,7 @@
   "announcementUrl": "https://news.blizzard.com/en-us/article/24295394/celebrate-30-years-of-diablo-in-season-of-hell-s-legacy",
   "localInstallationVersion": "3.2.2.73764",
   "localInstallationObservedOn": "2026-10-12",
-  "importedGameBuild": null,
+  "importedGameBuild": "73552",
   "verifiedLiveModels": 0,
   "areas": [
     { "slug": "damage", "title": "Hasar & çarpanlar", "description": "Toplamsal havuzlar, kritik, savunmasızlık, ana stat, DoT ve özel yetenek katsayıları.", "icon": "skills", "status": "Araştırma planlandı" },

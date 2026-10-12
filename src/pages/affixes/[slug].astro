@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SourceDetails from '../../components/SourceDetails.astro';
+import { affixes,items,aspects } from '../../lib/data';
+export function getStaticPaths(){return affixes.filter(affix=>affix.slug).map(affix=>({params:{slug:affix.slug!},props:{affix}}));}
+const {affix}=Astro.props;
+const base=import.meta.env.BASE_URL;
+---
+<BaseLayout title={affix.name??affix.internalName}>
+<a class="back-link" href={`${base}items/`}>← Eşyalara dön</a>
+<article class="detail-card"><p class="eyebrow">EŞYA ÖZELLİĞİ</p><h1>{affix.name??affix.internalName}</h1>
+<p class="lead">{affix.description??'Kaynakta bağımsız açıklama bulunmuyor; ham ifadeleri aşağıda inceleyebilirsin.'}</p>
+<dl class="detail-grid"><div><dt>Kaynak SNO</dt><dd>{affix.source.sno}</dd></div><div><dt>Eşya gücü alt sınırı</dt><dd>{affix.itemPowerMin??'Bilinmiyor'}</dd></div><div><dt>Eşya gücü üst sınırı</dt><dd>{affix.itemPowerMax??'Bilinmiyor'}</dd></div><div><dt>Statik değerler</dt><dd>{affix.staticValues.length?affix.staticValues.join(', '):'Kaynakta sabit değer yok'}</dd></div></dl>
+<section class="detail-section"><h2>Bağlı kayıtlar</h2><div class="chip-row">{items.filter(item=>item.affixIds.includes(affix.id)).map(item=><a class="chip" href={`${base}items/${item.slug}/`}>{item.name}</a>)}{aspects.filter(aspect=>aspect.affixId===affix.id).map(aspect=><a class="chip" href={`${base}aspects/${aspect.slug}/`}>{aspect.name}</a>)}</div></section>
+<SourceDetails source={affix.source} localizationSource={affix.localizationSource} patch={affix.patch} template={affix.descriptionTemplate} formulas={affix.rawFormulas}/>
+</article>
+</BaseLayout>
