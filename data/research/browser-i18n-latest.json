@@ -1,7 +1,7 @@
 {
-  "origin": "http://127.0.0.1:4321",
+  "origin": "https://diablozone.152.70.4.125.sslip.io",
   "browser": "155.0.4283.45",
-  "at": "2026-10-12T09:33:01.773Z",
+  "at": "2026-10-12T09:46:51.478Z",
   "checks": [
     "TR/EN official skills, bilingual search/tree, theme persistence, images and viewport 1440",
     "TR/EN official skills, bilingual search/tree, theme persistence, images and viewport 390",

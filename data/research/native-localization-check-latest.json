@@ -1,0 +1,14 @@
+{
+    "localeSetId":  "c1f24b94-a808-4b0b-aa85-dc79ed0a0382",
+    "entries":  18589,
+    "skillDescriptions":  1600,
+    "seal":  "f1f33e9583a0eff4f9239a473cdf135fae448740bfd42e7d81e4c098c3f44bc0",
+    "checks":  [
+                   "Every compact locale field matches actual PostgreSQL payload",
+                   "Locale seal and separate source builds verified",
+                   "All 1600 skill descriptions localized",
+                   "Reader ACL and published set/records immutable",
+                   "Localized API and invalid query rejection",
+                   "Aryaland HTTPS preserved"
+               ]
+}

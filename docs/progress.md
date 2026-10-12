@@ -247,3 +247,24 @@ kaldırıldı; üretim/Aryaland korundu. Yerel makine dışı kopya SHA256:
 826872a91f2b63b048940cdc2c2624c2f92fbeb608cd49d67bb52aef3a49a855.
 Yedek .cache/backups/diablozone-20261012-123500.dump içinde; Git/release dışında.
 Native uygulama yayını ve canlı kontroller bu kaydı izler. Ayrıntı docs/localization.md.
+
+## TR/EN ve tema canlı teslim — 12 Ekim 2026
+
+Aktif release /srv/diablozone/releases/20261012-123500; uygulama commit
+4437d490c19a576caad9d8981309afa4c1208f80, clean/draft=false.
+Arşiv SHA256 a2bcc4a884e423cd90ad64f44e0b86bdcde7110809e0f69148e424965b8e2df3.
+Linux CI success: https://github.com/serkanyilmaz-ce/DiabloZone/actions/runs/38230868022
+
+Canlı Edge HTTPS 1440/390/1024: resmî TR/EN yetenek, Türkçe arama/ağaç,
+kalıcı dil/tema, storage engelinde kullanım, okunabilir açık tema bilgi
+kutuları, belge başlığı ve kaynak metnin korunması geçti; pageerror 0.
+18589 locale kaydının tüm compact alanları gerçek PG payload'larıyla aynı;
+1600 skill description, ayrı kaynak build/mühür, reader ACL, immutable set,
+API doğru/yanlış sorgu kontrolleri geçti. 3510 sistem kaydının DB/API ve
+bütün detay HTML regresyonu da geçti; Aryaland HTTPS korundu.
+
+Son kontrol API/Caddy/Aryaland active, DiabloZone API enabled/health ok,
+HTTPS başarılı. Her SSH komutu tamamlandı ve bağlantısı kapandı; site
+systemd/Caddy'de açık kalır. Kaynak/kanıt MD ve dış Notlar.md güncellendi.
+Kendi local preview işlemi çalışma sonunda kapatılır. Sıradaki veri işleri
+F05 sınıfa özel sistemler, ardından F06 hasar bağımlılıkları/gerçek ölçümdür.
